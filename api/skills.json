@@ -1,0 +1,2183 @@
+{
+ "lib": "Skill",
+ "count": 138,
+ "categories": {
+  "dbskill 工具箱": 33,
+  "内容写作": 7,
+  "发布与运营": 7,
+  "基础工具": 10,
+  "学术研究": 26,
+  "技能与开发": 10,
+  "排版配图": 15,
+  "系统工具": 9,
+  "视频制作": 10,
+  "采集与对标": 11
+ },
+ "items": [
+  {
+   "id": "001_成稿风格检查器",
+   "name": "article-style-checker-buheliwa",
+   "display": "成稿风格检查器",
+   "category": "内容写作",
+   "summary": "成稿风格检查技能。默认快检模式：单角色、不联网、只报 P0/P1 硬违规（禁用词/句式/数据无来源/结尾强制互动…",
+   "tags": [
+    "内容写作",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/article-style-checker-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "成稿风格检查技能。默认快检模式：单角色、不联网、只报 P0/P1 硬违规（禁用词/句式/数据无来源/结尾强制互动/技术事实错误/过程痕迹元语言），报告 20 行内，目标 3 分钟内完成。用户说「全检」「深度检查」「定稿检查」「对抗性评审」「四角色审查」「自我审查」时切换全检模式：四角色并行（垂直领域专家/资深编辑/流量专家/普通读者），找软问题（观点力度/案例说服力/节奏/情绪曲线）。只读不改。"
+  },
+  {
+   "id": "002_内容写作流程",
+   "name": "content-writer-buheliwa",
+   "display": "内容写作流程",
+   "category": "内容写作",
+   "summary": "按固定流程帮创作者完成一篇内容的写作（双入口）：从选题池选题，或直接抛出观点/想法，都走同一套流程： 梳理并理解…",
+   "tags": [
+    "内容写作",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/content-writer-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "按固定流程帮创作者完成一篇内容的写作（双入口）：从选题池选题，或直接抛出观点/想法，都走同一套流程： 梳理并理解观点 → 逐个访谈提问补全角度（一次一问）→ 确认主观点 → 确认篇幅与字数 → 定写作角度（读框架库挑一个）→ 构思框架存入 02_构思 → 建素材包（背景卡片、知识库卡片、内容规律卡片的软链接，不复制）→ 框架确认 → 调用写作风格写作 → 初稿快检 → 改稿循环 → 可选对抗性评审 → 整理成稿检查 → 定稿后按指令分流（配图 / 排版 / 发布公众号 / 小红书文案 / 视频脚本）； 产出发布物之后回做一次修改痕迹分析。 所有输出物按作品仓库结构存放：01_母稿/{01_素材,02_构思,03_版本}、02_公众号、03_小红书、04_视频脚本。 每个需要创作者参与的节点都停下等确认，且 AI 都要先给建议；全程不编造数据、案例和个人经历，不把 AI 的观点写成创作者说的。 当用户说\"帮我写【选题名称】\"或\"我有一个观点/想法……帮我写成一篇文章\"时启动。"
+  },
+  {
+   "id": "003_human-writing",
+   "name": "human-writing",
+   "display": "human-writing",
+   "category": "内容写作",
+   "summary": "通用中文创作与改稿 Skill。用于知乎回答、论坛长帖、公众号文章、博客、评论、人物故事、历史叙事、新闻与行业解…",
+   "tags": [
+    "内容写作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "通用中文创作与改稿 Skill。用于知乎回答、论坛长帖、公众号文章、博客、评论、人物故事、历史叙事、新闻与行业解读、科普、教程、评测、个人叙事、小说、故事、对白、口播和演讲稿。默认写成一个见过事、查过材料、愿意把来龙去脉讲清楚的人在说话，重点保留中文互联网长回答与长帖的活人感和自然中文韵律，避免空泛的机构腔、喊口号式演说腔、营销腔和模型腔。非虚构长文先检查材料够不够，材料不足时研究、追问或缩短，绝不用重复解释灌字数。现实内容额外核验事实、引语、数据与用户亲历，虚构内容可以创造人物、场景、对白、心理与情节。成稿正文严禁冒号、破折号、“不是……而是……”及同类翻案句，并清除商业黑话和模型惯用黑话。不创建作者画像、个人规则库或个人写作 Skill。"
+  },
+  {
+   "id": "004_ip-creator-skill",
+   "name": "ip-creator-skill",
+   "display": "ip-creator-skill",
+   "category": "内容写作",
+   "summary": "把中文文章、流程、方法论做成人设化内容与工作流",
+   "tags": [
+    "内容写作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Use when creating or planning Chinese article, post, blog, Notion, workflow, methodology, process, state, metaphor, or viewpoint illustrations with a personal IP; also use for 个人IP、角色档案、创建IP、小红书配图、公众号配图、白板风、小漫画、编辑感、复杂一点、默认暹罗猫、正文配图、shot list、去标题或改图 requests."
+  },
+  {
+   "id": "005_pengyouquan-copywriting",
+   "name": "pengyouquan-copywriting",
+   "display": "pengyouquan-copywriting",
+   "category": "内容写作",
+   "summary": "朋友圈文案（通用版）：读你的知识库，用你的卖点、案例和客户原话，写出带你味道的朋友圈。",
+   "tags": [
+    "内容写作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "朋友圈文案（通用版）：读你的知识库，用你的卖点、案例和客户原话，写出带你味道的朋友圈。 支持 5 种写作流程（给话题 / 调知识库 / 粗糙想法 / 具体事件 / 录音转写稿）＋ 2 个延伸动作（口播稿、小红书标题）。 触发方式：「写朋友圈」「写条朋友圈文案」「今天发什么朋友圈」「用这段录音写条朋友圈」 Friend-circle copywriting: reads your knowledge base and writes posts in your voice. 7 styles, 5 workflows."
+  },
+  {
+   "id": "006_写作风格规范",
+   "name": "writing-style-buheliwa",
+   "display": "写作风格规范",
+   "category": "内容写作",
+   "summary": "通用文章写作风格规范。帮助内容创作者生成去AI味、事实严谨的写作内容。",
+   "tags": [
+    "内容写作",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/writing-style-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "通用文章写作风格规范。帮助内容创作者生成去AI味、事实严谨的写作内容。 检查和修正文章中的夸张表达、虚假统计、伪经验腔调、二元对立句式与模糊收束， 并守住数据来源与技术事实的准确。 当用户要求写文章、写公众号、写推文、写新媒体内容时自动应用此风格规范。 当用户提到\"写文章\"\"写公众号\"\"写推文\"\"新媒体\" \"内容创作\"\"去AI味\"\"检查风格\"时使用。 **修改文章也必须触发**：当用户要求\"改\"\"修改\"\"调整\"\"优化\"\"重写\" 已有文章时，同样加载此规范，修改完成后必须加载 article-style-checker-buheliwa 做快检。"
+  },
+  {
+   "id": "007_叁斤爆款笔记",
+   "name": "叁斤爆款笔记",
+   "display": "叁斤爆款笔记",
+   "category": "内容写作",
+   "summary": "叁斤·小红书爆款笔记写作。AI 扮演叁斤，先问清选题、人群、真实素材和目的，再按 6 年实战沉淀的选题方法、标题…",
+   "tags": [
+    "内容写作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "叁斤·小红书爆款笔记写作。AI 扮演叁斤，先问清选题、人群、真实素材和目的，再按 6 年实战沉淀的选题方法、标题三步法、四层正文结构写出可直接发布的小红书笔记（推荐流量导向）。适用场景：用户说\"写一篇小红书笔记\"\"帮我写爆款笔记\"\"这个选题帮我写成笔记\"\"帮我想想这周发什么\"\"小红书图文文案\"\"帮我写篇文章\"等。"
+  },
+  {
+   "id": "001_guizang-material-illustration",
+   "name": "guizang-material-illustration",
+   "display": "guizang-material-illustration",
+   "category": "排版配图",
+   "summary": "生成归藏风格的材料插画：带标注的图解、材质化图表",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://github.com/op7418/guizang-material-illustration.git",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Generate Guizang-style material illustrations, labeled explanatory visuals, material-styled chart illustrations, and data-first editorial images from articles, notes, product concepts, workplace reports, creator posts, tutorials, school materials, humanities topics, science explanations, screenshots, or chart data. Use when the user asks for 配图, 带字插图, 解释图, 图解插画, 概念拆解图, 图表美化, 数据图美化, 3D 图表, 汇报配图, 内容配图, 小学课文配图, 生物/化学/物理解释图, 人文类配图, process/loop/system diagrams, or wants GPT-Image / image generation to create supporting images that can sit inside social cards, docs, slides, PPTs, or posts."
+  },
+  {
+   "id": "002_guizang-ppt-skill",
+   "name": "guizang-ppt-skill",
+   "display": "guizang-ppt-skill",
+   "category": "排版配图",
+   "summary": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封…",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://github.com/op7418/guizang-ppt-skill",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "生成横向翻页网页 PPT（单 HTML 文件），含 WebGL 背景、演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格等模板。提供两种风格：① \"电子杂志 × 电子墨水\"（衬线 + 流体背景 + 暖色） ② \"瑞士国际主义\"（无衬线 + 网格点阵 + IKB/柠檬黄/柠檬绿/安全橙高亮）。当用户需要制作分享 / 演讲 / 发布会风格的网页 PPT，或提到\"杂志风 PPT\"、\"瑞士风 PPT\"、\"Swiss Style\"、\"horizontal swipe deck\"时使用。"
+  },
+  {
+   "id": "003_guizang-social-card-skill",
+   "name": "guizang-social-card-skill",
+   "display": "guizang-social-card-skill",
+   "category": "排版配图",
+   "summary": "生成归藏风格的社交卡片图组与实况照片动效卡",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://github.com/op7418/guizang-social-card-skill",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Generate Guizang-style social card image sets, Live Photo motion cards, material-first Live Photo puzzle layouts, triple Live Photo collages, long-video-to-Live-Photo treatments, and WeChat official account cover pairs from articles, scripts, screenshots, product notes, subtitles, photos, or user-supplied videos. Use when the user asks for 小红书图文, Rednote/Xiaohongshu images, social cards, carousel images, 3:4 covers, Live Photo, 实况照片, 单视频实况拼图, 二宫格实况拼图, 三连实况拼图, 四宫格实况拼图, 微信公众号封面, WeChat 21:9 + 1:1 covers, Swiss Style, or magazine-style social images."
+  },
+  {
+   "id": "004_gzh-design",
+   "name": "gzh-design",
+   "display": "gzh-design",
+   "category": "排版配图",
+   "summary": "微信公众号文章排版引擎，将 Markdown 转换为可直接粘贴到公众号编辑器的 HTML。",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://github.com/isjiamu/gzh-design-skill",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "微信公众号文章排版引擎，将 Markdown 转换为可直接粘贴到公众号编辑器的 HTML。主题风格从 references/theme-index.md 注册的自定义主题库中选取，自动章节编号、关键词下划线标记、引言卡片、目录导航、代码块、图片/GIF、作者签名。支持 Markdown / Word(.docx) / PDF / 纯文本输入（非 Markdown 先自动归一化），也支持\"一键自动排版\"（自动推断结构+选主题），还支持根据用户描述/参考图生成自定义主题组件库并保存本地复用。触发场景：(1) 用户提到\"公众号排版\"\"公众号文章\"\"微信排版\"\"gzh\"，(2) 用户想把文章（md/docx/pdf/纯文本）转成公众号 HTML，(3) 用户说\"自动排版\"\"一键排版\"公众号内容，(4) 用户想为公众号排版\"生成新主题/自定义风格/按这张图做一套组件库\"。不用于生成普通网页/落地页/PPT（用前端或 PPT 类 skill）。"
+  },
+  {
+   "id": "005_公众号排版",
+   "name": "gzh-layout-buheliwa",
+   "display": "公众号排版",
+   "category": "排版配图",
+   "summary": "把 Markdown 文章一键排成微信公众号格式的 HTML（样式全部内联，粘贴到公众号编辑器不掉格式）。",
+   "tags": [
+    "排版配图",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/gzh-layout-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把 Markdown 文章一键排成微信公众号格式的 HTML（样式全部内联，粘贴到公众号编辑器不掉格式）。自带一套通用商务风模板，改几行字就能换成你自己公众号的品牌信息。当用户说「排版」「公众号排版」「给文章排版」「排版成 HTML」「套用模板」时使用。"
+  },
+  {
+   "id": "006_html-compare-card",
+   "name": "html-compare-card",
+   "display": "html-compare-card",
+   "category": "排版配图",
+   "summary": "用 HTML/CSS 生成文章内配图：概念对比卡、双方案对照、信息图（不用 AI 生图）。",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "用 HTML/CSS 生成文章内配图：概念对比卡、双方案对照、信息图（不用 AI 生图）。当用户说「给这段做个对比图」「概念对照卡」「文内配图」时使用。输出 1600×900 PNG。"
+  },
+  {
+   "id": "007_html-content-images",
+   "name": "html-content-images",
+   "display": "html-content-images",
+   "category": "排版配图",
+   "summary": "用 HTML/CSS 生成内容配图（公众号封面 + 概念对比卡 + 文内图），输出 PNG。",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/html-content-images",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用 HTML/CSS 生成内容配图（公众号封面 + 概念对比卡 + 文内图），输出 PNG。当用户说「给这篇配封面」「生成封面」「公众号头图」「给这段做个对比图」「概念对照卡」「文内配图」时使用。"
+  },
+  {
+   "id": "008_HTML 内容配图",
+   "name": "html-content-images-buheliwa",
+   "display": "HTML 内容配图",
+   "category": "排版配图",
+   "summary": "用 HTML/CSS 生成内容配图（公众号封面 + 概念对比卡 + 文内图），输出 PNG。",
+   "tags": [
+    "排版配图",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/html-content-images-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用 HTML/CSS 生成内容配图（公众号封面 + 概念对比卡 + 文内图），输出 PNG。当用户说「给这篇配封面」「生成封面」「公众号头图」「给这段做个对比图」「概念对照卡」「文内配图」时使用。"
+  },
+  {
+   "id": "009_html-cover",
+   "name": "html-cover",
+   "display": "html-cover",
+   "category": "排版配图",
+   "summary": "用 HTML/CSS 生成公众号、小红书等文章的封面图（不用 AI 生图）。",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "用 HTML/CSS 生成公众号、小红书等文章的封面图（不用 AI 生图）。当用户说「给这篇配封面」「生成封面图」「封面」时使用。输出 1600×900 或方形 PNG，文字干净可控、无 AI 生图常见问题。"
+  },
+  {
+   "id": "010_image-indexer",
+   "name": "image-indexer",
+   "display": "image-indexer",
+   "category": "排版配图",
+   "summary": "个人照片索引与文章自动插图系统。扫描本地照片，调用视觉 AI（SiliconFlow）生成中文描述和向量索引，…",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "个人照片索引与文章自动插图系统。扫描本地照片，调用视觉 AI（SiliconFlow）生成中文描述和向量索引， 写文章时根据上下文语义匹配并插入个人照片，替代网络图库。支持关键词和自然语言搜索照片。 Use when user says \"配图\", \"插图\", \"给文章加图片\", \"搜索我的照片\", \"索引照片\", \"找一张...的照片\"."
+  },
+  {
+   "id": "011_wechat-layout-apply",
+   "name": "wechat-layout-apply",
+   "display": "wechat-layout-apply",
+   "category": "排版配图",
+   "summary": "将 Markdown 成稿用排版模板转换为公众号排版 HTML。",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "将 Markdown 成稿用排版模板转换为公众号排版 HTML。用户指定文章和模板（或自动选第一个模板）， 将 Markdown 结构映射到模板的封面图/标题/小节/图片/引用块等元素，输出到成稿工作目录下的 `排版/` 子文件夹（如 05_作品仓库/公众号文章/<NNN-选题名>/排版/）。 Use when user says \"排版这篇文章\", \"用模板排版\", \"套用模板\", \"应用排版\", \"排版成HTML\"."
+  },
+  {
+   "id": "012_wechat-layout-template",
+   "name": "wechat-layout-template",
+   "display": "wechat-layout-template",
+   "category": "排版配图",
+   "summary": "从微信公众号文章链接提取排版 HTML 模板。对比两篇同公众号文章， 自动识别固定素材（头图、尾图、二维码、品牌…",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "从微信公众号文章链接提取排版 HTML 模板。对比两篇同公众号文章， 自动识别固定素材（头图、尾图、二维码、品牌文案等），替换为占位符， 生成可复用的排版模板。固定素材存入素材库，支持随时修改。 Use when user says \"提取排版模板\", \"沉淀排版\", \"制作模板\", \"公众号排版\", \"排版复用\", \"提取公众号样式\"."
+  },
+  {
+   "id": "013_wechat-publisher",
+   "name": "wechat-publisher",
+   "display": "wechat-publisher",
+   "category": "排版配图",
+   "summary": "把 Markdown 或 HTML 文章推到微信公众号草稿箱",
+   "tags": [
+    "排版配图",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Use when publishing articles (Markdown or HTML) to WeChat Official Account draft box via wx.limyai.com OpenAPI - supports news and 小绿书 (newspic) modes, account listing, and Markdown utilities. Use when user says \"发布到公众号\" \"推送到草稿箱\" \"发布文章\" \"公众号发布\" \"小绿书发布\" \"获取公众号列表\"."
+  },
+  {
+   "id": "014_公众号发布",
+   "name": "wechat-publisher-buheliwa",
+   "display": "公众号发布",
+   "category": "排版配图",
+   "summary": "把写好的 Markdown/HTML 文章发布到微信公众号草稿箱，支持两条通道：微信官方通道（公众号 AppID…",
+   "tags": [
+    "排版配图",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/wechat-publisher-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把写好的 Markdown/HTML 文章发布到微信公众号草稿箱，支持两条通道：微信官方通道（公众号 AppID + AppSecret，需配 IP 白名单）和微绿流量宝第三方通道（weChat_bloom_key）；支持普通图文和小绿书（newspic）两种模式，可查已授权公众号列表。当用户说「发布到公众号」「推送到草稿箱」「发布文章」「公众号发布」「小绿书发布」「获取公众号列表」时使用。"
+  },
+  {
+   "id": "015_xiaowan-wechat-layout-lite",
+   "name": "xiaowan-wechat-layout-lite",
+   "display": "xiaowan-wechat-layout-lite",
+   "category": "排版配图",
+   "summary": "将已经定稿的中文长文排成适合微信公众号手机阅读、可复制到公众号编辑器的 HTML。",
+   "tags": [
+    "排版配图"
+   ],
+   "source": "https://github.com/isjiamu/gzh-design-skill",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "将已经定稿的中文长文排成适合微信公众号手机阅读、可复制到公众号编辑器的 HTML。适用于品牌案例、行业观察、教程、访谈、个人复盘、周报和方法论长文；当用户要求公众号排版、长图文 HTML、移动端优化、配图整理、首屏重做、修复断行/线条/层级/粘贴乱码，或希望把反复修改沉淀成排版 SOP 时使用。本 Skill 不代替写稿或强行套用文体模板；它是 gzh-design 的公开工作流增强层，不包含其排版引擎，使用前需另行安装 gzh-design。"
+  },
+  {
+   "id": "001_ai-video-prompt",
+   "name": "ai-video-prompt",
+   "display": "ai-video-prompt",
+   "category": "视频制作",
+   "summary": "把脚本、故事节拍或镜头想法转成图片参考型 AI 视频提示词，包含图片参考绑定、秒级动作、声音设计和硬约束。",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "把脚本、故事节拍或镜头想法转成图片参考型 AI 视频提示词，包含图片参考绑定、秒级动作、声音设计和硬约束。使用场景：用户需要 AI 视频提示词、Seedance 提示词、图片参考视频生成、脚本转视频提示词、多图参考、首尾帧、全能参考、视频提示词，或希望把脚本转成可直接复制使用的完整视频提示词。"
+  },
+  {
+   "id": "002_bilibili-transcribe",
+   "name": "bilibili-transcribe",
+   "display": "bilibili-transcribe",
+   "category": "视频制作",
+   "summary": "把 B 站视频转成带中英对照的结构化学习笔记",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": ""
+  },
+  {
+   "id": "003_download-wechat-channels",
+   "name": "download-wechat-channels",
+   "display": "download-wechat-channels",
+   "category": "视频制作",
+   "summary": "通过微信视频号“复制链接”得到的分享文字或 weixin.qq.com/sph 链接，先显示“镇涛 AI 实战笔…",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "通过微信视频号“复制链接”得到的分享文字或 weixin.qq.com/sph 链接，先显示“镇涛 AI 实战笔记”免费开源提示，再自动打开腾讯元宝官方登录页、等待用户本人扫码，并把视频下载到本地；已登录时直接下载。支持 macOS 和 Windows。Use when the user asks to 下载、保存、备份视频号视频，粘贴视频号分享链接，选择自动/原始/H.264/H.265 画质，或排查视频号下载失败。"
+  },
+  {
+   "id": "004_gbro-collage-broll",
+   "name": "gbro-collage-broll",
+   "display": "gbro-collage-broll",
+   "category": "视频制作",
+   "summary": "将约 5 秒口播文稿、观点句或抽象概念做成高级 editorial halftone paper-collage…",
+   "tags": [
+    "视频制作"
+   ],
+   "source": "https://github.com/pyang5166/gbro-collage-broll.git",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "将约 5 秒口播文稿、观点句或抽象概念做成高级 editorial halftone paper-collage / 半调纸拼贴 B-roll。用户说“collage b-roll”“纸拼贴 b-roll”“半调拼贴”“拼贴风格配画面”“用这段文稿做拼贴动画”“gbro-collage-broll”，或希望把一句文稿转成拼贴视觉隐喻时，必须使用此 skill。强制采用三阶段审批：先只提视觉隐喻，用户确认后才生成彩色拼贴静帧，静帧再次确认后才默认调用 Gemini Omni Flash 生成首尾帧组装动画。默认视频模型固定为 gemini-omni-flash-preview，不再默认使用 Veo；只有用户明确指定其他模型时才切换。"
+  },
+  {
+   "id": "005_huashu-douyin-script",
+   "name": "huashu-douyin-script",
+   "display": "huashu-douyin-script",
+   "category": "视频制作",
+   "summary": "抖音爆款脚本创作工作流。从竞品视频拆解到脚本生成的完整流程：下载抖音视频→Gemini视频分析→爆款公式提炼→脚…",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "抖音爆款脚本创作工作流。从竞品视频拆解到脚本生成的完整流程：下载抖音视频→Gemini视频分析→爆款公式提炼→脚本+分镜生成→AI味审校。 当用户提到\"抖音脚本\"、\"爆款拆解\"、\"竞品分析\"、\"带货脚本\"、\"千川素材\"、\"种草脚本\"、\"视频拆解\"、\"抖音视频分析\"时使用此技能。"
+  },
+  {
+   "id": "006_mx-shell-prompt",
+   "name": "mx-shell-prompt",
+   "display": "mx-shell-prompt",
+   "category": "视频制作",
+   "summary": "把完整脚本或口播稿转成电影感的视频生成提示词",
+   "tags": [
+    "视频制作"
+   ],
+   "source": "https://github.com/ttfake92-lab/skills/tree/main",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Turn a full script, story, or voiceover draft into structured, cinematic video-generation prompts — automatically segmented scene-by-scene. Best for structured-prompt video tools like Seedance 2.0, Kling, and Jimeng (即梦). Use this skill whenever a user pastes a script / story / 口播稿 / 分镜脚本 and wants it turned into video prompts, asks to write a video prompt, generate a storyboard, split a script into shots, or describe a cinematic scene for video AI. Each segment gets a complete prompt: 基础设定 (characters), 道具 (props), 场景 (scene), 声音 (sound), 氛围与画质 (mood & quality), 画面内容 (shots — auto-decomposed into a shot list or a long take, each with 景别/构图/运镜). Also trigger on keywords: video prompt, video generation, AI video, text-to-video, storyboard, 分镜, 拆分镜, 视频提示词, 视频生成, 脚本转视频, Seedance, Kling, 即梦, cinematic prompt, shot list, camera movement. Trigger even if the user only has a rough one-sentence idea — treat it as a single segment and flesh it out."
+  },
+  {
+   "id": "007_video-shotcraft",
+   "name": "video-shotcraft",
+   "display": "video-shotcraft",
+   "category": "视频制作",
+   "summary": "用镜头配方卡与模板做电影感产品视频",
+   "tags": [
+    "视频制作"
+   ],
+   "source": "https://github.com/Vincentwei1021/video-talkcraft",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Create cinematic product videos from shot recipe cards, a validated template, and code/audio assets (Remotion + real page screenshots + 2.5D camera moves + beat-synced cuts + sound design). Use when the user asks to turn a frontend project or webpage into a product video, says \"use video-shotcraft to make a video/promo\", names the Ink Press template or asks to reproduce its effect, or wants a single shot card's motion. 用镜头配方卡 + 已验收模板 + 代码/音频资产制作电影感产品视频（Remotion + 真实页面截图 + 2.5D 运镜 + 节奏卡点 + 声音设计）。当用户要求\"用 video-shotcraft 做视频/宣传片\"、把前端项目/网页做成产品视频、点名 Ink Press 模板或要求复刻模板片效果，或要用镜头卡做单个动效镜头时使用。"
+  },
+  {
+   "id": "008_web-video-presentation",
+   "name": "web-video-presentation",
+   "display": "web-video-presentation",
+   "category": "视频制作",
+   "summary": "把一篇文章或口播稿，做成\"看起来像视频\"的点击驱动 16:9 网页演示，可选合成口播音频。",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "把一篇文章或口播稿，做成\"看起来像视频\"的点击驱动 16:9 网页演示，可选合成口播音频。流程：原始文章 → **一次产出**口播稿 + outline 开发计划 → 用户**一次对齐** 5 件事（稿子 / outline / 主题 / 素材 / 开发模式）→ 网页开发（逐章 / 顺序 / 并行）→ 可选音频合成（provider-agnostic：内置 MiniMax mmx-cli + OpenAI TTS，可换 ElevenLabs / edge-tts / Azure / 自带 TTS）。**outline 只规划节奏与信息密度，不规划动画** —— 动画由章节开发时按 PRINCIPLES + ANTI-AI 法则即时设计。每次点击推进口播稿的一个节拍，每一步独占整屏，进度条平时隐藏只在悬浮时出现。适用场景：用网页做视频（动态 PPT 但不像 PPT）、把口播稿 / 文章变成可交互的解说、为 B 站 / YouTube / 视频号录屏教程、做有电影感的产品 / talk demo。本 Skill 沉淀的是设计方法论 + 协作流程 —— 不绑定任何特定样式 / 字体 / 颜色 —— 因此能复用到任意主题与美学。"
+  },
+  {
+   "id": "009_yyl-remotion-video",
+   "name": "yyl-remotion-video",
+   "display": "yyl-remotion-video",
+   "category": "视频制作",
+   "summary": "用 Remotion + React 做 16:9 带口播的视频工程",
+   "tags": [
+    "视频制作"
+   ],
+   "source": "https://github.com/ttfake92-lab/skills/tree/main",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Build 16:9 spoken-video compositions as standalone Remotion projects with React, TypeScript, frame-based animation, estimated durations, and direct mp4 rendering. Use when the user wants video files, Remotion, mp4 export, frame-accurate motion, post-production voiceover, or theme-driven video templates; do not use for click-driven web presentations."
+  },
+  {
+   "id": "010_yyl-video-thumbnail",
+   "name": "yyl-video-thumbnail",
+   "display": "yyl-video-thumbnail",
+   "category": "视频制作",
+   "summary": "生成 B站 / YouTube / 抖音 的高点击「视频封面 / 缩略图」，pop-out 技法：抠图人物全亮…",
+   "tags": [
+    "视频制作",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "生成 B站 / YouTube / 抖音 的高点击「视频封面 / 缩略图」——pop-out 技法：抠图人物全亮叠在自己那张被压暗的原图上、文字压在中间，一套内容用 HTML/CSS 重排成 16:9 / 4:3 / 3:4 三种比例。当用户要视频封面、缩略图、thumbnail、B站封面、YouTube 封面、抖音/视频号竖封面、把人物放封面上、Codex/Agent/AI 视频封面时使用。注意：这是「视频封面」专用，走 YouTube 高设计感美学；要小红书图文/信息图/PPT 风请用 yuyile-social-card-skill。"
+  },
+  {
+   "id": "001_对标账号采集",
+   "name": "account-collect-buheliwa",
+   "display": "对标账号采集",
+   "category": "采集与对标",
+   "summary": "采集小红书对标账号的主页信息（昵称、粉丝数、获赞与收藏、简介、小红书号、博主ID、IP 属地）， 按标准表格格式…",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/account-collect-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "采集小红书对标账号的主页信息（昵称、粉丝数、获赞与收藏、简介、小红书号、博主ID、IP 属地）， 按标准表格格式写进 `规律研究/对标账号/小红书对标博主.md`，并算出转粉率、按「1万–5万粉丝优先 + 组内转粉率降序」排好序。 当用户说\"采集对标账号\"\"把这个博主加进对标账号\"\"对标账号入库\"\"采集这个主页\"时使用。"
+  },
+  {
+   "id": "002_agent-reach",
+   "name": "agent-reach",
+   "display": "agent-reach",
+   "category": "采集与对标",
+   "summary": "全网调研采集：小红书、推特、B 站、Reddit、YouTube 等 15 个平台的搜索与抓取",
+   "tags": [
+    "采集与对标"
+   ],
+   "source": "https://github.com/Panniantong/Agent-Reach",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。 Also MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL. 15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now. NOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。 【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客) / finance(雪球/股票)。"
+  },
+  {
+   "id": "003_视频号采集",
+   "name": "channels-collect-buheliwa",
+   "display": "视频号采集",
+   "category": "采集与对标",
+   "summary": "采集微信视频号对标素材：下载视频、转写逐字稿、抽封面、写文案结构化梳理， 按标准素材槽位落成 02_内容信息.m…",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/channels-collect-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "采集微信视频号对标素材：下载视频、转写逐字稿、抽封面、写文案结构化梳理， 按标准素材槽位落成 02_内容信息.md + 04_文案结构化梳理.md + 05_视频脚本.md，封面存 01_原始素材/01-封面图/， 写入对标内容采集/视频号/。 当用户说\"采集这个视频号视频\"\"视频号入库\"\"把这条视频号链接存进对标素材\"时使用。"
+  },
+  {
+   "id": "004_采集编排器",
+   "name": "collect-orchestrator-buheliwa",
+   "display": "采集编排器",
+   "category": "采集与对标",
+   "summary": "对标内容采集编排器。用户说\"采集这条链接\"\"采集链接文档\"\"入库这些内容\"时触发。",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/collect-orchestrator-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "对标内容采集编排器。用户说\"采集这条链接\"\"采集链接文档\"\"入库这些内容\"时触发。识别链接类型（小红书/公众号/YouTube/视频号），分流调用对应采集技能，采集后可选沉淀知识卡片与规律。"
+  },
+  {
+   "id": "005_公众号采集",
+   "name": "crawl-wechat-buheliwa",
+   "display": "公众号采集",
+   "category": "采集与对标",
+   "summary": "抓公众号文章的正文与图片，存成标准素材文件夹",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/crawl-wechat-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Crawl and extract WeChat public account (微信公众号) articles into structured data and clean markdown. Use this skill whenever the user wants to scrape, crawl, read, extract, or fetch content from a WeChat article URL (mp.weixin.qq.com). Also trigger when the user mentions 微信公众号文章、抓取微信文章、 爬取公众号、or provides a WeChat article link and wants its content extracted. This skill handles the tricky parts: spoofing the WeChat in-app browser user-agent, waiting for dynamic content to load, fixing lazy-loaded images, extracting structured metadata (title, author, publish time), generating clean markdown with inline images, and downloading images locally to bypass hotlink protection. Output uses a reading template (AI 摘要/关键要点/我的笔记 + 原文) with page UI noise stripped; the agent fills in the summary and key points right after extraction. Also supports an archive mode (`--archive-dir`) that files the article as a standard 对标素材 folder (02_内容信息.md + 01_原始素材/ + 04_文案结构化梳理.md)，用来说「采集公众号对标文章」「公众号入库」 「把这篇公众号文章存进对标内容采集」时同样适用。"
+  },
+  {
+   "id": "006_对标规律提取",
+   "name": "pattern-extractor-buheliwa",
+   "display": "对标规律提取",
+   "category": "采集与对标",
+   "summary": "从内容素材库（小红书等对标内容）提取内容规律，按平台与类别写入规律卡片库： 先按统一字段整理生成底稿，再把每条规…",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/pattern-extractor-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "从内容素材库（小红书等对标内容）提取内容规律，按平台与类别写入规律卡片库： 先按统一字段整理生成底稿，再把每条规律写成一张规律卡片，投入 内容规律/<平台>/<类别>/ 沉淀判据（2026-09-15 定）：作者点名「沉淀成规律卡片」→ 直接落卡；未点名 → 说清卡片会写什么 问一句，作者说是才落卡、说不是就不落（不看数量、不设待确认池）。确认过的规律只追加证据不重写。 当用户说\"提取规律\"\"规律提取\"\"更新内容规律\"\"分析素材规律\"\"我搜集了新内容，帮我更新内容规律\"时使用。"
+  },
+  {
+   "id": "007_选题生成",
+   "name": "topic-generator-buheliwa",
+   "display": "选题生成",
+   "category": "采集与对标",
+   "summary": "读取账号定位与 规律研究/对标内容采集 生成候选选题，写入 选题池/选题池.md。",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/topic-generator-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "读取账号定位与 规律研究/对标内容采集 生成候选选题，写入 选题池/选题池.md。 生成前先过两道工序：① 素材五问（主题 / 讲什么 / 读者想看到什么 / 读者能得到什么 / 素材什么时候发的） ② 定位适配（强相关直接用 / 不相关就桥接到作者领域 / 桥不上就不建议写、不进池）。 三种入口：采完就沉淀（编排器调用）、首次全量生成、增量追加；每条选题写清主要讲什么、写给谁、读者看完能得到什么、素材时效； 与已有选题去重，不删除已确认选题，材料不足宁可少生成不凑数。 当用户说\"生成选题\"\"帮我生成新选题\"\"我搜集了新内容，帮我生成新选题\"\"选题池\"时使用。"
+  },
+  {
+   "id": "008_topic-research",
+   "name": "topic-research",
+   "display": "topic-research",
+   "category": "采集与对标",
+   "summary": "把一个选题想法/关键词/话题，调研成一份「能不能拍/能不能写」的完整选题报告。",
+   "tags": [
+    "采集与对标",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "把一个选题想法/关键词/话题，调研成一份「能不能拍/能不能写」的完整选题报告。报告包含：能不能做的结论与依据、市场现状（站内实时调研）、爆款拆解、可切的差异化角度+示范标题、可埋的长尾搜索词。**只要用户丢出一个选题、想法、话题、关键词，问\"这个能不能拍\"\"帮我调研下这个选题\"\"这个有没有人做过\"\"帮我看看这个方向\"，或想在发布之前评估一个内容方向，就用这个 skill**——哪怕没说\"调研\"\"选题报告\"这些词。面向小红书/短视频内容创作。不要用于：已确定要做后写脚本/标题/封面文案（那是执行不是调研）、账号自己的后台复盘数据。"
+  },
+  {
+   "id": "009_小红书采集",
+   "name": "xiaohongshu-collect-buheliwa",
+   "display": "小红书采集",
+   "category": "采集与对标",
+   "summary": "批量采集小红书对标内容入库。Use when 用户说「采集对标内容」「把链接文档里的小红书内容入库」「保存小红书…",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/xiaohongshu-collect-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "批量采集小红书对标内容入库。Use when 用户说「采集对标内容」「把链接文档里的小红书内容入库」「保存小红书素材」「小红书入库」， 或提供 xiaohongshu.com 链接/链接文档要求批量处理；单条提取也行：用户说「提取图片文字」「图片OCR」「小红书图片文案」 「提取笔记图片内容」「提取文案」时，走单条模式（信息+图片+OCR 一条龙）。 JSON 模式：社媒助手（Chrome 插件）复制的笔记 JSON——直接发对话框、或贴在链接文档里——同样走本技能入库， 与链接模式的产出完全一致（入库后 JSON 原文归档进 知识库/04_采集JSON存档/）。 自动抓取笔记信息、图片、评论，视频笔记转录脚本，按规范去重、归档、回写标记、汇报。"
+  },
+  {
+   "id": "010_YouTube 采集",
+   "name": "youtube-collect-buheliwa",
+   "display": "YouTube 采集",
+   "category": "采集与对标",
+   "summary": "采集 YouTube 视频对标素材：取官方字幕（或自动字幕）转成逐字稿、核对播放数据、下载封面图， 按标准素材槽…",
+   "tags": [
+    "采集与对标",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/youtube-collect-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "采集 YouTube 视频对标素材：取官方字幕（或自动字幕）转成逐字稿、核对播放数据、下载封面图， 按标准素材槽位落成 02_内容信息.md + 04_文案结构化梳理.md + 05_视频脚本.md， 封面存 01_原始素材/01-封面图/，写入对标内容采集/YouTube/。 当用户说\"采集这个 YouTube 视频\"\"YouTube 入库\"\"把这条 YouTube 链接存进对标素材\"时使用。"
+  },
+  {
+   "id": "011_yyl-benchmark-breakdown",
+   "name": "yyl-benchmark-breakdown",
+   "display": "yyl-benchmark-breakdown",
+   "category": "采集与对标",
+   "summary": "拆解对标账号 / 竞品内容，丢一个链接进来,自动识别平台(抖音/小红书/B站/YouTube/公众号)和粒度(…",
+   "tags": [
+    "采集与对标"
+   ],
+   "source": "https://github.com/Evil0ctal/Douyin_TikTok_Download_API",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "拆解对标账号 / 竞品内容——丢一个链接进来,自动识别平台(抖音/小红书/B站/YouTube/公众号)和粒度(单条 or 整个账号),抓取内容后输出三件套:可复用爆款公式、画面+口播逐段拆解、人设与内容定位,并自动存档到 benchmarks/。短视频自动下载 + 转写口播 + 抽视觉帧(contact sheet 多模态读图),不只看 caption。当用户说「拆解这个账号/视频/笔记」「分析对标/竞品」「这条为什么火」「给链接拆内容」「teardown」「看看别人怎么做的」时使用。抓不到内容会引导粘贴文案/字幕,绝不直接报错。"
+  },
+  {
+   "id": "001_job-ai-workbench",
+   "name": "job-ai-workbench",
+   "display": "job-ai-workbench",
+   "category": "发布与运营",
+   "summary": "根据使用者的岗位和已上传的真实资料，快速搭建财务、采购、销售、人事、市场、客服、管理等岗位专属AI工作台。",
+   "tags": [
+    "发布与运营",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "根据使用者的岗位和已上传的真实资料，快速搭建财务、采购、销售、人事、市场、客服、管理等岗位专属AI工作台。先要求上传资料并完整阅读，提取已知信息，资料中已有内容不重复询问，只补关键缺口；最终生成岗位工作地图、资料源地图、岗位对象与规则、人工审核边界、3条候选AI工作流和待补资料清单。用于“开始搭岗位工作台”“搭我的工作台”“岗位资料建库”“整理岗位资料”“找我的工作流”“补充岗位资料”等场景。不负责每周巡检、定时任务、完整Skill或Agent搭建。"
+  },
+  {
+   "id": "002_positioning-interview",
+   "name": "positioning-interview",
+   "display": "positioning-interview",
+   "category": "发布与运营",
+   "summary": "这是账号定位访谈专用 Skill。通过一对一渐进访谈，帮助零基础创作者完成关卡1的 AI 自媒体个人定位、账号定…",
+   "tags": [
+    "发布与运营",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "这是账号定位访谈专用 Skill。通过一对一渐进访谈，帮助零基础创作者完成关卡1的 AI 自媒体个人定位、账号定位、内容定位和小红书账号形象，并在用户逐阶段确认后自动创建或更新 Obsidian 定位文件。用于用户开始或继续“关卡1：定位”、回答定位访谈、修改定位结果、生成昵称简介头像背景图方案，或要求把已确认结果写入个人定位和账号形象文件时。"
+  },
+  {
+   "id": "003_账号定位访谈",
+   "name": "positioning-interview-buheliwa",
+   "display": "账号定位访谈",
+   "category": "发布与运营",
+   "summary": "账号定位访谈专用 Skill：用一对一访谈，帮第一次做内容的创作者把定位想清楚、落成文件。",
+   "tags": [
+    "发布与运营",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/positioning-interview-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "账号定位访谈专用 Skill：用一对一访谈，帮第一次做内容的创作者把定位想清楚、落成文件。先做商业定位（这个账号靠什么赚钱），再做账号定位（为谁写、写什么，含个人背景、内容定位、账号形象四个子环节），每个阶段都等你确认后再继续，最后生成个人定位、账号形象、背景卡片、个人简介、引流话术、作者档案六类文件。以下情况都该用它：说「开始定位 / 继续定位 / 修改定位结果」，在回答定位访谈的问题，要昵称、简介、头像、背景图方案，或要把确认好的定位结果写进定位文件。"
+  },
+  {
+   "id": "004_数据复盘",
+   "name": "review-buheliwa",
+   "display": "数据复盘",
+   "category": "发布与运营",
+   "summary": "发布后数据复盘：为已发布的笔记建复盘档案（数据复盘/01_单条复盘/<NNN>-<发布标题短词>-复盘.md）、…",
+   "tags": [
+    "发布与运营",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/review-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "发布后数据复盘：为已发布的笔记建复盘档案（数据复盘/01_单条复盘/<NNN>-<发布标题短词>-复盘.md）、存下发布版与封面， 取两次数（发布 48 小时之后、发布第 7 天；日子由作者自己定）、扒评论区原话， 按漏斗五环定位这一篇卡在哪一环； 没做过总复盘的攒够 5 篇走总复盘那条线，出可复用规律并起反喂关口。 当用户说\"复盘\"\"发布复盘\"\"建复盘档案\"\"这篇数据很低\"\"做这篇的复盘\"\"做总复盘\"时使用。"
+  },
+  {
+   "id": "005_space-xhs-note-analytics",
+   "name": "space-xhs-note-analytics",
+   "display": "space-xhs-note-analytics",
+   "category": "发布与运营",
+   "summary": "小红书个人笔记数据复盘，基于用户自己创作者后台（创作中心/蒲公英）的笔记数据，做漏斗定位、卡点归因和多篇横向规…",
+   "tags": [
+    "发布与运营"
+   ],
+   "source": "https://github.com/SpaceZephyr/creator-buddy",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "小红书个人笔记数据复盘——基于用户自己创作者后台（创作中心/蒲公英）的笔记数据，做漏斗定位、卡点归因和多篇横向规律发现。当用户说\"笔记数据复盘\"\"这条为什么没流量\"\"帮我看看这条数据\"\"小红书数据分析\"\"曝光高但没人点\"\"涨粉不行\"\"哪类内容该加码\"\"我导出了后台数据帮我看看\"，或直接贴出后台数据截图/CSV/Excel/几个数字时使用。只分析用户自己账号的笔记表现，不抓取平台数据、不做刷量。\n\n> 授权提醒：不要转给别人，不要进 `03-技能库/` 或魔搭"
+  },
+  {
+   "id": "006_叁斤内容复盘",
+   "name": "叁斤内容复盘",
+   "display": "叁斤内容复盘",
+   "category": "发布与运营",
+   "summary": "叁斤·内容数据复盘。丢后台数据截图（小红书创作中心/公众号后台/抖音）或口报数字，AI 按漏斗分诊法输出单篇诊断…",
+   "tags": [
+    "发布与运营",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "叁斤·内容数据复盘。丢后台数据截图（小红书创作中心/公众号后台/抖音）或口报数字，AI 按漏斗分诊法输出单篇诊断＋卡点频率统计＋获客收口数＋下周 3 个动作，并帮你维护一张累积数据总表。三种模式：周复盘（默认）、单篇加餐（爆款/扑街即时看）、错误分析（每攒 10-20 篇跑一次）。适用场景：用户说\"数据复盘\"\"周复盘\"\"帮我看看这周数据\"\"这篇数据怎么样\"＋丢截图。"
+  },
+  {
+   "id": "007_叁斤账号定位",
+   "name": "叁斤账号定位",
+   "display": "叁斤账号定位",
+   "category": "发布与运营",
+   "summary": "叁斤·小红书账号定位咨询。AI 扮演叁斤，通过 4 轮共 15 个问题的访谈式提问，帮用户生成一份完整的小红书账…",
+   "tags": [
+    "发布与运营",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "叁斤·小红书账号定位咨询。AI 扮演叁斤，通过 4 轮共 15 个问题的访谈式提问，帮用户生成一份完整的小红书账号定位方案（含一句话定位、用户画像、内容策略、昵称简介、变现路径、30 天起号建议）。适用场景：用户说\"帮我做账号定位\"\"我想做小红书但不知道做什么\"\"帮我想想账号方向\"\"小红书定位\"\"我该做什么赛道\"\"帮我规划一个小红书账号\"等。"
+  },
+  {
+   "id": "001_academic-paper-review",
+   "name": "academic-paper-review",
+   "display": "academic-paper-review",
+   "category": "学术研究",
+   "summary": "审阅、分析、批评或总结学术论文",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/bytedance/deer-flow",
+   "origin": "字节跳动 文献综述与深研技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Use this skill when the user requests to review, analyze, critique, or summarize academic papers, research articles, preprints, or scientific publications. Supports comprehensive structured reviews covering methodology assessment, contribution evaluation, literature positioning, and constructive feedback generation. Trigger on queries involving paper URLs, uploaded PDFs, arXiv links, or requests like \"review this paper\", \"analyze this research\", \"summarize this study\", or \"write a peer review\"."
+  },
+  {
+   "id": "002_analyze-data",
+   "name": "analyze-data",
+   "display": "analyze-data",
+   "category": "学术研究",
+   "summary": "用 DataVoyager 分析数据集，出数据分析与可视化结果",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "This skill should be used when the user asks to \"analyze this dataset\", \"run datavoyager\", \"run data voyager\", \"explore this data\", \"what's in this CSV\", \"statistical analysis of\", \"find patterns in\", or wants an AI-driven, code-executing analysis of a tabular dataset that answers a specific research question."
+  },
+  {
+   "id": "003_artifacts",
+   "name": "artifacts",
+   "display": "artifacts",
+   "category": "学术研究",
+   "summary": "导出并打开 A2A 智能体任务的产出物",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Use this skill to export and open A2A agent task outputs — \"export the task results\", \"convert the task output to HTML\", or work with the structured artifacts produced by an A2A agent task run."
+  },
+  {
+   "id": "004_asta-cli",
+   "name": "asta-cli",
+   "display": "asta-cli",
+   "category": "学术研究",
+   "summary": "安装或更新 asta 命令行工具",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Install or update the `asta` CLI to the version pinned by this plugin. Invoke whenever `asta` is not on PATH (e.g. `command not found` for `asta`) or when a subcommand/flag appears missing — that signals a stale install needing an update."
+  },
+  {
+   "id": "005_asta-documents",
+   "name": "asta-documents",
+   "display": "asta-documents",
+   "category": "学术研究",
+   "summary": "给 Asta 技能用到的本地文档建元数据索引",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Local document metadata index for files used by Asta skills and tools. Use this skill when the user asks to store a document \"in Asta\" or retrieve \"from Asta\". Use it when the user references an \"Asta document\" or anything with an `asta://` URI."
+  },
+  {
+   "id": "006_autodiscovery",
+   "name": "autodiscovery",
+   "display": "autodiscovery",
+   "category": "学术研究",
+   "summary": "创建、配置并监控 AutoDiscovery 科研探索任务",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Create, configure, and monitor AutoDiscovery runs — either via the hosted service (`asta autodiscovery`) or via the local CLI (`asta-autodiscovery`). Use when the user asks about their runs, experiments, discoveries, wants to check status, or wants to start a new discovery run."
+  },
+  {
+   "id": "007_credentials",
+   "name": "credentials",
+   "display": "credentials",
+   "category": "学术研究",
+   "summary": "安全处理 API key：检查是否配置、提示安全填写",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Instructions for handling API keys and credentials safely, verifying their presence, and prompting the user to add them if missing using a safe protocol."
+  },
+  {
+   "id": "008_deep-research",
+   "name": "deep-research",
+   "display": "deep-research",
+   "category": "学术研究",
+   "summary": "联网深度调研，多源检索后出研究报告",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/bytedance/deer-flow",
+   "origin": "字节跳动 文献综述与深研技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Use this skill instead of WebSearch for ANY question requiring web research. Trigger on queries like \"what is X\", \"explain X\", \"compare X and Y\", \"research X\", or before content generation tasks. Provides systematic multi-angle research methodology instead of single superficial searches. Use this proactively when the user's question needs online information."
+  },
+  {
+   "id": "009_experiment",
+   "name": "experiment",
+   "display": "experiment",
+   "category": "学术研究",
+   "summary": "跑科学（软件）实验并记录过程",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Run scientific (software) experiments. Use when the user asks to \"run an experiment\", \"run an investigation\", or \"research with Asta.\" Also use this skill to analyze experimental data generate a research report from it. The user may refer to this system by its internal project name, \"Panda.\""
+  },
+  {
+   "id": "010_feedback",
+   "name": "feedback",
+   "display": "feedback",
+   "category": "学术研究",
+   "summary": "访谈用户，收集 Asta 工具的使用反馈",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Interview the user about their experience with the Asta plugins and tools, write a narrative feedback report, and submit it (with optional supporting files) to the Asta team for analysis. Use when the user wants to \"give feedback\", \"send feedback to the Asta team\", \"report how this went\", or \"tell Ai2 what I think\"."
+  },
+  {
+   "id": "011_find-literature",
+   "name": "find-literature",
+   "display": "find-literature",
+   "category": "学术研究",
+   "summary": "检索论文与文献",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "This skill should be used when the user asks to \"find papers\", \"search for papers\", \"what does the literature say\", \"find research on\", \"academic papers about\", \"literature review\", \"cite papers\", or needs to answer questions using academic literature."
+  },
+  {
+   "id": "012_generate-theories",
+   "name": "generate-theories",
+   "display": "generate-theories",
+   "category": "学术研究",
+   "summary": "基于已有文献生成可检验的理论假设",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "This skill should be used when the user asks to \"generate theories\", \"theorize about\", \"what theories explain\", \"form scientific theories\", \"literature-driven theories\", \"hypothesize\", \"form hypotheses\", \"generate hypotheses\", \"what hypotheses explain\", \"run the theorizer\", or wants AI-generated, literature-grounded scientific theories or hypotheses about a research question."
+  },
+  {
+   "id": "013_huggingface-papers",
+   "name": "huggingface-papers",
+   "display": "huggingface-papers",
+   "category": "学术研究",
+   "summary": "查读 Hugging Face 论文页与结构化元数据",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/huggingface/skills",
+   "origin": "HuggingFace 论文速读技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked models/datasets/spaces, Github repo and project page. Use when the user shares a Hugging Face paper page URL, an arXiv URL or ID, or asks to summarize, explain, or analyze an AI research paper."
+  },
+  {
+   "id": "014_literature-report",
+   "name": "literature-report",
+   "display": "literature-report",
+   "category": "学术研究",
+   "summary": "生成或更新文献综述报告",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Create or update literature reviews/reports. Use whenever you need to research, summarize, or synthesize the literature."
+  },
+  {
+   "id": "015_literature-search-arxiv",
+   "name": "literature-search-arxiv",
+   "display": "literature-search-arxiv",
+   "category": "学术研究",
+   "summary": "检索 arXiv 上的论文与预印本",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Search for scientific papers, preprints, and publications on arXiv. Extract metadata, abstracts, and download full-text PDFs or HTML versions of papers. Use when the user asks to find research papers, literature, or specific arXiv IDs."
+  },
+  {
+   "id": "016_literature-search-biorxiv",
+   "name": "literature-search-biorxiv",
+   "display": "literature-search-biorxiv",
+   "category": "学术研究",
+   "summary": "检索 bioRxiv、medRxiv 上的生命科学预印本",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Browse, filter, and download life sciences, biology, and medical preprints from bioRxiv and medRxiv. Supports fetching paper metadata by DOI, and browsing by date range with category and keyword filters. Keyword filtering is local, so date ranges MUST be narrow (1-4 weeks) with a category to prevent timeouts."
+  },
+  {
+   "id": "017_literature-search-europepmc",
+   "name": "literature-search-europepmc",
+   "display": "literature-search-europepmc",
+   "category": "学术研究",
+   "summary": "检索 Europe PMC 文献并下载开放获取全文",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Search Europe PMC for scientific literature and download open-access full texts and PDFs. Retrieve full-text XML/plain text by PMCID, get citation lists and bibliography."
+  },
+  {
+   "id": "018_literature-search-openalex",
+   "name": "literature-search-openalex",
+   "display": "literature-search-openalex",
+   "category": "学术研究",
+   "summary": "查询 OpenAlex 学术数据库（论文、作者、机构、主题）",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Query the OpenAlex scholarly database for research papers, authors, institutions, topics, sources, publishers, funders, geo-locations, and keywords. Use when searching academic papers, resolving DOIs, downloading open-access PDFs, finding an author's publications, aggregating bibliometric data (citation counts, h-index, impact factor), exploring the research taxonomies, or performing DOI lookups."
+  },
+  {
+   "id": "019_local-paper-index",
+   "name": "local-paper-index",
+   "display": "local-paper-index",
+   "category": "学术研究",
+   "summary": "给本地一批 PDF 论文建可检索的索引",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Build a searchable Asta document index from a collection of local PDF files. Use when the user asks to \"index these PDFs\", \"put these PDFs into an Asta index\", \"index these PDFs using Asta\", \"build a local paper index\", \"make these PDFs searchable\", or \"create an index from these papers\"."
+  },
+  {
+   "id": "020_pdf-download",
+   "name": "pdf-download",
+   "display": "pdf-download",
+   "category": "学术研究",
+   "summary": "按标题、DOI、arXiv 编号批量下载论文 PDF",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Download PDFs for a list of academic papers identified by title, DOI, arXiv ID, or other paper IDs. Use when the user asks to \"download these papers\", \"grab the PDFs\", \"fetch full text for this list\", or supplies a list of citations and wants the source PDFs on disk. Resolves open-access PDFs automatically and drives a real browser (via Playwright, with a persistent profile) so the user can authenticate to paywalled publishers."
+  },
+  {
+   "id": "021_pdf-extraction",
+   "name": "pdf-extraction",
+   "display": "pdf-extraction",
+   "category": "学术研究",
+   "summary": "用 Asta 远端 OCR 接口提取 PDF 正文",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Extract text from PDFs using the Asta remote OCR API. Use when the user asks to \"extract text from PDF\", \"OCR a document\", \"read a PDF\", or needs to process scanned documents."
+  },
+  {
+   "id": "022_pubmed-database",
+   "name": "pubmed-database",
+   "display": "pubmed-database",
+   "category": "学术研究",
+   "summary": "检索 PubMed 文献与临床实验，取摘要和全文",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Search PubMed for scientific literature, including published clinical trials. Fetch abstracts and full text. Link published research to biological databases (gene, protein, nucleotide, PubChem) to discover associations between papers and specific compounds or genes. Verify medical spelling, match raw citations, and cache result sets for bulk processing. Interfaces NCBI E-utilities and PMC BioC APIs."
+  },
+  {
+   "id": "023_semantic-scholar",
+   "name": "semantic-scholar",
+   "display": "semantic-scholar",
+   "category": "学术研究",
+   "summary": "查 Semantic Scholar 上的论文、作者、引用与全文片段",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Look up or search papers, authors, citations, and full-text snippets on Semantic Scholar. Use for fast, targeted queries about a paper, author, or specific named research artifact (benchmark, dataset, model, method, etc.) — not comprehensive reports."
+  },
+  {
+   "id": "024_systematic-literature-review",
+   "name": "systematic-literature-review",
+   "display": "systematic-literature-review",
+   "category": "学术研究",
+   "summary": "跨多篇文献做系统性综述",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/bytedance/deer-flow",
+   "origin": "字节跳动 文献综述与深研技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Use this skill when the user wants a systematic literature review, survey, or synthesis across multiple academic papers on a topic. Also covers annotated bibliographies and cross-paper comparisons. Searches arXiv and outputs reports in APA, IEEE, or BibTeX format. Not for single-paper tasks — use academic-paper-review for reviewing one paper."
+  },
+  {
+   "id": "025_uv",
+   "name": "uv",
+   "display": "uv",
+   "category": "学术研究",
+   "summary": "检查并安装 uv（Python 包管理器）",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/google-deepmind/science-skills",
+   "origin": "谷歌 DeepMind 文献检索技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Checks whether the uv Python package manager is installed and installs it if missing. Ensures uv is on PATH. Use when another skill requires uv as a prerequisite."
+  },
+  {
+   "id": "026_workspace",
+   "name": "workspace",
+   "display": "workspace",
+   "category": "学术研究",
+   "summary": "展示科研项目进展，并按轮次保存迭代",
+   "tags": [
+    "学术研究"
+   ],
+   "source": "https://github.com/allenai/asta-plugins",
+   "origin": "艾伦人工智能研究所（AI2）asta 技能包",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Show the user the agent's work on a research project and save iterations on the user's behalf. Scaffold rendering and deploy infrastructure (Quarto today, GitHub Pages, dev container), show the rendered output, save iterations. Doesn't handle research execution (use `asta-flows`)."
+  },
+  {
+   "id": "001_agent-workstation-reviewer",
+   "name": "agent-workstation-reviewer",
+   "display": "agent-workstation-reviewer",
+   "category": "技能与开发",
+   "summary": "审查现有 Agent 工位拆分、连接、交接、退回与人工边界。",
+   "tags": [
+    "技能与开发",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "审查现有 Agent 工位拆分、连接、交接、退回与人工边界。适用于用户已有岗位卡、工作流、上下游判断、接力协议或失败记录时，先判断哪些工作更适合 Tool、Skill、固定 Workflow、Agent 或 Human，再检查是否值得连接、怎样验收、出错退给谁；不预设 Agent 数量。"
+  },
+  {
+   "id": "002_aias-meta-init",
+   "name": "aias-meta-init",
+   "display": "aias-meta-init",
+   "category": "技能与开发",
+   "summary": "一行命令初始化一个属于你自己领域的 AI 自主系统：生成六组完整骨架（开工手册与规约 · 真相源与参考 · 脚本…",
+   "tags": [
+    "技能与开发",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "一行命令初始化一个属于你自己领域的 AI 自主系统：生成六组完整骨架（开工手册与规约 · 真相源与参考 · 脚本与扩展 · 作品 · 状态与文档 · 过程材料），并起草一份意向书。像 rails new 一样快，不问问题，不要求任何前置材料。 Triggers：系统初始化、我想做一个 AI 自主 XX 系统、帮我初始化、开新系统、aias-meta-init。"
+  },
+  {
+   "id": "003_aias-meta-research",
+   "name": "aias-meta-research",
+   "display": "aias-meta-research",
+   "category": "技能与开发",
+   "summary": "一行命令起一次系统分析：生成决策点、两类来源登记（自有积累 · 他人积累）、派活模板、 差距表与取舍卡，并把参考…",
+   "tags": [
+    "技能与开发"
+   ],
+   "source": "https://github.com/foo/bar",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "一行命令起一次系统分析：生成决策点、两类来源登记（自有积累 · 他人积累）、派活模板、 差距表与取舍卡，并把参考区就位。不做文献综述，只回答「我该先做哪一件」。 Triggers：系统分析、调研一下、选型、我该用哪个、这事有没有人做过、最佳实践、aias-meta-research。"
+  },
+  {
+   "id": "004_内容系统初始化",
+   "name": "content-system-init-buheliwa",
+   "display": "内容系统初始化",
+   "category": "技能与开发",
+   "summary": "初始化内容创作系统：检查软件依赖是否装齐 + 建好全部目录结构 + 按需安装其他技能（后续环节\"帮我安装 XX…",
+   "tags": [
+    "技能与开发",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/content-system-init-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "初始化内容创作系统：检查软件依赖是否装齐 + 建好全部目录结构 + 按需安装其他技能（后续环节\"帮我安装 XX 技能\"统一走本技能）。用户说\"初始化内容系统\"\"搭建工作区\"\"建好文件夹\"\"我的文件夹不全\"\"缺什么软件\"\"帮我安装 XX 技能\"时使用。依赖缺的给安装命令并按国内镜像帮装，目录建在 AI第二大脑 下，每个目录附一份用途说明 README。"
+  },
+  {
+   "id": "005_create-flowchart",
+   "name": "create-flowchart",
+   "display": "create-flowchart",
+   "category": "技能与开发",
+   "summary": "创作或修改流程图（源 .md 里的 mermaid + 渲染成单文件 HTML）。",
+   "tags": [
+    "技能与开发",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "创作或修改流程图（源 .md 里的 mermaid + 渲染成单文件 HTML）。流程图分两类：业务流程（说清业务场景怎么走，给业务人员和需求分析师看）与产品流程（给 AI 开发当需求文档，要有明确的数据边界和明确的逻辑判断）。当用户说「画流程图」「做一张流程图」「梳理某某流程」「把流程画出来」「流程图改一下」时使用。"
+  },
+  {
+   "id": "006_流程图创作",
+   "name": "create-flowchart-buheliwa",
+   "display": "流程图创作",
+   "category": "技能与开发",
+   "summary": "创作或修改流程图（源 .md 里的 mermaid + 渲染成单文件 HTML）。",
+   "tags": [
+    "技能与开发",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/create-flowchart-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "创作或修改流程图（源 .md 里的 mermaid + 渲染成单文件 HTML）。流程图分两类：业务流程（说清业务场景怎么走，给业务人员和需求分析师看）与产品流程（给 AI 当需求文档，要有明确的数据边界和明确的逻辑判断）。当用户说「画流程图」「做一张流程图」「梳理某某流程」「把流程画出来」「流程图改一下」时使用。"
+  },
+  {
+   "id": "007_ms-hub",
+   "name": "ms-hub",
+   "display": "ms-hub",
+   "category": "技能与开发",
+   "summary": "魔搭社区的模型、数据集、技能搜索与部署入口",
+   "tags": [
+    "技能与开发"
+   ],
+   "source": "https://modelscope.cn/skills/install.sh",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "ModelScope unified operations entrypoint. Covers model/dataset search, download, and upload; repository management; Studio deployment; MCP service search, deployment, and configuration; and Skills Center search, install, and publish. Use this skill whenever the user mentions ModelScope or any platform operation. Use ms-studio-deploy for complex Studio deployment workflows; see this skill's references for the expanded MCP and Skills Center details."
+  },
+  {
+   "id": "008_publish-assistant",
+   "name": "publish-assistant",
+   "display": "publish-assistant",
+   "category": "技能与开发",
+   "summary": "把技能发布到魔搭社区（modelscope.cn）的全流程助手。",
+   "tags": [
+    "技能与开发"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把技能发布到魔搭社区（modelscope.cn）的全流程助手。当用户说「发布技能」「上传技能到魔搭」 「把技能分享出去」「做新技能」「更新技能」「技能发布了，教程提示词怎么写」时使用。 覆盖：内容自查（防内容安全拦截）→ 本地冒烟（安装命令验证）→ 打包上传 → 创建/更新技能 → 线上验证 → 编写可复制的教程安装提示词。"
+  },
+  {
+   "id": "009_skill-creator",
+   "name": "skill-creator",
+   "display": "skill-creator",
+   "category": "技能与开发",
+   "summary": "创建新技能，或改进已有技能（Anthropic 官方）",
+   "tags": [
+    "技能与开发",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/skill-creator",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+  },
+  {
+   "id": "010_工作场景挖掘",
+   "name": "workflow-mining-buheliwa",
+   "display": "工作场景挖掘",
+   "category": "技能与开发",
+   "summary": "把一件「天天在干、但说不清怎么干」的活，挖成一份说得清的工作流文档。",
+   "tags": [
+    "技能与开发",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/workflow-mining-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把一件「天天在干、但说不清怎么干」的活，挖成一份说得清的工作流文档。做法：先让使用者从头到尾讲一遍（不打断），再一轮两三个问题把缺的补上；每挖到一个判断就追问判断依据；问够了先给一页大纲让使用者确认，再写文档。产出含：这件事是什么、什么时候开始、要什么材料、分几步、每步谁做、哪里要判断（依据是什么）、做完交给谁、哪步最容易出错。以下情况都该用它：说「把这件活做成技能」「帮我梳理这件活」「这件事怎么交给 AI」「梳理我的工作流」。"
+  },
+  {
+   "id": "001_录音逐字稿清洗",
+   "name": "data-cleaning-buheliwa",
+   "display": "录音逐字稿清洗",
+   "category": "系统工具",
+   "summary": "录音逐字稿清洗：读取沟通录音目录下带 -待清洗 后缀的逐字稿， 脚本机械清洗 + AI 语义清洗两层接力，说话人…",
+   "tags": [
+    "系统工具",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/data-cleaning-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "录音逐字稿清洗：读取沟通录音目录下带 -待清洗 后缀的逐字稿， 脚本机械清洗 + AI 语义清洗两层接力，说话人识别、术语纠错、7 道闸门验证， 全程不打断用户（三级裁决 + 批次报告，沉默即通过）。 当用户说\"清洗\"\"洗稿\"\"处理逐字稿\"\"清洗这份录音\"时使用。"
+  },
+  {
+   "id": "002_find-skills",
+   "name": "find-skills",
+   "display": "find-skills",
+   "category": "系统工具",
+   "summary": "帮你发现并安装 AI 技能",
+   "tags": [
+    "系统工具"
+   ],
+   "source": "https://skills.sh/vercel-labs/agent-skills/react-best-practices",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+  },
+  {
+   "id": "003_git-upload",
+   "name": "git-upload",
+   "display": "git-upload",
+   "category": "系统工具",
+   "summary": "把本地改动提交并推送到远程仓库",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Use when user wants to upload local repo changes to a remote repository - stages changes, generates short Chinese commit messages (≤10 chars), and pushes to origin. Use when user says \"上传仓库\", \"推送到远程\", \"同步到CNB\", \"提交并推送\"."
+  },
+  {
+   "id": "004_macos-migration",
+   "name": "macos-migration",
+   "display": "macos-migration",
+   "category": "系统工具",
+   "summary": "macOS 系统迁移助手 ， 两阶段：先在旧系统采集清单（JSON），再在新系统还原。",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "macOS 系统迁移助手 — 两阶段：先在旧系统采集清单（JSON），再在新系统还原。 Use when user mentions: 系统迁移、换电脑、新装系统、Time Machine 恢复、 数据迁移、重装系统、migration、setup new mac、restore from backup、备份系统。 自动检测当前是旧系统（采集模式）还是新系统（还原模式）。 前置：先做一次 Time Machine 全量备份；唯一软件依赖是 Homebrew。"
+  },
+  {
+   "id": "005_ocr-pdf-extract",
+   "name": "ocr-pdf-extract",
+   "display": "ocr-pdf-extract",
+   "category": "系统工具",
+   "summary": "从 PDF 里提取文字（本地 OCR，不联网）",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "This skill should be used when the user wants to extract text from a PDF, especially Chinese PDFs, or when they mention \"提取PDF文字\", \"OCR\", \"图片转文字\", or \"PDF转文本\". Handles both text-based and image-based (scanned/long-screenshot) PDFs using OCR with specialized support for Chinese content. After extraction, cleans up OCR errors and formats output into a well-structured article."
+  },
+  {
+   "id": "006_recording-processing",
+   "name": "recording-processing",
+   "display": "recording-processing",
+   "category": "系统工具",
+   "summary": "录音处理（通用版）：把会议、见客户、上课、语音备忘的转写稿，自动提取有价值的信息，分流进你的知识库六大库。",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "录音处理（通用版）：把会议、见客户、上课、语音备忘的转写稿，自动提取有价值的信息，分流进你的知识库六大库。 触发方式：「处理录音」「整理逐字稿」「处理转写稿」「把这段录音入库」 Recording processor: extracts insights from transcripts and files them into your 6-folder knowledge base."
+  },
+  {
+   "id": "007_卡片沉淀",
+   "name": "thought-card-buheliwa",
+   "display": "卡片沉淀",
+   "category": "系统工具",
+   "summary": "两类卡片沉淀： ① 思想卡片：把用户在日常对话中说的观点，沉淀成一张张可更新的思想卡片，一张卡片记录一个独立观点…",
+   "tags": [
+    "系统工具",
+    "开源技能"
+   ],
+   "source": "https://modelscope.cn/skills/sunny31221/thought-card-buheliwa",
+   "origin": "不合理蛙开源技能库（一期）",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "两类卡片沉淀： ① 思想卡片：把用户在日常对话中说的观点，沉淀成一张张可更新的思想卡片，一张卡片记录一个独立观点 （如「AI 怎么用于团队开会」），同一观点再次被提及时更新已有卡片，而不是新建； ② 知识卡片：把知识/概念/工具/原理/方法（如「npm 是什么」「curl 是什么」）整理成可查阅的知识卡片， 按知识性质分四类预设（概念 / 工具 / 原理 / 方法；用户可自定义领域分类），存进 知识库/知识卡片/ 对应文件夹。 当用户在对话中表达观点、判断、方法论、经验总结时使用；当用户说「沉淀一下」「记到卡片里」 「整理成思想卡片」「记下来」「做成知识卡片」「整理进知识卡片」「存进知识卡片」时使用； 也适用于用户丢来一篇文章、一份文档或一个 PDF（如「把这篇做成知识卡片」「这份资料整理进知识库」） 要求把其中的知识点沉淀下来的场景——PDF 先用 pdftotext 转文本再整理。 不适用：闲聊、寒暄、提问、转述他人观点、无复用价值的流水账。"
+  },
+  {
+   "id": "008_yyl-disk-cleaner-cat",
+   "name": "yyl-disk-cleaner-cat",
+   "display": "yyl-disk-cleaner-cat",
+   "category": "系统工具",
+   "summary": "像素小猫帮你清理 macOS 磁盘、优化空间与性能。",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "收藏的外部技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "像素小猫帮你清理 macOS 磁盘、优化空间与性能。扫描开发者缓存 / 系统缓存 / 大文件下载，给出性能与网络优化建议，然后打开一个「像素风网页」让你勾选确认——确认后一只 3D 像素小猫在房间里实时打扫，灰尘堆随真实删除进度缩小。带持续记忆：每次清理了什么、你的偏好都记在 ~/.disk-cleanup-cat/，下次更懂你。当用户说「清理磁盘 / 清理空间 / 磁盘满了 / C盘满了 / 优化电脑 / 优化性能 / 电脑变慢了 / 清缓存 / disk cleanup / free up space」时使用。仅限 macOS。"
+  },
+  {
+   "id": "009_zsxq",
+   "name": "zsxq",
+   "display": "zsxq",
+   "category": "系统工具",
+   "summary": "知识星球 CLI（zsxq-cli）与底层接口完整操作指南，涵盖星球和内容管理、Skill Pay 微信支付场景。",
+   "tags": [
+    "系统工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "全局安装的工具",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "知识星球 CLI（zsxq-cli）与底层接口完整操作指南，涵盖星球和内容管理、Skill Pay 微信支付场景。当用户提到知识星球、zsxq、小密圈、星球、登录/认证、发帖、评论、回答、编辑、删除主题、定时发布/定时任务/定时回答、投票、问答主题、markdown 正文、AI 声明（aigc/personal_perspective）、置顶、精华、标签/hashtag、成员、足迹、提问记录、分享链接、NPS 反馈、Skill Pay、微信支付、查询星球价格/续费价格/轻读价格、付费加入、续费/续期、礼品卡、付费提问、赞赏用户/主题/评论、购买轻读、购买创建星球邀请码、创建订单、group_id、topic_id、comment_id，需要登录/查看认证状态、查看/搜索/发布/编辑/管理知识星球内容、修改星球名称/简介/背景图/亮点图（星球设置）、做每日巡场 / 评论区运营 / 提问管理 / 精华与标签整理 / 运营日报周报复盘 / 生成星球日报海报图片 / 生成竖版动画视频 / 负面内容监控 / 批量打标签 / 到期成员续费关怀 / 收录主题到专栏等运营场景、拼接分享链接、直接调用底层接口（api call / api raw / call_zsxq_api）、查成员列表 / 成员到期时间 / 专栏 column 列表，或需要检查/迁移/清理旧版知识星球 skill（zsxq-shared、zsxq-group 等升级到单一 zsxq）时，必须使用本 Skill。即使只涉及单一操作（如获取 group_id、查看帖子详情、回复评论），也应触发。"
+  },
+  {
+   "id": "001_dbs",
+   "name": "dbs",
+   "display": "dbs",
+   "category": "dbskill 工具箱",
+   "summary": "dontbesilent 商业工具箱主入口，提供新手教程与单任务动态编排。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "dontbesilent 商业工具箱主入口，提供新手教程与单任务动态编排。用户第一次使用 dbskill、不知道该用哪个正式 Skill、带着真实任务寻求合适能力，或在一项任务完成后询问下一步时使用。"
+  },
+  {
+   "id": "002_dbs-action",
+   "name": "dbs-action",
+   "display": "dbs-action",
+   "category": "dbskill 工具箱",
+   "summary": "用阿德勒心理学框架诊断执行阻滞。用户知道该做什么却迟迟不做、反复拖延或行动中断时使用。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用阿德勒心理学框架诊断执行阻滞。用户知道该做什么却迟迟不做、反复拖延或行动中断时使用。"
+  },
+  {
+   "id": "003_dbs-agent-migration",
+   "name": "dbs-agent-migration",
+   "display": "dbs-agent-migration",
+   "category": "dbskill 工具箱",
+   "summary": "审计项目规则文件、识别真源、统一命名并生成桥接，把项目迁移成多端一致的 Agent 工作台。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "审计项目规则文件、识别真源、统一命名并生成桥接，把项目迁移成多端一致的 Agent 工作台。用户要求迁移 Claude Code、Codex、Grok、通用 Agents 或整理 AGENTS.md 时使用。"
+  },
+  {
+   "id": "004_dbs-ai-check",
+   "name": "dbs-ai-check",
+   "display": "dbs-ai-check",
+   "category": "dbskill 工具箱",
+   "summary": "扫描文案中的 AI 写作特征并输出检测报告，默认只诊断不改写。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "扫描文案中的 AI 写作特征并输出检测报告，默认只诊断不改写。用户要求检查 AI 味、AI 痕迹或机器化表达时使用。"
+  },
+  {
+   "id": "005_dbs-benchmark",
+   "name": "dbs-benchmark",
+   "display": "dbs-benchmark",
+   "category": "dbskill 工具箱",
+   "summary": "用五重过滤法寻找值得模仿的对标，并排除主体差异造成的噪音。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用五重过滤法寻找值得模仿的对标，并排除主体差异造成的噪音。用户要求找对标、选择模仿对象或分析竞争参照时使用。"
+  },
+  {
+   "id": "006_dbs-chatroom",
+   "name": "dbs-chatroom",
+   "display": "dbs-chatroom",
+   "category": "dbskill 工具箱",
+   "summary": "根据话题推荐或接受用户指定的专家，模拟多角色对话并总结分歧。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "根据话题推荐或接受用户指定的专家，模拟多角色对话并总结分歧。用户要求定向聊天室、专家讨论或继续当前聊天室时使用。"
+  },
+  {
+   "id": "007_dbs-chatroom-austrian",
+   "name": "dbs-chatroom-austrian",
+   "display": "dbs-chatroom-austrian",
+   "category": "dbskill 工具箱",
+   "summary": "由哈耶克、米塞斯与 Claude 从奥派经济学视角展开多角色讨论。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "由哈耶克、米塞斯与 Claude 从奥派经济学视角展开多角色讨论。用户要求进入奥派聊天室或用奥派分析问题时使用。"
+  },
+  {
+   "id": "008_dbs-content",
+   "name": "dbs-content",
+   "display": "dbs-content",
+   "category": "dbskill 工具箱",
+   "summary": "诊断如何把已经确定的选题做成好内容。用户要求设计内容、检查文案或改善内容表达时使用。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "诊断如何把已经确定的选题做成好内容。用户要求设计内容、检查文案或改善内容表达时使用。"
+  },
+  {
+   "id": "009_dbs-content-risk-check",
+   "name": "dbs-content-risk-check",
+   "display": "dbs-content-risk-check",
+   "category": "dbskill 工具箱",
+   "summary": "面向创作者的内容发布风险检查。逐句检查自媒体、社交媒体和内容平台的标题、正文、图片文字、字幕、口播、评论、账号资…",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "面向创作者的内容发布风险检查。逐句检查自媒体、社交媒体和内容平台的标题、正文、图片文字、字幕、口播、评论、账号资料及视频画面，分别判断平台机器可能识别什么、内容本身存在什么实质问题，并给出具体位置和最小修改动作；需要明确视频语境边界时，额外生成真实准确的三行贴片小字。用户询问「检查敏感词」「发布前排雷」「这篇内容哪里可能违规」「这条小红书能不能发」「视频上放什么声明」时使用。保留强观点、情绪张力、个人风格和传播钩子。"
+  },
+  {
+   "id": "010_dbs-content-system",
+   "name": "dbs-content-system",
+   "display": "dbs-content-system",
+   "category": "dbskill 工具箱",
+   "summary": "把本地文稿、推文、选题、案例和课程稿整理成可持续生长、可重组复用的内容工程。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把本地文稿、推文、选题、案例和课程稿整理成可持续生长、可重组复用的内容工程。用户要求结构化内容资产、整理旧素材或建立主题地图时使用。"
+  },
+  {
+   "id": "011_dbs-decision",
+   "name": "dbs-decision",
+   "display": "dbs-decision",
+   "category": "dbskill 工具箱",
+   "summary": "把需要长期跟踪的业务、关系、健康、职业、学习或投资问题建成本地决策知识工程。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把需要长期跟踪的业务、关系、健康、职业、学习或投资问题建成本地决策知识工程。用户要求决策立案、结果回填、状态画像或长期复盘时使用。"
+  },
+  {
+   "id": "012_dbs-deconstruct",
+   "name": "dbs-deconstruct",
+   "display": "dbs-deconstruct",
+   "category": "dbskill 工具箱",
+   "summary": "用维特根斯坦与奥派经济学方法拆解模糊的商业概念。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用维特根斯坦与奥派经济学方法拆解模糊的商业概念。用户要求解释一个词、澄清概念边界或识别概念混用时使用。"
+  },
+  {
+   "id": "013_dbs-diagnosis",
+   "name": "dbs-diagnosis",
+   "display": "dbs-diagnosis",
+   "category": "dbskill 工具箱",
+   "summary": "自动识别用户是在解决具体商业问题，还是希望全面检查商业模式，并进入对应诊断流程。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "自动识别用户是在解决具体商业问题，还是希望全面检查商业模式，并进入对应诊断流程。用户希望拆解业务、检查商业模式或消解具体商业困境时使用。"
+  },
+  {
+   "id": "014_dbs-goal",
+   "name": "dbs-goal",
+   "display": "dbs-goal",
+   "category": "dbskill 工具箱",
+   "summary": "提取已有约束，只追问影响执行或验收的信息，把模糊愿望和目标整理成可行动、可检查的交付物。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "提取已有约束，只追问影响执行或验收的信息，把模糊愿望和目标整理成可行动、可检查的交付物。用户要求澄清目标、检查任务是否说清或定义交付结果时使用。"
+  },
+  {
+   "id": "015_dbs-good-question",
+   "name": "dbs-good-question",
+   "display": "dbs-good-question",
+   "category": "dbskill 工具箱",
+   "summary": "把模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，并判断自动化解决程度。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，并判断自动化解决程度。用户要求把问题说清、生成好问题或评估 Agent 可解性时使用。"
+  },
+  {
+   "id": "016_dbs-hook",
+   "name": "dbs-hook",
+   "display": "dbs-hook",
+   "category": "dbskill 工具箱",
+   "summary": "诊断短视频开头的问题并生成优化方案。用户要求修改开头、提高开场吸引力或降低开头流失时使用。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "诊断短视频开头的问题并生成优化方案。用户要求修改开头、提高开场吸引力或降低开头流失时使用。"
+  },
+  {
+   "id": "017_dbs-install-skill",
+   "name": "dbs-install-skill",
+   "display": "dbs-install-skill",
+   "category": "dbskill 工具箱",
+   "summary": "将单个 Skill 或 Skill 集合安装到通用 Agents、Claude Code、Codex、WorkB…",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "将单个 Skill 或 Skill 集合安装到通用 Agents、Claude Code、Codex、WorkBuddy、Grok、Hermes Agent、Kiro、Qwen Code、Cline 等 Agent。用户要求跨 Agent 安装、同步、查看、去重或卸载 Skill 时使用。"
+  },
+  {
+   "id": "018_dbs-jtbd",
+   "name": "dbs-jtbd",
+   "display": "dbs-jtbd",
+   "category": "dbskill 工具箱",
+   "summary": "dontbesilent JTBD 任务澄清。用 Jobs to Be Done 识别具体情境中用户想推进的进展…",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "dontbesilent JTBD 任务澄清。用 Jobs to Be Done 识别具体情境中用户想推进的进展、切换方案的力量与可观察的选择标准，据此优化产品、内容、服务、决策和 AI 提示词。调用名：/dbs-jtbd。用户问「到底要解决什么」「为什么会选择这个方案」「用 JTBD 重写提示词」时使用。"
+  },
+  {
+   "id": "019_dbs-knowledge",
+   "name": "dbs-knowledge",
+   "display": "dbs-knowledge",
+   "category": "dbskill 工具箱",
+   "summary": "把本地文件夹建成 Agent 可稳定查找、收录和维护的知识库，并支持导航、版本判断、健康检查及 SOT 分层治理。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把本地文件夹建成 Agent 可稳定查找、收录和维护的知识库，并支持导航、版本判断、健康检查及 SOT 分层治理。用户要求搭建、查询、更新、整理或瘦身知识库时使用。"
+  },
+  {
+   "id": "020_dbs-learning",
+   "name": "dbs-learning",
+   "display": "dbs-learning",
+   "category": "dbskill 工具箱",
+   "summary": "把课题拆成连续学习文章，并根据用户反馈调整后续深度、角度和节奏。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把课题拆成连续学习文章，并根据用户反馈调整后续深度、角度和节奏。用户要求系统学习一个主题、继续下一篇或按反馈调整课程时使用。"
+  },
+  {
+   "id": "021_dbs-report",
+   "name": "dbs-report",
+   "display": "dbs-report",
+   "category": "dbskill 工具箱",
+   "summary": "把多次 dbs-save 存档合并成可交付的 Markdown 报告。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把多次 dbs-save 存档合并成可交付的 Markdown 报告。用户要求汇总诊断、整理报告或生成可分享材料时使用。"
+  },
+  {
+   "id": "022_dbs-resonate",
+   "name": "dbs-resonate",
+   "display": "dbs-resonate",
+   "category": "dbskill 工具箱",
+   "summary": "用匹配当前文稿的传播学与社会心理学理论，诊断共鸣机制、问题位置和修改方向。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用匹配当前文稿的传播学与社会心理学理论，诊断共鸣机制、问题位置和修改方向。用户担心内容没流量、没戳中观众、完播率低或不确定能否发布时使用。"
+  },
+  {
+   "id": "023_dbs-restore",
+   "name": "dbs-restore",
+   "display": "dbs-restore",
+   "category": "dbskill 工具箱",
+   "summary": "恢复由 dbs-save 保存的最近诊断状态。用户要求接着上次、查看此前结论或继续未完成诊断时使用。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "恢复由 dbs-save 保存的最近诊断状态。用户要求接着上次、查看此前结论或继续未完成诊断时使用。"
+  },
+  {
+   "id": "024_dbs-save",
+   "name": "dbs-save",
+   "display": "dbs-save",
+   "category": "dbskill 工具箱",
+   "summary": "把当前诊断的关键状态保存到本地，并查看或设置存档位置。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把当前诊断的关键状态保存到本地，并查看或设置存档位置。用户要求保存结论、跨会话续接或修改存档位置时使用。"
+  },
+  {
+   "id": "025_dbs-script-flow",
+   "name": "dbs-script-flow",
+   "display": "dbs-script-flow",
+   "category": "dbskill 工具箱",
+   "summary": "检查短视频逐字稿的段落衔接、信息密度和口播流畅度，定位观众可能划走的位置。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "检查短视频逐字稿的段落衔接、信息密度和口播流畅度，定位观众可能划走的位置。用户要求检查逻辑延续、文稿顺畅度或流失风险时使用。"
+  },
+  {
+   "id": "026_dbs-skill-maker",
+   "name": "dbs-skill-maker",
+   "display": "dbs-skill-maker",
+   "category": "dbskill 工具箱",
+   "summary": "通过需求分析把反复出现的问题制作成可安装、可分级验证的单个 Skill。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "通过需求分析把反复出现的问题制作成可安装、可分级验证的单个 Skill。用户要求做 Skill、把问题沉淀成 Skill、检查或测试候选 Skill 时使用；只有用户明确要求分享或发布时，才准备 GitHub 仓库并验证 `npx skills add`。"
+  },
+  {
+   "id": "027_dbs-spread",
+   "name": "dbs-spread",
+   "display": "dbs-spread",
+   "category": "dbskill 工具箱",
+   "summary": "用传播学与社会心理学中匹配当前内容的理论，解码共鸣机制、受众情绪、有效立场和传播动机。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "用传播学与社会心理学中匹配当前内容的理论，解码共鸣机制、受众情绪、有效立场和传播动机。用户要求分析内容为什么能引起共鸣、打中什么情绪或受众还想听什么时使用。"
+  },
+  {
+   "id": "028_dbs-standard-answer",
+   "name": "dbs-standard-answer",
+   "display": "dbs-standard-answer",
+   "category": "dbskill 工具箱",
+   "summary": "围绕复杂问题先挖掘相关行业、学科、作者与可信理论，再比较结构同构的历史成功、失败和反例，提炼带条件的标准答案。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "围绕复杂问题先挖掘相关行业、学科、作者与可信理论，再比较结构同构的历史成功、失败和反例，提炼带条件的标准答案。用户需要同时获得理论解释与历史比较，或明确询问历史上如何解决、有没有经典解法、标准答案时使用；只需给现有命题、案例、PPT 或方法论找理论依据时不使用。"
+  },
+  {
+   "id": "029_dbs-theory-grounding",
+   "name": "dbs-theory-grounding",
+   "display": "dbs-theory-grounding",
+   "category": "dbskill 工具箱",
+   "summary": "理论溯源与案例重释。审查 PPT、课程、文案或方法论中的经验判断，先判断命题是否成立，再匹配并核实可信理论，用该…",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "理论溯源与案例重释。审查 PPT、课程、文案或方法论中的经验判断，先判断命题是否成立，再匹配并核实可信理论，用该理论重释案例并标明边界。适用于给自创理论找依据、给 PPT 补理论来源、判断一句话能否上升为理论、检查是否硬套名人；聚焦单次理论锚定，不默认展开历史同构研究。"
+  },
+  {
+   "id": "030_dbs-update",
+   "name": "dbs-update",
+   "display": "dbs-update",
+   "category": "dbskill 工具箱",
+   "summary": "更新官方 dbskill，并保留其他 Skill 与用户存档。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "更新官方 dbskill，并保留其他 Skill 与用户存档。用户要求更新、升级、检查 dbskill 版本，或在更新提醒后回复 1 时使用。"
+  },
+  {
+   "id": "031_dbs-video-extract",
+   "name": "dbs-video-extract",
+   "display": "dbs-video-extract",
+   "category": "dbskill 工具箱",
+   "summary": "接收抖音、小红书、微信视频号等短视频链接或分享文案，查询作品／账号数据并提取语音文字稿，按作者和标题归档为 Ma…",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "接收抖音、小红书、微信视频号等短视频链接或分享文案，查询作品／账号数据并提取语音文字稿，按作者和标题归档为 Markdown。用户希望完整解析短视频、取得数据或文字稿时使用；运行前检查 TikHub 与轻抖使用凭证，缺少时用新手能理解的方式引导购买和安全配置。"
+  },
+  {
+   "id": "032_dbs-wechat-html",
+   "name": "dbs-wechat-html",
+   "display": "dbs-wechat-html",
+   "category": "dbskill 工具箱",
+   "summary": "把 Markdown 转成可粘贴到微信公众号后台的 HTML，并提供 15 种内置风格。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "把 Markdown 转成可粘贴到微信公众号后台的 HTML，并提供 15 种内置风格。用户要求生成公众号 HTML、制作微信版本或排版公众号文章时使用。"
+  },
+  {
+   "id": "033_dbs-xhs-title",
+   "name": "dbs-xhs-title",
+   "display": "dbs-xhs-title",
+   "category": "dbskill 工具箱",
+   "summary": "从 75 个经过验证的小红书标题公式中选择并生成合适标题。",
+   "tags": [
+    "dbskill 工具箱",
+    "开源项目"
+   ],
+   "source": "https://github.com/dontbesilent2025/dbskill",
+   "origin": "dontbesilent 的 dbskill 开源项目",
+   "date": "2026-10-01",
+   "install": "在线安装",
+   "about": "从 75 个经过验证的小红书标题公式中选择并生成合适标题。用户要求起小红书标题、改标题或选择标题公式时使用。"
+  },
+  {
+   "id": "001_dev-docs",
+   "name": "dev-docs",
+   "display": "dev-docs",
+   "category": "基础工具",
+   "summary": "写带编号的项目开发文档并持续维护",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Use when writing a tracked, sequentially-numbered project doc under docs/ - a change record (arch/ops/fix under docs/changes/), a research doc (findings/sources under docs/research/), or an implementation plan (docs/plan/). Determines family + type, assigns next number, creates the file with correct frontmatter, and updates all relevant index files."
+  },
+  {
+   "id": "002_dev-launch",
+   "name": "dev-launch",
+   "display": "dev-launch",
+   "category": "基础工具",
+   "summary": "Issue 发车，把「状态校验 → 调研定位 → 按确定性分流 → 细化 → 实现 → 三层验证 → 双谱系评…",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Issue 发车——把「状态校验 → 调研定位 → 按确定性分流 → 细化 → 实现 → 三层验证 → 双谱系评审 → 交付」 串成自适应流水线。确定性强的快走、不确定的先停下让人拍板。单条 issue、人在场时可直接把本技能当入口触发。 Triggers：发车、跑这个 issue、处理这个 issue、dev-launch、这条 issue 怎么做。"
+  },
+  {
+   "id": "003_dev-req",
+   "name": "dev-req",
+   "display": "dev-req",
+   "category": "基础工具",
+   "summary": "将粗略的需求描述或 Issue 细化为结构化的实现规格。",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "将粗略的需求描述或 Issue 细化为结构化的实现规格。 通过「实体建模 → 信息流梳理 → 元反思」三阶段，产出 AI/Agent 可直接执行的需求文档。 Use when user says \"dev-req\", \"细化需求\", \"需求分析\", \"refine\", \"分析这个issue\", or wants to turn a rough idea into a structured implementation spec."
+  },
+  {
+   "id": "004_mkt-check",
+   "name": "mkt-check",
+   "display": "mkt-check",
+   "category": "基础工具",
+   "summary": "成稿过五道关的检查（合规、事实、表达等）",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Runs a finished draft through five gates ordered by cost, cheapest first, so the expensive reviewers only ever see drafts the free checks already cleared. Nothing about the brand is baked in: rules, lexicon, baseline and voice profile live in the user's own repo and are asked for up front — a missing one reports \"this gate did not run\", never \"passed\". Each gate has one power and never borrows another's: the regex gate blocks, the style gate only reports candidates, and only the plain-reader seat can veto. Gates route by code, so adding one touches one file. Every verdict lands in a state machine bound to the draft's content hash, where unknown is never green: the style gate exits 0 by design, so it records unknown until a human judges it. Running the gates never writes to the user's repo. It ends by asking whether to stake the draft; on a yes it signs and records editor_ready, the one entry mkt-pub reads. Use when the user says 检查 / 过一遍 / 风格闸 / 门禁 / 查违禁 / 自检 / 评审 / 读者看得懂吗 / 定标 / 环境预检 / CI / mkt-check."
+  },
+  {
+   "id": "005_mkt-content",
+   "name": "mkt-content",
+   "display": "mkt-content",
+   "category": "基础工具",
+   "summary": "从头做一期内容专栏",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Produces one issue of a content column end to end — the words and the figures — for whatever brand and columns the user owns. Nothing about the user's brand is baked in: the image endpoint, model and key come from their own .env.local, and the colors, fonts, logo and per-column figure spec come from their own specs/brand/<slug>/image-guide.md. If either is missing the skill asks for it up front and refuses to guess. Columns route by directory (columns/<name>/ COLUMN.md), figures route by what the picture is doing (explain → hand-drawn, report numbers → SVG, show a real artifact → never draw it, a real person → never generate). Adding a column or a figure kind means adding one file; the entry points never change. Use when the user says 出一期 / 跑这一期 / 写这个栏目 / 配图 / 画张图 / 做封面 / 海报 / mkt-content."
+  },
+  {
+   "id": "006_mkt-cro",
+   "name": "mkt-cro",
+   "display": "mkt-cro",
+   "category": "基础工具",
+   "summary": "转化审计，通用判据层 + 按对象路由。审查轴不是页面类型，是**三层互不通约的判据**： 事实层（可判定，说假…",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "转化审计——通用判据层 + 按对象路由。审查轴不是页面类型，是**三层互不通约的判据**： 事实层（可判定，说假话或坏掉）· 说服层（需判断，心理学原理用得对不对）· 伦理层（红线，暗黑模式与退订路径）。**三层取最坏，绝不取平均**—— 说服层做得好不能抵消事实层有问题。 严重度两个字段并存：**阻断/建议**（能不能过）× **P0/P1/P2**（先改哪个），与判据层正交。 路由层按对象码挂 targets/<码>.md；**对象是嵌套不是互斥**，落地页内置定价区与表单区检查。 用户说 审页面 / 落地页评审 / 为什么不转化 / CRO / 转化率优化 / 这个设计算不算暗黑模式 / mkt-cro 时用。"
+  },
+  {
+   "id": "007_mkt-get",
+   "name": "mkt-get",
+   "display": "mkt-get",
+   "category": "基础工具",
+   "summary": "把自有渠道的内容归档成素材",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Archives your own owned channels into resources/archive/ —— a 知识星球 (zsxq) group's full topic history, and a WeChat official account's full published history plus per-article read metrics. Which group and which account come from your own project's .env.local, not from code and not from the skill directory. Sources route by code: --source <码> → sources/<码>.md → the entry script, so adding a source never touches the dispatch layer. Both lines land in the same layout (原始数据/ as truth source + 整理后数据/YYYYMM/DD/ as readable Markdown), both are read-only, both default to a 3-item smoke run. Use when asked to 抓取 / 存档 / 同步 / 备份 自己的星球或公众号, or when someone needs that corpus for style analysis or 选题查重."
+  },
+  {
+   "id": "008_mkt-listen",
+   "name": "mkt-listen",
+   "display": "mkt-listen",
+   "category": "基础工具",
+   "summary": "中文平台的品牌口碑监听",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Brand reputation listening built for Chinese platforms —— 建谱（五类中文词表含错拼与拼音） → 探活（哪条通路在这台机器上真的活着）→ 扫（分层取数）→ 分诊（四维打分、四档路由、 人工先验兜底）→ 出报（每份报告首行给净新/回归/抑制三个数，正文第一节是覆盖度披露表）。 国内主流平台没有合规免密钥读取面，所以本技能的核心不是「抓得多」，是**把测不到的那一大块 诚实标出来**：blocked 与 parsed-zero 一律记「未测」而非 0，小红书/抖音/微博/微信私域 在披露表里永远占一行。零配置也能用——降级成人工巡检清单，任何人拿到就能跑第一步。 只读技能，一行发布代码都没有：不代发、不删帖、不绕登录、不采个人信息。 Use when asked to 监控舆情 / 品牌口碑 / 有没有人在黑我们 / 负面预警 / 社媒监听 / brand monitoring / social listening，或需要一份能说清自己盲区在哪的舆情简报。"
+  },
+  {
+   "id": "009_mkt-pub",
+   "name": "mkt-pub",
+   "display": "mkt-pub",
+   "category": "基础工具",
+   "summary": "内容发布调度，通用调度层 + 按渠道路由。**调度轴不是渠道，是动作的可逆性**： 同一个「发布」，底下装着上…",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "内容发布调度——通用调度层 + 按渠道路由。**调度轴不是渠道，是动作的可逆性**： 同一个「发布」，底下装着上传一张图和给十万人推一条通知，挂在同一个词下面 就等于用同一套授权管两件事，而授权总是向最宽松的那件对齐。 绿档（可逆**且对外不可见**：渲染、上传素材库、存草稿）AI 可自主； 黄档（对外可见**但能删**：星球发帖）真发，但每次要**人手敲一遍目标名**—— 不是按 y，因为按一下键证明不了他知道自己在往哪发； 红档（不可逆：公众号群发）**AI 一律不做，连能力都不提供**—— 不是加确认，是代码里根本没有那个函数，`audit_red.py` 按 AST 扫字符串字面量自证。 渠道按码挂 `channels/<码>/CHANNEL.md`，自报档位 · 源文件 · 产物 · 渲染器 · 凭证字段。 自带三个能直接用的参考实现：**微信公众号**（绿档，最远只到草稿箱；当场验凭证、 本地校验全部前置在花钱之前、封面按内容哈希缓存不重复烧配额）·**知识星球** （黄档，发前硬核对星球名、预检扫平台坑、明说 CLI 没有删除命令）·**小红书** （绿档；配图走「写 HTML + 无头浏览器截图」不走出图模型，填到编辑那一步就停， 必截一张 390×844 首屏——**定时那一档实测走不通，于是连定位串都没留**）， 外加一份不带品牌色的通用微信排版。 前置闸读 `mkt-check` 写的状态机，每条放行**绑稿件内容哈希**—— 改一个字，昨天的放行自动失效；**判不了的一律报「无从判」，绝不混进通过里**。 用户说 发布 / 上传素材库 / 存草稿 / 发星球 / 排版 / 推到 / 分发 / 配凭证 / mkt-pub 时用。"
+  },
+  {
+   "id": "010_pr-ready",
+   "name": "pr-ready",
+   "display": "pr-ready",
+   "category": "基础工具",
+   "summary": "开 PR 之前跑完整的提交前检查",
+   "tags": [
+    "基础工具",
+    "本机"
+   ],
+   "source": "",
+   "origin": "本机安装的技能",
+   "date": "2026-10-01",
+   "install": "从本机安装",
+   "about": "Use BEFORE opening any PR. Runs the full pre-PR SOP - loads relevant invariants from MEMORY, spawns 3 parallel adversarial reviewers (sibling / concurrency / boundary) that write findings to disk, runs /simplify, and emits a P1/P2 audit table for the PR description. Use whenever the user says \"开 PR\" / \"提 PR\" / \"ready to merge\" / \"review my diff\" / \"pr-ready\" / before any commit-and-push sequence."
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "site": "AI知识森林",
+ "home": "https://s393801048.github.io/ai-knowledge-forest/",
+ "updated": "2026-10-02",
+ "libs": [
+  {
+   "key": "prompts",
+   "name": "提示词",
+   "count": 117,
+   "file": "api/prompts.json",
+   "categories": {
+    "写作": 16,
+    "办公": 14,
+    "图像": 1,
+    "提问与思考": 10,
+    "生活与学习": 9,
+    "编程": 62,
+    "营销": 5
+   },
+   "desc": "一条一个提示词：原文可直接复制，另有中文详解和用法"
+  },
+  {
+   "key": "skills",
+   "name": "Skill",
+   "count": 138,
+   "file": "api/skills.json",
+   "categories": {
+    "dbskill 工具箱": 33,
+    "内容写作": 7,
+    "发布与运营": 7,
+    "基础工具": 10,
+    "学术研究": 26,
+    "技能与开发": 10,
+    "排版配图": 15,
+    "系统工具": 9,
+    "视频制作": 10,
+    "采集与对标": 11
+   },
+   "desc": "技能卡片：说明这个技能干什么、怎么装、从哪来"
+  },
+  {
+   "key": "cards",
+   "name": "知识卡片",
+   "count": 465,
+   "file": "api/cards.json",
+   "categories": {
+    "原理": 104,
+    "工具": 28,
+    "方法": 207,
+    "概念": 126
+   },
+   "desc": "一张卡讲清一个概念、工具、原理或方法"
+  }
+ ],
+ "howto": [
+  "查提示词读 api/prompts.json，items[].prompt 是可直接使用的原文",
+  "查技能读 api/skills.json，items[].summary 说它干什么",
+  "查知识卡片读 api/cards.json",
+  "装到本机：用 MCP 服务器（见 api/llms.txt 的说明）"
+ ]
+}
