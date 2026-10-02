@@ -30,10 +30,35 @@ https://s393801048.github.io/ai-knowledge-forest/
 - `summary` 干什么，`about` 详细说明
 - `install` 安装方式（`在线安装` 表示有公开地址，看 `source`；`从本机安装` 表示无公开地址）
 
+## 接上这个站（一条命令）
+
+在 Claude Code 里执行：
+
+```
+claude mcp add ai-knowledge-forest -- uv run https://s393801048.github.io/ai-knowledge-forest/mcp/server.py
+```
+
+之后就能直接说「去知识森林查一下写会议纪要的提示词」「把 xx 技能装上」。
+需要本机装有 [uv](https://docs.astral.sh/uv/)（`brew install uv`）。
+
+WorkBuddy 用户：把下面这段加进 MCP 配置（`~/.workbuddy/.mcp.json` 的 `mcpServers` 里，
+或在「插件 → MCP 服务器」面板里填）：
+
+```json
+"ai-knowledge-forest": {
+  "command": "uv",
+  "args": ["run", "https://s393801048.github.io/ai-knowledge-forest/mcp/server.py"]
+}
+```
+
 ## 装技能到本机
 
-装了配套的 MCP 服务器时，用 `install_skill` 工具直接安装；没有 MCP 时，
-`在线安装` 的技能按 `source` 里的地址装。
+技能分两类：
+
+- 本站作者自己做的，都发布在魔搭社区，卡片上的 `source` 就是下载地址
+- 别人做的，卡片上有技能名和 GitHub 地址
+
+跟你的 AI 说「把 xx 技能装上」即可，它会按 `source` 自己去下载。
 
 ## 更新
 
@@ -41,4 +66,4 @@ https://s393801048.github.io/ai-knowledge-forest/
 
 ---
 
-数据来源：Anthropic 官方文档、Claude Code 官方文档、作者自建与收藏。
+数据来源：Anthropic 官方文档、Claude Code 官方文档、魔搭社区、作者自建与收藏。

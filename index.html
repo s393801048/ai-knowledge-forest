@@ -51,6 +51,39 @@
   .tab.on{background:rgba(74,222,128,.12);color:var(--accent);border-color:rgba(74,222,128,.45)}
   .tab .n{opacity:.6;margin-left:6px;font-size:12px}
   main{padding:24px 0 70px}
+  .aiuse{
+    border:1px solid var(--line);border-radius:14px;background:linear-gradient(178deg,var(--card),var(--panel));
+    margin-bottom:20px;overflow:hidden;
+  }
+  .aiuse-btn{
+    width:100%;display:flex;align-items:center;gap:10px;padding:14px 18px;
+    background:none;border:0;color:var(--text);cursor:pointer;font-family:inherit;
+    font-size:14px;text-align:left;transition:.15s;
+  }
+  .aiuse-btn:hover{background:rgba(74,222,128,.05)}
+  .aiuse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto;
+    box-shadow:0 0 0 4px rgba(74,222,128,.13)}
+  .aiuse-btn .sp{flex:1}
+  .aiuse-arrow{color:var(--dim);font-size:12px;transition:.2s}
+  .aiuse.open .aiuse-arrow{transform:rotate(180deg)}
+  .aiuse-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+  .aiuse-body h4{margin:16px 0 8px;font-size:13.5px;color:var(--accent);font-weight:600}
+  .aiuse-body p{margin:8px 0;color:var(--dim);font-size:13.5px;line-height:1.75}
+  .aiuse-body .cmd{
+    display:flex;align-items:flex-start;gap:10px;background:#081310;
+    border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0;
+  }
+  .aiuse-body .cmd code{
+    flex:1;font-size:12.5px;color:#a5e8c3;line-height:1.7;word-break:break-all;
+    white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  .aiuse-body .cmd button{
+    flex:0 0 auto;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.35);
+    color:var(--accent);border-radius:8px;padding:5px 11px;font-size:12px;cursor:pointer;
+    font-family:inherit;transition:.15s;
+  }
+  .aiuse-body .cmd button:hover{background:rgba(74,222,128,.2)}
+  .aiuse-body .tip{color:#5d7a6d;font-size:12.5px;margin-top:6px}
   .cats{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
   .chip{
     padding:5px 12px;border-radius:999px;border:1px solid var(--line);
@@ -141,6 +174,37 @@
   </div>
 </header>
 <main class="wrap">
+  <div class="aiuse" id="aiuse">
+    <button class="aiuse-btn" id="aiuseBtn" aria-expanded="false">
+      <span class="aiuse-dot"></span>
+      <span>给 AI 用：一条命令，让你的 Claude Code / WorkBuddy 直接查这个站、装这里的技能</span>
+      <span class="sp"></span>
+      <span class="aiuse-arrow">▾</span>
+    </button>
+    <div class="aiuse-body" id="aiuseBody" hidden>
+      <h4>Claude Code</h4>
+      <p>把下面这条命令粘进终端跑一次，以后就能直接说「去知识森林查一下写会议纪要的提示词」「把内容写作流程这个技能装上」。</p>
+      <div class="cmd">
+        <code id="cmdCc">claude mcp add ai-knowledge-forest -- uv run https://s393801048.github.io/ai-knowledge-forest/mcp/server.py</code>
+        <button data-copy="cmdCc">复制</button>
+      </div>
+      <p class="tip">需要本机装有 uv：<code>brew install uv</code></p>
+
+      <h4>WorkBuddy</h4>
+      <p>把下面这段加进 MCP 配置（<code>~/.workbuddy/.mcp.json</code> 的 <code>mcpServers</code> 里），或在「插件 → MCP 服务器」面板里照填。</p>
+      <div class="cmd">
+        <code id="cmdWb">"ai-knowledge-forest": {
+  "command": "uv",
+  "args": ["run", "https://s393801048.github.io/ai-knowledge-forest/mcp/server.py"]
+}</code>
+        <button data-copy="cmdWb">复制</button>
+      </div>
+
+      <h4>接上之后能干什么</h4>
+      <p>搜提示词并直接拿到可用的原文；搜技能并拿到技能名和来源网址（自己做的在魔搭社区，别人的在 GitHub），让它自己去下载装上；查知识卡片。</p>
+      <p class="tip">不想装 MCP 也行：所有内容都在 <a href="api/index.json" style="color:var(--accent2)">api/</a> 目录下的 JSON 里，任何 AI 读一下 <a href="llms.txt" style="color:var(--accent2)">llms.txt</a> 就知道怎么用。</p>
+    </div>
+  </div>
   <p class="note" id="note" hidden></p>
   <div class="cats" id="cats"></div>
   <div class="grid" id="grid"></div>
@@ -306,9 +370,10 @@ function openModal(item) {
 }
 
 function copyText(text, btn) {
+  const label = btn.textContent;
   const done = () => {
     btn.textContent = "已复制 ✓";
-    setTimeout(() => (btn.textContent = "复制原文"), 1600);
+    setTimeout(() => (btn.textContent = label), 1600);
   };
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
@@ -332,6 +397,22 @@ function closeModal() {
   $("#modal").hidden = true;
   document.body.style.overflow = "";
 }
+
+$("#aiuseBtn").addEventListener("click", () => {
+  const box = $("#aiuse");
+  const body = $("#aiuseBody");
+  const open = body.hidden;
+  body.hidden = !open;
+  box.classList.toggle("open", open);
+  $("#aiuseBtn").setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const src = document.getElementById(btn.dataset.copy);
+    if (src) copyText(src.textContent.trim(), btn);
+  });
+});
 
 $("#tabs").addEventListener("click", (e) => {
   const btn = e.target.closest(".tab");
