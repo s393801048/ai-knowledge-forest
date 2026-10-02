@@ -7,16 +7,16 @@ description: 查 AI知识森林 —— 作者收集的提示词、Skill 和知�
 
 作者收集的提示词、Skill 和知识卡片，全部以静态 JSON 发布，直接读就行，不需要任何配置。
 
-站点：https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/
+站点：https://s393801048.github.io/ai-knowledge-forest/
 
 ## 数据在哪
 
 | 地址 | 内容 | 条数 |
 |---|---|---|
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/index.json | 目录：各库条数、分类 | — |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/prompts.json | 提示词，每条含**中文译文和英文原文** | 117 |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/cards.json | 知识卡片 | 465 |
+| https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
+| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含**中文译文和英文原文** | 117 |
+| https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
+| https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 465 |
 
 ## 查提示词
 

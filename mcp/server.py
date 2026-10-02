@@ -30,7 +30,7 @@ from mcp.server.mcpserver import MCPServer
 
 ROOT = Path(os.environ.get("KNOWLEDGE_FOREST_ROOT", Path.home() / "00_Huaya/07_AI知识森林")).expanduser()
 REMOTE = os.environ.get(
-    "KNOWLEDGE_FOREST_REMOTE", "https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api"
+    "KNOWLEDGE_FOREST_REMOTE", "https://s393801048.github.io/ai-knowledge-forest/api"
 ).rstrip("/")
 CARDS_SRC = Path.home() / "00_Huaya/05_不合理蛙写作/AI第二大脑/03_知识库/03_知识卡片"
 

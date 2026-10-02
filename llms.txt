@@ -1,6 +1,6 @@
 # AI知识森林
 
-https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/
+https://s393801048.github.io/ai-knowledge-forest/
 
 作者收集的提示词、Skill、知识卡片。全部内容以静态 JSON 提供，任何 AI 工具都能直接读取。
 
@@ -8,12 +8,12 @@ https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/
 
 | 文件 | 内容 | 条数 |
 |---|---|---|
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/index.json | 目录：各库条数、分类 | — |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/prompts.json | 提示词，每条含中文译文和英文原文 | 117 |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 103 |
-| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/cards.json | 知识卡片 | 465 |
+| https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
+| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含中文译文和英文原文 | 117 |
+| https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 103 |
+| https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 465 |
 
-本文件也在 https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/llms.txt。
+本文件也在 https://s393801048.github.io/ai-knowledge-forest/llms.txt。
 
 ## 怎么用
 
@@ -36,7 +36,7 @@ https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/
 在 Claude Code 里执行：
 
 ```
-claude mcp add ai-knowledge-forest -- uv run https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/mcp/server.py
+claude mcp add ai-knowledge-forest -- uv run https://s393801048.github.io/ai-knowledge-forest/mcp/server.py
 ```
 
 之后就能直接说「去知识森林查一下写会议纪要的提示词」「把 xx 技能装上」。
@@ -48,7 +48,7 @@ WorkBuddy 用户：把下面这段加进 MCP 配置（`~/.workbuddy/.mcp.json` �
 ```json
 "ai-knowledge-forest": {
   "command": "uv",
-  "args": ["run", "https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/mcp/server.py"]
+  "args": ["run", "https://s393801048.github.io/ai-knowledge-forest/mcp/server.py"]
 }
 ```
 
