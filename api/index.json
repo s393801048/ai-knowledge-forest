@@ -1,6 +1,6 @@
 {
  "site": "AI知识森林",
- "home": "https://s393801048.github.io/ai-knowledge-forest/",
+ "home": "https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/",
  "updated": "2026-10-02",
  "libs": [
   {
@@ -17,7 +17,7 @@
     "编程": 62,
     "营销": 5
    },
-   "desc": "一条一个提示词：原文可直接复制，另有中文详解和用法"
+   "desc": "一条一个提示词：中文译文和英文原文都能直接复制，另有中文详解和用法"
   },
   {
    "key": "skills",
@@ -52,7 +52,7 @@
   }
  ],
  "howto": [
-  "查提示词读 api/prompts.json，items[].prompt 是可直接使用的原文",
+  "查提示词读 api/prompts.json，items[].prompt 是中文译文，items[].prompt_en 是英文原文",
   "查技能读 api/skills.json，items[].summary 说它干什么",
   "查知识卡片读 api/cards.json",
   "装到本机：用 MCP 服务器（见 api/llms.txt 的说明）"

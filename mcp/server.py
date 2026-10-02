@@ -13,7 +13,7 @@
     uv run /path/to/server.py
 环境变量：
     KNOWLEDGE_FOREST_ROOT   仓库根目录，默认 ~/00_Huaya/07_AI知识森林
-    KNOWLEDGE_FOREST_REMOTE 线上 API 根地址，默认 GitHub Pages 那个
+    KNOWLEDGE_FOREST_REMOTE 线上 API 根地址，默认见 site_url.py（build_api.py 会校验一致）
 """
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ from mcp.server.mcpserver import MCPServer
 
 ROOT = Path(os.environ.get("KNOWLEDGE_FOREST_ROOT", Path.home() / "00_Huaya/07_AI知识森林")).expanduser()
 REMOTE = os.environ.get(
-    "KNOWLEDGE_FOREST_REMOTE", "https://s393801048.github.io/ai-knowledge-forest/api"
+    "KNOWLEDGE_FOREST_REMOTE", "https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api"
 ).rstrip("/")
 CARDS_SRC = Path.home() / "00_Huaya/05_不合理蛙写作/AI第二大脑/03_知识库/03_知识卡片"
 
@@ -64,9 +64,9 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
     return (meta if isinstance(meta, dict) else {}), text[end + 4:].lstrip("\n")
 
 
-def first_code_block(md: str) -> str:
-    m = re.search(r"```[^\n]*\n(.*?)```", md, re.S)
-    return m.group(1).strip() if m else ""
+def code_blocks(md: str) -> list[str]:
+    """正文里所有的代码块，按出现顺序。提示词是「中文译文、英文原文」两块。"""
+    return [b.strip() for b in re.findall(r"```[^\n]*\n(.*?)```", md, re.S)]
 
 
 def section(md: str, title: str) -> str:
@@ -94,12 +94,15 @@ def _local_items(lib: Path, kind: str) -> list[dict]:
                 continue
             meta, body = parse_frontmatter(md.read_text(encoding="utf-8"))
             if kind == "prompt":
+                blocks = code_blocks(body)
                 items.append({
-                    "id": md.stem, "name": str(meta.get("名称", md.stem)), "category": cat,
+                    "id": md.stem, "name": str(meta.get("名称", md.stem)),
+                    "en": str(meta.get("英文名", "")), "category": cat,
                     "summary": str(meta.get("一句话介绍", "")), "tags": meta.get("标签") or [],
                     "source": str(meta.get("来源链接", "")), "origin": str(meta.get("出处", "")),
-                    "prompt": first_code_block(body), "detail": section(body, "详细介绍"),
-                    "howto": section(body, "怎么用"),
+                    "prompt": blocks[0] if blocks else "",
+                    "prompt_en": blocks[1] if len(blocks) > 1 else "",
+                    "detail": section(body, "详细介绍"), "howto": section(body, "怎么用"),
                 })
             else:
                 items.append({
@@ -160,7 +163,7 @@ def _hit(item: dict, q: str) -> bool:
     if not q:
         return True
     blob = " ".join(str(item.get(k, "")) for k in
-                    ("name", "display", "summary", "category", "origin", "detail", "howto"))
+                    ("name", "en", "display", "summary", "category", "origin", "detail", "howto"))
     blob += " " + " ".join(str(t) for t in (item.get("tags") or []))
     return q.lower() in blob.lower()
 
@@ -170,7 +173,8 @@ def _rank(item: dict, q: str) -> int:
     if not q:
         return 0
     ql = q.lower()
-    name = str(item.get("name", "")).lower() + str(item.get("display", "")).lower()
+    name = str(item.get("name", "")).lower() + str(item.get("en", "")).lower() \
+        + str(item.get("display", "")).lower()
     return 0 if ql in name else 1
 
 
@@ -189,11 +193,18 @@ def brief(item: dict, kind: str) -> dict:
     return base
 
 
+def label(item: dict) -> str:
+    """提示词的显示名：中文名（英文原名）。"""
+    en = str(item.get("en", "")).strip()
+    name = str(item.get("name", ""))
+    return f"{name}（{en}）" if en else name
+
+
 def pick_one(items: list[dict], name: str) -> dict | None:
-    """按名字找一条：先精确匹配 id/name/display，再退回模糊匹配。"""
+    """按名字找一条：先精确匹配 id/name/en/display，再退回模糊匹配。"""
     q = name.strip().lower()
     for it in items:
-        for k in ("id", "name", "display"):
+        for k in ("id", "name", "en", "display"):
             v = str(it.get(k, "")).lower()
             if v and (v == q or v.startswith(q)):
                 return it
@@ -225,7 +236,7 @@ def site_overview() -> str:
     return "\n".join(lines)
 
 
-@server.tool(description="搜索提示词。query 支持中文关键词（匹配名称、说明、标签、详解），category 可按分类收窄，留空则全库搜")
+@server.tool(description="搜索提示词。query 中英文都行（匹配中英文名、说明、标签、详解），category 可按分类收窄，留空则全库搜")
 def search_prompts(query: str = "", category: str = "", limit: int = 10) -> str:
     items, src = load("prompts")
     rows = search(items, query, category, max(1, min(limit, 50)))
@@ -233,33 +244,32 @@ def search_prompts(query: str = "", category: str = "", limit: int = 10) -> str:
         return f"没搜到。全库 {len(items)} 条，分类：{'、'.join(sorted({i['category'] for i in items}))}"
     out = [f"找到 {len(rows)} 条（共 {len(items)} 条，数据来自{src}）："]
     for r in rows:
-        out.append(f"- **{r['name']}**［{r['category']}］{r['summary']}")
-    out.append("\n用 get_prompt 取某条的完整原文。")
+        out.append(f"- **{label(r)}**［{r['category']}］{r['summary']}")
+    out.append("\n用 get_prompt 取某条的完整提示词。")
     return "\n".join(out)
 
 
-@server.tool(description="按名字取一条提示词的完整内容：提示词原文（可直接复制使用）+ 详细介绍 + 怎么用")
+@server.tool(description="按名字取一条提示词的完整内容：中文译文和英文原文（都能直接复制使用）+ 详细介绍 + 怎么用")
 def get_prompt(name: str) -> str:
     items, _ = load("prompts")
     it = pick_one(items, name)
     if not it:
         return f"没找到「{name}」。可以先用 search_prompts 搜一下。"
-    return "\n".join([
-        f"# {it['name']}",
+    lines = [
+        f"# {label(it)}",
         f"分类：{it['category']}　标签：{'、'.join(it.get('tags') or [])}",
         f"来源：{it.get('origin', '')}　{it.get('source', '')}",
         "",
-        "## 提示词原文",
-        "```",
-        it.get("prompt", ""),
-        "```",
-        "",
-        "## 详细介绍",
-        it.get("detail", ""),
-        "",
-        "## 怎么用",
-        it.get("howto", ""),
-    ])
+        "## 提示词",
+    ]
+    zh, en = it.get("prompt", ""), it.get("prompt_en", "")
+    if en:
+        lines += ["", "中文译文：", "```", zh, "```", "", "英文原文：", "```", en, "```"]
+    else:
+        lines += ["", "```", zh, "```"]
+    lines += ["", "## 详细介绍", it.get("detail", ""), "",
+              "## 怎么用", it.get("howto", "")]
+    return "\n".join(lines)
 
 
 @server.tool(description="搜索 Skill。query 匹配技能名、中文名、说明、标签")

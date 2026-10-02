@@ -7,24 +7,24 @@ description: 查 AI知识森林 —— 作者收集的提示词、Skill 和知�
 
 作者收集的提示词、Skill 和知识卡片，全部以静态 JSON 发布，直接读就行，不需要任何配置。
 
-站点：https://s393801048.github.io/ai-knowledge-forest/
+站点：https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/
 
 ## 数据在哪
 
 | 地址 | 内容 | 条数 |
 |---|---|---|
-| https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
-| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含**可直接使用的原文** | 117 |
-| https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
-| https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 465 |
+| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/index.json | 目录：各库条数、分类 | — |
+| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/prompts.json | 提示词，每条含**中文译文和英文原文** | 117 |
+| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
+| https://ai-knowledge-forest-dp6o5hk4xsor.edgeone.dev/api/cards.json | 知识卡片 | 465 |
 
 ## 查提示词
 
 1. 读 `api/prompts.json`，`items` 是数组
-2. 每条字段：`name` 名称、`category` 分类、`summary` 一句话、`tags` 标签、
-   `prompt` **提示词原文（直接拿去用）**、`detail` 详解、`howto` 怎么用、`source` 来源
-3. 按 `name`、`summary`、`tags`、`detail` 匹配用户的关键词
-4. 把 `prompt` 原样给用户，需要时用 `howto` 说明要替换哪些占位符
+2. 每条字段：`name` 中文名、`en` 英文原名、`category` 分类、`summary` 一句话、`tags` 标签、
+   `prompt` **中文译文（直接拿去用）**、`prompt_en` 英文原文、`detail` 详解、`howto` 怎么用、`source` 来源
+3. 按 `name`、`en`、`summary`、`tags`、`detail` 匹配用户的关键词
+4. 把 `prompt` 原样给用户；用户要英文版就给 `prompt_en`。需要时用 `howto` 说明要替换哪些占位符
 
 ## 装技能
 
