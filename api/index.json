@@ -22,12 +22,12 @@
   {
    "key": "skills",
    "name": "Skill",
-   "count": 138,
+   "count": 137,
    "file": "api/skills.json",
    "categories": {
     "dbskill 工具箱": 33,
     "内容写作": 7,
-    "发布与运营": 7,
+    "发布与运营": 6,
     "基础工具": 10,
     "学术研究": 26,
     "技能与开发": 10,

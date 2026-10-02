@@ -10,7 +10,7 @@ https://s393801048.github.io/ai-knowledge-forest/
 |---|---|---|
 | https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
 | https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含可直接使用的原文 | 117 |
-| https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 138 |
+| https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 137 |
 | https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 465 |
 
 本文件也在 https://s393801048.github.io/ai-knowledge-forest/llms.txt。
