@@ -1,0 +1,4041 @@
+{
+ "lib": "AI 产品",
+ "count": 318,
+ "categories": {
+  "写作办公": 57,
+  "图像生成": 37,
+  "学习与科研": 26,
+  "对话助手": 24,
+  "智能体": 33,
+  "生活娱乐": 11,
+  "编程开发": 79,
+  "视频生成": 25,
+  "音频音乐": 26
+ },
+ "items": [
+  {
+   "id": "001_Character.AI",
+   "name": "Character.AI",
+   "category": "对话助手",
+   "summary": "自己捏角色，再跟它聊天。",
+   "tags": [],
+   "source": "https://character.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Character.AI lets you create characters and chat to them."
+  },
+  {
+   "id": "002_Copilot",
+   "name": "Copilot",
+   "category": "对话助手",
+   "summary": "微软的日常 AI 助手。",
+   "tags": [],
+   "source": "https://copilot.microsoft.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An everyday AI companion by Microsoft."
+  },
+  {
+   "id": "003_DeepSeek",
+   "name": "DeepSeek",
+   "category": "对话助手",
+   "summary": "DeepSeek 开源模型的对话网页版。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://www.deepseek.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A chatbot interface powered by DeepSeek's open-source language models."
+  },
+  {
+   "id": "004_Exa",
+   "name": "Exa",
+   "category": "对话助手",
+   "summary": "用语言模型驱动的搜索。",
+   "tags": [],
+   "source": "https://exa.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Language model powered search."
+  },
+  {
+   "id": "005_Komo",
+   "name": "Komo",
+   "category": "对话助手",
+   "summary": "AI 搜索引擎。",
+   "tags": [],
+   "source": "https://komo.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-powered search engine."
+  },
+  {
+   "id": "006_Le Chat",
+   "name": "Le Chat",
+   "category": "对话助手",
+   "summary": "Mistral AI 模型的对话界面。",
+   "tags": [],
+   "source": "https://chat.mistral.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A chat interface for Mistral AI's language models."
+  },
+  {
+   "id": "007_LibreChat",
+   "name": "LibreChat",
+   "category": "对话助手",
+   "summary": "免费开源的 AI 助手聊天界面，可自己部署。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://librechat.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "LibreChat is a free and open-source chat interface for assistant AIs."
+  },
+  {
+   "id": "008_Meta AI",
+   "name": "Meta AI",
+   "category": "对话助手",
+   "summary": "Meta 的 AI 助手，能答题、也能生成图像。",
+   "tags": [],
+   "source": "https://www.meta.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Meta AI assistant to get things done, create AI-generated images, get answers. Built on Llama LLM."
+  },
+  {
+   "id": "009_Perplexity AI",
+   "name": "Perplexity AI",
+   "category": "对话助手",
+   "summary": "AI 驱动的搜索工具。",
+   "tags": [],
+   "source": "https://www.perplexity.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI powered search tools."
+  },
+  {
+   "id": "010_Pi",
+   "name": "Pi",
+   "category": "对话助手",
+   "summary": "以数字助理形式提供的个性化 AI 平台。",
+   "tags": [],
+   "source": "https://pi.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A personalized AI platform available as a digital assistant."
+  },
+  {
+   "id": "011_privateGPT",
+   "name": "privateGPT",
+   "category": "对话助手",
+   "summary": "不联网也能拿自己的文档做问答。",
+   "tags": [
+    "开源",
+    "5.8 万星"
+   ],
+   "source": "https://github.com/zylon-ai/private-gpt",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Ask questions to your documents without an internet connection, using the power of LLMs."
+  },
+  {
+   "id": "012_quivr",
+   "name": "quivr",
+   "category": "对话助手",
+   "summary": "把文件丢进去就能对话的「第二大脑」。",
+   "tags": [
+    "开源",
+    "4.0 万星"
+   ],
+   "source": "https://github.com/QuivrHQ/quivr",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Dump all your files and chat with it using your generative AI second brain using LLMs & embeddings."
+  },
+  {
+   "id": "013_Qwen",
+   "name": "Qwen",
+   "category": "对话助手",
+   "summary": "通义千问聊天版，支持图像生成、文档处理、联网搜索和视频理解。",
+   "tags": [],
+   "source": "https://chat.qwenlm.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Qwen chatbot with image generation, document processing, web search integration, video understanding, etc."
+  },
+  {
+   "id": "014_You.com",
+   "name": "You.com",
+   "category": "对话助手",
+   "summary": "AI 搜索引擎，结果可定制，强调不拿用户数据。",
+   "tags": [],
+   "source": "https://you.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A search engine built on AI that provides users with a customized search experience while keeping their data 100% private."
+  },
+  {
+   "id": "015_Z.ai",
+   "name": "Z.ai",
+   "category": "对话助手",
+   "summary": "Z.ai 的聊天与智能体平台，基于 GLM 模型。",
+   "tags": [],
+   "source": "https://chat.z.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI chatbot and agent platform by Z.ai powered by the GLM model family."
+  },
+  {
+   "id": "016_豆包",
+   "name": "豆包",
+   "category": "对话助手",
+   "summary": "字节跳动的 AI 助手，写文案、答问题、做翻译、写代码都行，也能生成图片和视频。",
+   "tags": [
+    "小程序",
+    "Web",
+    "移动端",
+    "完全免费",
+    "中国大陆",
+    "465 条评价"
+   ],
+   "source": "https://www.doubao.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 465 条，9.4 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "017_Second Me",
+   "name": "Second Me",
+   "category": "对话助手",
+   "summary": "AI 原生社交应用，创建专属的 AI 身份和社交主页，再和别人建立连接。",
+   "tags": [
+    "Web",
+    "移动端",
+    "免费增值",
+    "海外",
+    "119 条评价"
+   ],
+   "source": "https://intro.second-me.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 119 条，7.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：心识宇宙\n\n观猹上的分类：通用助手、虚拟陪伴"
+  },
+  {
+   "id": "018_白艾莉",
+   "name": "白艾莉",
+   "category": "对话助手",
+   "summary": "会记事、会干活、也会陪你的 AI 搭子。",
+   "tags": [
+    "111 条评价"
+   ],
+   "source": "https://alice.fans/?from=watcha",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 111 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：洛小山\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "019_ColaOS",
+   "name": "ColaOS",
+   "category": "对话助手",
+   "summary": "把 AI 助手做成常驻操作系统的伙伴。",
+   "tags": [
+    "88 条评价"
+   ],
+   "source": "https://colaos.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 88 条，7.6 分）",
+   "date": "2026-10-02",
+   "body": "出品方：火星电波\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "020_秘塔AI搜索",
+   "name": "秘塔AI搜索",
+   "category": "对话助手",
+   "summary": "没有广告、直达结果的 AI 搜索引擎。",
+   "tags": [
+    "小程序",
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "68 条评价"
+   ],
+   "source": "https://metaso.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 68 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：秘塔科技\n\n观猹上的分类：智能搜索"
+  },
+  {
+   "id": "021_U 深研",
+   "name": "U 深研",
+   "category": "对话助手",
+   "summary": "深度研究工具，不满足于表面逻辑。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "31 条评价"
+   ],
+   "source": "https://unifuncs.com/deepresearch",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 31 条，7.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：UniFuncs\n\n观猹上的分类：通用助手、写作辅助、智能搜索"
+  },
+  {
+   "id": "022_ChatGPT",
+   "name": "ChatGPT",
+   "category": "对话助手",
+   "summary": "OpenAI 的对话助手，用聊天的方式交互。",
+   "tags": [
+    "92 条评价",
+    "Web",
+    "桌面端",
+    "免费增值",
+    "海外"
+   ],
+   "source": "https://chatgpt.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 92 条，7.9 分）",
+   "date": "2026-10-02",
+   "body": "ChatGPT by OpenAI is a large language model that interacts in a conversational way.\n\n出品方：OpenAI\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "023_Gemini",
+   "name": "Gemini",
+   "category": "对话助手",
+   "summary": "Google DeepMind 的多模态大模型助手。",
+   "tags": [
+    "249 条评价"
+   ],
+   "source": "https://gemini.google.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 249 条，8.6 分）",
+   "date": "2026-10-02",
+   "body": "A family of multimodal large language model developed by Google Deepmind.\n\n出品方：Google\n\n观猹上的分类：通用助手、图像生成、效率工具"
+  },
+  {
+   "id": "024_Kimi",
+   "name": "Kimi",
+   "category": "对话助手",
+   "summary": "月之暗面的 AI 助手，支持对话、深度研究、编程和多智能体。",
+   "tags": [
+    "152 条评价",
+    "小程序",
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "海外"
+   ],
+   "source": "https://www.kimi.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 152 条，8.6 分）",
+   "date": "2026-10-02",
+   "body": "An AI assistant by Moonshot AI with chat, deep research, coding, and multi-agent capabilities.\n\n出品方：月之暗面\n\n观猹上的分类：通用助手、智能搜索、效率工具"
+  },
+  {
+   "id": "001_Artbreeder",
+   "name": "Artbreeder",
+   "category": "图像生成",
+   "summary": "通过混合和探索来协作创作图像。",
+   "tags": [],
+   "source": "https://www.artbreeder.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Artbreeder is new type of creative tool that empowers users creativity by making it easier to collaborate and explore."
+  },
+  {
+   "id": "002_Bing Image Creator",
+   "name": "Bing Image Creator",
+   "category": "图像生成",
+   "summary": "微软基于 DALL·E 3 的文生图工具。",
+   "tags": [],
+   "source": "https://www.bing.com/images/create",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "DALLE·3 based text-to-image generator with safety features."
+  },
+  {
+   "id": "003_Brandmark",
+   "name": "Brandmark",
+   "category": "图像生成",
+   "summary": "AI logo 设计工具。",
+   "tags": [],
+   "source": "https://brandmark.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-based logo design tool."
+  },
+  {
+   "id": "004_ClipDrop",
+   "name": "ClipDrop",
+   "category": "图像生成",
+   "summary": "不用摄影棚也能做出专业视觉素材，Stability AI 出品。",
+   "tags": [],
+   "source": "https://clipdrop.co/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create professional visuals without a photo studio, powered by stability.ai."
+  },
+  {
+   "id": "005_ComfyUI",
+   "name": "ComfyUI",
+   "category": "图像生成",
+   "summary": "用节点连线搭 Stable Diffusion 工作流的界面。",
+   "tags": [
+    "开源",
+    "13.6 万星"
+   ],
+   "source": "https://github.com/comfyanonymous/ComfyUI",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A node-based interface for building and running Stable Diffusion workflows."
+  },
+  {
+   "id": "006_Craiyon",
+   "name": "Craiyon",
+   "category": "图像生成",
+   "summary": "前身是 DALL-E mini，输入文字就出图。",
+   "tags": [],
+   "source": "https://www.craiyon.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Craiyon, formerly DALL-E mini, is an AI model that can draw images from any text prompt."
+  },
+  {
+   "id": "007_FigureLabs",
+   "name": "FigureLabs",
+   "category": "图像生成",
+   "summary": "把文字描述或草图变成可发表的科研矢量插图。",
+   "tags": [],
+   "source": "https://www.figurelabs.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI tool for generating publication-ready scientific figures in vector format from text descriptions or sketches."
+  },
+  {
+   "id": "008_GenShare",
+   "name": "GenShare",
+   "category": "图像生成",
+   "summary": "免费快速生成艺术图，可商用可分享的多媒体生成工作室。",
+   "tags": [],
+   "source": "https://www.genshare.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Generate art in seconds for free. Own and share what you create. A multimedia generative studio, democratizing design and creativity."
+  },
+  {
+   "id": "009_Ideogram",
+   "name": "Ideogram",
+   "category": "图像生成",
+   "summary": "文生图平台，画面里的文字排版做得好。",
+   "tags": [],
+   "source": "https://ideogram.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A text-to-image platform to make creative expression more accessible."
+  },
+  {
+   "id": "010_Imagine by Magic Studio",
+   "name": "Imagine by Magic Studio",
+   "category": "图像生成",
+   "summary": "描述脑子里想的东西就能出图。",
+   "tags": [],
+   "source": "https://magicstudio.com/imagine",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A tool by Magic Studio that let's you express yourself by just describing what's on your mind."
+  },
+  {
+   "id": "011_KREA",
+   "name": "KREA",
+   "category": "图像生成",
+   "summary": "懂你的风格、概念和产品的 AI 视觉生成工具。",
+   "tags": [],
+   "source": "https://www.krea.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Generate high quality visuals with an AI that knows about your styles, concepts, or products."
+  },
+  {
+   "id": "012_Lensa",
+   "name": "Lensa",
+   "category": "图像生成",
+   "summary": "全能修图 App，含 Stable Diffusion 生成的头像。",
+   "tags": [],
+   "source": "https://lensa.app/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An all-in-one image editing app that includes the generation of personalized avatars using Stable Diffusion."
+  },
+  {
+   "id": "013_Leonardo AI",
+   "name": "Leonardo AI",
+   "category": "图像生成",
+   "summary": "为项目批量生成能直接用的视觉素材。",
+   "tags": [],
+   "source": "https://leonardo.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create production-quality visual assets for your projects with unprecedented quality, speed, and style."
+  },
+  {
+   "id": "014_Lexica",
+   "name": "Lexica",
+   "category": "图像生成",
+   "summary": "Stable Diffusion 作品的搜索引擎。",
+   "tags": [],
+   "source": "https://lexica.art/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Stable Diffusion search engine."
+  },
+  {
+   "id": "015_Magic Eraser",
+   "name": "Magic Eraser",
+   "category": "图像生成",
+   "summary": "几秒钟抹掉图里不想要的东西。",
+   "tags": [],
+   "source": "https://magicstudio.com/magiceraser/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Remove unwanted things from images in seconds."
+  },
+  {
+   "id": "016_Magnific",
+   "name": "Magnific",
+   "category": "图像生成",
+   "summary": "AI 设计工具集：图像生成、抠背景、创意模板。",
+   "tags": [],
+   "source": "https://www.magnific.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-powered design tools including image generation, background removal, and creative templates."
+  },
+  {
+   "id": "017_Microsoft Designer",
+   "name": "Microsoft Designer",
+   "category": "图像生成",
+   "summary": "微软的设计工具，快速出图。",
+   "tags": [],
+   "source": "https://designer.microsoft.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Stunning designs in a flash."
+  },
+  {
+   "id": "018_Napkin",
+   "name": "Napkin",
+   "category": "图像生成",
+   "summary": "把文字变成图表、流程图和信息图。",
+   "tags": [],
+   "source": "https://www.napkin.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI tool for generating diagrams, charts, and infographics from text."
+  },
+  {
+   "id": "019_Nightcafe",
+   "name": "Nightcafe",
+   "category": "图像生成",
+   "summary": "AI 艺术生成 App，提供多种生成方式。",
+   "tags": [],
+   "source": "https://creator.nightcafe.studio/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "NightCafe Creator is an AI Art Generator app with multiple methods of AI art generation."
+  },
+  {
+   "id": "020_OpenArt",
+   "name": "OpenArt",
+   "category": "图像生成",
+   "summary": "搜一千万条提示词，也能直接生成 AI 艺术图。",
+   "tags": [],
+   "source": "https://openart.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Search 10M+ of prompts, and generate AI art via Stable Diffusion, DALL·E 2."
+  },
+  {
+   "id": "021_Patience.ai",
+   "name": "Patience.ai",
+   "category": "图像生成",
+   "summary": "用 Stable Diffusion 生成图像的应用。",
+   "tags": [],
+   "source": "https://www.patience.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Patience.ai is an app for creating images with Stable Diffusion, a cutting edge AI developed by Stability.AI."
+  },
+  {
+   "id": "022_Photo AI",
+   "name": "Photo AI",
+   "category": "图像生成",
+   "summary": "生成你自己的 AI 头像。",
+   "tags": [],
+   "source": "https://photoai.com/ai-avatars",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create your own AI-generated avatars."
+  },
+  {
+   "id": "023_PhotoRoom",
+   "name": "PhotoRoom",
+   "category": "图像生成",
+   "summary": "只用手机就能做商品图和肖像图：抠背景、换背景。",
+   "tags": [],
+   "source": "https://www.photoroom.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create product and portrait pictures using only your phone. Remove background, change background and showcase products."
+  },
+  {
+   "id": "024_Playground",
+   "name": "Playground",
+   "category": "图像生成",
+   "summary": "免费的在线 AI 图像生成器，海报、社媒图、logo 都能做。",
+   "tags": [],
+   "source": "https://playground.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Playground is a free-to-use online AI image creator. Use it to create art, social media posts, presentations, posters, videos, logos and more."
+  },
+  {
+   "id": "025_PromptBase",
+   "name": "PromptBase",
+   "category": "图像生成",
+   "summary": "提示词交易市场，可以买也可以卖。",
+   "tags": [],
+   "source": "https://promptbase.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Search prompts from top prompt engineers. Sell your own prompts."
+  },
+  {
+   "id": "026_PromptHero",
+   "name": "PromptHero",
+   "category": "图像生成",
+   "summary": "搜 Stable Diffusion、Midjourney 等模型的提示词。",
+   "tags": [],
+   "source": "https://prompthero.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Search prompts for models like Stable Diffusion, ChatGPT, Midjourney, etc."
+  },
+  {
+   "id": "027_PublicPrompts",
+   "name": "PublicPrompts",
+   "category": "图像生成",
+   "summary": "免费提示词合集，主要面向 Stable Diffusion。",
+   "tags": [],
+   "source": "https://publicprompts.art/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A collection of free prompts for Stable Diffusion."
+  },
+  {
+   "id": "028_Recraft",
+   "name": "Recraft",
+   "category": "图像生成",
+   "summary": "生成和迭代原创图像、矢量图、插画、图标和 3D 图形。",
+   "tags": [],
+   "source": "https://www.recraft.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI tool that lets creators easily generate and iterate original images, vector art, illustrations, icons, and 3D graphics."
+  },
+  {
+   "id": "029_Reve Image",
+   "name": "Reve Image",
+   "category": "图像生成",
+   "summary": "从零训练的文生图模型，主打听指令、画面好看、字体准。",
+   "tags": [],
+   "source": "https://reve.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A model trained from the ground up to excel at prompt adherence, aesthetics, and typography."
+  },
+  {
+   "id": "030_RunDiffusion",
+   "name": "RunDiffusion",
+   "category": "图像生成",
+   "summary": "云端 AI 绘画工作台。",
+   "tags": [],
+   "source": "https://rundiffusion.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Cloud-based workspace for creating AI-generated art."
+  },
+  {
+   "id": "031_Scenario",
+   "name": "Scenario",
+   "category": "图像生成",
+   "summary": "生成游戏美术资产。",
+   "tags": [],
+   "source": "https://www.scenario.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-generated gaming assets."
+  },
+  {
+   "id": "032_Stable Horde",
+   "name": "Stable Horde",
+   "category": "图像生成",
+   "summary": "众包分布式集群，把大家的显卡攒起来跑 Stable Diffusion。",
+   "tags": [],
+   "source": "https://stablehorde.net/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A crowdsourced distributed cluster of Stable Diffusion workers."
+  },
+  {
+   "id": "033_即梦",
+   "name": "即梦",
+   "category": "图像生成",
+   "summary": "字节跳动的一站式 AI 创作平台，文生图、图生视频都能做。",
+   "tags": [
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "185 条评价"
+   ],
+   "source": "https://jimeng.jianying.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 185 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：图像生成、视频创作"
+  },
+  {
+   "id": "034_红墨Redink",
+   "name": "红墨Redink",
+   "category": "图像生成",
+   "summary": "一键生成小红书图文笔记。",
+   "tags": [
+    "123 条评价"
+   ],
+   "source": "https://redink.top",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 123 条，9.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：默子要早睡\n\n观猹上的分类：图像生成、效率工具"
+  },
+  {
+   "id": "035_Seede AI",
+   "name": "Seede AI",
+   "category": "图像生成",
+   "summary": "内容驱动排版的 AI 设计工具，汉字准确，图层可以编辑。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "海外",
+    "84 条评价"
+   ],
+   "source": "https://seede.ai",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 84 条，7.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：上海淅画科技有限公司\n\n观猹上的分类：图像生成、效率工具"
+  },
+  {
+   "id": "036_呜哩 AI",
+   "name": "呜哩 AI",
+   "category": "图像生成",
+   "summary": "蚂蚁集团的一站式 AIGC 创意平台，文生图、文生视频。",
+   "tags": [
+    "60 条评价"
+   ],
+   "source": "https://www.wuli.art/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 60 条，8.6 分）",
+   "date": "2026-10-02",
+   "body": "出品方：蚂蚁集团\n\n观猹上的分类：图像生成"
+  },
+  {
+   "id": "037_IP Studio",
+   "name": "IP Studio",
+   "category": "图像生成",
+   "summary": "上传一次角色形象，批量生成配图、信息图、贴纸和头像。",
+   "tags": [
+    "Web",
+    "完全免费",
+    "中国大陆",
+    "38 条评价"
+   ],
+   "source": "https://ipstudio.fun/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 38 条，7.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：EverettFish\n\n观猹上的分类：图像生成"
+  },
+  {
+   "id": "001_Affogato",
+   "name": "Affogato",
+   "category": "视频生成",
+   "summary": "生成面向 TikTok、Reels、Shorts 的 AI 产品广告视频。",
+   "tags": [],
+   "source": "https://affogato.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create AI-generated product video ads for TikTok, Reels, and Shorts."
+  },
+  {
+   "id": "002_Autodesk Flow Studio",
+   "name": "Autodesk Flow Studio",
+   "category": "视频生成",
+   "summary": "把 CG 角色做动画并合成进实拍画面的工具。",
+   "tags": [],
+   "source": "https://www.autodesk.com/products/flow-studio",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-powered tool for animating and compositing CG characters into live-action footage."
+  },
+  {
+   "id": "003_Colossyan",
+   "name": "Colossyan",
+   "category": "视频生成",
+   "summary": "面向培训场景的视频生成，用 AI 数字人做多语言教学视频。",
+   "tags": [],
+   "source": "https://www.colossyan.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Learning & Development focused video creator. Use AI avatars to create educational videos in multiple languages."
+  },
+  {
+   "id": "004_D-ID",
+   "name": "D-ID",
+   "category": "视频生成",
+   "summary": "一键生成会说话的数字人，还能跟它互动。",
+   "tags": [],
+   "source": "https://www.d-id.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create and interact with talking avatars at the touch of a button."
+  },
+  {
+   "id": "005_Fliki",
+   "name": "Fliki",
+   "category": "视频生成",
+   "summary": "几分钟把文字变成视频和配音。",
+   "tags": [],
+   "source": "https://fliki.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create text to video and text to speech content with ai powered voices in minutes."
+  },
+  {
+   "id": "006_Google Flow",
+   "name": "Google Flow",
+   "category": "视频生成",
+   "summary": "Google 的 AI 电影制作工具，底层是 Veo。",
+   "tags": [],
+   "source": "https://labs.google/fx/tools/flow",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI filmmaking tool from Google, powered by Veo."
+  },
+  {
+   "id": "007_Hailuo AI",
+   "name": "Hailuo AI",
+   "category": "视频生成",
+   "summary": "海螺 AI 的文生视频工具。",
+   "tags": [],
+   "source": "https://hailuoai.video/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-powered text-to-video generator."
+  },
+  {
+   "id": "008_HeyGen",
+   "name": "HeyGen",
+   "category": "视频生成",
+   "summary": "几分钟把脚本变成带可定制数字人的口播视频。",
+   "tags": [],
+   "source": "https://app.heygen.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Turn scripts into talking videos with customizable AI avatars in minutes."
+  },
+  {
+   "id": "009_HyperFrames",
+   "name": "HyperFrames",
+   "category": "视频生成",
+   "summary": "让 AI 智能体通过写 HTML、CSS、JavaScript 来渲染视频的框架。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://hyperframes.heygen.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A framework for AI agents to render videos by writing HTML, CSS, and JavaScript."
+  },
+  {
+   "id": "010_KLING AI",
+   "name": "KLING AI",
+   "category": "视频生成",
+   "summary": "可灵，生成图像和视频的工具集。",
+   "tags": [],
+   "source": "https://kling.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Tools for creating imaginative images and videos."
+  },
+  {
+   "id": "011_Luma Dream Machine",
+   "name": "Luma Dream Machine",
+   "category": "视频生成",
+   "summary": "从文字和图片快速生成高质量写实视频。",
+   "tags": [],
+   "source": "https://lumalabs.ai/app",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI model that makes high quality, realistic videos fast from text and images."
+  },
+  {
+   "id": "012_MaxVideoAI",
+   "name": "MaxVideoAI",
+   "category": "视频生成",
+   "summary": "同时调用多个 AI 视频模型、生成并对比的工作台。",
+   "tags": [],
+   "source": "https://maxvideoai.com/examples",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A workspace for generating and comparing videos across multiple AI video models."
+  },
+  {
+   "id": "013_Pictory",
+   "name": "Pictory",
+   "category": "视频生成",
+   "summary": "用文字创建和剪辑专业质量视频。",
+   "tags": [],
+   "source": "https://pictory.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Pictory's powerful AI enables you to create and edit professional quality videos using text."
+  },
+  {
+   "id": "014_Pika",
+   "name": "Pika",
+   "category": "视频生成",
+   "summary": "从想法到视频的创作平台。",
+   "tags": [],
+   "source": "https://pika.art/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An idea-to-video platform that brings your creativity to motion."
+  },
+  {
+   "id": "015_Runway",
+   "name": "Runway",
+   "category": "视频生成",
+   "summary": "下一代内容创作套件：AI 工具、实时协作、精细剪辑。",
+   "tags": [],
+   "source": "https://runwayml.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Magical AI tools, realtime collaboration, precision editing, and more. Your next-generation content creation suite."
+  },
+  {
+   "id": "016_Seedance 2.0",
+   "name": "Seedance 2.0",
+   "category": "视频生成",
+   "summary": "字节跳动的图生视频、文生视频模型。",
+   "tags": [],
+   "source": "https://seed.bytedance.com/en/seedance2_0",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An image-to-video and text-to-video model developed by Niobotics ByteDance."
+  },
+  {
+   "id": "017_Synthesia",
+   "name": "Synthesia",
+   "category": "视频生成",
+   "summary": "几分钟把纯文字变成视频。",
+   "tags": [],
+   "source": "https://www.synthesia.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create videos from plain text in minutes."
+  },
+  {
+   "id": "018_OiiOii",
+   "name": "OiiOii",
+   "category": "视频生成",
+   "summary": "AI 动画创作智能体，把创意做成动画片。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "海外",
+    "173 条评价"
+   ],
+   "source": "https://www.oiioii.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 173 条，8.6 分）",
+   "date": "2026-10-02",
+   "body": "出品方：天码形空\n\n观猹上的分类：图像生成、视频创作"
+  },
+  {
+   "id": "019_TapNow",
+   "name": "TapNow",
+   "category": "视频生成",
+   "summary": "面向广告、电影和创意叙事的 AI 视觉创作引擎。",
+   "tags": [
+    "74 条评价"
+   ],
+   "source": "https://www.tapnow.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 74 条，8.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Tamar AI\n\n观猹上的分类：图像生成、视频创作"
+  },
+  {
+   "id": "020_Mulan AI",
+   "name": "Mulan AI",
+   "category": "视频生成",
+   "summary": "你的 AI 制片厂。",
+   "tags": [
+    "67 条评价"
+   ],
+   "source": "https://Mulan.pro",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 67 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：旷野群星\n\n观猹上的分类：视频创作、效率工具"
+  },
+  {
+   "id": "021_Flova AI",
+   "name": "Flova AI",
+   "category": "视频生成",
+   "summary": "面向创作者的 AI 视频智能体，出成片、配音和前后一致的角色。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "海外",
+    "65 条评价"
+   ],
+   "source": "https://www.flova.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 65 条，8.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Flova\n\n观猹上的分类：视频创作"
+  },
+  {
+   "id": "022_Medeo",
+   "name": "Medeo",
+   "category": "视频生成",
+   "summary": "跟 AI 聊着天就能剪出专业视频。",
+   "tags": [
+    "48 条评价"
+   ],
+   "source": "https://www.medeo.app/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 48 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Medeo\n\n观猹上的分类：视频创作"
+  },
+  {
+   "id": "023_可灵",
+   "name": "可灵",
+   "category": "视频生成",
+   "summary": "快手的 AI 创意生产力平台，原生 4K 视频生成和图片生成。",
+   "tags": [
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "41 条评价"
+   ],
+   "source": "https://klingai.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 41 条，8.4 分）",
+   "date": "2026-10-02",
+   "body": "出品方：快手\n\n观猹上的分类：图像生成、视频创作"
+  },
+  {
+   "id": "024_RoboNeo",
+   "name": "RoboNeo",
+   "category": "视频生成",
+   "summary": "美图的 AI 创作智能体，会追热点。",
+   "tags": [
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "36 条评价"
+   ],
+   "source": "https://www.roboneo.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 36 条，8.2 分）",
+   "date": "2026-10-02",
+   "body": "出品方：美图\n\n观猹上的分类：视频创作、Agent 构建、效率工具"
+  },
+  {
+   "id": "025_灵芽社区",
+   "name": "灵芽社区",
+   "category": "视频生成",
+   "summary": "腾讯的 AI 创作者社区，发布作品、接活、上公开课。",
+   "tags": [
+    "31 条评价"
+   ],
+   "source": "https://lumio.qq.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 31 条，7.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：腾讯\n\n观猹上的分类：视频创作"
+  },
+  {
+   "id": "001_AIVA",
+   "name": "AIVA",
+   "category": "音频音乐",
+   "summary": "AI 作曲助手，250 多种风格可选。",
+   "tags": [],
+   "source": "https://www.aiva.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-based music generation assistant. Choose from 250+ styles."
+  },
+  {
+   "id": "002_AudioCraft",
+   "name": "AudioCraft",
+   "category": "音频音乐",
+   "summary": "Meta 的生成式音频代码库，含 MusicGen 做音乐、AudioGen 做音效。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://audiocraft.metademolab.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A single-stop code base for generative audio needs, by Meta. Includes MusicGen for music and AudioGen for sounds."
+  },
+  {
+   "id": "003_Bark",
+   "name": "Bark",
+   "category": "音频音乐",
+   "summary": "基于 Transformer 的文本转音频模型。",
+   "tags": [
+    "开源",
+    "3.9 万星"
+   ],
+   "source": "https://github.com/suno-ai/bark",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A transformer-based text-to-audio model."
+  },
+  {
+   "id": "004_Eleven Labs",
+   "name": "Eleven Labs",
+   "category": "音频音乐",
+   "summary": "AI 声音生成器。",
+   "tags": [],
+   "source": "https://elevenlabs.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI voice generator."
+  },
+  {
+   "id": "005_Harmonai",
+   "name": "Harmonai",
+   "category": "音频音乐",
+   "summary": "社区驱动的组织，发布开源生成式音频工具，降低音乐制作门槛。",
+   "tags": [],
+   "source": "https://www.harmonai.org/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "We are a community-driven organization releasing open-source generative audio tools to make music production more accessible and fun for everyone."
+  },
+  {
+   "id": "006_Mubert",
+   "name": "Mubert",
+   "category": "音频音乐",
+   "summary": "面向创作者、品牌和开发者的免版税音乐生态。",
+   "tags": [],
+   "source": "https://mubert.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A royalty-free music ecosystem for content creators, brands and developers."
+  },
+  {
+   "id": "007_MusicLM",
+   "name": "MusicLM",
+   "category": "音频音乐",
+   "summary": "Google Research 的模型，用文字描述生成高保真音乐。",
+   "tags": [],
+   "source": "https://google-research.github.io/seanet/musiclm/examples/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A model by Google Research for generating high-fidelity music from text descriptions."
+  },
+  {
+   "id": "008_NeMo",
+   "name": "NeMo",
+   "category": "音频音乐",
+   "summary": "NVIDIA 的开源语音 AI 框架，含语音识别和语音合成。",
+   "tags": [
+    "开源",
+    "1.9 万星"
+   ],
+   "source": "https://github.com/NVIDIA-NeMo/Speech",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source framework by NVIDIA for building speech AI systems, including automatic speech recognition and text-to-speech."
+  },
+  {
+   "id": "009_Parakeet",
+   "name": "Parakeet",
+   "category": "音频音乐",
+   "summary": "NVIDIA 的开源语音识别模型系列，含流式和多语言版本。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://huggingface.co/collections/nvidia/parakeet-asr-659711f49d1469e51546e021",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A family of open speech recognition models by NVIDIA, including streaming and multilingual variants."
+  },
+  {
+   "id": "010_Resemble AI",
+   "name": "Resemble AI",
+   "category": "音频音乐",
+   "summary": "AI 声音生成与语音克隆，用于配音。",
+   "tags": [],
+   "source": "https://www.resemble.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI voice generator and voice cloning for text to speech."
+  },
+  {
+   "id": "011_Stable Audio",
+   "name": "Stable Audio",
+   "category": "音频音乐",
+   "summary": "Stability AI 的音乐与音效生成产品。",
+   "tags": [],
+   "source": "https://stability.ai/stable-audio",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Stable Audio is Stability AI's first product for music and sound effect generation."
+  },
+  {
+   "id": "012_Suno AI",
+   "name": "Suno AI",
+   "category": "音频音乐",
+   "summary": "不需要会乐器，想一下就能做出音乐。",
+   "tags": [],
+   "source": "https://suno.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Anyone can make great music. No instrument needed, just imagination. From your mind to music."
+  },
+  {
+   "id": "013_TorToiSe",
+   "name": "TorToiSe",
+   "category": "音频音乐",
+   "summary": "多音色语音合成系统，训练时以音质为先。",
+   "tags": [
+    "开源",
+    "1.5 万星"
+   ],
+   "source": "https://github.com/neonbjb/tortoise-tts",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A multi-voice text-to-speech system trained with an emphasis on quality."
+  },
+  {
+   "id": "014_TTS WebUI",
+   "name": "TTS WebUI",
+   "category": "音频音乐",
+   "summary": "一个网页界面，跑多种语音合成、音乐生成和音频工具。",
+   "tags": [
+    "开源",
+    "3280 星"
+   ],
+   "source": "https://github.com/rsxdalv/TTS-WebUI",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Web UI for running multiple text-to-speech, music generation, and audio tools."
+  },
+  {
+   "id": "015_Udio",
+   "name": "Udio",
+   "category": "音频音乐",
+   "summary": "发现、创作并与世界分享音乐。",
+   "tags": [],
+   "source": "https://www.udio.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Discover, create, and share music with the world."
+  },
+  {
+   "id": "016_Vibe Transcribe",
+   "name": "Vibe Transcribe",
+   "category": "音频音乐",
+   "summary": "一步到位的音视频转写工具。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://thewh1teagle.github.io/vibe/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "All-in-one solution for effortless audio and video transcription."
+  },
+  {
+   "id": "017_WellSaid",
+   "name": "WellSaid",
+   "category": "音频音乐",
+   "summary": "实时把文字转成语音。",
+   "tags": [],
+   "source": "https://www.wellsaid.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Convert text to voice in real time."
+  },
+  {
+   "id": "018_Whisper",
+   "name": "Whisper",
+   "category": "音频音乐",
+   "summary": "OpenAI 的语音识别模型，靠大规模弱监督训练做到稳健。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://openai.com/index/whisper/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Robust speech recognition via large-scale weak supervision."
+  },
+  {
+   "id": "019_whisper-ctranslate2",
+   "name": "whisper-ctranslate2",
+   "category": "音频音乐",
+   "summary": "Whisper 的命令行客户端，用 CTranslate2 提速。",
+   "tags": [
+    "开源",
+    "1355 星"
+   ],
+   "source": "https://github.com/Softcatala/whisper-ctranslate2",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A Whisper CLI client compatible with the original OpenAI client, using CTranslate2 for faster inference."
+  },
+  {
+   "id": "020_whisper.cpp",
+   "name": "whisper.cpp",
+   "category": "音频音乐",
+   "summary": "OpenAI Whisper 的 C/C++ 移植版。",
+   "tags": [
+    "开源",
+    "5.4 万星"
+   ],
+   "source": "https://github.com/ggml-org/whisper.cpp",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Port of OpenAI's Whisper model in C/C++."
+  },
+  {
+   "id": "021_Wispr Flow",
+   "name": "Wispr Flow",
+   "category": "音频音乐",
+   "summary": "在电脑上任何应用里都能语音口述，让写字变快。",
+   "tags": [],
+   "source": "https://wisprflow.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Flow makes writing quick with seamless voice dictation for any application on your computer."
+  },
+  {
+   "id": "022_闪电说",
+   "name": "闪电说",
+   "category": "音频音乐",
+   "summary": "AI 语音输入法，说话比打字快，不知道怎么回时还能帮你组织措辞。",
+   "tags": [
+    "桌面端",
+    "完全免费",
+    "中国大陆",
+    "99 条评价"
+   ],
+   "source": "https://shandianshuo.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 99 条，8.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：探未\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "023_Typeless",
+   "name": "Typeless",
+   "category": "音频音乐",
+   "summary": "语音听写工具，随口说出来的话会自动整理成通顺的邮件和文档。",
+   "tags": [
+    "88 条评价"
+   ],
+   "source": "https://www.typeless.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 88 条，9.4 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Typeless\n\n观猹上的分类：音频处理"
+  },
+  {
+   "id": "024_豆包输入法",
+   "name": "豆包输入法",
+   "category": "音频音乐",
+   "summary": "豆包同款语音识别能力，越用越准的中文输入法。",
+   "tags": [
+    "46 条评价"
+   ],
+   "source": "https://shurufa.doubao.com/pc",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 46 条，8.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "025_Tunee",
+   "name": "Tunee",
+   "category": "音频音乐",
+   "summary": "跟 AI 聊着天做歌，还能做 MV。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "海外",
+    "33 条评价"
+   ],
+   "source": "https://www.tunee.ai",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 33 条，8.0 分）",
+   "date": "2026-10-02",
+   "body": "出品方：趣丸科技\n\n观猹上的分类：音频处理"
+  },
+  {
+   "id": "026_谱乐 AI",
+   "name": "谱乐 AI",
+   "category": "音频音乐",
+   "summary": "一站式 AI 音乐平台：生成、混音、母带、人声克隆，还能全球发行。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "30 条评价"
+   ],
+   "source": "https://www.yourmusic.fun/?utm_source=watcha",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 30 条，7.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：谱乐 AI\n\n观猹上的分类：音频处理、效率工具"
+  },
+  {
+   "id": "001_AI Poem Generator",
+   "name": "AI Poem Generator",
+   "category": "写作办公",
+   "summary": "给个题目，就写一首押韵的诗。",
+   "tags": [],
+   "source": "https://www.aipoemgenerator.org",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI Poem Generator writes a beautiful rhyming poem for you on any subject, given a text prompt."
+  },
+  {
+   "id": "002_AI Prompt Genius",
+   "name": "AI Prompt Genius",
+   "category": "写作办公",
+   "summary": "发现、分享、导入和使用 ChatGPT 提示词，聊天记录只存在本地。",
+   "tags": [],
+   "source": "https://chromewebstore.google.com/detail/ai-prompt-genius/jjdnakkfjnnbbckhifcfchagnpofjffo",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Discover, share, import, and use the best prompts for ChatGPT & save your chat history locally."
+  },
+  {
+   "id": "003_Anyword",
+   "name": "Anyword",
+   "category": "写作办公",
+   "summary": "AI 文案助手，帮你写出有效的推广文案。",
+   "tags": [],
+   "source": "https://anyword.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Anyword's AI writing assistant generates effective copy for anyone."
+  },
+  {
+   "id": "004_ChatGPT for Sheets, Docs, Slides, Forms",
+   "name": "ChatGPT for Sheets, Docs, Slides, Forms",
+   "category": "写作办公",
+   "summary": "把 ChatGPT 接进 Google 表格、文档、幻灯片和表单。",
+   "tags": [],
+   "source": "https://workspace.google.com/marketplace/app/gpt_for_sheets_docs_forms_slides/466607203252",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "ChatGPT extension for Google Sheets, Google Docs, Google Slides, Google Forms."
+  },
+  {
+   "id": "005_ChatPDF",
+   "name": "ChatPDF",
+   "category": "写作办公",
+   "summary": "跟任何 PDF 对话。",
+   "tags": [],
+   "source": "https://www.chatpdf.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Chat with any PDF."
+  },
+  {
+   "id": "006_ChatSonic",
+   "name": "ChatSonic",
+   "category": "写作办公",
+   "summary": "能写文字也能画图的 AI 助手。",
+   "tags": [],
+   "source": "https://writesonic.com/chat",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-powered assistant that enables text and image creation."
+  },
+  {
+   "id": "007_Cogram",
+   "name": "Cogram",
+   "category": "写作办公",
+   "summary": "在线上会议里自动记笔记，并挑出待办事项。",
+   "tags": [],
+   "source": "https://www.cogram.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Cogram takes automatic notes in virtual meetings and identifies action items."
+  },
+  {
+   "id": "008_Compose AI",
+   "name": "Compose AI",
+   "category": "写作办公",
+   "summary": "免费的 Chrome 插件，用 AI 自动补全帮你省下四成写作时间。",
+   "tags": [],
+   "source": "https://www.compose.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Compose AI is a free Chrome extension that cuts your writing time by 40% with AI-powered autocompletion."
+  },
+  {
+   "id": "009_copy.ai",
+   "name": "copy.ai",
+   "category": "写作办公",
+   "summary": "用 AI 写营销文案和内容。",
+   "tags": [],
+   "source": "https://www.copy.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Write better marketing copy and content with AI."
+  },
+  {
+   "id": "010_Copysmith",
+   "name": "Copysmith",
+   "category": "写作办公",
+   "summary": "面向企业和电商的 AI 内容创作方案。",
+   "tags": [],
+   "source": "https://copysmith.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI content creation solution for Enterprise & eCommerce."
+  },
+  {
+   "id": "011_editGPT",
+   "name": "editGPT",
+   "category": "写作办公",
+   "summary": "在 ChatGPT 里校对、修改并追踪内容改动。",
+   "tags": [],
+   "source": "https://www.editgpt.app/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Easily proofread, edit, and track changes to your content in chatGPT."
+  },
+  {
+   "id": "012_EmailTriager",
+   "name": "EmailTriager",
+   "category": "写作办公",
+   "summary": "在后台自动起草邮件回复。",
+   "tags": [],
+   "source": "https://www.emailtriager.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Use AI to automatically draft email replies in the background."
+  },
+  {
+   "id": "013_Fireflies.ai",
+   "name": "Fireflies.ai",
+   "category": "写作办公",
+   "summary": "转写、总结、搜索和分析团队的各类对话。",
+   "tags": [],
+   "source": "https://fireflies.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Transcribe, summarize, search, and analyze all your team conversations."
+  },
+  {
+   "id": "014_Forefront",
+   "name": "Forefront",
+   "category": "写作办公",
+   "summary": "另一个 ChatGPT 客户端，体验更好。",
+   "tags": [],
+   "source": "https://www.forefront.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A Better ChatGPT Experience."
+  },
+  {
+   "id": "015_GPT for Gmail",
+   "name": "GPT for Gmail",
+   "category": "写作办公",
+   "summary": "Gmail 的 AI 邮件助手。",
+   "tags": [],
+   "source": "https://workspace.google.com/marketplace/app/gpt_for_gmail_ai_email_assistant_gemini/899305976589",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI email assistant for Gmail."
+  },
+  {
+   "id": "016_GPT for Sheets and Docs",
+   "name": "GPT for Sheets and Docs",
+   "category": "写作办公",
+   "summary": "把 ChatGPT 接进 Google 表格和文档。",
+   "tags": [],
+   "source": "https://workspace.google.com/marketplace/app/gpt_for_sheets_and_docs/677318054654",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "ChatGPT extension for Google Sheets and Google Docs."
+  },
+  {
+   "id": "017_Humanize-Text",
+   "name": "Humanize-Text",
+   "category": "写作办公",
+   "summary": "把 AI 写的文字改得更像人写的，支持多语言。",
+   "tags": [
+    "开源",
+    "3187 星"
+   ],
+   "source": "https://github.com/lynote-ai/humanize-text",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI text humanizer with a multilingual rewriting pipeline and step-by-step examples."
+  },
+  {
+   "id": "018_HyperWrite",
+   "name": "HyperWrite",
+   "category": "写作办公",
+   "summary": "从想法到终稿，帮你更快写完。",
+   "tags": [],
+   "source": "https://hyperwriteai.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "HyperWrite helps you write with confidence and get your work done faster from idea to final draft."
+  },
+  {
+   "id": "019_Hypotenuse AI",
+   "name": "Hypotenuse AI",
+   "category": "写作办公",
+   "summary": "几个关键词就能生成文章、商品描述和社媒文案。",
+   "tags": [],
+   "source": "https://www.hypotenuse.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Turn a few keywords into original, insightful articles, product descriptions and social media copy."
+  },
+  {
+   "id": "020_Jasper",
+   "name": "Jasper",
+   "category": "写作办公",
+   "summary": "用 AI 更快地产出内容。",
+   "tags": [],
+   "source": "https://www.jasper.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Create content faster with artificial intelligence."
+  },
+  {
+   "id": "021_Jenni",
+   "name": "Jenni",
+   "category": "写作办公",
+   "summary": "写作助手，省下构思和写作的时间。",
+   "tags": [],
+   "source": "https://jenni.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Jenni is the ultimate writing assistant that saves you hours of ideation and writing time."
+  },
+  {
+   "id": "022_Jetwriter",
+   "name": "Jetwriter",
+   "category": "写作办公",
+   "summary": "Chrome、桌面和手机端都能用的 AI 写作助手。",
+   "tags": [],
+   "source": "https://jetwriter.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI writing assistant for Chrome, desktop, and mobile."
+  },
+  {
+   "id": "023_Lavender",
+   "name": "Lavender",
+   "category": "写作办公",
+   "summary": "邮件助手，帮你在更短时间里收到更多回复。",
+   "tags": [],
+   "source": "https://www.lavender.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Lavender email assistant helps you get more replies in less time."
+  },
+  {
+   "id": "024_Lex",
+   "name": "Lex",
+   "category": "写作办公",
+   "summary": "内置 AI 的文字处理器，写得更快。",
+   "tags": [],
+   "source": "https://lex.page/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A word processor with artificial intelligence baked in, so you can write faster."
+  },
+  {
+   "id": "025_Limitless",
+   "name": "Limitless",
+   "category": "写作办公",
+   "summary": "记录对话和会议、生成摘要、跨应用搜索过往交互的 AI 记忆助手。",
+   "tags": [],
+   "source": "https://www.limitless.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI memory assistant for recording conversations and meetings, generating summaries, and searching past interactions across apps and an optional wearable."
+  },
+  {
+   "id": "026_Loopin AI",
+   "name": "Loopin AI",
+   "category": "写作办公",
+   "summary": "会议协作工作台：录制、转写、总结，并把笔记自动排到日历上。",
+   "tags": [],
+   "source": "https://www.loopinhq.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Loopin is a collaborative meeting workspace that not only enables you to record, transcribe & summaries meetings using AI, but also enables you to auto-organise meeting notes on top of your calendar."
+  },
+  {
+   "id": "027_Mem",
+   "name": "Mem",
+   "category": "写作办公",
+   "summary": "个性化的 AI 工作空间，激发创意、自动处理琐事、自动整理。",
+   "tags": [],
+   "source": "https://mem.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Mem is the world's first AI-powered workspace that's personalized to you. Amplify your creativity, automate the mundane, and stay organized automatically."
+  },
+  {
+   "id": "028_Merlin",
+   "name": "Merlin",
+   "category": "写作办公",
+   "summary": "在所有网站上都用得上的 ChatGPT 扩展。",
+   "tags": [],
+   "source": "https://www.getmerlin.in/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "ChatGPT Plus extension on all websites."
+  },
+  {
+   "id": "029_Moonbeam",
+   "name": "Moonbeam",
+   "category": "写作办公",
+   "summary": "用零头的时间写出更好的博客。",
+   "tags": [],
+   "source": "https://www.gomoonbeam.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Better blogs in a fraction of the time."
+  },
+  {
+   "id": "030_Nekton AI",
+   "name": "Nekton AI",
+   "category": "写作办公",
+   "summary": "用大白话一步步描述流程，就能把工作流自动化。",
+   "tags": [],
+   "source": "https://nekton.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Automate your workflows with AI. Describe your workflows step by step in plain language."
+  },
+  {
+   "id": "031_Notion AI",
+   "name": "Notion AI",
+   "category": "写作办公",
+   "summary": "写更好、更省事的笔记和文档。",
+   "tags": [],
+   "source": "https://www.notion.so/product/ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Write better, more efficient notes and docs."
+  },
+  {
+   "id": "032_Open Notebook",
+   "name": "Open Notebook",
+   "category": "写作办公",
+   "summary": "NotebookLM 的开源实现，更灵活、功能更多。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://www.open-notebook.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open source implementation of NotebookLM with more flexibility and features."
+  },
+  {
+   "id": "033_Otter.ai",
+   "name": "Otter.ai",
+   "category": "写作办公",
+   "summary": "会议助手，录音、记笔记、自动抓取幻灯片并生成摘要。",
+   "tags": [],
+   "source": "https://otter.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A meeting assistant that records audio, writes notes, automatically captures slides, and generates summaries."
+  },
+  {
+   "id": "034_Postwise",
+   "name": "Postwise",
+   "category": "写作办公",
+   "summary": "用 AI 写推文、定时发帖、涨粉。",
+   "tags": [],
+   "source": "https://postwise.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Write tweets, schedule posts and grow your following using AI."
+  },
+  {
+   "id": "035_QuillBot",
+   "name": "QuillBot",
+   "category": "写作办公",
+   "summary": "AI 改写润色工具。",
+   "tags": [],
+   "source": "https://quillbot.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-powered paraphrasing tool."
+  },
+  {
+   "id": "036_Read AI",
+   "name": "Read AI",
+   "category": "写作办公",
+   "summary": "会议、邮件、消息的 AI 副驾，提供摘要、内容发现和建议。",
+   "tags": [],
+   "source": "https://www.read.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI copilot for wherever you work, making your meetings, emails, and messages more productive with summaries, content discovery, and recommendations."
+  },
+  {
+   "id": "037_Rytr",
+   "name": "Rytr",
+   "category": "写作办公",
+   "summary": "AI 写作助手，帮你产出高质量内容。",
+   "tags": [],
+   "source": "https://rytr.me/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Rytr is an AI writing assistant that helps you create high-quality content."
+  },
+  {
+   "id": "038_Screenpipe",
+   "name": "Screenpipe",
+   "category": "写作办公",
+   "summary": "开源工具，录制屏幕和声音，用 AI 搜索和自动化，支持本地模型。",
+   "tags": [
+    "开源",
+    "2.2 万星"
+   ],
+   "source": "https://github.com/screenpipe/screenpipe",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source tool for recording screen and audio activity with AI-powered search, automations, and support for local LLMs."
+  },
+  {
+   "id": "039_ShareGPT",
+   "name": "ShareGPT",
+   "category": "写作办公",
+   "summary": "分享你的 ChatGPT 对话，也能看别人分享的。",
+   "tags": [],
+   "source": "https://sharegpt.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Share your ChatGPT conversations and explore conversations shared by others."
+  },
+  {
+   "id": "040_Sybill",
+   "name": "Sybill",
+   "category": "写作办公",
+   "summary": "生成销售通话摘要，含下一步、痛点和关注点，结合了转写和情绪分析。",
+   "tags": [],
+   "source": "https://www.sybill.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Sybill generates summaries of sales calls, including next steps, pain points and areas of interest, by combining transcript and emotion-based insights."
+  },
+  {
+   "id": "041_Taskade",
+   "name": "Taskade",
+   "category": "写作办公",
+   "summary": "用 AI 列任务、记笔记、生成结构化清单和思维导图。",
+   "tags": [],
+   "source": "https://www.taskade.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Outline tasks, notes, generated structured lists and mind maps with Taskade AI."
+  },
+  {
+   "id": "042_WebChatGPT",
+   "name": "WebChatGPT",
+   "category": "写作办公",
+   "summary": "给 ChatGPT 的提问配上网页搜索结果。",
+   "tags": [],
+   "source": "https://chromewebstore.google.com/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Augment your ChatGPT prompts with relevant results from the web."
+  },
+  {
+   "id": "043_Whimsical AI",
+   "name": "Whimsical AI",
+   "category": "写作办公",
+   "summary": "用 GPT 做思维导图、流程图，快速理清想法和流程。",
+   "tags": [],
+   "source": "https://whimsical.com/ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "GPT-powered mind mapping, flowcharts, and visual tools for rapid idea development and process organization."
+  },
+  {
+   "id": "044_wordtune",
+   "name": "wordtune",
+   "category": "写作办公",
+   "summary": "个人写作助手。",
+   "tags": [],
+   "source": "https://www.wordtune.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Personal writing assistant."
+  },
+  {
+   "id": "045_YouTube Summary with ChatGPT",
+   "name": "YouTube Summary with ChatGPT",
+   "category": "写作办公",
+   "summary": "用 ChatGPT 总结 YouTube 视频。",
+   "tags": [],
+   "source": "https://chromewebstore.google.com/detail/youtube-summary-with-chat/nmmicjeknamkfloonkhhcjmomieiodli",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Use ChatGPT to summarize YouTube videos."
+  },
+  {
+   "id": "046_麦当秀",
+   "name": "麦当秀",
+   "category": "写作办公",
+   "summary": "输入标题，一分钟生成排版好的 PPT。",
+   "tags": [
+    "小程序",
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "195 条评价"
+   ],
+   "source": "https://www.mindshow.vip/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 195 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：爱客易\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "047_扣子空间 - PPT 专项",
+   "name": "扣子空间 - PPT 专项",
+   "category": "写作办公",
+   "summary": "字节跳动的 AI 办公助手，这一个空间专攻 PPT 生成。",
+   "tags": [
+    "Web",
+    "移动端",
+    "完全免费",
+    "中国大陆",
+    "173 条评价"
+   ],
+   "source": "https://space.coze.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 173 条，7.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：通用助手、效率工具"
+  },
+  {
+   "id": "048_Pi 智能演示文档",
+   "name": "Pi 智能演示文档",
+   "category": "写作办公",
+   "summary": "一站式 AI 内容创作平台，主打智能生成专业 PPT。",
+   "tags": [
+    "小程序",
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "163 条评价"
+   ],
+   "source": "https://pi.deepvinci.tech/login?share_token=Q4GBAT2GCBDIA",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 163 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：醒智科技\n\n观猹上的分类：智能搜索、知识管理、效率工具"
+  },
+  {
+   "id": "049_天工 Skywork - PPT 专项",
+   "name": "天工 Skywork - PPT 专项",
+   "category": "写作办公",
+   "summary": "昆仑万维的 AI 办公智能体，这个入口专攻 PPT 生成。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "145 条评价"
+   ],
+   "source": "https://skywork.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 145 条，7.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：昆仑万维\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "050_ima.copilot",
+   "name": "ima.copilot",
+   "category": "写作办公",
+   "summary": "腾讯的知识库 AI 工作台，边搜边读边写，还能生成报告、PPT 和播客。",
+   "tags": [
+    "小程序",
+    "Web",
+    "移动端",
+    "桌面端",
+    "完全免费",
+    "中国大陆",
+    "89 条评价"
+   ],
+   "source": "https://ima.qq.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 89 条，8.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：腾讯\n\n观猹上的分类：知识管理、效率工具"
+  },
+  {
+   "id": "051_DeskClaw",
+   "name": "DeskClaw",
+   "category": "写作办公",
+   "summary": "面向电商的桌面 AI 工作台：选品调研、竞品监测、商品图和营销视频、Listing 文案。",
+   "tags": [
+    "82 条评价"
+   ],
+   "source": "https://deskclaw.ai",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 82 条，7.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：NoDesk AI\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "052_Get 笔记",
+   "name": "Get 笔记",
+   "category": "写作办公",
+   "summary": "AI 笔记工具，智能记录和整理，让知识流动起来。",
+   "tags": [
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "55 条评价"
+   ],
+   "source": "https://www.biji.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 55 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：思维造物\n\n观猹上的分类：知识管理"
+  },
+  {
+   "id": "053_ChatExcel",
+   "name": "ChatExcel",
+   "category": "写作办公",
+   "summary": "用聊天的方式处理 Excel 和数据分析。",
+   "tags": [
+    "Web",
+    "移动端",
+    "桌面端",
+    "免费增值",
+    "中国大陆",
+    "54 条评价"
+   ],
+   "source": "https://chatexcel.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 54 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：元空智能\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "054_办公小浣熊",
+   "name": "办公小浣熊",
+   "category": "写作办公",
+   "summary": "商汤的办公 AI 助手，研发、数据分析、任务规划、应用开发都由 AI 驱动。",
+   "tags": [
+    "33 条评价"
+   ],
+   "source": "https://office.xiaohuanxiong.com/home",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 33 条，7.6 分）",
+   "date": "2026-10-02",
+   "body": "出品方：商汤科技\n\n观猹上的分类：通用助手"
+  },
+  {
+   "id": "055_NewMax AI",
+   "name": "NewMax AI",
+   "category": "写作办公",
+   "summary": "桌面 AI 工作台，读你的文件、调用你的工具、编排你的工作流。",
+   "tags": [
+    "33 条评价"
+   ],
+   "source": "https://newmax.cc/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 33 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：NewMax\n\n观猹上的分类：通用助手、写作辅助、效率工具"
+  },
+  {
+   "id": "056_闪念贝壳",
+   "name": "闪念贝壳",
+   "category": "写作办公",
+   "summary": "语音笔记应用，随口说出灵感，它帮你捕捉并推进。",
+   "tags": [
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "30 条评价"
+   ],
+   "source": "https://ideashell.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 30 条，7.0 分）",
+   "date": "2026-10-02",
+   "body": "出品方：圆红点\n\n观猹上的分类：知识管理"
+  },
+  {
+   "id": "057_Gamma",
+   "name": "Gamma",
+   "category": "写作办公",
+   "summary": "做演示文稿和网页，不用管排版设计。",
+   "tags": [
+    "164 条评价",
+    "Web",
+    "免费增值",
+    "海外"
+   ],
+   "source": "https://gamma.app/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 164 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "Create beautiful presentations and webpages with none of the formatting and design work.\n\n出品方：Gamma\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "001_agenta",
+   "name": "agenta",
+   "category": "编程开发",
+   "summary": "开源的一站式 LLMOps 平台，做提示词工程、评测和部署。",
+   "tags": [
+    "开源",
+    "4803 星"
+   ],
+   "source": "https://github.com/agenta-ai/agenta",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source end-to-end LLMOps platform for prompt engineering, evaluation, and deployment."
+  },
+  {
+   "id": "002_Agentset",
+   "name": "Agentset",
+   "category": "编程开发",
+   "summary": "开源平台，用来构建和评测 RAG 与智能体应用。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://agentset.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source platform for building and evaluating RAG and agentic applications."
+  },
+  {
+   "id": "003_AI2sql",
+   "name": "AI2sql",
+   "category": "编程开发",
+   "summary": "不会 SQL 也能写出高效、不出错的查询。",
+   "tags": [],
+   "source": "https://www.ai2sql.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "With AI2sql, engineers and non-engineers can easily write efficient, error-free SQL queries without knowing SQL."
+  },
+  {
+   "id": "004_aider",
+   "name": "aider",
+   "category": "编程开发",
+   "summary": "终端里的 AI 结对编程，支持多家模型。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://aider.chat/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI pair programming in your terminal, supporting multiple LLM providers."
+  },
+  {
+   "id": "005_Amazon Q",
+   "name": "Amazon Q",
+   "category": "编程开发",
+   "summary": "AWS 的生成式 AI 助手，答题、写代码、自动化任务。",
+   "tags": [],
+   "source": "https://aws.amazon.com/q/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "The AWS generative AI–powered assistant that helps answer questions, write code, and automate tasks."
+  },
+  {
+   "id": "006_Bifrost",
+   "name": "Bifrost",
+   "category": "编程开发",
+   "summary": "开源的 LLM 网关，支持 1000 多个模型的路由、负载均衡、护栏和可观测性。",
+   "tags": [
+    "开源",
+    "8517 星"
+   ],
+   "source": "https://github.com/maximhq/bifrost",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source LLM gateway with routing, load balancing, guardrails, and observability for 1000+ models."
+  },
+  {
+   "id": "007_bitnet.cpp",
+   "name": "bitnet.cpp",
+   "category": "编程开发",
+   "summary": "微软官方的 1-bit 大模型推理框架。",
+   "tags": [
+    "开源",
+    "4.0 万星"
+   ],
+   "source": "https://github.com/microsoft/BitNet",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Official inference framework for 1-bit LLMs, by Microsoft."
+  },
+  {
+   "id": "008_Cleanlab",
+   "name": "Cleanlab",
+   "category": "编程开发",
+   "summary": "检测和给大模型幻觉打分的 API。",
+   "tags": [],
+   "source": "https://cleanlab.ai/tlm/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An API for detecting and scoring hallucinations in LLM outputs."
+  },
+  {
+   "id": "009_Cohere",
+   "name": "Cohere",
+   "category": "编程开发",
+   "summary": "提供大语言模型和 NLP 工具的服务。",
+   "tags": [],
+   "source": "https://cohere.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Cohere provides access to advanced Large Language Models and NLP tools."
+  },
+  {
+   "id": "010_Continue",
+   "name": "Continue",
+   "category": "编程开发",
+   "summary": "开源 AI 编程助手，在 IDE 里接入任意模型和上下文。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://www.continue.dev/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source AI code assistant. Connect any model and any context to create custom autocomplete and chat experiences inside the IDE."
+  },
+  {
+   "id": "011_DataLine",
+   "name": "DataLine",
+   "category": "编程开发",
+   "summary": "AI 驱动的数据分析和可视化工具。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://dataline.app",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-driven data analysis and visualization tool."
+  },
+  {
+   "id": "012_fal",
+   "name": "fal",
+   "category": "编程开发",
+   "summary": "调用和部署图像、视频、音频、3D 生成模型的开发者平台。",
+   "tags": [],
+   "source": "https://fal.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A developer platform for accessing and deploying image, video, audio, and 3D generation models."
+  },
+  {
+   "id": "013_Ghostwriter",
+   "name": "Ghostwriter",
+   "category": "编程开发",
+   "summary": "Replit 的 AI 结对编程工具。",
+   "tags": [],
+   "source": "https://blog.replit.com/ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-powered pair programmer by replit."
+  },
+  {
+   "id": "014_GitHub Copilot",
+   "name": "GitHub Copilot",
+   "category": "编程开发",
+   "summary": "在编辑器里实时补全代码和整个函数。",
+   "tags": [],
+   "source": "https://github.com/features/copilot",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor."
+  },
+  {
+   "id": "015_GitHub Models",
+   "name": "GitHub Models",
+   "category": "编程开发",
+   "summary": "在 GitHub 上找模型、做实验，用来开发生成式 AI 应用。",
+   "tags": [],
+   "source": "https://github.com/marketplace?type=models",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Find and experiment with AI models to develop a generative AI application."
+  },
+  {
+   "id": "016_Gitingest",
+   "name": "Gitingest",
+   "category": "编程开发",
+   "summary": "把任意 Git 仓库变成一个纯文本摘要，方便喂给大模型。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://gitingest.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Turn any Git repository into a simple text digest of its codebase so it can be fed into any LLM."
+  },
+  {
+   "id": "017_Google AI Studio",
+   "name": "Google AI Studio",
+   "category": "编程开发",
+   "summary": "网页工具，用 Gemini 和实验模型做原型。",
+   "tags": [],
+   "source": "https://aistudio.google.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A web-based tool to prototype with Gemini and experimental models."
+  },
+  {
+   "id": "018_GPT-Code UI",
+   "name": "GPT-Code UI",
+   "category": "编程开发",
+   "summary": "OpenAI 代码解释器的开源实现。",
+   "tags": [
+    "开源",
+    "3535 星"
+   ],
+   "source": "https://github.com/ricklamers/gpt-code-ui",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open source implementation of OpenAI's ChatGPT Code interpreter."
+  },
+  {
+   "id": "019_gpt4all",
+   "name": "gpt4all",
+   "category": "编程开发",
+   "summary": "用干净助手数据训练出来的聊天机器人，含代码、故事和对话。",
+   "tags": [
+    "开源",
+    "7.7 万星"
+   ],
+   "source": "https://github.com/nomic-ai/gpt4all",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A chatbot trained on a massive collection of clean assistant data including code, stories and dialogue."
+  },
+  {
+   "id": "020_Groq",
+   "name": "Groq",
+   "category": "编程开发",
+   "summary": "跑开源大模型的云端推理 API，用自研 LPU 硬件加速。",
+   "tags": [],
+   "source": "https://groq.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A cloud inference API for running open-source LLMs, powered by custom LPU hardware."
+  },
+  {
+   "id": "021_Harbor",
+   "name": "Harbor",
+   "category": "编程开发",
+   "summary": "容器化工具箱，一条命令跑起本地大模型后端、界面和配套服务。",
+   "tags": [
+    "开源",
+    "3237 星"
+   ],
+   "source": "https://github.com/av/harbor",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A containerized toolkit for running local LLM backends, UIs, and supporting services with one command."
+  },
+  {
+   "id": "022_Haystack",
+   "name": "Haystack",
+   "category": "编程开发",
+   "summary": "用语言模型搭 NLP 应用（智能体、语义搜索、问答等）的框架。",
+   "tags": [],
+   "source": "https://haystack.deepset.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A framework for building NLP applications (e.g. agents, semantic search, question-answering) with language models."
+  },
+  {
+   "id": "023_Helicone AI",
+   "name": "Helicone AI",
+   "category": "编程开发",
+   "summary": "开源的 LLM 可观测平台，做日志、监控和调试。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://helicone.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source LLM observability platform for logging, monitoring, and debugging AI applications."
+  },
+  {
+   "id": "024_Jan",
+   "name": "Jan",
+   "category": "编程开发",
+   "summary": "在自己电脑上离线跑大模型，也能连远程 API。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://jan.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Run LLMs like Mistral or Llama2 locally and offline on your computer, or connect to remote AI APIs."
+  },
+  {
+   "id": "025_Jupyter AI",
+   "name": "Jupyter AI",
+   "category": "编程开发",
+   "summary": "Jupyter 里的开源 AI 助手，支持 100 多个模型，含本地模型。",
+   "tags": [
+    "开源",
+    "4412 星"
+   ],
+   "source": "https://github.com/jupyterlab/jupyter-ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source, configurable AI assistant in Jupyter Notebook and JupyterLab that supports 100+ LLMs, including locally-hosted models from Ollama and GPT4All."
+  },
+  {
+   "id": "026_Kilo",
+   "name": "Kilo",
+   "category": "编程开发",
+   "summary": "面向 VS Code、JetBrains 和命令行的开源 AI 编程助手。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://kilo.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source AI coding assistant for VS Code, JetBrains, and the CLI."
+  },
+  {
+   "id": "027_LangChain",
+   "name": "LangChain",
+   "category": "编程开发",
+   "summary": "开发语言模型应用的框架。",
+   "tags": [],
+   "source": "https://langchain.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A framework for developing applications powered by language models."
+  },
+  {
+   "id": "028_Langfuse",
+   "name": "Langfuse",
+   "category": "编程开发",
+   "summary": "开源的 LLM 工程平台：链路追踪、评测、提示词管理和指标。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://langfuse.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source LLM engineering platform for tracing, evaluation, prompt management, and metrics."
+  },
+  {
+   "id": "029_llama.cpp",
+   "name": "llama.cpp",
+   "category": "编程开发",
+   "summary": "用纯 C/C++ 跑 LLaMA 等模型的推理实现。",
+   "tags": [
+    "开源",
+    "13.0 万星"
+   ],
+   "source": "https://github.com/ggml-org/llama.cpp",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Inference of Meta's LLaMA model (and others) in pure C/C++."
+  },
+  {
+   "id": "030_LlamaIndex",
+   "name": "LlamaIndex",
+   "category": "编程开发",
+   "summary": "在外部数据上搭大模型应用的数据框架。",
+   "tags": [],
+   "source": "https://www.llamaindex.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A data framework for building LLM applications over external data."
+  },
+  {
+   "id": "031_LLM",
+   "name": "LLM",
+   "category": "编程开发",
+   "summary": "与远程和本地大模型交互的命令行工具和 Python 库。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://llm.datasette.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A CLI utility and Python library for interacting with Large Language Models, remote and local."
+  },
+  {
+   "id": "032_LLM App",
+   "name": "LLM App",
+   "category": "编程开发",
+   "summary": "开源 Python 库，用来搭实时的 LLM 数据管道。",
+   "tags": [
+    "开源",
+    "5.9 万星"
+   ],
+   "source": "https://github.com/pathwaycom/llm-app",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source Python library to build real-time LLM-enabled data pipeline."
+  },
+  {
+   "id": "033_LM Studio",
+   "name": "LM Studio",
+   "category": "编程开发",
+   "summary": "在电脑上下载并运行本地大模型。",
+   "tags": [],
+   "source": "https://lmstudio.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Download and run local LLMs on your computer."
+  },
+  {
+   "id": "034_LMQL",
+   "name": "LMQL",
+   "category": "编程开发",
+   "summary": "面向大模型的查询语言。",
+   "tags": [],
+   "source": "https://lmql.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "LMQL is a query language for large language models."
+  },
+  {
+   "id": "035_Lovable",
+   "name": "Lovable",
+   "category": "编程开发",
+   "summary": "对话式全栈应用生成，把想法变成可部署的代码。",
+   "tags": [],
+   "source": "https://lovable.dev",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Conversational full-stack app generation, turning ideas into deployable code."
+  },
+  {
+   "id": "036_Ludwig",
+   "name": "Ludwig",
+   "category": "编程开发",
+   "summary": "低代码框架，用来构建大模型等自定义 AI 模型。",
+   "tags": [
+    "开源",
+    "1.2 万星"
+   ],
+   "source": "https://github.com/ludwig-ai/ludwig",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A low-code framework for building custom AI models like LLMs and other deep neural networks."
+  },
+  {
+   "id": "037_Manifest",
+   "name": "Manifest",
+   "category": "编程开发",
+   "summary": "开源 LLM 路由器，把请求发给性价比最高的模型，带用量限制和模型评测。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://manifest.build",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source LLM router that routes agent requests to the most cost-effective model, with usage limits and model benchmarking."
+  },
+  {
+   "id": "038_Mintlify",
+   "name": "Mintlify",
+   "category": "编程开发",
+   "summary": "AI 文档写作工具。",
+   "tags": [],
+   "source": "https://mintlify.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI powered documentation writer."
+  },
+  {
+   "id": "039_MLflow",
+   "name": "MLflow",
+   "category": "编程开发",
+   "summary": "开源平台：跟踪实验、评测模型和提示词、部署模型、LLM 可观测。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://mlflow.org/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source platform for tracking ML experiments, evaluating models and prompts, deploying models, and adding LLM observability."
+  },
+  {
+   "id": "040_Model Context Protocol",
+   "name": "Model Context Protocol",
+   "category": "编程开发",
+   "summary": "把 AI 模型连到外部工具和数据源的开源标准。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://modelcontextprotocol.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open standard for connecting AI models to external tools and data sources. MCP Registry."
+  },
+  {
+   "id": "041_Msty",
+   "name": "Msty",
+   "category": "编程开发",
+   "summary": "本地和在线大模型的简洁客户端。",
+   "tags": [],
+   "source": "https://msty.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A straightforward and powerful interface for local and online AI models."
+  },
+  {
+   "id": "042_off-grid-mobile",
+   "name": "off-grid-mobile",
+   "category": "编程开发",
+   "summary": "React Native 应用，在手机上离线跑大模型、视觉模型和 Stable Diffusion。",
+   "tags": [
+    "开源",
+    "3196 星"
+   ],
+   "source": "https://github.com/alichherawalla/off-grid-mobile-ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "React Native app for running LLMs, vision models, and Stable Diffusion on-device on iOS and Android without internet access."
+  },
+  {
+   "id": "043_Ollama",
+   "name": "Ollama",
+   "category": "编程开发",
+   "summary": "在本地把大模型跑起来。",
+   "tags": [
+    "开源",
+    "18.2 万星"
+   ],
+   "source": "https://github.com/ollama/ollama",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Get up and running with large language models locally."
+  },
+  {
+   "id": "044_Open Interpreter",
+   "name": "Open Interpreter",
+   "category": "编程开发",
+   "summary": "在你终端里本地运行的代码解释器。",
+   "tags": [
+    "开源",
+    "6.8 万星"
+   ],
+   "source": "https://github.com/openinterpreter/open-interpreter",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "OpenAI's Code Interpreter in your terminal, running locally."
+  },
+  {
+   "id": "045_Open WebUI",
+   "name": "Open WebUI",
+   "category": "编程开发",
+   "summary": "可扩展、功能全、好上手的自托管 AI 平台，完全离线可用。",
+   "tags": [
+    "开源",
+    "15.4 万星"
+   ],
+   "source": "https://github.com/open-webui/open-webui",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline."
+  },
+  {
+   "id": "046_OpenAI Codex",
+   "name": "OpenAI Codex",
+   "category": "编程开发",
+   "summary": "把自然语言翻译成代码的 AI 系统。",
+   "tags": [],
+   "source": "https://platform.openai.com/docs/guides/code/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI system by OpenAI that translates natural language to code."
+  },
+  {
+   "id": "047_OpenAI Playground",
+   "name": "OpenAI Playground",
+   "category": "编程开发",
+   "summary": "官方试验场，探索资源、教程、API 文档和示例。",
+   "tags": [],
+   "source": "https://platform.openai.com/playground",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Explore resources, tutorials, API docs, and dynamic examples."
+  },
+  {
+   "id": "048_OpenLIT",
+   "name": "OpenLIT",
+   "category": "编程开发",
+   "summary": "开源 GenAI 和 LLM 可观测平台，原生对接 OpenTelemetry。",
+   "tags": [
+    "开源",
+    "2812 星"
+   ],
+   "source": "https://github.com/openlit/openlit",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source GenAI and LLM observability platform native to OpenTelemetry with traces and metrics."
+  },
+  {
+   "id": "049_OpenRouter",
+   "name": "OpenRouter",
+   "category": "编程开发",
+   "summary": "大模型的统一调用入口。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://openrouter.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A unified interface for LLMs."
+  },
+  {
+   "id": "050_Opik",
+   "name": "Opik",
+   "category": "编程开发",
+   "summary": "开源平台，给 LLM 应用做链路追踪、评测和监控。",
+   "tags": [
+    "开源",
+    "2.2 万星"
+   ],
+   "source": "https://github.com/comet-ml/opik",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source platform for tracing, evaluating, and monitoring LLM applications."
+  },
+  {
+   "id": "051_Phoenix",
+   "name": "Phoenix",
+   "category": "编程开发",
+   "summary": "Arize 的开源机器学习可观测工具，能在 notebook 里跑。",
+   "tags": [],
+   "source": "https://phoenix.arize.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source tool for ML observability that runs in your notebook environment, by Arize. Monitor and fine tune LLM, CV and tabular models."
+  },
+  {
+   "id": "052_Plandex",
+   "name": "Plandex",
+   "category": "编程开发",
+   "summary": "开源的终端 AI 编程引擎，处理复杂任务。",
+   "tags": [
+    "开源",
+    "1.6 万星"
+   ],
+   "source": "https://github.com/plandex-ai/plandex",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open source, terminal-based AI programming engine for complex tasks."
+  },
+  {
+   "id": "053_Portkey",
+   "name": "Portkey",
+   "category": "编程开发",
+   "summary": "全栈 LLMOps 平台，做监控、缓存和管理。",
+   "tags": [],
+   "source": "https://portkey.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A full-stack LLMOps platform for LLM monitoring, caching, and management."
+  },
+  {
+   "id": "054_PR-Agent",
+   "name": "PR-Agent",
+   "category": "编程开发",
+   "summary": "自动分析 PR、给反馈和建议的工具。",
+   "tags": [
+    "开源",
+    "1.3 万星"
+   ],
+   "source": "https://github.com/The-PR-Agent/pr-agent",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI-powered tool for automated PR analysis, feedback, suggestions and more."
+  },
+  {
+   "id": "055_PyGPT",
+   "name": "PyGPT",
+   "category": "编程开发",
+   "summary": "桌面 AI 助手，含对话、视觉、智能体、生图、工具、语音控制。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://pygpt.net/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Personal desktop AI assistant with chat, vision, agents, image generation, tools and commands, voice control and more."
+  },
+  {
+   "id": "056_Qodo",
+   "name": "Qodo",
+   "category": "编程开发",
+   "summary": "AI 代码审查工具，面向 IDE、PR 和安全场景。",
+   "tags": [],
+   "source": "https://www.qodo.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI code review tool with agentic workflows for IDEs, pull requests, and security."
+  },
+  {
+   "id": "057_Rapid-MLX",
+   "name": "Rapid-MLX",
+   "category": "编程开发",
+   "summary": "兼容 OpenAI 的本地推理服务，为 Apple 芯片优化，支持工具调用、推理、视觉和结构化输出。",
+   "tags": [
+    "开源",
+    "3874 星"
+   ],
+   "source": "https://github.com/raullenchai/Rapid-MLX",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "OpenAI-compatible local LLM inference server optimized for Apple Silicon, with tool calling, reasoning, vision, and structured output support."
+  },
+  {
+   "id": "058_Repomix",
+   "name": "Repomix",
+   "category": "编程开发",
+   "summary": "把代码库打包成大模型友好的格式。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://repomix.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Pack your codebase into AI-friendly formats."
+  },
+  {
+   "id": "059_RunThisLLM",
+   "name": "RunThisLLM",
+   "category": "编程开发",
+   "summary": "看看你的硬件能跑哪些大模型。",
+   "tags": [],
+   "source": "https://runthisllm.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "See which LLMs you can run on your hardware."
+  },
+  {
+   "id": "060_Scale Spellbook",
+   "name": "Scale Spellbook",
+   "category": "编程开发",
+   "summary": "构建、对比和部署大语言模型应用。",
+   "tags": [],
+   "source": "https://scale.com/genai-platform",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Build, compare, and deploy large language model apps with Scale Spellbook."
+  },
+  {
+   "id": "061_Steel Browser",
+   "name": "Steel Browser",
+   "category": "编程开发",
+   "summary": "开源浏览器沙箱和自动化底座，给 AI 智能体用。",
+   "tags": [
+    "开源",
+    "7726 星"
+   ],
+   "source": "https://github.com/steel-dev/steel-browser",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source browser sandbox and automation infrastructure for AI agents, with session management, screenshots, PDFs, proxies, and anti-bot tooling."
+  },
+  {
+   "id": "062_Stenography",
+   "name": "Stenography",
+   "category": "编程开发",
+   "summary": "自动生成代码文档。",
+   "tags": [],
+   "source": "https://stenography.dev/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Automatic code documentation."
+  },
+  {
+   "id": "063_SymbolicAI",
+   "name": "SymbolicAI",
+   "category": "编程开发",
+   "summary": "以 LLM 为核心的神经符号框架。",
+   "tags": [
+    "开源",
+    "1776 星"
+   ],
+   "source": "https://github.com/ExtensityAI/symbolicai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A neuro-symbolic framework for building applications with LLMs at the core."
+  },
+  {
+   "id": "064_tabnine",
+   "name": "tabnine",
+   "category": "编程开发",
+   "summary": "整行和整函数的代码补全。",
+   "tags": [],
+   "source": "https://www.tabnine.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Code faster with whole-line & full-function code completions."
+  },
+  {
+   "id": "065_Together AI",
+   "name": "Together AI",
+   "category": "编程开发",
+   "summary": "快速、低成本、可规模化地训练、微调和推理 AI 模型。",
+   "tags": [],
+   "source": "https://www.together.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Train, fine-tune-and run inference on AI models blazing fast, at low cost, and at production scale."
+  },
+  {
+   "id": "066_Unsloth",
+   "name": "Unsloth",
+   "category": "编程开发",
+   "summary": "微调大模型的 Python 库。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://unsloth.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A Python library for fine-tuning LLMs."
+  },
+  {
+   "id": "067_v0",
+   "name": "v0",
+   "category": "编程开发",
+   "summary": "用提示词生成 React 和 Next.js 的生产级组件。",
+   "tags": [],
+   "source": "https://v0.dev",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Prompt-driven UI generation for React and Next.js, creating production-ready components."
+  },
+  {
+   "id": "068_Vanna.ai",
+   "name": "Vanna.ai",
+   "category": "编程开发",
+   "summary": "开源 Python RAG 框架，用于生成 SQL。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://vanna.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source Python RAG framework for SQL generation and related functionality."
+  },
+  {
+   "id": "069_Windsurf",
+   "name": "Windsurf",
+   "category": "编程开发",
+   "summary": "AI 原生的代码编辑器，把 AI 辅助贯穿整个开发过程。",
+   "tags": [],
+   "source": "https://windsurf.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-native IDE that combines code editing with advanced AI assistance throughout the development process."
+  },
+  {
+   "id": "070_Wren AI",
+   "name": "Wren AI",
+   "category": "编程开发",
+   "summary": "开源的 text-to-SQL 和生成式 BI 智能体，带语义层。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://www.getwren.ai/oss",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source text-to-SQL and generative BI agent with a semantic layer."
+  },
+  {
+   "id": "071_TRAE",
+   "name": "TRAE",
+   "category": "编程开发",
+   "summary": "字节跳动的 AI 代码编辑器，针对中文开发场景做了深度优化。",
+   "tags": [
+    "桌面端",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "206 条评价"
+   ],
+   "source": "https://www.trae.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 206 条，8.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：编程开发、效率工具"
+  },
+  {
+   "id": "072_EvoMap",
+   "name": "EvoMap",
+   "category": "编程开发",
+   "summary": "给 AI 智能体做「进化」的基础设施，让智能体能自我迭代。",
+   "tags": [
+    "190 条评价"
+   ],
+   "source": "https://evomap.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 190 条，8.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：EvoMap\n\n观猹上的分类：编程开发、效率工具"
+  },
+  {
+   "id": "073_CodeX app",
+   "name": "CodeX app",
+   "category": "编程开发",
+   "summary": "OpenAI 的编程智能体指挥中心，用来和智能体协作写代码。",
+   "tags": [
+    "187 条评价"
+   ],
+   "source": "https://openai.com/zh-Hans-CN/codex/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 187 条，9.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：OpenAI\n\n观猹上的分类：编程开发"
+  },
+  {
+   "id": "074_QoderWork",
+   "name": "QoderWork",
+   "category": "编程开发",
+   "summary": "阿里的桌面级通用智能体助手，从想法到落地全程代劳。",
+   "tags": [
+    "50 条评价"
+   ],
+   "source": "https://qoder.com/qoderwork",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 50 条，7.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：阿里巴巴\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "075_Readdy",
+   "name": "Readdy",
+   "category": "编程开发",
+   "summary": "对话式 AI 建站工具，带后端、模板、SEO 和托管。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "海外",
+    "46 条评价"
+   ],
+   "source": "https://readdy.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 46 条，8.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Readdy AI\n\n观猹上的分类：图像生成、编程开发、其他类型"
+  },
+  {
+   "id": "076_词元跳动",
+   "name": "词元跳动",
+   "category": "编程开发",
+   "summary": "大模型 API 统一网关，兼容多种协议并做智能路由。",
+   "tags": [
+    "33 条评价"
+   ],
+   "source": "https://tokendance.space",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 33 条，9.0 分）",
+   "date": "2026-10-02",
+   "body": "出品方：观猹\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "077_Google Antigravity",
+   "name": "Google Antigravity",
+   "category": "编程开发",
+   "summary": "Google 的智能体优先开发平台，含 IDE、命令行工具和 SDK。",
+   "tags": [
+    "31 条评价"
+   ],
+   "source": "https://antigravity.google/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 31 条，7.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Google\n\n观猹上的分类：编程开发"
+  },
+  {
+   "id": "078_Claude Code",
+   "name": "Claude Code",
+   "category": "编程开发",
+   "summary": "Anthropic 的编程智能体，跑在终端里，帮你把想法变成代码。",
+   "tags": [
+    "106 条评价",
+    "CLI",
+    "Web",
+    "免费增值",
+    "海外"
+   ],
+   "source": "https://code.claude.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 106 条，9.1 分）",
+   "date": "2026-10-02",
+   "body": "Anthropic's agentic coding tool that lives in your terminal and helps you turn ideas into code.\n\n出品方：Anthropic\n\n观猹上的分类：编程开发"
+  },
+  {
+   "id": "079_Cursor",
+   "name": "Cursor",
+   "category": "编程开发",
+   "summary": "为 AI 结对编程而生的代码编辑器。",
+   "tags": [
+    "111 条评价",
+    "Web",
+    "桌面端",
+    "免费增值",
+    "海外"
+   ],
+   "source": "https://cursor.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 111 条，8.3 分）",
+   "date": "2026-10-02",
+   "body": "Cursor is the IDE of the future, built for pair-programming with Powerful AI.\n\n出品方：Anysphere\n\n观猹上的分类：编程开发、效率工具"
+  },
+  {
+   "id": "001_Agent Skills",
+   "name": "Agent Skills",
+   "category": "智能体",
+   "summary": "把可复用的能力和经验打包给 AI 智能体的开放格式和 SDK。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://agentskills.io",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open format and reference SDK for packaging reusable capabilities and expertise for AI agents."
+  },
+  {
+   "id": "002_AgentMail",
+   "name": "AgentMail",
+   "category": "智能体",
+   "summary": "给 AI 智能体用的邮箱。",
+   "tags": [],
+   "source": "https://www.agentmail.to",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Email inboxes for AI agents."
+  },
+  {
+   "id": "003_Auto-GPT",
+   "name": "Auto-GPT",
+   "category": "智能体",
+   "summary": "让 GPT-4 完全自主运行的早期开源实验。",
+   "tags": [
+    "开源",
+    "18.8 万星"
+   ],
+   "source": "https://github.com/Significant-Gravitas/AutoGPT",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An experimental open-source attempt to make GPT-4 fully autonomous."
+  },
+  {
+   "id": "004_AutoGen",
+   "name": "AutoGen",
+   "category": "智能体",
+   "summary": "让多个智能体互相对话来解决问题的框架。",
+   "tags": [
+    "开源",
+    "6.1 万星"
+   ],
+   "source": "https://github.com/microsoft/autogen",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AutoGen is a framework that enables the development of LLM applications using multiple agents that can converse with each other to solve tasks."
+  },
+  {
+   "id": "005_babyagi",
+   "name": "babyagi",
+   "category": "智能体",
+   "summary": "AI 驱动的任务管理系统。",
+   "tags": [
+    "开源",
+    "2.2 万星"
+   ],
+   "source": "https://github.com/yoheinakajima/babyagi",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-powered task management system."
+  },
+  {
+   "id": "006_Davika",
+   "name": "Davika",
+   "category": "智能体",
+   "summary": "开源的 AI 软件工程师智能体。",
+   "tags": [
+    "开源",
+    "2.0 万星"
+   ],
+   "source": "https://github.com/stitionai/devika",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An agentic AI software engineer."
+  },
+  {
+   "id": "007_Devin",
+   "name": "Devin",
+   "category": "智能体",
+   "summary": "Cognition Labs 的自主 AI 软件工程师。",
+   "tags": [],
+   "source": "https://devin.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An autonomous AI software engineer by Cognition Labs."
+  },
+  {
+   "id": "008_Gemini CLI",
+   "name": "Gemini CLI",
+   "category": "智能体",
+   "summary": "把 Gemini 能力带进终端的开源 AI 智能体。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://geminicli.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source AI agent that brings the power of Gemini directly into your terminal."
+  },
+  {
+   "id": "009_GPT Builder",
+   "name": "GPT Builder",
+   "category": "智能体",
+   "summary": "创建 GPT 助手的官方工具。",
+   "tags": [],
+   "source": "https://chatgpt.com/gpts/editor",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Assistant for creating GPT-based assistants."
+  },
+  {
+   "id": "010_GPT Pilot",
+   "name": "GPT Pilot",
+   "category": "智能体",
+   "summary": "从零写可扩展应用，开发者在一旁盯着实现过程。",
+   "tags": [
+    "开源",
+    "3.4 万星"
+   ],
+   "source": "https://github.com/Pythagora-io/gpt-pilot",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Dev tool that writes scalable apps from scratch while the developer oversees the implementation."
+  },
+  {
+   "id": "011_GPT Prompt Engineer",
+   "name": "GPT Prompt Engineer",
+   "category": "智能体",
+   "summary": "自动化的提示词工程：生成、测试并排序，找出最好的提示词。",
+   "tags": [
+    "开源",
+    "9679 星"
+   ],
+   "source": "https://github.com/mshumer/gpt-prompt-engineer",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Automated prompt engineering. It generates, tests, and ranks prompts to find the best ones."
+  },
+  {
+   "id": "012_Hermes Agent",
+   "name": "Hermes Agent",
+   "category": "智能体",
+   "summary": "会自我改进的个人智能体，有记忆、消息集成和沙箱工具执行。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://hermes-agent.nousresearch.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A self-improving personal agent with memory, messaging integrations, and sandboxed tool execution."
+  },
+  {
+   "id": "013_Hive",
+   "name": "Hive",
+   "category": "智能体",
+   "summary": "开源多智能体框架，自动生成图、进化循环，集成 MCP。",
+   "tags": [
+    "开源",
+    "1.1 万星"
+   ],
+   "source": "https://github.com/aden-hive/hive",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open-source multi-agent framework with auto-generated graphs, evolution loops, and MCP integration."
+  },
+  {
+   "id": "014_Mastra",
+   "name": "Mastra",
+   "category": "智能体",
+   "summary": "用 TypeScript 构建 AI 智能体、工作流和应用的框架。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://mastra.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A TypeScript framework for building AI agents, workflows, and applications."
+  },
+  {
+   "id": "015_MetaGPT",
+   "name": "MetaGPT",
+   "category": "智能体",
+   "summary": "多智能体框架：给一句需求，返回 PRD、设计、任务和代码仓库。",
+   "tags": [
+    "开源",
+    "7.1 万星"
+   ],
+   "source": "https://github.com/FoundationAgents/MetaGPT",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "The Multi-Agent Framework: Given one line requirement, return PRD, design, tasks, repo."
+  },
+  {
+   "id": "016_moltbook",
+   "name": "moltbook",
+   "category": "智能体",
+   "summary": "给 AI 智能体用的社交网络。",
+   "tags": [],
+   "source": "https://www.moltbook.com",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A social network for AI agents."
+  },
+  {
+   "id": "017_n8n",
+   "name": "n8n",
+   "category": "智能体",
+   "summary": "工作流自动化平台，把 AI 能力和业务流程自动化结合起来。",
+   "tags": [],
+   "source": "https://n8n.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A workflow automation platform that combines AI capabilities with business process automation."
+  },
+  {
+   "id": "018_OpenAgents",
+   "name": "OpenAgents",
+   "category": "智能体",
+   "summary": "开源平台，构建支持多协议（WebSocket、gRPC、HTTP、MCP、A2A）的智能体网络。",
+   "tags": [
+    "开源",
+    "4171 星"
+   ],
+   "source": "https://github.com/openagents-org/openagents",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source platform for building AI agent networks with multi-protocol support (WebSocket, gRPC, HTTP, MCP, A2A)."
+  },
+  {
+   "id": "019_OpenCode",
+   "name": "OpenCode",
+   "category": "智能体",
+   "summary": "开源的 AI 编程智能体。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://opencode.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "The open-source AI coding agent."
+  },
+  {
+   "id": "020_OpenHands",
+   "name": "OpenHands",
+   "category": "智能体",
+   "summary": "用来处理软件工程复杂流程的自主智能体。",
+   "tags": [
+    "开源",
+    "9.0 万星"
+   ],
+   "source": "https://github.com/OpenHands/OpenHands",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An autonomous agent designed to navigate the complexities of software engineering."
+  },
+  {
+   "id": "021_Openwork",
+   "name": "Openwork",
+   "category": "智能体",
+   "summary": "智能体之间互相雇佣、完成工作、验收结果并赚取代币。",
+   "tags": [],
+   "source": "https://openwork.bot",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "AI agents hire each other, complete work, verify outcomes, and earn tokens."
+  },
+  {
+   "id": "022_Poe",
+   "name": "Poe",
+   "category": "智能体",
+   "summary": "一个入口用到多种机器人。",
+   "tags": [],
+   "source": "https://poe.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Poe gives access to a variety of bots."
+  },
+  {
+   "id": "023_PraisonAI",
+   "name": "PraisonAI",
+   "category": "智能体",
+   "summary": "构建多智能体系统的框架，含工作流、工具集成和记忆。",
+   "tags": [
+    "开源",
+    "9121 星"
+   ],
+   "source": "https://github.com/MervinPraison/PraisonAI",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A framework for building multi-agent AI systems with workflows, tool integrations, and memory."
+  },
+  {
+   "id": "024_Sauna",
+   "name": "Sauna",
+   "category": "智能体",
+   "summary": "为积累上下文而生的 AI 助手，学你的品味、发现隐藏规律、主动干活。",
+   "tags": [],
+   "source": "https://www.sauna.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI assistant built for compounding context. It learns your taste, detects hidden patterns, augments your brain context and works proactively."
+  },
+  {
+   "id": "025_WorkBuddy",
+   "name": "WorkBuddy",
+   "category": "智能体",
+   "summary": "腾讯云的 AI 原生桌面工作台，让智能体替你在电脑上办事。",
+   "tags": [
+    "272 条评价"
+   ],
+   "source": "https://www.codebuddy.cn/work/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 272 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：腾讯云\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "026_扣子3.0",
+   "name": "扣子3.0",
+   "category": "智能体",
+   "summary": "字节跳动的智能体开发平台，搭智能体、编工作流。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "175 条评价"
+   ],
+   "source": "https://www.coze.cn/overview",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 175 条，8.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：通用助手、智能硬件、Agent 构建"
+  },
+  {
+   "id": "027_阶跃 AI 桌面伙伴",
+   "name": "阶跃 AI 桌面伙伴",
+   "category": "智能体",
+   "summary": "阶跃星辰的桌面智能体，常驻在系统里，会主动发现并完成任务。",
+   "tags": [
+    "116 条评价"
+   ],
+   "source": "https://www.stepfun.com/download",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 116 条，7.4 分）",
+   "date": "2026-10-02",
+   "body": "出品方：阶跃星辰\n\n观猹上的分类：通用助手、效率工具"
+  },
+  {
+   "id": "028_飞书妙搭",
+   "name": "飞书妙搭",
+   "category": "智能体",
+   "summary": "飞书的 AI 原生系统搭建工具，一句话搭出业务系统并一键部署。",
+   "tags": [
+    "80 条评价"
+   ],
+   "source": "https://miaoda.feishu.cn/bot",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 80 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：字节跳动\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "029_Refly AI",
+   "name": "Refly AI",
+   "category": "智能体",
+   "summary": "用一句话生成 AI 工作流，不写代码也能搭自动化。",
+   "tags": [
+    "56 条评价"
+   ],
+   "source": "https://refly.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 56 条，7.0 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Refly\n\n观猹上的分类：通用助手、知识管理、效率工具"
+  },
+  {
+   "id": "030_Cherry Studio",
+   "name": "Cherry Studio",
+   "category": "智能体",
+   "summary": "全能 AI 桌面工作站，多模型对话、知识库和智能体集在一处。",
+   "tags": [
+    "桌面端",
+    "中国大陆",
+    "海外",
+    "45 条评价"
+   ],
+   "source": "https://cherryai.com.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 45 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Cherry Studio\n\n观猹上的分类：通用助手、Agent 构建、效率工具"
+  },
+  {
+   "id": "031_Dify",
+   "name": "Dify",
+   "category": "智能体",
+   "summary": "生产级的智能体工作流平台，在一块画布上搭智能体、知识库和工具。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "36 条评价"
+   ],
+   "source": "https://dify.ai/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 36 条，7.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Dify\n\n观猹上的分类：Agent 构建"
+  },
+  {
+   "id": "032_MyAgents",
+   "name": "MyAgents",
+   "category": "智能体",
+   "summary": "开源免费的桌面智能体客户端，个人 AI 工作台。",
+   "tags": [
+    "31 条评价"
+   ],
+   "source": "https://myagents.io",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 31 条，7.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Ethan\n\n观猹上的分类：通用助手、知识管理、效率工具"
+  },
+  {
+   "id": "033_OpenClaw",
+   "name": "OpenClaw",
+   "category": "智能体",
+   "summary": "跑在自己设备上的个人 AI 助手。",
+   "tags": [
+    "开源",
+    "352 条评价"
+   ],
+   "source": "https://openclaw.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 352 条，8.4 分）",
+   "date": "2026-10-02",
+   "body": "A personal AI assistant you run on your own devices.\n\n出品方：Peter Steinberger\n\n观猹上的分类：效率工具"
+  },
+  {
+   "id": "001_alphaXiv",
+   "name": "alphaXiv",
+   "category": "学习与科研",
+   "summary": "讨论、发现和阅读 arXiv 论文。",
+   "tags": [],
+   "source": "https://www.alphaxiv.org",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Discuss, discover, and read arXiv papers."
+  },
+  {
+   "id": "002_ASReview",
+   "name": "ASReview",
+   "category": "学习与科研",
+   "summary": "开源工具，帮研究者高效筛选大量文献做系统综述。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://asreview.nl/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Open-source AI-powered tool for systematic reviews, helping researchers screen large volumes of academic literature efficiently."
+  },
+  {
+   "id": "003_Consensus",
+   "name": "Consensus",
+   "category": "学习与科研",
+   "summary": "用 AI 在科学研究里找答案的搜索引擎。",
+   "tags": [],
+   "source": "https://consensus.app/search/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Consensus is a search engine that uses AI to find answers in scientific research."
+  },
+  {
+   "id": "004_Elicit",
+   "name": "Elicit",
+   "category": "学习与科研",
+   "summary": "用语言模型自动化研究流程，比如文献综述的部分环节。",
+   "tags": [],
+   "source": "https://elicit.org/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Elicit uses language models to help you automate research workflows, like parts of literature review."
+  },
+  {
+   "id": "005_Explainpaper",
+   "name": "Explainpaper",
+   "category": "学习与科研",
+   "summary": "读论文时高亮看不懂的句子，它给你解释。",
+   "tags": [],
+   "source": "https://www.explainpaper.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A better way to read academic papers. Upload a paper, highlight confusing text, get an explanation."
+  },
+  {
+   "id": "006_FinChat",
+   "name": "FinChat",
+   "category": "学习与科研",
+   "summary": "用 AI 回答关于上市公司和投资人的问题。",
+   "tags": [],
+   "source": "https://finchat.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Using AI, FinChat generates answers to questions about public companies and investors."
+  },
+  {
+   "id": "007_genei",
+   "name": "genei",
+   "category": "学习与科研",
+   "summary": "几秒钟总结学术文章，省下大量研究时间。",
+   "tags": [],
+   "source": "https://www.genei.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Summarise academic articles in seconds and save 80% on your research times."
+  },
+  {
+   "id": "008_Have I Been Trained？",
+   "name": "Have I Been Trained?",
+   "category": "学习与科研",
+   "summary": "查你的图片有没有被拿去训练 AI 绘画模型。",
+   "tags": [],
+   "source": "https://haveibeentrained.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Check if your image has been used to train popular AI art models."
+  },
+  {
+   "id": "009_Local Deep Research",
+   "name": "Local Deep Research",
+   "category": "学习与科研",
+   "summary": "深度研究工具，能在学术来源、网页和私人文档里检索。",
+   "tags": [
+    "开源",
+    "9149 星"
+   ],
+   "source": "https://github.com/LearningCircuit/local-deep-research",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A deep research tool for searching academic sources, the web, and private documents with local or cloud LLMs."
+  },
+  {
+   "id": "010_Morpher AI",
+   "name": "Morpher AI",
+   "category": "学习与科研",
+   "summary": "给任何市场提供实时洞察和分析。",
+   "tags": [],
+   "source": "https://morpher.com/ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Morpher AI delivers real-time insights and analysis for any market."
+  },
+  {
+   "id": "011_Paper2Agent",
+   "name": "Paper2Agent",
+   "category": "学习与科研",
+   "summary": "把研究论文和配套代码变成经过测试的 MCP 服务器和交互式智能体。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://paper2agent.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Converts research papers and associated codebases into tested MCP servers and interactive AI agents."
+  },
+  {
+   "id": "012_Rayyan",
+   "name": "Rayyan",
+   "category": "学习与科研",
+   "summary": "管理系统综述的平台，支持协作筛选和数据管理。",
+   "tags": [],
+   "source": "https://www.rayyan.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI-powered platform for managing systematic literature reviews with collaborative screening and data management tools."
+  },
+  {
+   "id": "013_SciSpace",
+   "name": "SciSpace",
+   "category": "学习与科研",
+   "summary": "帮你读懂科学文献的 AI 研究助手。",
+   "tags": [],
+   "source": "https://scispace.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An AI research assistant for understanding scientific literature."
+  },
+  {
+   "id": "014_scite",
+   "name": "scite",
+   "category": "学习与科研",
+   "summary": "发现和评价科学文章的平台。",
+   "tags": [],
+   "source": "https://scite.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A platform for discovering and evaluating scientific articles."
+  },
+  {
+   "id": "015_STORM",
+   "name": "STORM",
+   "category": "学习与科研",
+   "summary": "用大模型做知识梳理，围绕一个题目生成带引用的完整报告。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://storm.genie.stanford.edu/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations."
+  },
+  {
+   "id": "016_观猹 insights",
+   "name": "观猹 insights",
+   "category": "学习与科研",
+   "summary": "AI 应用的大众点评，先看别人真实的使用评价再决定用哪个。",
+   "tags": [
+    "小程序",
+    "Web",
+    "完全免费",
+    "中国大陆",
+    "257 条评价"
+   ],
+   "source": "https://watcha.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 257 条，9.2 分）",
+   "date": "2026-10-02",
+   "body": "出品方：周树人 & 闰土\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "017_Paper2Galgame",
+   "name": "Paper2Galgame",
+   "category": "学习与科研",
+   "summary": "把论文变成互动视觉小说，边玩边读文献。",
+   "tags": [
+    "CLI",
+    "Web",
+    "桌面端",
+    "免费增值",
+    "买断制",
+    "中国大陆",
+    "海外",
+    "107 条评价"
+   ],
+   "source": "https://paper2gal.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 107 条，8.5 分）",
+   "date": "2026-10-02",
+   "body": "出品方：Mirako\n\n观猹上的分类：虚拟陪伴、效率工具、科研辅助"
+  },
+  {
+   "id": "018_LexSaga",
+   "name": "LexSaga",
+   "category": "学习与科研",
+   "summary": "把背单词变成一场冒险，在故事里体验语言和文化。",
+   "tags": [
+    "Web",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "82 条评价"
+   ],
+   "source": "https://cn.lexsaga.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 82 条，8.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：希言Minalis\n\n观猹上的分类：图像生成、知识管理、其他类型"
+  },
+  {
+   "id": "019_庞征博引",
+   "name": "庞征博引",
+   "category": "学习与科研",
+   "summary": "把想学的东西写成连载文章，边读边问，学习路径跟着你走。",
+   "tags": [
+    "Web",
+    "移动端",
+    "完全免费",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "64 条评价"
+   ],
+   "source": "https://pangzhengboyin.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 64 条，9.2 分）",
+   "date": "2026-10-02",
+   "body": "出品方：汉士\n\n观猹上的分类：通用助手、知识管理、效率工具"
+  },
+  {
+   "id": "020_小山学堂",
+   "name": "小山学堂",
+   "category": "学习与科研",
+   "summary": "从零基础到大模型原理、Prompt 工程、RAG、Agent 工程的 AI 产品课程，免费开放。",
+   "tags": [
+    "55 条评价"
+   ],
+   "source": "https://xueai.app",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 55 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：洛小山\n\n观猹上的分类：科研辅助"
+  },
+  {
+   "id": "021_洛洛救救我！HELP",
+   "name": "洛洛救救我！HELP",
+   "category": "学习与科研",
+   "summary": "能直接开口问的中文技术百科，从 Claude Code 到闲鱼接单。",
+   "tags": [
+    "44 条评价"
+   ],
+   "source": "https://luoluo.help",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 44 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：锦衣卫\n\n观猹上的分类："
+  },
+  {
+   "id": "022_OpenMAIC",
+   "name": "OpenMAIC",
+   "category": "学习与科研",
+   "summary": "开源 AI 交互课堂，传一个 PDF 就生成多智能体的沉浸式学习体验。",
+   "tags": [
+    "37 条评价"
+   ],
+   "source": "https://open.maic.chat/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 37 条，8.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：清华团队\n\n观猹上的分类：知识管理"
+  },
+  {
+   "id": "023_AIHOT",
+   "name": "AIHOT",
+   "category": "学习与科研",
+   "summary": "全自动聚合 AI 资讯，用大模型摘要打分，每天出一份 AI 日报。",
+   "tags": [
+    "30 条评价"
+   ],
+   "source": "https://aihot.virxact.com/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 30 条，8.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：数字生命卡兹克\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "024_CapWords",
+   "name": "CapWords",
+   "category": "学习与科研",
+   "summary": "拍照识别物体，生成双语单词卡和例句，让日常场景变成语言老师。",
+   "tags": [
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "30 条评价"
+   ],
+   "source": "https://capwords.app/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 30 条，8.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：HappyPlan\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "025_今天学点啥",
+   "name": "今天学点啥",
+   "category": "学习与科研",
+   "summary": "秘塔科技的 AI 学习应用，把知识讲活。",
+   "tags": [
+    "小程序",
+    "Web",
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "30 条评价"
+   ],
+   "source": "https://metaso.cn/study",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 30 条，7.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：秘塔科技\n\n观猹上的分类：知识管理"
+  },
+  {
+   "id": "026_NotebookLM",
+   "name": "NotebookLM",
+   "category": "学习与科研",
+   "summary": "Google 的在线研究与笔记工具，能跟文档对话。",
+   "tags": [
+    "85 条评价",
+    "Web",
+    "免费增值",
+    "海外"
+   ],
+   "source": "https://notebooklm.google/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）｜观猹 watcha.cn 产品图鉴（猹评 85 条，9.4 分）",
+   "date": "2026-10-02",
+   "body": "A research and note-taking online tool to interact with documents, powered by Google Gemini.\n\n出品方：Google\n\n观猹上的分类：音频处理、效率工具"
+  },
+  {
+   "id": "001_AI Dungeon",
+   "name": "AI Dungeon",
+   "category": "生活娱乐",
+   "summary": "文字冒险游戏，你导演并主演，AI 把故事演出来。",
+   "tags": [],
+   "source": "https://aidungeon.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A text-based adventure-story game you direct (and star in) while the AI brings it to life."
+  },
+  {
+   "id": "002_Selfies with Sama",
+   "name": "Selfies with Sama",
+   "category": "生活娱乐",
+   "summary": "跟真人亿万富翁合影（玩的）。",
+   "tags": [],
+   "source": "https://selfies-with-sama.vost.ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Grab a picture with a real-life billionaire!."
+  },
+  {
+   "id": "003_This Image Does Not Exist",
+   "name": "This Image Does Not Exist",
+   "category": "生活娱乐",
+   "summary": "测试你能不能分辨图片是人做的还是 AI 生成的。",
+   "tags": [],
+   "source": "https://thisimagedoesnotexist.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Test your ability to tell if an image is human or computer generated."
+  },
+  {
+   "id": "004_Wolfcha - 猹杀",
+   "name": "Wolfcha - 猹杀",
+   "category": "生活娱乐",
+   "summary": "AI 狼人杀，看哪个大模型能笑到最后。",
+   "tags": [
+    "143 条评价"
+   ],
+   "source": "https://wolf-cha.com",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 143 条，8.6 分）",
+   "date": "2026-10-02",
+   "body": "出品方：LP·AI\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "005_动物去哪儿",
+   "name": "动物去哪儿",
+   "category": "生活娱乐",
+   "summary": "治愈系放置旅行游戏，小动物在真实地理上旅行、冒险、生活、交朋友。",
+   "tags": [
+    "84 条评价"
+   ],
+   "source": "https://animaltrip.qiaoqiao.social/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 84 条，9.2 分）",
+   "date": "2026-10-02",
+   "body": "出品方：游心雕龙\n\n观猹上的分类：虚拟陪伴、其他类型"
+  },
+  {
+   "id": "006_AI 小镇：星原（原 AIvilization）",
+   "name": "AI 小镇：星原（原 AIvilization）",
+   "category": "生活娱乐",
+   "summary": "AI 自主生活的模拟游戏，一座由所有玩家共同改写的 AI 小镇。",
+   "tags": [
+    "Web",
+    "完全免费",
+    "中国大陆",
+    "62 条评价"
+   ],
+   "source": "https://aitown.com.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 62 条，8.9 分）",
+   "date": "2026-10-02",
+   "body": "出品方：港科大\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "007_圆周旅迹",
+   "name": "圆周旅迹",
+   "category": "生活娱乐",
+   "summary": "旅游出行智能规划，能复制别人的行程攻略，也能记录自己的路线。",
+   "tags": [
+    "移动端",
+    "中国大陆",
+    "58 条评价"
+   ],
+   "source": "https://www.pitravel.cn/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 58 条，7.1 分）",
+   "date": "2026-10-02",
+   "body": "出品方：超超世世\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "008_蚂蚁阿福",
+   "name": "蚂蚁阿福",
+   "category": "生活娱乐",
+   "summary": "蚂蚁集团的 AI 健康管家。",
+   "tags": [
+    "移动端",
+    "完全免费",
+    "中国大陆",
+    "57 条评价"
+   ],
+   "source": "https://apps.apple.com/cn/app/aq-%E5%80%BC%E5%BE%97%E6%89%98%E4%BB%98%E7%9A%84%E5%81%A5%E5%BA%B7%E7%AE%A1%E5%AE%B6/id6743828427",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 57 条，8.8 分）",
+   "date": "2026-10-02",
+   "body": "出品方：蚂蚁集团\n\n观猹上的分类：其他类型"
+  },
+  {
+   "id": "009_林间聊愈室",
+   "name": "林间聊愈室",
+   "category": "生活娱乐",
+   "summary": "24 小时 AI 陪伴的心理健康应用，安全私密地聊感受和经历。",
+   "tags": [
+    "移动端",
+    "免费增值",
+    "中国大陆",
+    "海外",
+    "41 条评价"
+   ],
+   "source": "https://moodtalker.com",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 41 条，8.7 分）",
+   "date": "2026-10-02",
+   "body": "出品方：心纪源\n\n观猹上的分类：虚拟陪伴"
+  },
+  {
+   "id": "010_独醒-AI剧本杀",
+   "name": "独醒-AI剧本杀",
+   "category": "生活娱乐",
+   "summary": "AI 陪你玩剧本杀。",
+   "tags": [
+    "Web",
+    "完全免费",
+    "中国大陆",
+    "34 条评价"
+   ],
+   "source": "https://duxing.chat/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 34 条，7.3 分）",
+   "date": "2026-10-02",
+   "body": "出品方：tpxbps\n\n观猹上的分类：虚拟陪伴、其他类型"
+  },
+  {
+   "id": "011_今天你卖的是什么腿？",
+   "name": "今天你卖的是什么腿？",
+   "category": "生活娱乐",
+   "summary": "关于流量、诚信与校园烟火气的虚构经营游戏。",
+   "tags": [
+    "32 条评价"
+   ],
+   "source": "https://stupid-students.pages.dev/",
+   "origin": "观猹 watcha.cn 产品图鉴（猹评 32 条，8.4 分）",
+   "date": "2026-10-02",
+   "body": "出品方：校园摊主生存实录\n\n观猹上的分类：其他类型"
+  }
+ ]
+}

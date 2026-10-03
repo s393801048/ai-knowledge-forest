@@ -42,9 +42,11 @@ server = MCPServer(
     name="ai-knowledge-forest",
     title="AI知识森林",
     instructions=(
-        "作者收集的提示词、Skill 和知识卡片。"
+        "作者收集的提示词、Skill、知识卡片、AI 产品和学习资源。"
         "查提示词用 search_prompts / get_prompt（get_prompt 返回可直接使用的原文）；"
-        "查技能用 search_skills / get_skill；装技能用 install_skill。"
+        "查技能用 search_skills / get_skill；装技能用 install_skill；"
+        "查 AI 产品用 search_products / get_product（返回产品官网）；"
+        "查教程课程和别人整理的清单用 search_resources / get_resource。"
     ),
 )
 
@@ -104,7 +106,7 @@ def _local_items(lib: Path, kind: str) -> list[dict]:
                     "prompt_en": blocks[1] if len(blocks) > 1 else "",
                     "detail": section(body, "详细介绍"), "howto": section(body, "怎么用"),
                 })
-            else:
+            elif kind == "skill":
                 items.append({
                     "id": md.stem, "name": str(meta.get("技能名", md.stem)),
                     "display": str(meta.get("名称", "")), "category": cat,
@@ -112,6 +114,14 @@ def _local_items(lib: Path, kind: str) -> list[dict]:
                     "source": str(meta.get("来源链接", "")), "origin": str(meta.get("出处", "")),
                     "install": str(meta.get("安装方式", "")),
                     "body_path": str(meta.get("本体位置", "")),
+                })
+            else:  # product / learn：字段一样
+                items.append({
+                    "id": md.stem, "name": str(meta.get("名称", md.stem)), "category": cat,
+                    "summary": str(meta.get("一句话介绍", "")), "tags": meta.get("标签") or [],
+                    "source": str(meta.get("来源链接", "")), "origin": str(meta.get("出处", "")),
+                    "date": str(meta.get("收录日期", "")),
+                    "body": section(body, "详细介绍"),
                 })
     return items
 
@@ -122,10 +132,22 @@ def _fetch(name: str) -> dict:
         return json.loads(r.read().decode("utf-8"))
 
 
+CATALOGS = {
+    "products": ("AI 产品", "05_AI产品库"),
+    "learn": ("学习资源", "06_学习资源"),
+}
+
+
 def load(lib_key: str) -> tuple[list[dict], str]:
     """返回 (条目列表, 数据来源说明)。"""
-    kind = "prompt" if lib_key == "prompts" else "skill"
-    if kind == "prompt":
+    if lib_key in CATALOGS:
+        label, dirname = CATALOGS[lib_key]
+        local = ROOT / dirname
+        if local.is_dir():
+            items = _local_items(local, "catalog")
+            if items:
+                return items, "本机仓库"
+    elif lib_key == "prompts":
         local = ROOT / "03_提示词库"
         if local.is_dir():
             return _local_items(local, "prompt"), "本机仓库"
@@ -214,11 +236,13 @@ def pick_one(items: list[dict], name: str) -> dict | None:
 
 # ── 工具 ────────────────────────────────────────────────────────────
 
-@server.tool(description="知识森林总览：三个库各有多少条、分类分布、当前数据来自本机仓库还是线上 API")
+@server.tool(description="知识森林总览：五个库各有多少条、分类分布、当前数据来自本机仓库还是线上 API")
 def site_overview() -> str:
     lines = ["# AI知识森林", ""]
     for key, label, local_dir in (("prompts", "提示词", ROOT / "03_提示词库"),
-                                  ("skills", "Skill", ROOT / "04_Skill库")):
+                                  ("skills", "Skill", ROOT / "04_Skill库"),
+                                  ("products", "AI 产品", ROOT / "05_AI产品库"),
+                                  ("learn", "学习资源", ROOT / "06_学习资源")):
         cats = categories(local_dir)
         src = "本机仓库" if cats else "线上 API"
         if not cats:
@@ -233,6 +257,8 @@ def site_overview() -> str:
         ccats[c["category"]] = ccats.get(c["category"], 0) + 1
     lines.append(f"## 知识卡片（{len(cards)} 条，数据来自{csrc}）")
     lines.append("、".join(f"{k} {v}" for k, v in ccats.items()))
+    lines.append("")
+    lines.append("查 AI 产品用 search_products，查学习资源用 search_resources。")
     return "\n".join(lines)
 
 
@@ -376,6 +402,79 @@ def get_card(name: str) -> str:
     return f"# {it['name']}\n\n{it.get('body', '')}"
 
 
+@server.tool(description=(
+    "在 AI 产品库里搜别人做的 AI 产品和 AI 应用。用户问「有没有做 XX 的 AI 工具」"
+    "「推荐个好用的 XX 产品」时用这个。query 匹配名称、一句话说明、标签、分类，"
+    "category 可按分类收窄（对话助手／图像生成／视频生成／音频音乐／写作办公／"
+    "编程开发／智能体／学习与科研／生活娱乐），留空则全库搜"))
+def search_products(query: str = "", category: str = "", limit: int = 10) -> str:
+    items, src = load("products")
+    rows = search(items, query, category, max(1, min(limit, 50)))
+    if not rows:
+        return f"没搜到。全库 {len(items)} 条，分类：{'、'.join(sorted({i['category'] for i in items}))}"
+    out = [f"找到 {len(rows)} 条（共 {len(items)} 条，数据来自{src}）："]
+    for r in rows:
+        tags = "、".join(str(t) for t in (r.get("tags") or []))
+        out.append(f"- **{r['name']}**［{r['category']}］{r['summary']}"
+                   + (f"（{tags}）" if tags else ""))
+    out.append("\n用 get_product 看某条的官网和详情。")
+    return "\n".join(out)
+
+
+@server.tool(description="看一个 AI 产品的详情：官网地址、谁做的、从哪收录的")
+def get_product(name: str) -> str:
+    items, _ = load("products")
+    it = pick_one(items, name)
+    if not it:
+        return f"没找到「{name}」。可以先用 search_products 搜一下。"
+    lines = [
+        f"# {it['name']}",
+        f"分类：{it['category']}　标签：{'、'.join(str(t) for t in (it.get('tags') or []))}",
+        str(it.get("summary", "")),
+        "",
+        f"官网：{it.get('source', '')}",
+        f"出处：{it.get('origin', '')}",
+    ]
+    if it.get("body"):
+        lines += ["", str(it["body"])]
+    return "\n".join(lines)
+
+
+@server.tool(description=(
+    "在「学习资源」库里搜能读的、能学的、能查的资料。用户问「去哪学 XX」"
+    "「有没有 XX 的教程」「有没有别人整理好的 XX 清单」「现在哪个模型最强」时用这个。"
+    "分类：行业文章／教程与课程／别人的清单／模型排行榜"))
+def search_resources(query: str = "", category: str = "", limit: int = 10) -> str:
+    items, src = load("learn")
+    rows = search(items, query, category, max(1, min(limit, 50)))
+    if not rows:
+        return f"没搜到。全库 {len(items)} 条，分类：{'、'.join(sorted({i['category'] for i in items}))}"
+    out = [f"找到 {len(rows)} 条（共 {len(items)} 条，数据来自{src}）："]
+    for r in rows:
+        out.append(f"- **{r['name']}**［{r['category']}］{r['summary']}")
+    out.append("\n要完整说明就用 get_resource 取。")
+    return "\n".join(out)
+
+
+@server.tool(description="看一条学习资源的详情：讲的什么、在哪看")
+def get_resource(name: str) -> str:
+    items, _ = load("learn")
+    it = pick_one(items, name)
+    if not it:
+        return f"没找到「{name}」。可以先用 search_resources 搜一下。"
+    lines = [
+        f"# {it['name']}",
+        f"分类：{it['category']}　标签：{'、'.join(str(t) for t in (it.get('tags') or []))}",
+        str(it.get("summary", "")),
+        "",
+        f"地址：{it.get('source', '')}",
+        f"出处：{it.get('origin', '')}",
+    ]
+    if it.get("body"):
+        lines += ["", str(it["body"])]
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "--selftest":
         print(site_overview())
@@ -383,5 +482,9 @@ if __name__ == "__main__":
         print(search_prompts("少说套话"))
         print()
         print(search_skills("写作", limit=3))
+        print()
+        print(search_products("小红书", limit=5))
+        print()
+        print(search_resources("教程", limit=5))
     else:
         server.run("stdio")

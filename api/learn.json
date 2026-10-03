@@ -1,0 +1,515 @@
+{
+ "lib": "学习资源",
+ "count": 45,
+ "categories": {
+  "别人的清单": 19,
+  "教程与课程": 15,
+  "模型排行榜": 6,
+  "行业文章": 5
+ },
+ "items": [
+  {
+   "id": "001_How Large Language Models Will Transform Science, Society, and AI",
+   "name": "How Large Language Models Will Transform Science, Society, and AI",
+   "category": "行业文章",
+   "summary": "讲清 GPT-3 这类模型能做什么、不能做什么，以及它对社会的影响。斯坦福 HAI，2021 年。",
+   "tags": [],
+   "source": "https://hai.stanford.edu/news/how-large-language-models-will-transform-science-society-and-ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Article summarizing the capabilities and limitations of the GPT-3 model, and its potential impact on society. By Alex Tamkin and Deep Ganguli, February 5, 2021."
+  },
+  {
+   "id": "002_Generative AI: A Creative New World",
+   "name": "Generative AI: A Creative New World",
+   "category": "行业文章",
+   "summary": "红杉资本对生成式 AI 产业的系统梳理：从历史脉络到产业链格局。2022 年。",
+   "tags": [],
+   "source": "https://www.sequoiacap.com/article/generative-ai-a-creative-new-world/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A comprehensive examination of the generative AI industry, offering a historical perspective and in-depth analysis of the industry ecosystem. By Sonya Huang, Pat Grady and GPT-3, September 19, 2022."
+  },
+  {
+   "id": "003_A Coming-Out Party for Generative A.I., Silicon Valley's New Craze",
+   "name": "A Coming-Out Party for Generative A.I., Silicon Valley's New Craze",
+   "category": "行业文章",
+   "summary": "生成式 AI 的崛起，重点讲 Stable Diffusion 的成功和随之而来的争议。纽约时报，2022 年。",
+   "tags": [
+    "付费墙"
+   ],
+   "source": "https://www.nytimes.com/2022/10/21/technology/generative-ai.html",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Article about the rise of generative AI, particularly the success of the Stable Diffusion image generator, and the associated controversies. New York Times, October 21, 2022."
+  },
+  {
+   "id": "004_AI's New Creative Streak Sparks a Silicon Valley Gold Rush",
+   "name": "AI's New Creative Streak Sparks a Silicon Valley Gold Rush",
+   "category": "行业文章",
+   "summary": "生成式 AI 创业公司的投资热潮，以及各行业在试水的应用。Wired，2022 年。",
+   "tags": [],
+   "source": "https://www.wired.com/story/ais-new-creative-streak-sparks-a-silicon-valley-gold-rush/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Article about the growing hype and investment in generative AI startups, with various industries exploring its potential applications. Wired, October 27, 2022."
+  },
+  {
+   "id": "005_ChatGPT Heralds an Intellectual Revolution",
+   "name": "ChatGPT Heralds an Intellectual Revolution",
+   "category": "行业文章",
+   "summary": "基辛格、埃里克·施密特和丹尼尔·胡滕洛赫的联名评论。华尔街日报，2023 年。",
+   "tags": [
+    "付费墙"
+   ],
+   "source": "https://www.wsj.com/articles/artificial-intelligence-generative-ai-chatgpt-kissinger-84512912",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An op-ed by Henry Kissinger, Eric Schmidt and Daniel Huttenlocher. Wall Street Journal, February 24, 2023."
+  },
+  {
+   "id": "001_Learn Prompting",
+   "name": "Learn Prompting",
+   "category": "教程与课程",
+   "summary": "免费开源的提示词工程课程。",
+   "tags": [],
+   "source": "https://learnprompting.org/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A free, open source course on communicating with artificial intelligence."
+  },
+  {
+   "id": "002_Prompt Engineering Guide",
+   "name": "Prompt Engineering Guide",
+   "category": "教程与课程",
+   "summary": "提示词工程的指南与资源合集。",
+   "tags": [],
+   "source": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Guide and resources for prompt engineering."
+  },
+  {
+   "id": "003_ChatGPT prompt engineering for developers",
+   "name": "ChatGPT prompt engineering for developers",
+   "category": "教程与课程",
+   "summary": "吴恩达和 OpenAI 的 Isa Fulford 合讲的短课。",
+   "tags": [],
+   "source": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A short course by Isa Fulford (OpenAI) and Andrew Ng (DeepLearning.AI)."
+  },
+  {
+   "id": "004_OpenAI Cookbook",
+   "name": "OpenAI Cookbook",
+   "category": "教程与课程",
+   "summary": "OpenAI API 的使用示例和指南。",
+   "tags": [],
+   "source": "https://github.com/openai/openai-cookbook",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Examples and guides for using the OpenAI API."
+  },
+  {
+   "id": "005_OpenAI Prompt Engineering Guide",
+   "name": "OpenAI Prompt Engineering Guide",
+   "category": "教程与课程",
+   "summary": "OpenAI 官方提示词指南：从大模型拿到更好结果的策略和技巧。",
+   "tags": [],
+   "source": "https://platform.openai.com/docs/guides/prompt-engineering",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Strategies and tactics for getting better results from large language models."
+  },
+  {
+   "id": "006_PromptPerfect",
+   "name": "PromptPerfect",
+   "category": "教程与课程",
+   "summary": "提示词优化工具。",
+   "tags": [],
+   "source": "https://promptperfect.jina.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Tool for prompt engineering."
+  },
+  {
+   "id": "007_Anthropic courses",
+   "name": "Anthropic courses",
+   "category": "教程与课程",
+   "summary": "Anthropic 官方课程。",
+   "tags": [],
+   "source": "https://github.com/anthropics/courses",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Anthropic's educational courses."
+  },
+  {
+   "id": "008_Build a Large Language Model (From Scratch)",
+   "name": "Build a Large Language Model (From Scratch)",
+   "category": "教程与课程",
+   "summary": "Sebastian Raschka 的书：从零搭一个能跑起来的大语言模型。",
+   "tags": [],
+   "source": "https://www.manning.com/books/build-a-large-language-model-from-scratch",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A guide to building your own working LLM, by Sebastian Raschka."
+  },
+  {
+   "id": "009_Prompt Engineering for Vision Models",
+   "name": "Prompt Engineering for Vision Models",
+   "category": "教程与课程",
+   "summary": "DeepLearning.AI 免费短课：怎么用自然语言、边界框和分割掩码提示视觉模型。",
+   "tags": [],
+   "source": "https://www.deeplearning.ai/short-courses/prompt-engineering-for-vision-models/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A free DeepLearning.AI short course on how to prompt computer vision models with natural language, bounding boxes, segmentation masks, coordinate points, and other images."
+  },
+  {
+   "id": "010_Build a Reasoning Model (From Scratch)",
+   "name": "Build a Reasoning Model (From Scratch)",
+   "category": "教程与课程",
+   "summary": "Sebastian Raschka 的书：从零搭一个能跑的推理模型。",
+   "tags": [],
+   "source": "https://www.manning.com/books/build-a-reasoning-model-from-scratch",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A guide to building a working reasoning model from the ground up, by Sebastian Raschka."
+  },
+  {
+   "id": "011_Build an AI Agent (From Scratch)",
+   "name": "Build an AI Agent (From Scratch)",
+   "category": "教程与课程",
+   "summary": "讲怎么用工具、记忆、规划和多智能体搭出 AI 智能体的书。",
+   "tags": [],
+   "source": "https://www.manning.com/books/build-an-ai-agent-from-scratch",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A book about building AI agents with tools, memory, planning, and multi-agent systems."
+  },
+  {
+   "id": "012_Build a DeepSeek Model (From Scratch)",
+   "name": "Build a DeepSeek Model (From Scratch)",
+   "category": "教程与课程",
+   "summary": "讲 DeepSeek 那套大模型架构、训练和蒸馏方法的书。",
+   "tags": [],
+   "source": "https://www.manning.com/books/build-a-deepseek-model-from-scratch",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A book about implementing DeepSeek-style LLM architecture, training, and distillation methods."
+  },
+  {
+   "id": "013_AI Governance",
+   "name": "AI Governance",
+   "category": "教程与课程",
+   "summary": "讲生成式 AI 的治理、风险、合规、安全、隐私和监督的书。",
+   "tags": [],
+   "source": "https://www.manning.com/books/ai-governance",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A book about governance, risk, compliance, security, privacy, and oversight for generative AI systems."
+  },
+  {
+   "id": "014_AnimatedLLM",
+   "name": "AnimatedLLM",
+   "category": "教程与课程",
+   "summary": "用交互动画讲清大语言模型是怎么工作的。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://animatedllm.github.io/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Interactive visualizations explaining how large language models work."
+  },
+  {
+   "id": "015_Transformer Explainer",
+   "name": "Transformer Explainer",
+   "category": "教程与课程",
+   "summary": "交互式可视化讲 Transformer 大模型，浏览器里直接跑一个 GPT-2。",
+   "tags": [
+    "开源"
+   ],
+   "source": "https://poloclub.github.io/transformer-explainer/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Interactive visualization of how transformer-based LLMs work, running a live GPT-2 model in the browser."
+  },
+  {
+   "id": "001_Tools and Resources for AI Art",
+   "name": "Tools and Resources for AI Art",
+   "category": "别人的清单",
+   "summary": "一大批生成式 AI 的 Google Colab notebook，Pharmapsychotic 整理。",
+   "tags": [],
+   "source": "https://pharmapsychotic.com/tools.html",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A large list of Google Colab notebooks for generative AI, by @pharmapsychotic."
+  },
+  {
+   "id": "002_The Generative AI Application Landscape",
+   "name": "The Generative AI Application Landscape",
+   "category": "别人的清单",
+   "summary": "一张图画出生成式 AI 的生态版图，红杉的 Sonya Huang 做的。",
+   "tags": [],
+   "source": "https://twitter.com/sonyatweetybird/status/1584580362339962880",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An infographic that maps the generative AI ecosystem, by Sonya Huang of Sequoia Capital."
+  },
+  {
+   "id": "003_Startups - @builtwithgenai",
+   "name": "Startups - @builtwithgenai",
+   "category": "别人的清单",
+   "summary": "生成式 AI 创业公司的 Airtable 清单。",
+   "tags": [],
+   "source": "https://airtable.com/shr6nfE9FOHp17IjG/tblL3ekHZfkm3p6YT",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An Airtable list by @builtwithgenai."
+  },
+  {
+   "id": "004_The Generative AI Index",
+   "name": "The Generative AI Index",
+   "category": "别人的清单",
+   "summary": "Scale Venture Partners 整理的生成式 AI 索引。",
+   "tags": [],
+   "source": "https://airtable.com/shrH4REIgddv8SzUo/tbl5dsXdD1P859QLO",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An Airtable list by Scale Venture Partners."
+  },
+  {
+   "id": "005_Generative AI for Games",
+   "name": "Generative AI for Games",
+   "category": "别人的清单",
+   "summary": "做游戏生成式 AI 的公司市场地图，a16z 做的。",
+   "tags": [],
+   "source": "https://twitter.com/gwertz/status/1593268767269670912",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A market map of companies working on Generative AI for games, by a16z."
+  },
+  {
+   "id": "006_Generative Deep Art",
+   "name": "Generative Deep Art",
+   "category": "别人的清单",
+   "summary": "面向艺术创作的生成式深度学习工具与作品清单。",
+   "tags": [],
+   "source": "https://github.com/filipecalegario/awesome-generative-ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A curated list of generative deep learning tools, works, models, etc. for artistic uses, by @filipecalegario."
+  },
+  {
+   "id": "007_GPT-3 Demo",
+   "name": "GPT-3 Demo",
+   "category": "别人的清单",
+   "summary": "GPT-3 的示例、demo 和 NLP 用例展示。",
+   "tags": [],
+   "source": "https://gpt3demo.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Showcase with GPT-3 examples, demos, apps, showcase, and NLP use-cases."
+  },
+  {
+   "id": "008_GPT-4 Demo",
+   "name": "GPT-4 Demo",
+   "category": "别人的清单",
+   "summary": "GPT-4 的应用和用例集合。",
+   "tags": [],
+   "source": "https://gpt4demo.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "GPT-4 apps and use-cases."
+  },
+  {
+   "id": "009_The Generative AI Landscape",
+   "name": "The Generative AI Landscape",
+   "category": "别人的清单",
+   "summary": "生成式 AI 应用大合集，按 80 多个门类收录。",
+   "tags": [],
+   "source": "https://github.com/ai-collection/ai-collection",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A Collection of Awesome Generative AI Applications."
+  },
+  {
+   "id": "010_Molecular design",
+   "name": "Molecular design",
+   "category": "别人的清单",
+   "summary": "用生成式 AI 和深度学习做分子设计的论文清单。",
+   "tags": [],
+   "source": "https://github.com/AspirinCode/papers-for-molecular-design-using-DL",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "List of molecular design using Generative AI and Deep Learning."
+  },
+  {
+   "id": "011_Open LLMs",
+   "name": "Open LLMs",
+   "category": "别人的清单",
+   "summary": "可商用的开源大模型清单。",
+   "tags": [],
+   "source": "https://github.com/eugeneyan/open-llms",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A list of open LLMs available for commercial use."
+  },
+  {
+   "id": "012_Awesome Music AI",
+   "name": "Awesome Music AI",
+   "category": "别人的清单",
+   "summary": "AI 音乐创作、生成和分析工具清单。",
+   "tags": [],
+   "source": "https://github.com/steven2358/awesome-music-ai",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A curated list of AI tools for music composition, generation, and analysis."
+  },
+  {
+   "id": "013_Awesome AI Market Maps",
+   "name": "Awesome AI Market Maps",
+   "category": "别人的清单",
+   "summary": "2024 到 2026 年的 AI 市场地图合集。",
+   "tags": [],
+   "source": "https://github.com/joylarkin/Awesome-AI-Market-Maps",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A curated list of AI market maps from 2026, 2025, and 2024, by Joy Larkin."
+  },
+  {
+   "id": "014_Awesome RAG Production",
+   "name": "Awesome RAG Production",
+   "category": "别人的清单",
+   "summary": "搭生产级 RAG 系统的工具和资源清单。",
+   "tags": [],
+   "source": "https://github.com/Yigtwxx/Awesome-RAG-Production",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A curated list of tools and resources for building production RAG systems."
+  },
+  {
+   "id": "015_Awesome ChatGPT（humanloop）",
+   "name": "Awesome ChatGPT（humanloop）",
+   "category": "别人的清单",
+   "summary": "ChatGPT 和 GPT-3 的工具、demo、文档清单。",
+   "tags": [],
+   "source": "https://github.com/humanloop/awesome-chatgpt",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A curated list of awesome tools, demos, docs for ChatGPT and GPT-3, by @jordn."
+  },
+  {
+   "id": "016_Awesome ChatGPT Prompts",
+   "name": "Awesome ChatGPT Prompts",
+   "category": "别人的清单",
+   "summary": "ChatGPT 提示词示例合集。",
+   "tags": [],
+   "source": "https://github.com/f/prompts.chat",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A collection of prompt examples to be used with the ChatGPT model."
+  },
+  {
+   "id": "017_FlowGPT",
+   "name": "FlowGPT",
+   "category": "别人的清单",
+   "summary": "提示词分享社区，用现成的提示词串起工作流。",
+   "tags": [],
+   "source": "https://flowgpt.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Amplify your workflow with the best prompts."
+  },
+  {
+   "id": "018_ChatGPT Prompts for Data Science",
+   "name": "ChatGPT Prompts for Data Science",
+   "category": "别人的清单",
+   "summary": "数据科学用的 ChatGPT 提示词仓库。",
+   "tags": [],
+   "source": "https://github.com/travistangvh/ChatGPT-Data-Science-Prompts",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A repository of useful data science prompts for ChatGPT."
+  },
+  {
+   "id": "019_Awesome ChatGPT（sindresorhus）",
+   "name": "Awesome ChatGPT（sindresorhus）",
+   "category": "别人的清单",
+   "summary": "另一份 ChatGPT 的 awesome 清单。",
+   "tags": [],
+   "source": "https://github.com/sindresorhus/awesome-chatgpt",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Another awesome list for ChatGPT."
+  },
+  {
+   "id": "001_Arena",
+   "name": "Arena",
+   "category": "模型排行榜",
+   "summary": "众包的 AI 模型评测平台，UC Berkeley SkyLab 维护。",
+   "tags": [],
+   "source": "https://arena.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "An open platform for crowdsourced AI benchmarking, hosted by researchers at UC Berkeley SkyLab."
+  },
+  {
+   "id": "002_Artificial Analysis",
+   "name": "Artificial Analysis",
+   "category": "模型排行榜",
+   "summary": "客观的模型跑分和信息，帮你选模型和托管服务商。",
+   "tags": [],
+   "source": "https://artificialanalysis.ai/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Artificial Analysis provides objective benchmarks & information to help choose AI models and hosting providers."
+  },
+  {
+   "id": "003_imgsys",
+   "name": "imgsys",
+   "category": "模型排行榜",
+   "summary": "fal.ai 做的生成图像模型竞技场。",
+   "tags": [],
+   "source": "https://imgsys.org/rankings",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "A generative image model arena by fal.ai."
+  },
+  {
+   "id": "004_OpenRouter LLM Rankings",
+   "name": "OpenRouter LLM Rankings",
+   "category": "模型排行榜",
+   "summary": "按各家应用的实际调用量给大模型排名。",
+   "tags": [],
+   "source": "https://openrouter.ai/rankings",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Language models ranked and analyzed by usage across apps."
+  },
+  {
+   "id": "005_SEAL LLM Leaderboard",
+   "name": "SEAL LLM Leaderboard",
+   "category": "模型排行榜",
+   "summary": "Scale 做的专家驱动模型评测榜。",
+   "tags": [],
+   "source": "https://labs.scale.com/leaderboard",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Expert-driven LLM benchmarks and updated AI model leaderboards."
+  },
+  {
+   "id": "006_LLM Stats",
+   "name": "LLM Stats",
+   "category": "模型排行榜",
+   "summary": "跨基准、价格、速度和上下文窗口对比大模型。",
+   "tags": [],
+   "source": "https://llm-stats.com/",
+   "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
+   "date": "2026-10-02",
+   "body": "Compare AI models across benchmarks, pricing, speed, and context window."
+  }
+ ]
+}

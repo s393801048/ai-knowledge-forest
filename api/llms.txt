@@ -2,16 +2,18 @@
 
 https://s393801048.github.io/ai-knowledge-forest/
 
-作者收集的提示词、Skill、知识卡片。全部内容以静态 JSON 提供，任何 AI 工具都能直接读取。
+作者收集的提示词、Skill、知识卡片、AI 产品、学习资源。全部内容以静态 JSON 提供，任何 AI 工具都能直接读取。
 
 ## 数据接口
 
 | 文件 | 内容 | 条数 |
 |---|---|---|
 | https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
-| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含中文译文和英文原文 | 117 |
+| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含中文译文和英文原文 | 168 |
 | https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 103 |
-| https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 465 |
+| https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 489 |
+| https://s393801048.github.io/ai-knowledge-forest/api/products.json | AI 产品和 AI 应用：干什么、谁做的、官网在哪 | 318 |
+| https://s393801048.github.io/ai-knowledge-forest/api/learn.json | 学习资源：文章、课程、别人的清单、模型排行榜 | 45 |
 
 本文件也在 https://s393801048.github.io/ai-knowledge-forest/llms.txt。
 
@@ -30,6 +32,15 @@ https://s393801048.github.io/ai-knowledge-forest/
 - `name` 技能名，`display` 中文名，`category` 分类
 - `summary` 干什么，`about` 详细说明
 - `install` 安装方式（`在线安装` 表示有公开地址，看 `source`；`从本机安装` 表示无公开地址）
+
+读 `api/products.json` 和 `api/learn.json`，字段一样：
+
+- `name` 名称，`category` 分类，`summary` 一句话说明
+- `tags` 标签，里面可能有 **GitHub 星标数**（开源项目）或**评价条数**（有人用过的量）
+- `source` **官网或仓库地址**，`origin` 出处，`body` 详细说明
+
+**用 products 回答「有没有 XX 类的 AI 工具」「推荐个好用的 XX 工具」**；
+用 learn 回答「去哪学 XX」「有没有 XX 的教程」「现在哪个模型最强」。
 
 ## 接上这个站（一条命令）
 

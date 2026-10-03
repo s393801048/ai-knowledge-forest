@@ -1,20 +1,20 @@
 {
  "site": "AI知识森林",
  "home": "https://s393801048.github.io/ai-knowledge-forest/",
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "libs": [
   {
    "key": "prompts",
    "name": "提示词",
-   "count": 117,
+   "count": 168,
    "file": "api/prompts.json",
    "categories": {
-    "写作": 16,
-    "办公": 14,
+    "写作": 28,
+    "办公": 27,
     "图像": 1,
-    "提问与思考": 10,
-    "生活与学习": 9,
-    "编程": 62,
+    "提问与思考": 27,
+    "生活与学习": 13,
+    "编程": 67,
     "营销": 5
    },
    "desc": "一条一个提示词：中文译文和英文原文都能直接复制，另有中文详解和用法"
@@ -40,21 +40,54 @@
   {
    "key": "cards",
    "name": "知识卡片",
-   "count": 465,
+   "count": 489,
    "file": "api/cards.json",
    "categories": {
     "原理": 104,
-    "工具": 28,
+    "工具": 52,
     "方法": 207,
     "概念": 126
    },
    "desc": "一张卡讲清一个概念、工具、原理或方法"
+  },
+  {
+   "key": "products",
+   "name": "AI 产品",
+   "count": 318,
+   "file": "api/products.json",
+   "categories": {
+    "写作办公": 57,
+    "图像生成": 37,
+    "学习与科研": 26,
+    "对话助手": 24,
+    "智能体": 33,
+    "生活娱乐": 11,
+    "编程开发": 79,
+    "视频生成": 25,
+    "音频音乐": 26
+   },
+   "desc": "别人做的 AI 产品和 AI 应用：干什么、谁做的、官网在哪。只收还在运营的"
+  },
+  {
+   "key": "learn",
+   "name": "学习资源",
+   "count": 45,
+   "file": "api/learn.json",
+   "categories": {
+    "别人的清单": 19,
+    "教程与课程": 15,
+    "模型排行榜": 6,
+    "行业文章": 5
+   },
+   "desc": "能读的、能学的、能查的资料：行业文章、教程课程、别人的清单、模型排行榜"
   }
  ],
  "howto": [
   "查提示词读 api/prompts.json，items[].prompt 是中文译文，items[].prompt_en 是英文原文",
   "查技能读 api/skills.json，items[].summary 说它干什么",
   "查知识卡片读 api/cards.json",
+  "查 AI 产品读 api/products.json，items[].source 是产品官网",
+  "查学习资源读 api/learn.json",
   "装到本机：用 MCP 服务器（见 api/llms.txt 的说明）"
  ]
 }
