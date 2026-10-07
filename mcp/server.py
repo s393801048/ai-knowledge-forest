@@ -32,7 +32,9 @@ ROOT = Path(os.environ.get("KNOWLEDGE_FOREST_ROOT", Path.home() / "00_Huaya/07_A
 REMOTE = os.environ.get(
     "KNOWLEDGE_FOREST_REMOTE", "https://s393801048.github.io/ai-knowledge-forest/api"
 ).rstrip("/")
+SITE = REMOTE.rsplit("/api", 1)[0]      # 站点根地址，取课程讲次原文时用
 CARDS_SRC = Path.home() / "00_Huaya/05_不合理蛙写作/AI第二大脑/03_知识库/03_知识卡片"
+LOCAL_API = ROOT / "01_网站工程" / "api"
 
 # 复制技能时跳过的目录
 SKIP_DIRS = {".git", ".venv", "venv", "node_modules", "__pycache__",
@@ -46,7 +48,8 @@ server = MCPServer(
         "查提示词用 search_prompts / get_prompt（get_prompt 返回可直接使用的原文）；"
         "查技能用 search_skills / get_skill；装技能用 install_skill；"
         "查 AI 产品用 search_products / get_product（返回产品官网）；"
-        "查教程课程和别人整理的清单用 search_resources / get_resource。"
+        "查教程课程和别人整理的清单用 search_resources / get_resource"
+        "（整门课能取到每一讲的全文）。"
     ),
 )
 
@@ -132,6 +135,18 @@ def _fetch(name: str) -> dict:
         return json.loads(r.read().decode("utf-8"))
 
 
+def _local_courses() -> list[dict]:
+    """课程条目取自本机生成的 api/learn.json（build_api.py 生成，含讲次和 Markdown 地址）。"""
+    f = LOCAL_API / "learn.json"
+    if not f.is_file():
+        return []
+    try:
+        items = json.loads(f.read_text(encoding="utf-8"))["items"]
+    except (OSError, ValueError, KeyError):
+        return []
+    return [i for i in items if i.get("course")]
+
+
 CATALOGS = {
     "products": ("AI 产品", "05_AI产品库"),
     "learn": ("学习资源", "06_学习资源"),
@@ -145,6 +160,8 @@ def load(lib_key: str) -> tuple[list[dict], str]:
         local = ROOT / dirname
         if local.is_dir():
             items = _local_items(local, "catalog")
+            if lib_key == "learn":
+                items = items + _local_courses()      # 课程不在 06_学习资源 里，另取
             if items:
                 return items, "本机仓库"
     elif lib_key == "prompts":
@@ -243,10 +260,16 @@ def site_overview() -> str:
                                   ("skills", "Skill", ROOT / "04_Skill库"),
                                   ("products", "AI 产品", ROOT / "05_AI产品库"),
                                   ("learn", "学习资源", ROOT / "06_学习资源")):
-        cats = categories(local_dir)
-        src = "本机仓库" if cats else "线上 API"
-        if not cats:
-            cats = _fetch(key)["categories"]
+        if key == "learn":                       # 学习资源里还有课程，得走 load 才能算全
+            rows, src = load("learn")
+            cats: dict[str, int] = {}
+            for i in rows:
+                cats[i["category"]] = cats.get(i["category"], 0) + 1
+        else:
+            cats = categories(local_dir)
+            src = "本机仓库" if cats else "线上 API"
+            if not cats:
+                cats = _fetch(key)["categories"]
         total = sum(cats.values())
         lines.append(f"## {label}（{total} 条，数据来自{src}）")
         lines.append("、".join(f"{k} {v}" for k, v in cats.items()))
@@ -443,7 +466,8 @@ def get_product(name: str) -> str:
 @server.tool(description=(
     "在「学习资源」库里搜能读的、能学的、能查的资料。用户问「去哪学 XX」"
     "「有没有 XX 的教程」「有没有别人整理好的 XX 清单」「现在哪个模型最强」时用这个。"
-    "分类：行业文章／教程与课程／别人的清单／模型排行榜"))
+    "分类：行业文章／教程与课程／别人的清单／模型排行榜。"
+    "教程与课程里有几门完整课程，能用 get_resource 读到每一讲全文"))
 def search_resources(query: str = "", category: str = "", limit: int = 10) -> str:
     items, src = load("learn")
     rows = search(items, query, category, max(1, min(limit, 50)))
@@ -451,17 +475,68 @@ def search_resources(query: str = "", category: str = "", limit: int = 10) -> st
         return f"没搜到。全库 {len(items)} 条，分类：{'、'.join(sorted({i['category'] for i in items}))}"
     out = [f"找到 {len(rows)} 条（共 {len(items)} 条，数据来自{src}）："]
     for r in rows:
-        out.append(f"- **{r['name']}**［{r['category']}］{r['summary']}")
+        mark = "（完整课程，能读全文）" if r.get("course") else ""
+        out.append(f"- **{r['name']}**［{r['category']}］{r['summary']}{mark}")
     out.append("\n要完整说明就用 get_resource 取。")
     return "\n".join(out)
 
 
-@server.tool(description="看一条学习资源的详情：讲的什么、在哪看")
-def get_resource(name: str) -> str:
+def _lesson_text(course: dict, les: dict) -> str:
+    """取一讲的原文：本机有发布出来的 Markdown 就读本机，没有就去线上取。"""
+    rel = str(les.get("md", ""))
+    local = ROOT / "01_网站工程" / rel
+    if local.is_file():
+        text = local.read_text(encoding="utf-8")
+    else:
+        url = f"{SITE}/{rel}"
+        try:
+            with urllib.request.urlopen(url, timeout=20) as r:  # noqa: S310
+                text = r.read().decode("utf-8")
+        except Exception as e:  # noqa: BLE001
+            return f"这一讲的原文没取到（{url}）：{e}"
+    head = f'{les.get("no", "")} {les.get("title", "")}'.strip()
+    return f"# {course['name']}｜{head}\n\n{text}"
+
+
+def _course_detail(it: dict, lesson: str) -> str:
+    lessons = it.get("lessons") or []
+    if lesson:
+        q = lesson.strip().lower()
+        hit = next((l for l in lessons if str(l.get("no", "")).lower() == q), None)
+        if hit is None:
+            hits = [l for l in lessons if q in str(l.get("title", "")).lower()]
+            hit = hits[0] if hits else None
+        if hit is None:
+            listing = "、".join(f'{l.get("no") or "附录"} {l.get("title", "")}' for l in lessons)
+            return f"「{it['name']}」里没找到「{lesson}」。可选：{listing}"
+        return _lesson_text(it, hit)
+
+    lines = [
+        f"# {it['name']}",
+        f"分类：{it['category']}　标签：{'、'.join(str(t) for t in (it.get('tags') or []))}",
+        str(it.get("summary", "")),
+        "",
+        f"全文页：{it.get('url', '')}",
+        f"出处：{it.get('origin', '')}",
+        "",
+        f"共 {len(lessons)} 讲：",
+    ]
+    lines += [f'- {l.get("no", "")} {l.get("title", "")}'.replace("  ", " ").strip()
+              for l in lessons]
+    lines += ["", '要某一讲的原文，再用 get_resource 取，传 lesson="05"（编号或标题里的字样都行）。']
+    return "\n".join(lines)
+
+
+@server.tool(description=(
+    "看一条学习资源的详情：讲的什么、在哪看。"
+    "如果是完整课程，传 lesson 还能取到某一讲的全文（lesson 用编号如 05，或标题里的字样）"))
+def get_resource(name: str, lesson: str = "") -> str:
     items, _ = load("learn")
     it = pick_one(items, name)
     if not it:
         return f"没找到「{name}」。可以先用 search_resources 搜一下。"
+    if it.get("course"):
+        return _course_detail(it, lesson)
     lines = [
         f"# {it['name']}",
         f"分类：{it['category']}　标签：{'、'.join(str(t) for t in (it.get('tags') or []))}",
@@ -486,5 +561,9 @@ if __name__ == "__main__":
         print(search_products("小红书", limit=5))
         print()
         print(search_resources("教程", limit=5))
+        print()
+        print(get_resource("给所有人的 AI 课"))
+        print()
+        print(get_resource("给所有人的 AI 课", lesson="02")[:300] + "……")
     else:
         server.run("stdio")

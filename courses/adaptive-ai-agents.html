@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吴恩达《构建自适应 AI 智能体》实战 · AI知识森林</title>
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --bg:#f5f5f7; --panel:#f5f5f7; --card:#fff; --line:#e8e8ed;
+    --text:#1d1d1f; --dim:#515154; --faint:#86868b;
+    --accent:#0066cc; --accent-h:#0071e3; --accent-soft:rgba(0,102,204,.07);
+    --nav:rgba(250,250,252,.82); --scrim:rgba(0,0,0,.42);
+    --code-bg:#f5f5f7;
+  }
+  html[data-theme="dark"]{
+    --bg:#000; --panel:#1d1d1f; --card:#1d1d1f; --line:#333336;
+    --text:#f5f5f7; --dim:#b0b0b5; --faint:#86868b;
+    --accent:#2997ff; --accent-h:#4aa8ff; --accent-soft:rgba(41,151,255,.12);
+    --nav:rgba(22,22,23,.82); --scrim:rgba(0,0,0,.6);
+    --code-bg:#141416;
+  }
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    font-family:"SF Pro SC","SF Pro Text",-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height:1.47; transition:background .3s,color .3s;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+
+  header{
+    position:sticky;top:0;z-index:20;background:var(--nav);
+    backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:16px;height:54px}
+  .back{font-size:14px;color:var(--dim);white-space:nowrap}
+  .back:hover{color:var(--text);text-decoration:none}
+  .ctitle{font-size:14px;font-weight:600;min-width:0;overflow:hidden;
+          text-overflow:ellipsis;white-space:nowrap}
+  .sp{flex:1}
+  .tog{display:flex;gap:2px;padding:3px;border-radius:980px;background:var(--panel);
+       border:1px solid var(--line);flex:0 0 auto}
+  .tog button{background:none;border:0;width:32px;height:26px;border-radius:980px;cursor:pointer;
+              color:var(--dim);font-size:13px;line-height:1;display:grid;place-items:center;
+              transition:.2s;font-family:inherit}
+  .tog button:hover{color:var(--text)}
+  .tog button.on{background:var(--card);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  html[data-theme="dark"] .tog button.on{background:#3a3a3c}
+  .tocbtn{
+    display:none;background:var(--panel);border:1px solid var(--line);color:var(--dim);
+    border-radius:980px;padding:6px 14px;font-size:13px;font-family:inherit;cursor:pointer;
+  }
+  .tocbtn:hover{color:var(--text)}
+
+  .shell{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;
+         align-items:start;padding-top:32px;padding-bottom:90px}
+  @media (max-width:900px){ .shell{grid-template-columns:1fr;gap:0} }
+
+  aside{position:sticky;top:76px;max-height:calc(100vh - 104px);overflow-y:auto;
+        padding-right:8px;scrollbar-width:thin}
+  .intro h1{margin:0;font-size:20px;font-weight:600;letter-spacing:-.012em;line-height:1.3}
+  .intro .meta{margin:9px 0 0;font-size:12px;color:var(--faint);line-height:1.6}
+  .intro .sum{margin:11px 0 16px;font-size:13.5px;color:var(--dim);line-height:1.65}
+  aside .grp{font-size:11.5px;color:var(--faint);margin:16px 0 7px;padding-top:14px;
+             border-top:1px solid var(--line)}
+  aside .grp:first-of-type{border-top:0;padding-top:0;margin-top:4px}
+  aside .item{display:flex;gap:9px;align-items:baseline;padding:7px 10px;margin:1px 0;
+              border-radius:6px;color:var(--dim);font-size:13.5px;line-height:1.45}
+  aside .item:hover{background:var(--accent-soft);color:var(--text);text-decoration:none}
+  aside .item.on{background:var(--accent-soft);color:var(--text);font-weight:600}
+  aside .item .no{color:var(--faint);font-variant-numeric:tabular-nums;flex:0 0 auto;font-size:12px}
+  aside .item.on .no{color:var(--dim)}
+  aside .item .t{min-width:0}
+  aside .item .badge{margin-left:auto;flex:0 0 auto;font-size:10.5px;color:var(--faint);
+                     border:1px solid var(--line);border-radius:980px;padding:1px 7px}
+
+  main{min-width:0}
+  .lesson{max-width:800px;scroll-margin-top:74px}
+  .lesson+.lesson{margin-top:26px}
+  .lhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+         margin:0 0 20px;padding-top:34px;border-top:1px solid var(--line)}
+  .lesson:first-child .lhead{border-top:0;padding-top:0}
+  .lhead .no{font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .lhead h2{margin:0;font-size:26px;font-weight:600;letter-spacing:-.016em;line-height:1.25;flex:1 1 auto}
+  .lhead .mdlink{font-size:12px;color:var(--faint);white-space:nowrap}
+  .lhead .mdlink:hover{color:var(--accent);text-decoration:none}
+
+  .content{font-size:16px}
+  .content h3{margin:36px 0 12px;font-size:20px;font-weight:600;letter-spacing:-.012em;line-height:1.35}
+  .content h4{margin:28px 0 10px;font-size:17px;font-weight:600;line-height:1.4}
+  .content h5{margin:24px 0 8px;font-size:15.5px;font-weight:600;color:var(--dim)}
+  .content p{margin:15px 0;color:var(--dim);line-height:1.85}
+  .content strong{color:var(--text)}
+  .content em{font-style:italic}
+  .content ul,.content ol{margin:14px 0;padding-left:23px;color:var(--dim)}
+  .content li{margin:7px 0;line-height:1.8}
+  .content li>ul,.content li>ol{margin:6px 0}
+  .content img{max-width:100%;border-radius:4px}
+  .content code{background:var(--code-bg);border:1px solid var(--line);border-radius:5px;
+                padding:1px 6px;font-size:13.5px;color:var(--text);
+                font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+  .content pre{position:relative;background:var(--code-bg);border:1px solid var(--line);
+               border-radius:8px;padding:16px 18px;overflow:auto;margin:18px 0}
+  .content pre code{display:block;background:none;border:none;padding:0;font-size:13px;
+                    line-height:1.7;white-space:pre-wrap;word-break:break-word}
+  .content pre .copy{position:absolute;top:9px;right:9px;background:var(--card);
+                     border:1px solid var(--line);color:var(--dim);border-radius:980px;
+                     padding:3px 12px;font-size:11.5px;font-family:inherit;cursor:pointer;
+                     opacity:0;transition:.2s}
+  .content pre:hover .copy,.content pre .copy:focus{opacity:1}
+  .content pre .copy:hover{color:var(--text);border-color:var(--faint)}
+  .content blockquote{margin:18px 0;padding:13px 19px;border-left:2px solid var(--accent);
+                      background:var(--accent-soft);border-radius:0 6px 6px 0}
+  .content blockquote p{margin:9px 0;font-size:15px;line-height:1.8}
+  .content blockquote p:first-child{margin-top:0}
+  .content blockquote p:last-child{margin-bottom:0}
+  .content table{border-collapse:collapse;width:100%;margin:18px 0;font-size:14.5px;display:block;overflow-x:auto}
+  .content th,.content td{border:1px solid var(--line);padding:9px 12px;text-align:left;
+                          color:var(--dim);vertical-align:top}
+  .content th{color:var(--text);font-weight:600;background:var(--panel);white-space:nowrap}
+  .content hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+  .pagebar{display:flex;justify-content:space-between;gap:18px;margin:38px 0 0;
+           padding-top:18px;border-top:1px solid var(--line);font-size:13.5px}
+  .pagebar a{max-width:47%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .pagebar a:hover{text-decoration:none;color:var(--accent-h)}
+
+  footer{color:var(--faint);font-size:12px;text-align:center;padding:0 0 46px}
+  footer a{color:var(--accent)}
+
+  .scrim{position:fixed;inset:0;background:var(--scrim);z-index:35;opacity:0;
+         pointer-events:none;transition:opacity .25s}
+
+  @media (max-width:900px){
+    .wrap{padding:0 18px}
+    .tocbtn{display:inline-block}
+    aside{position:fixed;top:0;left:0;bottom:0;width:min(320px,86vw);background:var(--card);
+          z-index:40;max-height:none;padding:22px 18px;overflow-y:auto;
+          transform:translateX(-103%);transition:transform .25s;box-shadow:0 0 40px rgba(0,0,0,.25)}
+    aside.open{transform:none}
+    .scrim.open{opacity:1;pointer-events:auto}
+    .ctitle{display:none}
+    .lesson{max-width:none}
+    .lhead h2{font-size:22px}
+    .content{font-size:15.5px}
+  }
+  @media print{
+    header,aside,.pagebar,.content pre .copy,.tocbtn{display:none}
+    .shell{display:block;padding:0}
+    .lesson{max-width:none;break-inside:auto}
+    .lhead{break-after:avoid}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="back" href="../index.html">🌿 AI知识森林</a>
+    <div class="ctitle">吴恩达《构建自适应 AI 智能体》实战</div>
+    <span class="sp"></span>
+    <button class="tocbtn" id="tocBtn">目录</button>
+    <div class="tog" id="tog">
+      <button data-theme="light" title="浅色">☀</button>
+      <button data-theme="dark" title="深色">☾</button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="wrap shell">
+  <aside id="toc">
+    <div class="intro">
+      <h1>吴恩达《构建自适应 AI 智能体》实战</h1>
+      <p class="meta">7 讲 · B站 · 吴恩达AI课程研究院｜原课：DeepLearning.AI × Oracle（中文翻译整理）</p>
+      <p class="sum">吴恩达 × Oracle《Building Adaptive AI Agents》全 7 讲中文精读：智能体怎么把经验留下来——先改技能、再改知识，最后才动模型参数。</p>
+    </div>
+<div class="grp">正文</div>
+<a class="item" href="#s-00"><span class="no">00</span><span class="t">课程总览</span></a>
+<a class="item" href="#s-01"><span class="no">01</span><span class="t">课程介绍 - Introduction</span></a>
+<a class="item" href="#s-02"><span class="no">02</span><span class="t">学习概述 - Overview of Continual Learning</span></a>
+<a class="item" href="#s-03"><span class="no">03</span><span class="t">行为适应：从轨迹到技能的学习 - Behavior Adaptation</span></a>
+<a class="item" href="#s-04"><span class="no">04</span><span class="t">通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs</span></a>
+<a class="item" href="#s-05"><span class="no">05</span><span class="t">构建代码知识图谱 - Building the Code Knowledge Graph</span></a>
+<a class="item" href="#s-06"><span class="no">06</span><span class="t">调整模型本身 - Adapting the Model Itself</span></a>
+<a class="item" href="#s-07"><span class="no">07</span><span class="t">课程总结 - Conclusion</span></a>
+  </aside>
+  <main id="doc">
+<article class="lesson" id="s-00">
+  <div class="lhead"><span class="no">00</span><h2>课程总览</h2><a class="mdlink" href="../learn/adaptive-ai-agents/00.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>课程来源：Bilibili｜吴恩达AI课程研究院｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">BV1zY4o6cEL1</a> 原课程：DeepLearning.AI × Oracle《Building Adaptive AI Agents》授课：Nacho Martínez、Casius Lee（Oracle）整理方式：B站视频 → 提取音频 → 转录 → 中英对照翻译 → 结构化笔记</p></blockquote>
+<h3>课程信息</h3>
+<ul>
+<li>课程名称：构建自适应 AI 智能体 / Building Adaptive AI Agents</li>
+<li>出品方：DeepLearning.AI 与 Oracle 联合出品</li>
+<li>时长：1 小时 3 分钟，7 个分P</li>
+<li>难度：中级，动手实验建议会 Python</li>
+<li>开始整理：2026-10-02</li>
+<li>完成整理：2026-10-02</li>
+</ul>
+<p>原课程（DeepLearning.AI 平台）除这 7 个视频外，还有一份 10 分钟的评分测验和一个选读术语表；B站这个投稿只含 7 个视频。</p>
+<h3>课程进度</h3>
+<table><thead><tr><th>分P</th><th>标题</th><th>环节</th><th>时长</th><th>状态</th><th>完成日期</th></tr></thead><tbody>
+<tr><td>01</td><td>课程介绍 - Introduction</td><td>引入</td><td>2:43</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>02</td><td>学习概述 - Overview of Continual Learning</td><td>打地基</td><td>4:44</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>03</td><td>行为适应：从轨迹到技能的学习 - Behavior Adaptation: Trajectory-to-Skill Learning</td><td>第一层：行为层</td><td>6:08</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>04</td><td>通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs</td><td>第二层：知识层</td><td>10:06</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>05</td><td>构建代码知识图谱 - Building the Code Knowledge Graph</td><td>第二层：知识层（动手）</td><td>14:32</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>06</td><td>调整模型本身 - Adapting the Model Itself</td><td>第三层：模型层</td><td>14:21</td><td>已完成</td><td>2026-10-02</td></tr>
+<tr><td>07</td><td>课程总结 - Conclusion</td><td>收尾</td><td>0:25</td><td>已完成</td><td>2026-10-02</td></tr>
+</tbody></table>
+<h3>全课主线</h3>
+<p>整门课解决的是智能体的一个致命短板：<strong>每次会话都从零开始</strong>。昨天花半小时踩明白的坑，今天开个新对话，还得再踩一遍——时间、token、还有&quot;这次模型可能推出别的答案&quot;的风险，全白付了。</p>
+<p>解法是一把<strong>从便宜到贵的梯子</strong>。先在最便宜的<strong>token space（词元空间）</strong>动手：改行为、改知识，不用碰模型本身；这两招都用尽了还是不行，才爬到最贵的<strong>weight space（权重空间）</strong>，动模型自己的参数。</p>
+<pre><code>问题：智能体没有记忆 → 每次运行都从零开始 → 重复踩坑，时间和 token 双输
+  │
+  ├─ 地基（分P 2）：先分清什么叫&quot;记住&quot;
+  │    ├─ 智能体 = 模型 + 外壳（harness）；外壳负责组装上下文、跑工具、写记忆
+  │    ├─ 四种记忆：工作记忆 / 情景记忆 / 语义记忆 / 程序性记忆
+  │    └─ 长期记忆的原料 = 轨迹（trace）：对话、工具调用、决策、报错、修复
+  │
+  ├─ 第一层 · 行为适应（分P 3）→ 改【技能】
+  │    ├─ 技能归纳管道：轨迹 → 归纳引擎起草 skill.md → 人工审核 → 进技能箱
+  │    ├─ 关键设计：人在环上。批准=把提案变成行为；坏技能会天天重犯
+  │    └─ 演示：run the tests 技能从 v1 升到 v2，测试全绿
+  │
+  ├─ 第二层 · 知识适应（分P 4-5）→ 改【检索】
+  │    ├─ 诊断：大代码库里写不是瓶颈，【检索】才是
+  │    ├─ 三种关系建成知识图谱：import（文件→文件）、call（函数→函数）、co-edit（Git 里一起改）
+  │    ├─ 检索两步：锚点（语义相似度找到起点）→ PageRank（沿边扩散排序）
+  │    ├─ 实测：多跳问题图检索赢，简单问题不吃亏；httpie 上省 22% 工具调用、36% 更快到第一次正确编辑
+  │    └─ 闭环：新提交进来 → 抽新边 → 并库 → 重排，增量成本几乎为零
+  │
+  ├─ 第三层 · 模型适应（分P 6）→ 改【权重】
+  │    ├─ 什么时候才用：拒答某话题、装人设、改语气格式——上下文改不动的行为
+  │    ├─ 手段：LoRA 低秩适配（冻住原权重，只训两个小矩阵）+ 量化（32 位压到 4 位）
+  │    ├─ 甜点区：训约 1% 的权重。太少学不会，太多【灾难性遗忘】
+  │    └─ 演示：Qwen 0.6B + 礼貌 LoRA，14,000 组数据，训 1 小时，适配器只 150MB
+  │
+  └─ 收尾（分P 7）：行为 + 知识 + 权重，三层都掌握，智能体才会&quot;越用越聪明&quot;</code></pre>
+<h3>三层适应一览</h3>
+<table><thead><tr><th></th><th>行为适应</th><th>知识适应</th><th>模型适应</th></tr></thead><tbody>
+<tr><td>改什么</td><td>技能（skill.md）</td><td>检索结构（代码知识图谱）</td><td>模型权重（LoRA 适配器）</td></tr>
+<tr><td>空间</td><td>token space（词元空间）</td><td>token space（词元空间）</td><td>weight space（权重空间）</td></tr>
+<tr><td>成本</td><td>低</td><td>中</td><td>高</td></tr>
+<tr><td>见效</td><td>立刻，人工审核后自动调用</td><td>立刻，增量更新几乎零成本</td><td>要训练，几小时到几千小时</td></tr>
+<tr><td>什么时候用</td><td>一开始就该做</td><td>检索找不对文件时</td><td>前两层都用尽还是不行</td></tr>
+</tbody></table>
+<h3>涉及的工具与产品</h3>
+<table><thead><tr><th>名称</th><th>是什么</th></tr></thead><tbody>
+<tr><td>Oracle AI Database 26ai</td><td>底座数据库，存轨迹、存知识图谱（PGQ 属性图 + 向量检索）</td></tr>
+<tr><td>Oracle Agent Memory（<code>oracleagentmemory</code>）</td><td>存轨迹和记忆的 Python 包</td></tr>
+<tr><td>LangGraph + Oracle DB</td><td>跑技能归纳循环的编排框架</td></tr>
+<tr><td>代码知识图谱（Code Knowledge Graph）</td><td>用 import / call / co-edit 三种边把代码库连成属性图</td></tr>
+<tr><td>PageRank</td><td>从锚点出发沿边扩散，给节点排重要度的算法</td></tr>
+<tr><td>LoRA</td><td>低秩适配，只训两个小矩阵的微调技术</td></tr>
+<tr><td>量化</td><td>把 32 位浮点权重压到 4 位，省显存</td></tr>
+<tr><td>Claude Code</td><td>实验里驱动智能体的编码工具，配 Sonnet 和 Haiku 两个模型</td></tr>
+<tr><td>Qwen 0.6B</td><td>第 6 讲的底座模型，6 亿参数，量化后占约 1GB 内存</td></tr>
+<tr><td>httpie / Django</td><td>两套用来做基准测试的开源代码库</td></tr>
+</tbody></table>
+<h3>写作规范（与《AI-native SDLC playbook》一致，后续复用）</h3>
+<ul>
+<li><strong>通俗化标准</strong>：正文要让没接触过软件工程的人（初中生水平）也能看懂。英文术语和难懂的专业词第一次出现时，直接在后面加括号写中文释义，让读者不用回头查；不另设《名词解释》章节。不用比喻，也不用指意不明的词。</li>
+<li><strong>小节顺序</strong>：中心思想 → 逻辑框架 → 核心要点 → 分段详解。逻辑框架放在前面，读者只看这一节就能明白整篇在讲什么。四个小节并存，不互相替代。</li>
+<li>汇总类小节（中心思想、核心要点、逻辑框架）用白话重写；分段详解保持忠实翻译，英文原文一字不动，只把中文改口语。</li>
+<li>原文里的表格，译成中文表后再附一份英文原表。代码块、配置文件、提示词保留英文原样，另附中文对照或逐段说明。</li>
+<li>核心产物名不译：skill、skill.md、trace、harness、PageRank、LoRA。</li>
+</ul>
+  </div>
+  <div class="pagebar"><span></span><a href="#s-01">课程介绍 - Introduction →</a></div>
+</article>
+<article class="lesson" id="s-01">
+  <div class="lhead"><span class="no">01</span><h2>课程介绍 - Introduction</h2><a class="mdlink" href="../learn/adaptive-ai-agents/01.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 01 / 07｜环节：引入｜时长 2:43</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>这门课解决智能体的一个致命短板：<strong>每次会话都从零开始</strong>。智能体会写代码、会用工具、能完成复杂任务，可它不记得昨天已经找到过的解法，于是同一个问题被反复重新解决一遍。</p>
+<p>解法是给智能体装上&quot;记住经验&quot;的机制——<strong>不要把每次交互当成一次孤立的会话</strong>，而是让它把有用的信息留存下来，明天干得更好。课程具体带大家搭一个自适应编码智能体，它有<strong>两层适应机制</strong>：第一层<strong>行为适应</strong>，让智能体的技能随着运行越来越强；第二层<strong>知识适应</strong>，建一张代码知识图谱，让它记住代码里的主要关系。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>问题：智能体没有记忆
+  │     → 昨天找到过的解法，今天换个对话就得从头再找一遍
+  │
+  ├─ 关键主张：别把每次交互当成孤立会话
+  │     └─ 给智能体机制，让它记住有用信息、明天干得更好
+  │
+  ├─ 第一层 · 行为适应 → 改【技能】
+  │     ├─ 每次运行都留下【轨迹】：对话、工具调用、决策、报错、修复
+  │     └─ 技能归纳管道：轨迹里反复出现的经验 → 可复用技能
+  │           └─ 效果：不用每次重新发现同一套流程，也避开已经踩过的坑
+  │
+  ├─ 第二层 · 知识适应 → 改【检索】
+  │     ├─ 诊断：大代码库里，检索和构建正确的上下文才是真正的瓶颈
+  │     │     └─ 关键词搜索和正则匹配，经常漏掉真正重要的文件
+  │     └─ 解法：从零搭一张代码知识图谱
+  │           ├─ 关系一：imports（文件之间的引用）
+  │           ├─ 关系二：function calls（函数之间的调用）
+  │           └─ 关系三：Git 历史里的 co-edits（总被一起改动的文件）
+  │           └─ 效果：检索方式能反映代码库实际的组织结构
+  │
+  └─ 对比验证：图检索 vs 传统文本检索
+        └─ 结构化记忆能让编码智能体干得更快、决策更好
+
+下一步（第 1 课）：打地基 —— 什么是自适应智能体、遗忘的代价有多大、
+                        各种&quot;让智能体变强&quot;的方式之间怎么权衡</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>课程来源</strong>：DeepLearning.AI 与 Oracle 联合出品，讲师是 Nacho Martinez 和 Casius Lee。</li>
+<li><strong>要解决的短板</strong>：智能体会写代码、会用工具、能完成很多复杂任务，但它可能不得不<strong>反复解决同一个问题</strong>——因为它不记得昨天已经找到的解法，于是又把它重新发现一遍。</li>
+<li><strong>全课的关键思想</strong>：不要把每次交互当成一次孤立的会话（isolated session）。我们可以给智能体一些机制，让它<strong>记住有用的信息</strong>，并用这些信息在明天表现得更好。</li>
+<li><strong>你会搭出来的东西</strong>：一个自适应编码智能体，带两层适应机制。</li>
+<ul>
+<li>第一层，<strong>行为适应</strong>：随着运行不断改进智能体的技能。</li>
+<li>第二层，<strong>知识适应</strong>：建一张知识图谱，让智能体跟踪代码里的主要关系。</li>
+</ul>
+<li><strong>轨迹（trace）</strong>：每一次智能体运行都会留下轨迹，也就是它的对话、工具调用、决策、报错和修复。</li>
+<li><strong>技能归纳管道（skill induction pipeline）</strong>：把轨迹里反复出现的经验变成可复用的技能。这样智能体不用每次重新发现同一套工作流程，还能避开已经犯过的错，<strong>一天比一天表现更好</strong>。</li>
+<li><strong>知识适应要回答的问题</strong>：为什么在大代码库里，<strong>检索和构建正确的上下文往往才是真正的瓶颈</strong>；为什么关键词搜索和正则表达式匹配经常漏掉那些真正重要的文件。</li>
+<li><strong>代码知识图谱</strong>：从零搭起，用 imports、function calls、以及 Git 历史里的 co-edits 把文件连起来，用这种结构去检索，<strong>让检索方式反映代码库实际是怎么组织的</strong>。</li>
+<li><strong>对比实验</strong>：把基于图的检索和传统的文本搜索放在一起比，看结构化记忆怎么帮编码智能体干得更快、决策更好。</li>
+<li><strong>致谢名单</strong>：Oracle 的 Richmond Alake 和 Wojtek Pluta；DeepLearning.AI 的 Esmaeil Gagari 和 Brendan Brown 也参与了这门课的制作。</li>
+<li><strong>下一课预告</strong>：建立自适应智能体的心智模型——它到底是什么，以及为什么&quot;遗忘&quot;会增加成本、让智能体变得没那么有效；还会讲不同学习方式之间的权衡。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>开场：这门课叫《构建自适应 AI 智能体》，由 DeepLearning.AI 与 Oracle 联合出品，讲师是 Nacho Martinez 和 Casius Lee；课程要教的是怎么搭出能从错误里学习、从经验里变强的智能体——智能体会写代码、会用工具、能完成很多复杂任务，但它可能不得不反复解决同一个问题，因为它不记得昨天已经找到过的解法，于是又把它重新发现一遍</h4>
+<blockquote><p>欢迎来到《构建自适应 AI 智能体》。这门课由 DeepLearning.AI 与 Oracle 联合出品，讲师是 Nacho Martinez 和 Casius Lee。 Welcome to Building Adaptive AI Agents, built in partnership with Oracle and taught by Nacho Martinez and Casius Lee.</p></blockquote>
+<blockquote><p>在这门课里，你会学到怎么搭出那种能从自己的错误里学习、从自己的经验里变强的智能体。AI 智能体会写代码、会用工具、能完成很多复杂任务，但它们可能最后不得不反复解决同一个问题——因为它不记得昨天已经找到过的解法，于是又把它重新发现一遍。 In this course, you learn how to build agents that learn from their mistakes and improve from their experiences. AI agents can write code, use tools, carry out many complex tasks, but they might end up having to solve the same problem over and over because it does not remember the solution that it already found yesterday and so ends up rediscovering it.</p></blockquote>
+<h4>全课的关键思想：不要把每次交互当成一次孤立的会话，而是给智能体一些机制，让它记住有用的信息、并用这些信息在明天表现得更好；具体要搭的是一个自适应编码智能体，它带两层适应机制——第一层行为适应，随着运行不断改进智能体的技能；第二层知识适应，建一张知识图谱让智能体跟踪代码里的主要关系</h4>
+<blockquote><p>这门课要教的关键思想是：与其把每次交互都当成一次孤立的会话，我们可以给智能体一些机制，让它记住有用的信息，并用这些信息在明天表现得更好。 The key idea that you learn in this course is that instead of treating every interaction as an isolated session, we can give agents mechanisms to remember useful information and use that information to perform better tomorrow.</p></blockquote>
+<blockquote><p>具体来说，你会搭一个自适应编码智能体，它带两层主要的适应机制。第一层是行为适应，随着运行不断改进智能体的技能。第二层是知识适应，建一张知识图谱，让智能体跟踪代码里的主要关系。 Specifically, you build an adaptive coding agent that has two main adaptation layers. First, behavior adaptation by improving the agent&#x27;s skills as they run. And second, knowledge adaptation by creating a knowledge graph that makes the agent keep track of the main relations in the code.</p></blockquote>
+<h4>行为层要解决的事：每一次智能体运行都会留下轨迹，也就是它的对话、工具调用、决策、报错和修复；你会搭一条技能归纳管道，把轨迹里反复出现的经验变成可复用的技能，这样智能体不用每次重新发现同一套工作流程，还能避开已经犯过的错，一天比一天表现更好</h4>
+<blockquote><p>谢谢，Andrew。 Thanks, Andrew.</p></blockquote>
+<blockquote><p>每一次智能体运行都会留下轨迹，也就是它的对话、工具调用、决策、报错和修复。你会搭一条技能归纳管道，把轨迹里反复出现的经验变成可复用的技能。这样，智能体不用每次重新发现同一套工作流程，而是可以取回它以前干过的，并避开它已经犯过的错。这让它一天比一天表现得更好。 Every agent run leaves behind a trace, which is its conversations, tool calls, decisions, errors, and fixes. You&#x27;ll build a skill induction pipeline that turns repeated experiences in these traces into reusable skills. Instead of rediscovering the same workflow every time, the agent can retrieve what it&#x27;s worked before and avoid mistakes it&#x27;s already made. This improves its performance from one day to the next.</p></blockquote>
+<h4>知识层要解决的事：在大代码库里，检索和构建正确的上下文往往才是真正的瓶颈，关键词搜索和正则表达式匹配经常漏掉那些真正重要的文件；你会从零搭一张代码知识图谱，用 imports、函数调用和 Git 历史里的 co-edits 把文件连起来，让检索方式反映代码库实际的组织结构，再把图检索和传统文本搜索放在一起比，看结构化记忆怎么帮编码智能体干得更快、决策更好</h4>
+<blockquote><p>接下来你会学到，智能体怎么通过适应自己的知识来随着时间变强。你会看到，为什么在大代码库里，检索和构建正确的上下文往往才是真正的瓶颈；以及为什么关键词搜索和正则表达式匹配经常漏掉那些真正重要的文件。 You will then learn how agents can improve over time by adapting their knowledge. You&#x27;ll see why retrieval and building the right context is often the real bottleneck in large code bases and why keyword search and regular expression matching can frequently miss the files that actually matter.</p></blockquote>
+<blockquote><p>然后你会从零搭起一张代码知识图谱。你会用 imports、函数调用、以及 Git 历史里的 co-edits 把文件连起来，用这种结构去检索信息，让检索方式反映代码库实际是怎么组织的。你会把基于图的检索和传统的文本搜索放在一起比，看看结构化记忆怎么帮编码智能体干得更快、做出更好的决策。 Then you&#x27;ll build a code knowledge graph from scratch. You&#x27;ll connect files through imports, function calls, and co-edits in the Git history and use that structure to retrieve information in a way that reflects how the code base is actually organized. You&#x27;ll compare graph-based retrieval with traditional text search and see how structured memory can help coding agents work faster and make better decisions.</p></blockquote>
+<h4>致谢与下一课预告：这门课是很多人一起做出来的，要感谢 Oracle 的 Richmond Alake 和 Wojtek Pluta，DeepLearning.AI 的 Esmaeil Gagari 和 Brendan Brown 也参与了制作；第一课会建立自适应智能体的心智模型——它到底是什么，为什么&quot;遗忘&quot;会增加成本、让智能体变得没那么有效，还会讲不同学习方式之间的权衡</h4>
+<blockquote><p>这门课是很多人一起做出来的。我要感谢 Oracle 的 Richmond Alake 和 Wojtek Pluta；DeepLearning.AI 的 Esmaeil Gagari 和 Brendan Brown 也参与了这门课的制作。 Many people have worked to create this course. I&#x27;d like to thank Richmond Alake and Wojtek Pluta from Oracle, from DeepLearning.AI, Esmaeil Gagari and Brendan Brown also contributed to this course.</p></blockquote>
+<blockquote><p>在第一课里，你会建立一个心智模型：自适应智能体到底是什么，以及为什么&quot;遗忘&quot;会增加成本、让智能体变得没那么有效。你还会学到，智能体各种&quot;学习和变强&quot;的方式之间有哪些不同的权衡。 In the first lesson, you&#x27;ll build a mental model for what an adaptive agent is and why forgetting can add to that cost, making the agent less effective. You&#x27;ll also learn about the different trade-offs among different ways agents can learn and get better.</p></blockquote>
+<blockquote><p>听起来很不错。我们进入下一个视频，开始&quot;适应&quot;吧。 That sounds great. Let&#x27;s go on to the next video and start adapting.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-00">← 课程总览</a><a href="#s-02">学习概述 - Overview of Continual Learning →</a></div>
+</article>
+<article class="lesson" id="s-02">
+  <div class="lhead"><span class="no">02</span><h2>学习概述 - Overview of Continual Learning</h2><a class="mdlink" href="../learn/adaptive-ai-agents/02.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 02 / 07｜环节：打地基（全课的概念地图）｜时长 4:44</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>这一集是全课的<strong>概念地图</strong>：先把&quot;自适应智能体&quot;这个词定义清楚，再讲明白<strong>遗忘到底贵在哪</strong>，最后给出该从哪儿下手的判断顺序。</p>
+<p>核心是一个<strong>从便宜到贵的梯子</strong>。你要先问自己一句：<strong>更好的上下文和指令，能不能提升智能体的表现？</strong> 能的话就走<strong>token space（词元空间）</strong>的两条路——让技能自己适应（第 3 课），或者用知识图谱搭自适应记忆（第 4-5 课）。这两条都走尽了还是不行，才轮到最贵的<strong>weight space（权重空间）</strong>：动模型本身（第 6 课）。</p>
+<p>还有一个贯穿全课的关键区分：<strong>智能体 = 模型 + 外壳（harness）</strong>。模型只是推理的那股劲；真正组装上下文、跑工具、写记忆的是外壳。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>问题：智能体不把经验带过来 → 老犯同样的错，时间白白花掉
+  │
+  ├─ 用药价说明问题：周一 / 周二 / 周三
+  │    ├─ 周一：解释器找不到项目模块 → 排查 → 找到正确命令 → 测试通过
+  │    ├─ 周二：开个新对话做类似任务 → 又跑错命令 → 又同样的报错
+  │    │     └─ 代价：时间和 token 双输；而且每重复一次，都是模型推出错答案的又一次机会
+  │    └─ 周三应该不一样：记住周一验证过的命令，从那儿起步，跳过周二那一整轮浪费
+  │
+  ├─ 先把两个词定义清楚
+  │    ├─ 智能体 = 从环境接收信息 + 用 LLM 推理下一步 + 用工具作用于环境
+  │    │     └─ 有记忆 → 能留住过去的有用经验；没记忆 → 今天干完了，明天不记得
+  │    └─ 外壳 harness = 模型外面那层软件脚手架
+  │          ├─ 组装模型看到的上下文
+  │          ├─ 给模型工具，并让它能跑
+  │          ├─ 把结果记进记忆
+  │          └─ 在智能体循环里再次调用模型
+  │          └─ 模型 + 外壳 = 一个能干活的智能体
+  │
+  ├─ 记忆分四种（按保持时间长短不同）
+  │    ├─ 工作记忆：此刻正在用的消息和工具结果
+  │    ├─ 情景记忆：以前那些运行里发生过的事
+  │    ├─ 语义记忆：项目相关的事实和知识
+  │    └─ 程序性记忆：智能体学到的流程步骤   ← 下一课的主角
+  │
+  ├─ 长期记忆的原料是【轨迹 trace】
+  │    └─ 轨迹 = 一次智能体交互里每一个事件的完整记录
+  │          ├─ 智能体查看过的项目文件
+  │          ├─ 采取的动作
+  │          ├─ 动作的结果
+  │          └─ 智能体做的修正
+  │
+  └─ 该从哪儿下手：先问&quot;更好的上下文和指令，能不能提升它的表现？&quot;
+       ├─ 能 → 走【token space 适应（词元空间）】，两个手段
+       │    ├─ ① 建一个增强循环，让技能自己适应、变强（第 3 课）
+       │    └─ ② 用知识图谱搭自适应记忆（第 4-5 课）
+       └─ 都用尽了还是不行 → 才动【weight space（权重空间）】
+             └─ 改造模型本身（第 6 课）</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>今天的智能体会写代码、会用工具、能解复杂任务，但它经常重复犯同样的错</strong>，因为它不把经验带到下一次。</li>
+<li><strong>这一课要建立三样东西</strong>：自适应 AI 智能体的心智模型、为什么遗忘很贵、智能体可以从哪些地方改进。</li>
+<li><strong>周一 / 周二 / 周三的例子</strong>：</li>
+<ul>
+<li><strong>周一</strong>：你让编码智能体跑 Python 测试，但 Python 解释器找不到项目里的某个模块。智能体去排查，发现了正确的项目命令，把测试跑通了。</li>
+<li><strong>周二</strong>：你开了一个全新的对话，让它做一件很类似的事。因为没有周一的记忆，它<strong>又跑了错命令，又撞上同一个报错</strong>，再花时间和 token 去重新发现同一个修复方法。</li>
+<li><strong>周三应该是不同的样子</strong>：我们希望它记得周一验证过的命令，直接从那开始，跳过周二浪费掉的时间和 token。</li>
+</ul>
+<li><strong>遗忘的代价</strong>：没有记忆和学习，每一次重复的迭代，都是模型推出错误答案、多烧 token 的又一次机会。反过来，如果智能体从第一天的经验里学到了，第二天就会好得多，而且<strong>几乎不花钱</strong>。</li>
+<li><strong>什么是智能体</strong>：一个能从环境里接收信息、用 LLM 推理下一步该做什么、并用工具作用于环境的系统。如果它<strong>有记忆</strong>，它还能把过去有用的经验留住。<strong>没有记忆</strong>，它可能完成今天的任务，但不会把学到的东西留到明天。</li>
+<li><strong>智能体循环（agent loop）是怎么转的</strong>（用测试失败的例子）：</li>
+<ol>
+<li>从用户请求开始——让智能体跑 Python 测试。</li>
+<li>推理时，模型判断它需要检查项目仓库，于是向外壳（harness）申请一个工具。</li>
+<li>外壳执行这个工具去检查项目，并把结果返回。</li>
+<li>模型接着选择跑一条单独的测试命令，再申请一个工具、再跑一次，又返回一个错误。</li>
+<li>模型的回复和工具结果（包括那个报错）都成为下一轮迭代的上下文历史。</li>
+<li>如此重复，直到测试通过，或者智能体停下来。</li>
+</ol>
+<li><strong>什么是外壳（harness）</strong>：LLM 是智能体的<strong>原始推理能力</strong>，外壳是它周围的<strong>软件脚手架</strong>。外壳负责组装模型看到的上下文、给模型访问和执行工具的能力、把结果记录进记忆、并在智能体循环里再次调用模型。<strong>模型加外壳，合起来才是一个能干活的智能体。</strong></li>
+<li><strong>记忆的四个类别</strong>：</li>
+<ul>
+<li><strong>工作记忆（working memory）</strong>：此刻正在使用的消息和工具结果。</li>
+<li><strong>情景记忆（episodic memory）</strong>：以前那些智能体运行里发生过的任何事。</li>
+<li><strong>语义记忆（semantic memory）</strong>：项目相关的事实和知识。</li>
+<li><strong>程序性记忆（procedural memory）</strong>：智能体学到的流程步骤。</li>
+</ul>
+<li><strong>下一课聚焦程序性记忆</strong>：把经验变成可复用的技能。DeepLearning.AI 上一门关于&quot;构建有记忆感知的智能体&quot;的课深入讲过这部分，想了解更多可以去看看。</li>
+<li><strong>长期记忆怎么建</strong>：从<strong>轨迹（trace）</strong>开始。轨迹就是一次智能体交互里<strong>每一个事件的完整记录</strong>。一个轨迹里包含：智能体干活时查看过的项目文件、为解决问题采取的动作、这些动作的结果、以及智能体做的修正。这些轨迹就是学习的<strong>原材料</strong>。</li>
+<li><strong>该先在哪里下手</strong>：你要问的主要问题是——<strong>更好的上下文和指令，能不能提升智能体的表现？</strong> 如果能，就用我们归为<strong>token space adaptation（词元空间适应）</strong>的两个主要手段：先建一个增强循环，让智能体的技能适应并变得更好；再用知识图谱搭一套自适应记忆。</li>
+<li><strong>什么时候才轮到模型</strong>：如果这些手段都被用尽了，再没有什么能让智能体变得更好，那才去看模型本身在<strong>weight space（权重空间）</strong>里还有哪些可以增强的地方。这是最后一课的重点。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>开篇：今天的智能体会写代码、会用工具、能解复杂任务，但它们经常重复犯同样的错，因为不把经验带到下一次；这一课要建立自适应 AI 智能体的心智模型、讲清为什么遗忘很贵、并看清智能体可以从哪些地方改进</h4>
+<blockquote><p>今天的智能体会写代码、会用工具、能解复杂任务，但它们经常重复犯同样的错，因为它们不把经验带到下一次。在这一课里，你会建立起自适应 AI 智能体的心智模型，弄明白为什么遗忘很贵，并看清智能体可以从哪些主要地方改进。我们开始吧。 Today&#x27;s agents can write code, use tools, and solve complex tasks, but they often repeat the same mistakes because they don&#x27;t carry experience forward. In this lesson, you&#x27;ll build a mental model for adaptive AI agents, learn why forgetting is expensive, and see the main places an agent can improve. Let&#x27;s dive in.</p></blockquote>
+<h4>周一 / 周二 / 周三：周一你让编码智能体跑 Python 测试，解释器找不到项目里的一个模块，智能体排查后发现了正确的项目命令、把测试跑通；周二你开个新对话做类似的任务，它没有周一的记忆，又跑错命令、又撞上同一个报错，再花时间和 token 重新发现同一个修复；我们希望周三不一样——记得周一验证过的命令，从那开始，跳过周二浪费掉的时间和 token，这就是这门课要填上的那道缝</h4>
+<blockquote><p>我们想象一下，你周一在跟一个编码智能体一起干活。你让它跑 Python 测试，但你的 Python 解释器找不到项目里的一个模块。智能体去排查，发现了正确的项目命令，把测试跑通了。很好。 Let&#x27;s imagine you&#x27;re working with a coding agent on Monday. You ask it to run your Python tests, but your Python interpreter can&#x27;t find one of the project modules. The agent investigates, discovers the correct project command, and gets the test passing. Great.</p></blockquote>
+<blockquote><p>到了周二，你开了一个全新的对话，让它做一件很类似的任务。因为没有周一的记忆，它又跑了错命令，又撞上同一个报错，再花时间和 token 去重新发现同一个修复方法。 Now on Tuesday, you open a fresh chat and ask it to do a very similar task. With no memory of Monday, it runs the wrong command again, hits the same error, and spends time and tokens trying to rediscover the same fix.</p></blockquote>
+<blockquote><p>那我们希望周三变成什么样呢？我们希望它记得周一验证过的命令，直接从那开始，跳过周二浪费掉的时间和 token。这就是这门课想填上的那道缝。 So how do we want Wednesday to be different? Well, we want it to remember the proven command from Monday and start there, bypassing the wasted time and tokens spent on Tuesday. That&#x27;s the gap we&#x27;re trying to close in this course.</p></blockquote>
+<h4>遗忘的代价：周二那个智能体把同一轮排查又做了一遍，多花时间和 token 去修同一个问题；没有记忆和学习，每一次重复的迭代都是模型推出错误答案、多烧 token 的又一次机会；反过来，如果智能体从第一天的经验里学到了，第二天就会好得多，而且几乎不花钱</h4>
+<blockquote><p>我们也来看看这种遗忘的代价。我们那个智能体周二又把同一轮排查做了一遍，多花时间和 token 去修同一个问题。没有记忆和学习，每一次重复的迭代都是模型推出错误答案、多花 token 的又一次机会。反过来，如果智能体从第一天的经验里学到了，第二天就会好得多，而且几乎不花钱。 Let&#x27;s also take a look at the cost of that forgetting. Our agent on Tuesday repeats the same investigation and spends more time and tokens on fixing that issue again. Without memory and learning, every repeat iteration is another chance for the model to derive the wrong answer and spend more tokens. In contrast, if the agent learns from day one&#x27;s experience, then day two will be a lot better and almost free.</p></blockquote>
+<h4>先定义智能体：智能体是一个能从环境接收信息、用 LLM 推理下一步该做什么、并用工具作用于环境的系统；如果它有记忆，它还能把过去有用的经验留住——没有记忆，它可能完成今天的任务，但不会把学到的东西留到明天</h4>
+<blockquote><p>在学怎么改进智能体的学习方式之前，我们先简单把&quot;智能体&quot;这个词说清楚。智能体可以定义成一个这样的系统：它能从环境里接收信息，用 LLM 推理下一步该做什么，并用工具作用于环境。如果智能体有记忆，它还能把过去有用的经验留住。没有记忆，智能体可能完成今天的任务，但不会把学到的东西留到明天。 Before we learn about improving how agents can learn, let&#x27;s briefly get clear on what we mean by an agent. An agent can be defined as a system that can take in information from its environment, reason about what to do next using an LLM, and use tools to act on its environment. If an agent has memory, it can also hold onto useful experience from the past. Without memory, the agent may complete today&#x27;s task but won&#x27;t retain what it&#x27;s learned tomorrow.</p></blockquote>
+<h4>智能体循环怎么转：从用户请求开始，模型判断需要检查项目仓库、向外壳申请工具，外壳跑工具并把结果返回，模型再选择跑一条单独的测试命令、又申请一个工具、又返回一个错误；模型的回复和工具结果（包括那个报错）都成为下一轮迭代的上下文历史，如此重复直到测试通过或者智能体停下来</h4>
+<blockquote><p>我们用编码智能体测试失败这个例子，看看智能体循环是怎么转起来的。循环从一条用户请求开始，我们让智能体跑 Python 测试。推理期间，模型判断它需要检查项目仓库，于是向智能体外壳申请一个工具。外壳执行这个工具去检查项目，并把结果返回。模型接着选择跑一条单独的测试命令，再申请一个工具、再跑一次，又返回一个错误。模型的回复和工具结果（包括那个报错）随后都成为下一轮迭代的上下文历史的一部分。这个过程一直重复，直到测试通过，或者智能体停下来。 Let&#x27;s use our coding agent&#x27;s test failure example to see the agent loop in action. We start the loop with a user request, asking the agent to run our Python tests. During inference, the model decides it needs to inspect the project repository, so it requests a tool from the agent harness. The harness runs the tool to inspect the project and returns the result. The model then chooses to run a separate test command, requests another tool, runs it, and another error is returned. The model&#x27;s responses and tool results, including the error, then become part of the context history for the next iteration. This repeats until the tests pass or the agent stops.</p></blockquote>
+<h4>什么是外壳（harness）：LLM 是智能体的原始推理能力，外壳是它周围的软件脚手架——它组装模型看到的上下文、给模型访问和执行工具的能力、把结果记录进记忆、并在智能体循环里再次调用模型；模型和外壳合起来，才是一个能干活的智能体</h4>
+<blockquote><p>既然刚提到了&quot;外壳（harness）&quot;这个词，我们也把它拆开讲讲。LLM 是你智能体的原始推理能力。外壳是它周围的软件脚手架。它组装模型看到的上下文，给模型访问和执行工具的能力，把结果记录进记忆，并在智能体循环里再次调用模型。把模型和外壳放在一起，你就有了一个能干活的智能体。 Since we just used the word harness, let&#x27;s also unpack that. The LLM is the raw reasoning power for your agent. The harness is the software scaffolding around it. It assembles the context the model sees, gives the model access and ability to run tools, records the results to memory, and calls the model again within the agent loop. Put the model and the harness together, and you have a working agent.</p></blockquote>
+<h4>记忆分四类：此刻正在用的消息和工具结果是工作记忆，以前那些运行里发生过的事是情景记忆，项目相关的事实和知识是语义记忆，智能体学到的流程步骤是程序性记忆——下一课聚焦最后这一类，把经验变成可复用的技能；DeepLearning.AI 上一门关于构建有记忆感知的智能体的课深入讲过这部分</h4>
+<blockquote><p>我们也来看看智能体可以有哪些不同类型的记忆。我们可以把这些记忆分成四个类别。第一，此刻正在使用的消息和工具结果，是工作记忆。另外，以前那些智能体运行里发生过的任何事，成为情景记忆。项目相关的事实和知识，成为语义记忆。而智能体学到的那些流程步骤，成为程序性记忆。下一课我们会聚焦最后这一类：把经验变成可复用的技能。我们之前和 DeepLearning.AI 合作的、关于构建有记忆感知的智能体的课，深入讲过这部分。如果你想了解更多，欢迎去看看。 Let&#x27;s also see the different types of memories our agents can have. We can put these memories into four categories. First, the messages and tool results being used right now are working memory. Also, anything that happened in previous agent runs becomes episodic memory. The project-specific facts and knowledge becomes semantic memory, and the workflow steps that are learned by the agent become procedural memory. In the next lesson, we can focus on that last one, turning experience into reusable skills. Our previous course with DeepLearning.AI on building memory-aware agents covers this in depth. Feel free to check this out if you want to learn more.</p></blockquote>
+<h4>长期记忆的原料是轨迹：轨迹是一次智能体交互里每一个事件的完整记录；拿&quot;跑 Python 测试&quot;这个任务举例，它记录下智能体查看过的项目文件、为解决问题采取的动作、这些动作的结果、以及智能体做的修正——这些轨迹就是学习的原材料</h4>
+<blockquote><p>那这些长期记忆要怎么建呢？我们从轨迹开始。轨迹是一次智能体交互里发生过的每一个事件的完整记录。我们来看一个轨迹的例子和它的组成部分。想象我们的编码智能体有一个要解决的任务，比如在我们的代码库上跑 Python 测试。它记录下智能体在做这个任务时查看过的项目文件。我们还有一份记录，是解决问题所采取的动作、这些动作的结果、以及智能体做的修正。我们可以把这些轨迹当作学习的原材料。 So how do we build these long-term memories? We start with traces. A trace is a complete record of every event that occurred within an agent interaction. Let&#x27;s see an example of a trace and its components. Imagine our coding agent has a task to solve. For an example, running Python tests on our code base. It records the project files the agent inspected while working on the task. We also have a record of the actions that were taken to solve the problem, the outcomes from these actions, and the corrections taken by the agent. We can use these traces as raw materials for learning.</p></blockquote>
+<h4>该从哪儿下手：先问&quot;更好的上下文和指令，能不能提升智能体的表现&quot;；能的话就走token space adaptation（词元空间适应）的两条路——先建一个增强循环让技能适应变强，再用知识图谱搭自适应记忆；如果这些手段都用尽了还是不行，才轮到weight space（权重空间）里对模型本身的增强，那是最后一课的重点</h4>
+<blockquote><p>最后，如果你想让智能体随着时间变强，应该先在哪里下手？你该问的主要问题是这个：更好的上下文和指令，能不能提升你智能体的表现？如果能，那你就可以用我们归为<strong>token space adaptation（词元空间适应）</strong>的两个主要手段。第一，建一个增强循环，让你智能体的技能适应并变得更好。然后，用知识图谱搭一套自适应记忆。接下来三课我们会看到这些。如果这些手段都被用尽了，再没有什么能让智能体变得更好，那我们才会去看模型本身在<strong>weight space（权重空间）</strong>里还有哪些可能的增强。这会是最后一课的重点。 Lastly, if you want your agents to improve over time, where should you intervene first? The main question you should ask is this, can better context and instructions enhance your agent&#x27;s performance? If so, then you can use the two main methods that we group as token space adaptation. Firstly, you will create an enhancement loop to make your agent&#x27;s skills adapt and get better. Then you will build adaptive memory using a knowledge graph. We will see these in the next three lessons. If these methods have been exhausted and nothing more can be done to make the agent get better, then we will focus on any possible enhancements in the model itself within the weight space. This will be our focus of the last lesson.</p></blockquote>
+<h4>收尾：下一课会为智能体搭一个行为适应层，让它从自己的轨迹里学习、变强</h4>
+<blockquote><p>那现在我们就进入下一课，为智能体搭一个行为适应层，让它从自己的轨迹里学习、变强。 So now let&#x27;s go to the next lesson where we will build a behavioral adaptation layer for our agents to learn and get better from its traces.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-01">← 课程介绍 - Introduction</a><a href="#s-03">行为适应：从轨迹到技能的学习 - Behavior Adaptation →</a></div>
+</article>
+<article class="lesson" id="s-03">
+  <div class="lhead"><span class="no">03</span><h2>行为适应：从轨迹到技能的学习 - Behavior Adaptation</h2><a class="mdlink" href="../learn/adaptive-ai-agents/03.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 03 / 07｜环节：第一层适应 · 行为层｜时长 6:08｜含代码演示</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>这一集讲<strong>第一层适应——行为层</strong>：把智能体留下的轨迹（trace）<strong>炼成可复用的技能</strong>，这样明天的智能体就不会重犯昨天的错。</p>
+<p>具体做法叫<strong>技能归纳（skill induction）</strong>：归纳引擎用 LLM 读一批原始轨迹，起草一份简短的流程，写成 <code>skill.md</code> 文件；<strong>经人批准后</strong>，这份技能进入 skill box（技能箱），从此在每一个匹配的任务上被自动调用。因为批准等于把一份提案变成行为，坏技能一旦溜进去就会天天重犯、伤害不断累积，所以<strong>人必须留在环上</strong>。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>问题（第 1 课挖的坑）：智能体昨天的错，明天还犯
+  │
+  ├─ 解法：技能归纳（skill induction）—— 把轨迹炼成技能
+  │    ├─ 原料：原始轨迹（智能体试过什么、在哪儿失败、最后什么管用）
+  │    ├─ 归纳引擎：用 LLM 审这些轨迹，起草一份简短流程 → skill.md
+  │    ├─ 人工批准
+  │    └─ 进 skill box（智能体可用的受管技能集合）
+  │    └─ 本质：把这一次运行变成【别的智能体以后也能用】的技能
+  │
+  ├─ 怎么让它持续变强（这是个循环）
+  │    ├─ ① 智能体用 skill box 里的技能干新活 → 又堆出更多轨迹
+  │    ├─ ② 【在主管道之外】跑归纳引擎 → 提出「增强版技能 + 每一处改动的证据」
+  │    ├─ ③ 人审：批准（升进 skill box）或 驳回（给理由 → 引擎下次改得更好）
+  │    └─ ④ 回到 ①
+  │
+  ├─ 为什么必须有人在环上
+  │    ├─ 批准 = 把提案变成行为
+  │    │     └─ 之后每个匹配的任务都会调它 —— 这是它的力量，也是它的风险
+  │    │     └─ 风险一：坏技能溜进去 → 每次都重犯，伤害不断累积
+  │    ├─ 风险二：轨迹是从世界里收来的数据
+  │    │     ├─ 错误、甚至被人【故意植入】的指令，也可能被提成技能
+  │    │     └─ 人审就是挡住「毒轨迹」变成行为的那道闸
+  │    └─ 附带好处：每次点批准或驳回都带理由
+  │          ├─ skill box 里每个技能都有一个负责人
+  │          └─ 每次驳回都在教引擎：下次该改什么
+  │
+  └─ 动手实证（notebook）
+       ├─ 两个开源包：Oracle Agent Memory（存轨迹）+ LangGraph + Oracle DB（跑归纳循环）
+       ├─ 改造前：同一个任务，智能体用基础版 run the tests → 撞错
+       ├─ 归纳引擎：从轨迹里发现重复出现的失败 + 对应修法 → 提出 v2（四步流程）
+       ├─ 人审批准（带理由）→ v2 升为 active，替换 v1
+       └─ 同样的问题再跑一遍：加载 v2，学会了上次的错，测试全绿</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>这一课要做的事</strong>：把智能体的轨迹（过去的对话、工具调用、报错和修复）变成可复用的技能，这样明天的智能体就不会重犯昨天的错。</li>
+<li><strong>什么叫技能归纳（skill induction）</strong>：拿原始轨迹——也就是智能体试过什么、在哪儿失败、最后什么管用的日志。<strong>归纳引擎（induction engine）</strong> 用 LLM 来审这些轨迹，起草一份简短的流程，形式是一个 <code>skill.md</code> 文件。然后<strong>经人批准</strong>，这份技能进入 <strong>skill box</strong>——一个受管的技能集合，供智能体取用。在这个过程里，我们把智能体的<strong>一次运行</strong>变成了<strong>别的智能体以后也能用</strong>的技能。</li>
+<li><strong>怎么让技能持续变好（这是个循环）</strong>：</li>
+<ol>
+<li>从 skill box 里已批准的技能出发。</li>
+<li>智能体用这些技能去完成新任务，于是<strong>更多的轨迹堆积起来</strong>。</li>
+<li><strong>在智能体主管道之外</strong>，跑归纳引擎去读这些轨迹，提出「一份增强版技能 + 每一处改动的证据」。</li>
+<li>人工审核：<strong>批准</strong>就升进 skill box 供智能体使用；<strong>驳回</strong>就给出理由，让归纳引擎下次能生成更好的增强提案。</li>
+</ol>
+<li><strong>为什么必须有人在环上</strong>：想想批准这个动作实际做了什么——<strong>它把一份提案变成了行为</strong>。技能一旦被批准，从此在每一个匹配的任务上，智能体都会调用它。这是它的力量，也是它的风险。</li>
+<ul>
+<li><strong>风险一</strong>：如果一个坏技能溜了过去，智能体就会<strong>每次都重犯这个错，伤害不断累积</strong>。</li>
+<li><strong>风险二</strong>：轨迹是智能体从世界里收集来的数据。错误、甚至是被<strong>故意植入</strong>的指令，都可能被当成技能提出来。人工审核就是那道闸，挡住一条&quot;毒轨迹&quot;变成行为。</li>
+<li><strong>附带好处</strong>：因为是人点下批准或驳回并给出理由，所以 <strong>skill box 里的每一份技能都有一个负责人</strong>，而每一次驳回都在教归纳引擎下次该修什么。</li>
+</ul>
+<li><strong>演示里用到的两个开源包</strong>：<strong>Oracle Agent Memory</strong>（用来存轨迹）和 <strong>LangGraph + Oracle DB</strong>（用来跑技能归纳循环）。</li>
+<li><strong>演示用的五份技能</strong>：brainstorming（头脑风暴）、requesting code review（请求代码评审）、run the tests（跑测试）、systematic debugging（系统性调试）、writing plans（写计划）。每份技能展示它的名字、主题、以及具体的流程。</li>
+<li><strong>轨迹被拆成这几类内容</strong>：对话轮次（conversation turns）、工具调用（tool calls）、技能使用（skill uses）、流程步骤（workflow steps）、偏好（preferences）、以及报错和修复（errors and fixes）。</li>
+<li><strong>归纳引擎的契约（contract）</strong>：也就是给 LLM 的指令。这份契约把<strong>同一个主题下的所有片段</strong>收拢起来，蒸馏成可复用的流程和经验教训，输出步骤、工具、报错、修复、以及任何需要的来源信息（provenance）。</li>
+<li><strong>演示结果</strong>：引擎从轨迹里发现了一个<strong>反复出现的失败</strong>和对应的修法，据此提出了一份新的增强版技能，包含智能体可以照着做的<strong>四个步骤</strong>。人审通过后，<code>run the test</code> 的技能从 v1 升到 v2，设为 active。<strong>用同样的问题再跑一遍智能体</strong>，它加载了 v2，用上了改进后的流程，<strong>整个测试集全部通过</strong>。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>开篇：这一课把智能体的轨迹（过去的对话、工具调用、报错和修复）变成可复用的技能，好让明天的智能体不再重犯昨天的错</h4>
+<blockquote><p>在这一课里，你会把智能体的轨迹——也就是它过去的对话、工具调用、报错和修复——变成可复用的技能，这样明天的智能体就能避开重复昨天的错误。好，我们开始。 In this lesson, you&#x27;ll turn an agent&#x27;s traces, which are its past conversations, tool calls, errors and fixes, into reusable skills, so tomorrow&#x27;s agent can avoid repeating yesterday&#x27;s mistakes. Alright, let&#x27;s go.</p></blockquote>
+<h4>什么是技能归纳：拿原始轨迹（智能体试过什么、在哪儿失败、最后什么管用的日志），归纳引擎用 LLM 审这些轨迹、起草一份简短流程写成 skill.md；经人批准后，这份技能进入 skill box——一个受管的、供智能体取用的技能集合；这个过程把智能体的一次运行，变成了别的智能体以后也能用的技能</h4>
+<blockquote><p>首先，我们看看技能归纳是什么意思。我们拿原始轨迹，也就是智能体试过什么、在哪儿失败、最后什么管用的日志。归纳引擎用 LLM 来审这些轨迹，起草一份简短的流程，形式是一个 <code>skill.md</code> 文件。然后经人批准，这份技能可以进入我们的 skill box——一个受管的技能集合，供智能体取用。在这个技能归纳的过程里，我们把智能体的这次运行，变成了别的智能体以后也能用的技能。 First, let&#x27;s see what skill induction means. We take the raw traces, which is the log of what the agent tried, where it failed, and what finally worked. The induction engine uses an LLM to review those traces, and drafts a short procedure in the form of a skill.md file. Then, with a human approval, this skill can go into our skill box, which is a managed collection of skills available to the agent. Within this skill induction process, we are turning the agent&#x27;s run into a skill other agents can also use in the future.</p></blockquote>
+<h4>怎么让技能持续变好：从 skill box 里已批准的技能出发，智能体用它们完成新任务、于是堆出更多轨迹；然后在智能体主管道之外跑归纳引擎，提出一份增强版技能和每一处改动的证据；人工审核要么批准（升进 skill box 供智能体使用），要么驳回（给出理由，让引擎下次生成更好的增强提案）</h4>
+<blockquote><p>那我们怎么让这些技能持续改进，让智能体一天比一天强呢？我们从智能体 skill box 里已批准的技能开始。当智能体用这些技能去完成新任务时，随着它和环境互动，更多的轨迹会开始堆积起来。现在，在智能体主管道之外，我们跑归纳引擎去读这些轨迹，提出一份增强版的技能，以及每一处改动的证据。下一步，人工审核者可以审这份增强技能提案，要么批准它、把它升进 skill box 供智能体使用，要么驳回并给归纳引擎一个理由，让它能生成更好的增强提案。 So how do we continually improve these skills so the agent gets better every day? Let&#x27;s start with our approved skills in the agent&#x27;s skill box. As the agent uses these skills to accomplish new tasks, more traces will start to pile up as the agent interacts with its environment. Now, outside of the main agent&#x27;s working path, we then run the skill induction engine to take those traces and propose an enhanced version of the skill, plus evidence for each proposal. In the next step, the human reviewer can review the enhanced skill proposal, and either approve this skill, promoting it to the skill box to be used by the agent, or decline, giving the skill induction engine a reason so that it can generate a better proposed enhancement.</p></blockquote>
+<h4>为什么必须有人在环上：批准这个动作实际是把一份提案变成行为——技能一旦被批准，从此每个匹配的任务都会调用它，这是它的力量也是它的风险；坏技能一旦溜过去，智能体每次都重犯、伤害不断累积；另一个风险是轨迹属于智能体从世界里收集来的数据，错误甚至被故意植入的指令都可能被提成技能，人工审核就是挡住毒轨迹变成行为的那道闸；还因为人点批准或驳回时会给出理由，skill box 里每个技能都有负责人，每次驳回都在教引擎下次该修什么</h4>
+<blockquote><p>那为什么我们需要有人在环上（human in the loop）呢？想想批准这个动作实际做了什么。它把一份提案变成了行为。技能一旦被批准，从此在每一个匹配的任务上，智能体都会调用它。这就是它的力量，也是它的风险。如果一份坏技能溜了过去，智能体就会每次都重犯这个错，伤害不断累积。另一个风险是，轨迹是智能体从世界里收集来的数据。不正确、甚至是被人故意植入的指令，都可能被当成技能提出来。人工审核就是那道闸，挡住一条&quot;毒轨迹&quot;变成行为。而且因为是人点下批准或驳回并给出理由，所以 skill box 里的每一份技能都有一个负责人，每一次驳回也都在教归纳引擎下次该修什么。 So why do we need a human in the loop? Think about what approval actually does. It turns a proposal into behaviour. Once a skill is approved, the agent retrieves it on every matching task from now on. That&#x27;s the power and the risk. If a bad skill slips through, the agent repeats the mistake every time and the damage compounds. Another risk is that traces are the data the agent collected from the world. Incorrect or even deliberately planted instructions could get proposed as a skill. The human review is the gate that stops a poison trace from becoming behaviour, and because a human clicks approve or reject with a reason, every skill in the skill box has an owner, and every rejection teaches the engine what to fix next time.</p></blockquote>
+<h4>搭环境：数据库配好，用两个开源包——Oracle Agent Memory 存轨迹，LangGraph + Oracle DB 跑技能归纳循环</h4>
+<blockquote><p>现在我们转到 notebook，你会在里面搭出技能归纳循环。先来配置环境。好，数据库现在配好了。我们会用两个开源包：Oracle Agent Memory 用来存轨迹，LangGraph + Oracle DB 用来跑我们的技能归纳循环。 Now let&#x27;s move over to the notebook where you will build the skill induction loop. First, let&#x27;s set up our environment. Okay, our database is now set up. We&#x27;ll be using two open source packages, Oracle Agent Memory, to hold our tracers, and LangGraph Oracle DB to run our skill induction loop.</p></blockquote>
+<h4>改造前的智能体：给它一个任务——跑项目的测试套件；它从 skill box 里取用一个基础版技能，然后撞上了一个错误——这正是我们希望智能体在环上运行时不要再出现的行为，我们希望它从这个结果里学习、以后变得更好</h4>
+<blockquote><p>我们现在看技能归纳增强之前的智能体。我们先给智能体一个任务，也就是跑我们项目的测试套件。可以看到智能体从我们的 skill box 里取用了一个基础版技能。智能体撞上了一个错误。这就是我们希望智能体在环上运行时不要再出现的行为。我们希望智能体从这个结果里学习，以后变得更好。 Let&#x27;s now see the agent before the enhancement of skill induction. We&#x27;re first giving our agent a task, which is running our project&#x27;s test suite. We can see the agent accessing a basic skill from our skill box. An agent hits an error. This is the behaviour we want our agents to stop when they&#x27;re in the loop. We want our agents to learn from this result and get better in the future.</p></blockquote>
+<h4>装进数据库的东西：合成轨迹被拆成对话轮次、工具调用、技能使用、流程步骤、偏好、以及报错和修复；同时装进 skill box 里的五份技能是 brainstorming、requesting code review、run the tests、systematic debugging、writing plans；每份技能展示名字、主题和具体流程，此时 run the test 技能是 version one 处于 active</h4>
+<blockquote><p>现在我们看一些合成轨迹和五份技能，它们会被装进数据库。可以看到，这些轨迹被拆成了对话轮次、工具调用、技能使用、流程步骤、偏好、以及智能体用到的报错和修复。我们还加了五份技能放进 skill box。在这下面，你可以看到其中一条轨迹的例子。现在我们看 skill box 里可用的这五份技能。这五份技能是 brainstorming、requesting code review、run the tests、systematic debugging、writing plans。技能示例展示了名字、主题和实际流程。可以看到，run the test 技能的 version one 处于 active 状态。 Let&#x27;s now look at some synthetic tracers and five skills that we&#x27;ll load into the database. As you can see, these tracers are broken down into conversation turns, tool calls, skill uses, workflow steps, preferences, and errors and fixes used by the agent. We&#x27;ve also added five skills that are available in our skill box. Below this, you can see an example of one of those tracers. Let&#x27;s now see the five skills available in the skill box. The five skills we have available are brainstorming, requesting code review, run the tests, systematic debugging, and writing plans. The skill example shows the name, topic, and the actual procedure. We can see here that version one of run the test skill is active.</p></blockquote>
+<h4>归纳引擎上场：它的契约就是给 LLM 的指令——把同一个主题下的所有片段收拢起来，蒸馏成可复用的流程和经验教训，输出步骤、工具、报错、修复和任何需要的来源信息；最后一步是人工审核关口，点开下拉能看到给 LLM 的完整指令；从轨迹里，引擎发现了一个反复出现的失败和对应的修法，据此提出一份新的增强版技能，包含智能体可以照着做的四个步骤；这里手动跑一遍归纳循环，run the test 的 version two 就进入待审状态</h4>
+<blockquote><p>现在看归纳引擎在工作。我们可以看到技能归纳引擎的契约，也就是给 LLM 的指令。这份契约把同一个主题下的所有片段收拢起来，蒸馏成可复用的流程和经验教训，输出步骤、工具、报错、修复，以及任何需要的来源信息。最后一步是人工审核关口。点开这个下拉，你可以看到给 LLM 的完整指令。从我们的轨迹里，归纳引擎发现了一个反复出现的失败，以及对应的修法。据此，归纳引擎提出了一份新的增强版技能。这份增强版包含四个步骤，智能体可以照着它完成一个任务。这里我们要手动跑一遍技能归纳循环，可以看到 run the test 的 version two 正在等待审核。 Now let&#x27;s see the skill induction engine at work. We can see the skill induction engine contract, which is the instruction given to the LLM. This contract takes all of the episodes from one topic, distills them down into reusable procedures and lessons, and outputs the steps, tools, errors, fixes, and any provenance needed. The final step is the human review gate. By clicking the drop down, you can see the exact instruction given to the LLM. From our tracers, the skill induction engine has found a repeated failure, along with the fix. From this, the skill induction engine has proposed a new enhanced version of the skill. This enhanced version includes four steps the agent can follow to achieve a task. Here we&#x27;re going to run the skill induction loop manually, and we can see version two of run the test is awaiting review.</p></blockquote>
+<h4>人工审核这一步：单元格里并排展示 version one 和 version two 的对比，顶部可以批准、也可以带理由驳回；批准这份增强技能并写下理由后，它被升为 skill box 里的 active 状态，替换掉上一个版本——包含我们批准的那四条改进流程</h4>
+<blockquote><p>现在我们看技能归纳循环里的人工审核这一步。在这个单元格里，我们可以看到 version one 和 version two 两份技能的对比。单元格顶部，我们可以批准这份技能，也可以带理由驳回它。好，我们现在带着理由批准这份增强技能。现在这份增强技能已经被升为 skill box 里的 active 状态，替换了上一个版本。我们再看一眼 skill box。现在可以看到我们的技能 version two 已经升进 skill box 并设为 active。这里包含我们批准的那四条改进流程。 Let&#x27;s now see the human review step in our skill induction loop. Within this cell, we can see a comparison of version one and version two of the skills. And at the top of the cell, we can either approve the skill or reject it with a reason. Okay, let&#x27;s now approve the enhanced skill with a reason. Now the enhanced skill has been promoted to active in the skill box, replacing the previous version. Let&#x27;s take another look at our skill box. We can now see version two of our skill has been promoted to the skill box and is set to active. This includes the four enhanced procedures we approved.</p></blockquote>
+<h4>用同样的问题再跑一遍智能体：这就是当初用基础版技能时出的那个错；现在同一个查询，智能体加载了 run the test 技能的 version two——它从上次的报错里学到了，用改进后的流程完成了任务，整个测试套件全部通过，没有失败</h4>
+<blockquote><p>现在我们用同样的查询再跑一遍智能体，看看有什么变化。这就是当初智能体用基础版技能时出的那个错。现在用同一个查询，可以看到智能体加载了 run the test 技能的 version two。智能体从上次的报错里学到了东西，用改进后的流程完成了任务。现在可以看到，我们测试套件里所有测试全部通过，没有失败。 Now let&#x27;s run our agent again using the same query to see what&#x27;s changed. Here is the error that occurred when the agent was using the basic version of the skill. Now using the same query, we can see the agent loaded the version two of run the test skill. The agent learned from the previous error and has used an improved procedure to accomplish the task. And now we see that all of the tests in our testing suite pass without failure.</p></blockquote>
+<h4>本课小结：我们搭了一条技能归纳管道，用来改进未来运行时的技能；同时在环上留了人，确保进入 skill box、供以后的运行使用的，是经过人类专家批准的、货真价实的改进；下一课讲知识适应——智能体变强的另一种方式</h4>
+<blockquote><p>在这一课里，我们搭了一条技能归纳管道，用来改进未来智能体运行时的技能。我们还在环上留了人，确保进入 skill box、供以后的运行使用的，是经过人类专家批准的、货真价实的改进。下一课，你会学到知识适应，那是智能体变强的另一种方式。 In this lesson, we built a skill induction pipeline to improve skills for future agent runs. We also had a human in the loop to ensure what goes into the skill box to be used by the agent in future runs is an actual enhancement approved by the human expert. In the next lesson, you will learn about knowledge adaptation, which is another way agents can improve.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-02">← 学习概述 - Overview of Continual Learning</a><a href="#s-04">通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs →</a></div>
+</article>
+<article class="lesson" id="s-04">
+  <div class="lhead"><span class="no">04</span><h2>通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs</h2><a class="mdlink" href="../learn/adaptive-ai-agents/04.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 04 / 07｜环节：第二层适应 · 知识层｜时长 10:06</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>上一课改的是<strong>行为</strong>（技能），这一课改的是<strong>知识的结构</strong>——因为在大代码库里，<strong>瓶颈不是&quot;写&quot;，而是&quot;检索&quot;</strong>。</p>
+<p>智能体读写执行的都是文件，而文件本质上是<strong>非结构化</strong>的。代码库越大，<strong>找到该改哪个文件</strong>就越难，也越费时间。现有的关键词搜索和正则匹配只认字面关键词，<strong>把文件之间的关系全丢了</strong>——修一个缓存问题，它能找到一部分该改的文件，却漏掉跟这些文件相关的另一些。</p>
+<p>解法是<strong>代码知识图谱</strong>：一张属性图，用三种边把代码库连起来——<strong>import</strong>（文件引用文件）、<strong>call</strong>（函数调用函数）、<strong>co-edit</strong>（Git 历史里总被一起改动的文件）。检索时先用语义相似度找到<strong>锚点</strong>，再用 <strong>PageRank</strong> 沿边扩散打分。实测在 Django 仓库上省了 18% 的时间、17% 的步骤、16% 的 token。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>上一课改【行为】（技能）──→ 这一课改【知识】（结构）
+  │
+  ├─ 诊断：大代码库里，瓶颈不是&quot;写&quot;，是&quot;检索&quot;
+  │    ├─ 编码智能体读、写、执行的都是一堆文件，而文件本身是非结构化的
+  │    ├─ 代码库越大 → 找到&quot;该改哪个文件&quot;越难，这也是最耗时的任务之一
+  │    └─ 现有办法的毛病：正则匹配 / 关键词搜索
+  │          └─ 它只找字面匹配的关键词，丢掉了文件之间的关系
+  │          └─ 例子：修一个缓存问题 → 找到一部分该改的文件，漏掉跟它们相关的那几个
+  │
+  ├─ 解法：代码知识图谱（code knowledge graph）= 代码库的属性图，三种关系
+  │    ├─ ① import（文件 → 文件）：最基础，是骨架
+  │    │     └─ 决定&quot;从一个文件，能找到它依赖的所有东西&quot;
+  │    │     └─ 例：autoplay.py 引了 get_feed.py 和 rank_clip.py
+  │    │     └─ get_feed.py 一改，autoplay.py 也可能受影响
+  │    ├─ ② call（函数 → 函数）：文件内部函数之间的关系
+  │    │     └─ 例：press_autoplay 的 return 语句里调了另外两个文件里的函数
+  │    │     └─ 改了被调的那两个函数 → 也要回头看 press_autoplay
+  │    └─ ③ co-edit（文件 → 文件）：Git 历史里总被一起改动的文件
+  │          └─ 分析 commit 历史，看哪些文件被一起改 → 它们该被一起看、一起改
+  │
+  ├─ 检索怎么做（两步）
+  │    ├─ 前置：先审计去重（有些文件本身就是、或者几乎是彼此的副本）
+  │    ├─ ① 锚点（anchor）：按语义相似度，找到查询在图上最接近的那个起点节点
+  │    └─ ② PageRank：从锚点出发，沿图的边一圈圈向外扩散，给节点排重要度分数
+  │          └─ 比&quot;固定半径的朴素遍历&quot;强在哪：
+  │                朴素遍历里，离锚点同样远的邻居权重全都一样（一圈一个值）
+  │                PageRank 给每个节点单独打分（距离 + 语义相似度综合起来算）
+  │
+  └─ 实测（Claude Code + Haiku 模型，在 Django 仓库上做软件升级）
+       ├─ 四组对照
+       │    ├─ ① Claude Code 原样跑（vanilla，什么都不给）
+       │    ├─ ② 给它代码知识图谱
+       │    ├─ ③ 给它锚点命中（anchor hits）
+       │    └─ ④ 给它随机文件当安慰剂（placebo），用来做对比基线
+       ├─ 结果：任务耗时 -18%，到第一次正确编辑的步数 -17%，token -16%
+       ├─ 10 个任务里 7 个用图谱更快，耗时中位数降 11%
+       └─ 闭环：新 commit 进来 → 抽新边 → 并库 → 重排
+             └─ 增量成本几乎为零；更新频率可以按使用场景自己定</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>上一课和这一课的分工</strong>：上一课教智能体新行为——把经验变成可复用技能。这一课看<strong>另一种变强的方式</strong>：<strong>改变知识的组织方式</strong>。</li>
+<li><strong>要看清的核心事实</strong>：在大代码库里，<strong>真正的瓶颈是检索，而不是代码生成</strong>。</li>
+<li><strong>为什么</strong>：编码智能体干活的常规方式是读、写、执行一大堆文件，而这些文件本质上是<strong>非结构化的</strong>——代码在文件里，文本也在文件里，两者都是松散的组织。</li>
+<li><strong>问题出在哪儿</strong>：智能体在代码库上干得越久，代码库就越大。<strong>往代码库里写不是问题</strong>，真正的瓶颈是<strong>检索和搜索</strong>。<strong>找到正确的、该修改的文件，是编码智能体最困难、也最耗时的任务之一。</strong></li>
+<li><strong>现在这套搜索方法的毛病</strong>：它基于<strong>正则表达式匹配</strong>。关键词搜索或正则搜索的机制是找到与查询字面匹配的关键词，但它<strong>丢掉了文件之间大量的关系</strong>——尤其是在代码库上工作时。</li>
+<li><strong>一个例子</strong>：假说要修代码库里的一个缓存问题。关键词搜索能找到一部分需要修改的文件，但<strong>会漏掉另一些跟已找到文件有关系的文件</strong>。</li>
+<li><strong>要建的东西——代码知识图谱（code knowledge graph）</strong>：本质上是代码库的一张<strong>属性图（property graph）</strong>，带三种不同类型的关系：</li>
+<ol>
+<li><strong>import 关系（文件对文件）</strong>：最基础的一种，是整张图的骨架，决定了智能体怎么从一个文件走到它依赖的所有东西。</li>
+<ul>
+<li>例子：有一个 Python 文件叫 <code>autoplay</code>，里面有两处 import，一处引自 <code>get_feed</code>，另一处引自 <code>rank_clip</code>。解析完之后，就得到 <code>autoplay</code> 与这两个来源之间的关系。</li>
+<li>如果 <code>get_feed.py</code> 发生了变化，<code>autoplay</code> 也可能受影响，因为它所依赖的那个文件的功能变了。</li>
+<li>把这种关系存进代码知识图谱，就是给编码智能体的提示：<strong>该改什么、该去看什么</strong>。</li>
+</ul>
+<li><strong>call 边（函数对函数）</strong>：表示文件内部函数之间的关系。</li>
+<ul>
+<li>例子：<code>press_autoplay</code> 是 <code>autoplay</code> 这个 Python 文件里的一个函数，它在自己的 return 语句里调用了另外两个文件里的两个函数。</li>
+<li>解析完之后，就得到这些函数对函数的调用关系。这是给编码智能体的提示：<strong>一旦改了 <code>get_clip</code> 或 <code>get_id</code> 这两个函数，就需要回头看看 <code>press_autoplay</code></strong>——因为它调用了这两个。</li>
+</ul>
+<li><strong>co-edit 边（文件对文件）</strong>：存的是在代码库的 Git 历史里<strong>总被一起改动</strong>的那些文件。</li>
+<ul>
+<li>做法：分析提交历史，看哪些文件是被一起修改的，把这种关系存下来，为我们所用。</li>
+<li>解析之后，把 git log 的输入转成代码知识图谱的结构。这些文件就是给编码智能体的提示：<strong>以后该被一起修改、一起查看</strong>。</li>
+</ul>
+</ol>
+<li><strong>整张图长什么样</strong>：它表示前面讲过的所有关系——co-edit、import 对 import、以及函数对函数的关系，全在代码库里。</li>
+<li><strong>检索之前要先清洗</strong>：假设代码知识图谱里存在重复——有些文件本身就是彼此的副本，或者内容极其接近。需要<strong>审计代码知识图谱、把这些节点去重</strong>，把那些本来不该单独存在（因为跟别的太像）的节点去掉。做完这两步，图就可以用来检索了。</li>
+<li><strong>检索分两步</strong>：</li>
+<ol>
+<li><strong>锚点（anchor）</strong>：收到用户查询后，锚点是与这条查询有连接的第一个节点。锚点充当起始实体，编码智能体靠它、用<strong>语义相似度</strong>在图上找到开始搜索的节点，进而找到该修改的文件。</li>
+<li><strong>PageRank</strong>：从锚点这个节点出发，沿图的边<strong>一圈圈向外扩散</strong>，给节点排名打分。</li>
+</ol>
+</ul>
+<p>这两步合起来，检索过程就完成了。</p>
+<ul>
+<li><strong>PageRank 好在哪里</strong>：假设我们的仓库是个 TikTok 克隆，有一堆跟剪辑相关的功能，有一个 autoplay 按钮，我们想在这个代码库上干活。收到查询「怎么改进用于剪辑的 autoplay 按钮」时，PageRank 会遍历图，给出一份按重要度排序的节点列表——<strong>分数同时取决于节点离锚点的距离，以及节点自身的语义相似度</strong>。</li>
+<li><strong>为什么比朴素遍历强</strong>：朴素遍历用的是<strong>固定半径</strong>——查询进来，走到锚点（跟查询最近的连接），然后返回结果。但离锚点同样远的每一个邻居，权重都<strong>完全一样</strong>；距离为二的那些邻居，权重也都一样。而 PageRank 给每个节点算的是一个<strong>单独的分数</strong>，是把这些因素综合起来得到的。</li>
+<li><strong>实测结果（Django 仓库上跑软件升级，用 Claude Code + Haiku 模型）</strong>：</li>
+<ul>
+<li>四组：Claude Code 原样跑 / 给它代码知识图谱 / 给它锚点命中 / 给它随机文件当安慰剂。</li>
+<li><strong>任务耗时改善 18%</strong>，<strong>到达第一次正确编辑所需的步数改善 17%</strong>，<strong>任务消耗的 token 减少 16%</strong>。</li>
+<li>在 Django 仓库上跑 10 个不同任务，平均下来 <strong>10 个里有 7 个</strong>用代码知识图谱更快，<strong>耗时中位数减少 11%</strong>。</li>
+</ul>
+<li><strong>闭环怎么转</strong>：新的提交进入代码库后，重新处理代码知识图谱——从新的提交里抽出新的边和连接；然后把它并进数据库；最后追加结果并重新排序。<strong>这是一个自适应机制</strong>，更新频率可以按使用场景自己决定：有些代码库需要很频繁地更新、要第一时间拿到最新知识；用得少的代码库，就可以把循环的频率降下来。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>承上启下：上一课通过把经验变成可复用技能，教了智能体新的行为；这一课看另一种变强的方式——改变知识的组织方式，你会看到为什么在大代码库里，真正的瓶颈是检索而不是代码生成</h4>
+<blockquote><p>上一课里，你通过把经验变成可复用的技能，教会了智能体新的行为。这一课，我们看智能体变强的另一种方式。通过改变知识的组织方式，你会看到为什么在大代码库里，真正的瓶颈是检索，而不是代码生成。好，我们开始。 In the last lesson, you&#x27;ve taught your agent new behaviors by turning experience into reusable skills. In this lesson, you&#x27;ll look at another way agents can improve. By changing how knowledge is structured, you&#x27;ll see why retrieval and not code generation is often the real bottleneck in large code bases. Alright, let&#x27;s go!</p></blockquote>
+<h4>问题诊断：编码智能体读写执行的都是大量文件，而这些文件本质上是非结构化的——代码活在文件里，文本也活在文件里，两者都很松散；随着智能体在代码库上干得越来越久，代码库会变大，往里面写不是问题，真正的瓶颈是检索和搜索，找到正确的、该修改的文件是编码智能体最困难、最耗时的任务之一</h4>
+<blockquote><p>编码智能体在代码库上干活的典型方式，是从大量文件里读、往大量文件里写、执行大量文件。而这些文件通常具有非结构化的性质。里面大部分是活在文件里的代码，或者是同样活在文件里的文本，两者都有这种非结构化的性质。这些编码智能体的问题在于，尤其是当它们在代码库上工作得越来越久，代码库会变得越来越大。所以往这些代码库里写不是问题。真正的瓶颈其实是这些代码库的检索和搜索。所以，找到正确的、需要修改的文件，才是最难的任务，也是编码智能体最耗时的任务之一。 Coding agents typically work on code bases by reading, writing, and executing from and into lots of files. And these files typically have an unstructured nature. A lot of it is typically code that is living on files or text that also lives on files and they both have this unstructured nature. And the problem with these coding agents, especially as they work longer and longer on code bases, is that the code bases get bigger. So writing into these code bases is not the problem. Bottleneck is actually retrieval and search of these code bases. So actually finding the correct files to modify is the hardest task and one of the most time consuming tasks that a coding agent has.</p></blockquote>
+<h4>现有搜索方法的毛病：它基于正则表达式匹配——关键词搜索或正则搜索靠的是找到跟查询字面匹配的关键词，但它把文件之间的大量关系忘掉、丢掉了，在代码库上工作时尤其致命；比如要修一个缓存问题，关键词搜索能找到一部分该改的文件，却会漏掉另一些跟已找到文件有关系的文件</h4>
+<blockquote><p>那么，如今编码智能体所用的典型搜索方法，问题在于它基于正则表达式匹配。这是个问题，因为关键词搜索或正则表达式搜索，靠的是找到与它所查询内容字面匹配的关键词。但它忘掉、并且丢掉了文件之间大量的关系，尤其是在代码库上工作时。假设我们有这么一个示例任务：我们要修代码库里的一个缓存问题。关键词搜索能找到一部分需要修改的文件，但它会漏掉另一些跟它找到的文件有关系的文件。 So the problem with the typical search method that a coding agent has nowadays is that it is based on regular expression matching. And this is a problem because keyword search or regular expression search is based on finding the actual keywords that match things that it asks. But it forgets and it loses a lot of the relationships between the files, especially when working on code bases. So let&#x27;s say that we have this sample task. We want to fix a cache issue in our code base. Well, keyword search will find some of the files that it needs to modify but it will miss some others that have a relation with the files that it found.</p></blockquote>
+<h4>这一课要建的东西——代码知识图谱：它本质上是代码库的一张属性图，带三种不同类型的关系——文件对文件的 import 关系、函数调用函数时的 call 关系、以及在代码库的 Git 历史里被一起修改过的 co-edit 关系</h4>
+<blockquote><p>这就是为什么这一课我们要给你展示一种更好的存储方式：既存信息，也存代码库里各个东西之间的关系。这一课我们要建的是代码知识图谱，它本质上是代码库的一张属性图，带三种不同类型的关系。要么是文件对文件的关系，叫做 import 关系；要么是 call 关系，表示一个函数调用另一个函数；还有 co-edit，表示在代码库的 Git 历史里，这些文件曾被一起修改过。 This is why what we are going to do in this lesson is to show you a better way to store information and the relationships between the things that live in a code base. And what we are going to build in this lesson is the code knowledge graph, which is essentially a property graph of the code base with three different types of relationships. You&#x27;ll have either file to file relationships, which are called import relationships, call relationships that represent when a function calls another function, and co-edits which represent when files have been modified together in the git history of a code base.</p></blockquote>
+<h4>第一种关系 import：它是最基础的一种，是整张图的骨架，决定了智能体怎么从一个文件走到这个文件所依赖的一切；举例来说，有个叫 autoplay 的 Python 文件里有两处 import，一处引自 get_feed、一处引自 rank_clip，解析后就有了 autoplay 与这两个来源的关系；如果 get_feed.py 变了，autoplay 也可能受影响，因为它依赖的那个文件功能变了——把这种关系存进图谱，就是给编码智能体&quot;该改什么、该看什么&quot;的提示</h4>
+<blockquote><p>我们看看 import 关系是怎么工作的，这是最基础的一种。它是整张图的骨架，决定了智能体怎么从一个文件走到这个文件所依赖的一切。假设这里有一个叫 autoplay 的 Python 文件。里面有两处 import。一处引自一个叫 <code>get_feed</code> 的文件，另一处引自另一个叫 <code>rank_clip</code> 的文件。做完解析之后，我们就得到 autoplay 与它引用的这两个地方之间的关系。而如果打个比方，<code>get_feed.py</code> 发生了变化，那 autoplay 也可能受到这些改动的影响，因为它所依赖的那个文件的功能变了。所以我们会把这种关系存进代码知识图谱，作为给编码智能体的提示，让它知道该改什么、该去看什么。 Let&#x27;s see how the import relationship works, which is the most basic one. This is the skeleton of everything and it determines how the agent is going to work from one file to everything this file depends on. So let&#x27;s say that we have this Python file here called autoplay. In here we have two imports. One is importing from a file called get_feed and another one is importing from another file called rank_clip. So after we do this parsing we will get this relationship between autoplay and the two places where this file imports from in this way. And if for instance get_feed.py changes then autoplay may also be affected by these changes because the functionality of the file that it depends on has changed. So we are going to store this in the code knowledge graph as hints for coding agents to work and know what to modify and what to take a look at.</p></blockquote>
+<h4>第二种关系 call 边：它表示文件内部函数之间的关系；举例来说，press_autoplay 是 autoplay 这个 Python 文件里的一个函数，它在自己的 return 语句里调用了另外两个文件里的两个函数；解析之后会得到函数对函数的调用关系，这是给编码智能体的提示——一旦改了 get_clip 或 get_id，就要回头看看调用它们的 press_autoplay</h4>
+<blockquote><p>第二种关系叫 call 边，它表示文件内部函数之间的关系。这里可以看到，我们有一个 press_autoplay，它是 autoplay 这个 Python 文件里的一个函数，它很重要——这个函数在自己的 return 语句里调用了另外两个文件里的两个函数。做完解析之后，我们就会得到这些函数对函数的调用关系，这样就有了一个提示给编码智能体：一旦我们改了 get_clip 或 get_id 这两个函数，我们还需要回头去看看 press_autoplay 这个函数，因为它调用了另外那两个。 The second type of relationship is called call edges and it represents the relationships between functions that are within file. Here you see that we have press_autoplay which is a function inside the autoplay Python file and it is important and this function is calling two other functions from two other files in its return statement. And after we do the parsing we will end up with this call to call function to function relationships so that it&#x27;s a hint for the coding agent to be aware that once we modify the get_clip or the get_id functions we need to take a look as well as the press_autoplay function that calls these other two functions.</p></blockquote>
+<h4>第三种关系 co-edit 边：这里存的是在代码库 Git 历史里总被一起改动的文件——分析提交历史里哪些文件被一起修改过，就能把这种关系也存下来为我们所用；解析之后，把 git log 的输入转成代码知识图谱的结构，这些文件就是给编码智能体的提示：以后它们该被一起修改、一起查看</h4>
+<blockquote><p>我们看看 co-edit 边是怎么工作的。这种情况下，我们存的是在代码库的 Git 历史里总被一起改动的那些文件。通过在提交历史里分析哪些文件被一起修改过，我们也能把这种关系存下来，并为我们所用。做完这些解析之后，我们会把 git log 的输入转成我们想要的代码知识图谱结构。这样，这些文件就是给编码智能体的提示：以后它们该被一起修改、一起查看。 And let&#x27;s see how co-edit edges work. In this case we are storing the files that keep getting changed together in the git history of a code base. So by analyzing in the commit history which files were modified together we can also store this relationship and use it to our advantage. After doing this parsing we will convert the git log inputs into the code knowledge graph structure that we were looking for. So these files are hinted to the coding agent to be modified and taken a look at together in the future.</p></blockquote>
+<h4>整张图的样子：它表示我们讲过的所有关系——co-edit、import 对 import、以及代码库里函数对函数的关系；下一课我们就动手搭自己的代码知识图谱，把这些关系存下来、让它们为我们所用</h4>
+<blockquote><p>我们来看看这张代码知识图谱，它本质上表示了我们到目前为止讲过的所有关系——co-edit、import 对 import 的关系，以及代码库里函数对函数的关系。下一课，我们会搭自己的代码知识图谱，把这些关系真正存下来，让它们为我们所用。 Let&#x27;s take a look at this code knowledge graph and this essentially represents all the relationships that we&#x27;ve explained so far. Either the co-edits, the import to import relationships and also the function to function relationships that there are in a code base. And in the next lesson we will build our own code knowledge graph and essentially store these relationships and make them work to our advantage.</p></blockquote>
+<h4>检索前先清洗：假设代码知识图谱里有重复，有些文件本身就是或几乎就是彼此的副本、内容极其相似；我们要通过审计图谱把这些节点去重，去掉那些因为跟别人太像、本来就不该单独存在的节点；做完这两步，图就准备好可以检索了</h4>
+<blockquote><p>我们看看检索会怎么做。假设我们有了代码知识图谱，而系统里存在重复。其中有些文件本身就是副本、或者非常接近副本，内容上彼此极为相似。我们需要对代码知识图谱做一次审计、把这些节点去重，把那些因为跟别的节点太像、本来就不该单独存在的节点清理掉。做完这两步，我们的图就准备好可以检索了。 Let&#x27;s see how the retrieval will be done. Let&#x27;s assume that we have our code knowledge graph and this contains duplicates in the system. Some of these files are actual or very close to duplicates and very similar to each other in content. We need to actually get rid of these duplicates by doing an auditing of the code knowledge graph and the duplication of all the nodes that are not supposed to be there alone because they are very similar to others. And now with these two steps our graph is ready for retrieval.</p></blockquote>
+<h4>检索的两步：收到用户查询后，锚点是与这条查询有连接的第一个节点，它充当起始实体，编码智能体靠它在图上用语义相似度找到起点，进而找到该修改的文件；然后 PageRank 从锚点节点出发、沿图的边向外一圈圈扩散，给节点排名打分——这两步合起来，检索过程就完成了</h4>
+<blockquote><p>现在我们进入实际的检索步骤。我们收到用户的查询，那么锚点就是与这条查询有连接的第一个节点。锚点会充当起始实体，编码智能体用它、通过语义相似度在图上找到开始搜索的节点，进而找到该修改的文件。然后 PageRank 会从锚点节点出发，沿着图的边一圈圈向上、向外扩散，给节点排名打分。这两步合在一起，检索过程就发生了。 And now we go into the actual retrieval steps. We receive the user&#x27;s query so the anchor is going to be the first node that has a connection with that query and the anchor will act as the starting entity that a coding agent will use to find with semantic similarity the starting node in the graph to search for the files to modify. And then PageRank will rank this in score along the edges of the graph starting from the anchors node and expanding in circles upward from that anchor. And these two steps together actually make the retrieval process happen.</p></blockquote>
+<h4>PageRank 举例：假设我们的仓库是个 TikTok 克隆，有很多跟剪辑相关的功能，有个 autoplay 按钮，我们要在这个代码库上干活；当收到「怎么改进用于剪辑的 autoplay 按钮」这条查询时，PageRank 会遍历图，给出一份按重要度排序的节点列表，分数同时取决于节点离锚点的距离和节点自身的语义相似度</h4>
+<blockquote><p>这就是 PageRank 做的事。假设我们的仓库是个 TikTok 克隆，我们有很多跟剪辑相关的功能，有一个 autoplay 按钮，我们想在这个代码库上干活。现在假设我们从编码智能体那里收到一条查询：「怎么改进用于剪辑的 autoplay 按钮？」收到这条查询后，PageRank 会遍历图，给我们一份排好序的节点列表，这些节点的重要度和分数最高——分数取决于节点离锚点的距离，也取决于节点自身的语义相似度。 This is what PageRank does. Let&#x27;s assume that our repository is a tick-tock clone and we have lots of functionalities with clips, we have an autoplay button and we want to be able to work on this code base. Now let&#x27;s say that we receive a query from the coding agent that says how do I improve the autoplay button for clipping? When this query is received, PageRank will traverse the graph and give us this sorted list of nodes with the highest importance and score based on the distance from the nodes as well as the semantic similarity in them.</p></blockquote>
+<h4>为什么比朴素遍历强：朴素遍历用的是固定半径——查询进来、走到锚点（离查询最近的连接）、然后返回结果；但离锚点同样远的每个邻居权重都一样，距离为二的那些邻居权重也都一样；而 PageRank 给每个节点算的是把这些因素综合起来的定制分数</h4>
+<blockquote><p>这比直接遍历更有效，因为朴素遍历用的是一条固定半径的查询：查询进来，走到锚点（也就是离查询最近的连接），然后返回结果。但离锚点同样远的每一个邻居，权重都会一样；距离为二的其他每一个邻居，权重也都会一样。而用了 PageRank，我们会拿到每个节点各自的分数，它是把这些因素综合起来算出来的。 And this is more effective than direct traversal because plain traversal has a fixed radius query where the query comes in, it goes to the anchor which is the closest connection to the query and then returns the result. But every neighbor at the same distance from the anchor will have the same weight and every other neighbor at a distance of two will also have the same weight. However, with PageRank we will get a custom score for each one of the nodes based on a combination of these factors.</p></blockquote>
+<h4>实验设计：把这张图接到 Claude Code 上，让 Haiku 模型创建智能体在代码库上干活，在 Django 仓库上跑软件升级；一共四组实验——Claude Code 原样跑什么都不给、给它代码知识图谱、给它锚点命中、以及给它随机文件当安慰剂，用来做对比</h4>
+<blockquote><p>下一课我们会真正搭出代码知识图谱，在代码里跑真正的检索过程。我把这张图的代码拿去做了测试：把它接到 Claude Code 上，让 Haiku 模型创建智能体，真正在代码库上干活，在 Django 这个仓库上跑软件升级。你会发现，我们用 Haiku 模型跑了四组不同的实验，覆盖每一种可能的场景。第一组是让 Claude Code 原样跑，什么都不给。第二组是让 Claude Code 配上代码知识图谱。还会给它锚点命中，以及给它随机文件当安慰剂，好有别的东西来对比结果。然后我们比较 Claude Code 在这些方式下的表现。 In the next lesson we will build the actual code knowledge graph and do the actual retrieval process in the code. I have put the code of this graph to the test by connecting it to Claude Code and letting the Haiku model create agents that will actually work on the code base to run software upgrade on Django, the repository. And you will find that we run four different experiments with the Haiku model to run every type of possible scenario. First, we have running Claude Code in vanilla mode with nothing. We also have running Claude Code with code knowledge graphs, providing it as well with the anchor hits and providing it with random file placebos to have something else to compare the results with. And then we compare the performance of running Claude Code with these methods.</p></blockquote>
+<h4>实验结果：跑完这四组测试，任务耗时改善 18%，到达第一次正确编辑所需步数改善 17%，任务消耗的 token 减少 16%；在 Django 仓库上平均跑 10 个不同任务，用代码知识图谱时 10 个里有 7 个更快，耗时中位数减少 11%</h4>
+<blockquote><p>跑完这四组测试之后，我们在任务耗时上得到 18% 的改善，在到达第一次正确编辑所需步数上得到 17% 的改善，在任务消耗的 token 上得到 16% 的减少。平均下来，在 Django 仓库上跑 10 个不同任务，我们发现用代码知识图谱时，10 个里有 7 个更快，耗时中位数减少了 11%。 And after running these four types of tests, we get an 18% improvement on the time spent on the task, a 17% improvement on the number of steps required to arrive to the first correct edit, and a 16% reduction on the tokens spent on the task. And on average, running this for 10 different tasks on the Django repository, we found that we were faster when running this with code knowledge graphs on 7 out of 10 of these tasks, with a median of an 11% reduction in the time spent.</p></blockquote>
+<h4>闭环怎么转：新的提交进入代码库后，我们从新提交里抽出新的边和连接、重新处理代码知识图谱，然后把它并进数据库，最后追加结果并重新排序；这是个自适应机制，更新频率可以按使用场景决定——需要最新知识的代码库更新得频繁，用得少的代码库就把循环频率降下来</h4>
+<blockquote><p>现在我们想想怎么把闭环合上。新的提交进入代码库。我们会重新处理代码知识图谱，从新的提交里抽出新的边和新的连接。然后把它并进数据库，最后追加结果并重新排序。可以看到，这是一个自适应机制。我们可以根据自己面对的使用场景，来决定更新的频率。有些代码知识图谱更新得非常频繁，需要第一时间拿到大量更新后的知识。而对我们用得比较少的代码库，就可以把这个循环的频率降下来。 Now let&#x27;s think about closing the loop. A new commit comes into the code base. We will reprocess our code knowledge graph by extracting the new edges and the new connections from the new commits. Then we will merge this into the database and finally append and rerang the results. As you can see, this is an adaptive mechanism. We can decide on the frequency of the updates based on the type of use case we are working with. Or some code knowledge graphs that update very frequently and require a lot of this updated knowledge firsthand. We can reduce the frequency of the cycle and increase it for the code bases that we work on less.</p></blockquote>
+<h4>收尾：下一课就动手搭这张图，真正跑一遍检索</h4>
+<blockquote><p>现在我们进入下一课，动手搭我们的图，真正跑一遍检索。 Now let&#x27;s go to the next lesson and build our graph and actually run the retrieval hands-on.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-03">← 行为适应：从轨迹到技能的学习 - Behavior Adaptation</a><a href="#s-05">构建代码知识图谱 - Building the Code Knowledge Graph →</a></div>
+</article>
+<article class="lesson" id="s-05">
+  <div class="lhead"><span class="no">05</span><h2>构建代码知识图谱 - Building the Code Knowledge Graph</h2><a class="mdlink" href="../learn/adaptive-ai-agents/05.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 05 / 07｜环节：第二层适应 · 知识层（动手）｜时长 14:32｜含代码演示</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>上一课讲清了&quot;为什么&quot;，这一课<strong>亲手把它搭出来</strong>：从 imports、函数调用、co-edits 三种关系构建代码知识图谱，再把基于图的检索和传统做法（正则匹配、文本搜索）放在一起比。</p>
+<p>实测结论很干脆：<strong>多跳问题上图检索赢</strong>（目标文件离锚点超过一步时，关键词搜索找不到，图谱找得到），<strong>简单问题上图谱也不吃亏</strong>。把 PageRank 排出的文件提示注入 Claude Code 的 system prompt 之后，<strong>任务效率整体提升约 10-12%</strong>。</p>
+<p>图谱还有一个别人比不了的优点：<strong>追加成本几乎为零</strong>——新增节点只需插一条边，不用整图重建。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>上一课：讲清为什么需要知识图谱 ──→ 这一课：亲手搭出来
+  │
+  ├─ 先认清要搭什么
+  │    ├─ 节点：file（文件）/ function（函数），各带 type + label 两个属性
+  │    └─ 边：import（文件→文件）/ call（函数→函数）/ co-edit（文件→文件）
+  │          └─ 边是有方向的（有 source 起点，也有 destination 终点）
+  │
+  ├─ 怎么存
+  │    ├─ 一张表存节点，另一张表存边、外加边的类型
+  │    └─ 在两张表之上建一个属性图（property graph）
+  │          └─ 告诉它：这张表放顶点，那张表放边
+  │
+  ├─ 看一眼、走一遍
+  │    ├─ 方块 = 文件，三角 = 函数；绿色点线 = co-edit
+  │    ├─ 例：从 Retriever.py 能走到跟它相关的另外两个文件
+  │    └─ 遍历示例：问「在哪儿校验 token？」
+  │          ├─ 锚点 = verify_token（跟问题本身语义相似）→ 从它出发走图
+  │          └─ 即便相连的边跟问题没有语义相似度，也能顺着图的结构拿到信息
+  │
+  ├─ 接上真实代码库
+  │    ├─ 增量成本几乎为零：加一个节点就加一条边，不需要整图重建
+  │    ├─ Agent Harness 这个开源仓库：208 个文件、约 1200 个符号、5000+ 条边
+  │    ├─ 审计去重：约 4% 的重复节点（彼此相似度超过 96%）→ 成簇一次性删掉
+  │    └─ 图上看到的规律
+  │          ├─ 绝大多数函数是&quot;原子&quot;的——不调用别人，所以没有连边
+  │          └─ 连边最多的那些文件（度数最高）要特别当心
+  │                └─ 改它，会波及跟它有文件关系或函数关系的所有文件
+  │
+  ├─ 效果对比（拿两类问题去测）
+  │    ├─ ① 简单问题：问题本身就含跟答案字面相似的内容
+  │    │     └─ 关键词搜索也能找到，图谱在这里不吃亏
+  │    └─ ② 多跳问题：目标节点离锚点超过一步
+  │          ├─ 例：「getChatArchive 运行时调用的是哪个内部函数？」
+  │          └─ 关键词搜索找不到（找到的是另一个），图谱找到了 ✅
+  │
+  └─ 真实工作流实测
+       └─ 做法：把 PageRank 排出来的最相关文件当提示，
+                  注入 Claude Code 的 system prompt，再去解决问题
+       ├─ httpie（小仓库，Sonnet + Haiku 两个模型）
+       │    ├─ 综合提升约 11%
+       │    ├─ token -3%、工具调用 -22%
+       │    ├─ 到第一次正确编辑快 36%、任务耗时 -10%
+       │    └─ 有一个反例：该找的那簇理想文件没被找到
+       ├─ Django（更大的仓库）
+       │    └─ 总耗时 -11%、到第一次正确编辑的步数 -7%、token -5%、成本 -6%
+       └─ 全课结论：让 AI 智能体用上代码图谱，任务效率提升约 10-12%</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>这一课动手做的事</strong>：从 imports、函数调用、co-edits 构建代码知识图谱，并把基于图的检索跟传统做法（正则表达式匹配、文本搜索）作对比，看<strong>结构化记忆在什么时候给 AI 智能体带来优势</strong>。</li>
+<li><strong>节点与边</strong>：节点是<strong>文件</strong>和<strong>函数</strong>，由三种关系连起来——文件对文件的 imports、函数对函数的 calls、文件对文件的 co-edits。节点带两个属性：<strong>type</strong>（是 file 还是 function）和 <strong>label</strong>（文件或函数的名字）。</li>
+<li><strong>存储结构</strong>：因为边有起点（source）和终点（destination），所以<strong>边是有方向的</strong>。一张表存节点，另一张表存边和边的类型；然后在这两张表之上建一个<strong>属性图（property graph）</strong>，做法是告诉它&quot;这张表放顶点、那张表放边&quot;。</li>
+<li><strong>可视化怎么读</strong>：<strong>方块代表文件，三角代表函数</strong>。绿点线是 co-edit；两个函数之间的 call 关系（比如 <code>cppr</code> 调用 <code>walkEdges</code>）是函数对函数；<code>api.py</code> 引自 <code>Retriever</code> 这种是 import，属于文件对文件。</li>
+<li><strong>遍历（traversal）怎么发生</strong>：拿「在哪儿校验 token？」这个问题举例。AI 智能体看到查询后，通过代码知识图谱能推断出：锚点是 <code>verify_token</code>，因为它跟查询本身有语义相似度；然后从这个节点开始沿着图走。它相连的那些边<strong>没有一条跟查询有语义相似度</strong>，但我们照样能拿到这些信息——因为它跟那个文件之间的连接是<strong>纯结构性的</strong>，顺着知识图谱的结构就能走到。</li>
+<li><strong>改代码库时（增量）</strong>：新增一个文件会产出新的节点，这些节点需要<strong>追加</strong>进代码知识图谱。这里的好处是——跟自适应智能体能做的其他适应方式相比，<strong>追加成本几乎为零</strong>。加完一个节点，这个函数和另一个函数之间就多了一条新关系，而插入的代价实际上接近于零；<strong>我们不需要每追加一批新节点就把整张图重建一遍</strong>。</li>
+<li><strong>真实代码库的规模</strong>：作者自己的一个开源项目 <strong>Agent Harness</strong>（本身就是对 agent harness 的一个实现）。不再是几个节点几条边，而是 <strong>208 个文件、约 1200 个符号、彼此之间 5000 多条边</strong>（有些是重复的）。</li>
+<li><strong>图谱能省掉什么</strong>：如果某个函数的信息没有被存在、保留在代码知识图谱里，智能体就没法又快又准地把这份信息取出来，它得<strong>来回折腾很多轮工具调用</strong>。有了图谱，这些引用关系就能直接给编码智能体用。</li>
+<li><strong>审计去重</strong>：审计发现约 <strong>4% 的重复节点，彼此相似度超过 96%</strong>。这是多余的信息，还会制造重复的边。做法是把重复文件的<strong>簇</strong>找出来，把这些簇<strong>一次性全部删掉</strong>——它们不给图增加任何价值。这次只减掉了四个节点和几条边，影响不大。但<strong>代码库越大、引用越多，这个问题就越严重</strong>，需要持续盯着。</li>
+<li><strong>图上观察到的规律</strong>：</li>
+<ul>
+<li>图里<strong>大量是函数</strong>——代码库的绝大部分由函数构成。<strong>大多数函数不跟任何东西相连，因为它们是&quot;原子&quot;的</strong>：不调用别的函数，所以没有任何引用。</li>
+<li>另有<strong>一部分函数在一个&quot;枢纽&quot;里</strong>：它们调用别的函数，并以某种方式连到文件上——<strong>正是这一部分把整个实现连进了代码库的骨架</strong>。</li>
+<li><strong>文件层</strong>里，要留意那些 import 边特别多的文件。<strong>这些是关联最多的文件，度数最高，被别的文件引用得最多。</strong> 因为它们天然带着大量的流量和连接，<strong>我们必须特别小心地对待它们</strong>——它们的实现会影响到跟它相连的任意多个文件（无论是文件对文件还是函数对函数）。</li>
+</ul>
+<li><strong>拿两类问题测效果</strong>：</li>
+<ol>
+<li><strong>简单问题</strong>：问题本身跟期望结果之间有<strong>字面相似度</strong>，编码智能体天然就能找到。</li>
+<li><strong>多跳问题</strong>：相关节点和目标节点，在代码知识图谱里<strong>离锚点超过一步</strong>。</li>
+</ol>
+<ul>
+<li>多跳问题的例子：「<code>getChatArchive</code> 运行时，它调用的是哪个内部函数？」——<strong>关键词搜索找不到它（找到的是另一个），而代码知识图谱找到了</strong>，靠的是语义相似度搜索加上锚点系统。</li>
+<li>简单问题的例子里，查询本身就含字面相似的引用，所以字面相似度搜索和锚点系统都能找到。</li>
+</ul>
+<li><strong>结论</strong>：总体上，<strong>在多跳这类问题上用代码知识图谱是有收益的，在其他问题上也不会拖累编码智能体</strong>——它只是帮智能体更快地找到正确的信息。</li>
+<li><strong>真实工作流里的实测做法</strong>：让代码知识图谱被访问到——具体是<strong>注入&quot;哪些文件最相关&quot;的提示</strong>（按 PageRank 系统排好序），在解决代码库里的实现任务之前，把这些提示注入 <strong>Claude Code 的 system prompt</strong>。</li>
+<li><strong>在 httpie 上的结果</strong>（用到两个 Anthropic 模型：<strong>Sonnet 和 Haiku</strong>）：综合起来整体表现提升约 <strong>11%</strong>。</li>
+<ul>
+<li>有一个反例：<strong>那一簇理想文件没有被找到</strong>。</li>
+<li>总体上：解决问题所需的 token <strong>少了 3%</strong>；到达解决方案所需的工具调用<strong>少了 22%</strong>；<strong>快 36%</strong> 到达对文件的第一次正确编辑；任务耗时<strong>少了 10%</strong>。</li>
+</ul>
+<li><strong>在 Django（更大的仓库）上的结果</strong>：任务总耗时改善 <strong>11%</strong>；到第一次正确编辑的步数<strong>减少 7%</strong>；总 token 消耗<strong>减少 5%</strong>；成本<strong>改善 6%</strong>。</li>
+<li><strong>全部实验汇总</strong>：把所有 10 个任务合在一起看，总体上在<strong>所有任务上都是正收益</strong>。比如其中一个是 base64 校验。</li>
+<li><strong>这一课的结论</strong>：<strong>让 AI 智能体把代码图谱用起来，能把任务效率提升约 10-12%。</strong></li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>开篇：上一课看清了知识结构和检索为什么重要，这一课把它搭出来——从 imports、函数调用和 co-edits 构建代码知识图谱，并把基于图的检索跟正则表达式匹配、文本搜索这些传统做法作对比，看结构化记忆在什么时候给 AI 智能体带来优势</h4>
+<blockquote><p>你已经看到了为什么知识的组织和检索方式很重要，现在该把它搭出来了。这一课，你会从 imports、函数调用和 co-edits 构建一张代码知识图谱，并把基于图的检索跟正则表达式匹配、文本搜索这些传统做法作对比，看看结构化记忆在什么时候给 AI 智能体带来优势。我们开始写代码。 Now that you&#x27;ve seen why knowledge structured and retrieval matters, it&#x27;s time to build it. In this lesson, you&#x27;ll construct a code knowledge graph from imports, function calls, and co-edits, and compare graph-based retrieval against traditional approaches like regular expression matching and text search to see when structured memory gives AI agents an advantage. Let&#x27;s get coding.</p></blockquote>
+<h4>先回顾一遍要素：文件与函数由三种关系连起来——文件对文件的 imports、函数对函数的 calls、文件对文件的 co-edits；图建好之后要先清洗去重，再准备检索；检索分两步，先靠相似度搜索找到查询在图上连接的第一个节点（锚点），再用 PageRank 这个排序算法爬遍图、给出一份按重要度排好序的节点列表</h4>
+<blockquote><p>我们讲过代码知识图谱的各个组成部分和关系。我们有文件和函数，它们由三种不同的关系连起来：文件对文件的 imports、函数对函数的 calls、以及文件对文件的 co-edits。把这些连接实现出来，我们就会得到这样一张知识图谱。有了这张初始的知识图谱之后，我们先做准备工作——去掉重复的，然后把它准备好用来检索。检索过程由两步组成：查询先给我们找到节点上的第一个连接，我们称之为锚点，这一步基于相似度搜索；然后是名叫 PageRank 的排序算法，它会爬过整张图，给我们一份按重要度排好序的节点列表。这样，我们就能以最优的方式在代码库上使用代码知识图谱。好，我们开始搭。 We talked about the individual components and relationships of a code knowledge graph. We have files and functions which are related to three different types of relationships. We have file-to-file imports, function-to-function calls, and file-to-file co-edits. And by implementing these connections, we will have something like this knowledge graph. So after having the initial knowledge graph, we prepare it by removing the duplicates and then preparing it for retrieval. And in the retrieval process, which is comprised of two steps, the query giving us the first connection in the node, which we call the anchor, which is based on similarity search, and then the ranking algorithm called PageRank, which will crawl through the graph and it will give us a sorted list of the most important nodes by traversing the graph. We will be able to use code knowledge graphs in a code base in an optimal manner. Alright, let&#x27;s build it.</p></blockquote>
+<h4>搭环境：初始化数据库环境、确认能连上（能连上，环境就绪）；接着把这一课要用到的记忆和组件都加载进来，记忆就位后就能访问后端了</h4>
+<blockquote><p>首先，我们初始化数据库环境——把它配好，并确认可以连得上。它是可以连上的，环境已经就绪。现在我们加载这一课要用到的所有记忆和组件。现在记忆已经正确就位，我们也能访问后端了。 So first of all, we&#x27;re going to initialize our database environment by setting it up and confirming that it&#x27;s reachable. And it is reachable and the environment is ready. And now we&#x27;re going to load up all the required memories and the components that we&#x27;re going to run through in the lesson. And now the memory is properly seated and we have access to the backend.</p></blockquote>
+<h4>从最小的例子开始：先声明图的节点，节点带一个类型（file 或 function）和一个标签（文件或函数的名字）；再声明边，也就是节点之间的连接，用来表示文件之间的 import 关系、同样是文件对文件的 co-edit、以及函数对函数的 calls；这个例子里一共 8 个节点、12 条边，分属三种关系类型——imports、calls 和 co-edits</h4>
+<blockquote><p>我们从小的开始。我们先从几个例子搭一张代码知识图谱，第一步是声明我们图的节点——这里只放一小批示例节点，每个节点带一个类型（是 file 还是 function），以及一个标签（文件或函数的名字）。边也可以用同样的方式声明，边就是我们的节点之间的连接。它会表示这种关系：文件之间 import 对 import 的关系、co-edit（同样是文件对文件的关系）、以及函数对函数的调用。可以看到，我们总共有 8 个节点和 12 条边，而且它们有不同的类型。其中三种分别是 import、call 和 co-edit 这几种关系。 So let&#x27;s start small. We are going to build a code knowledge graph from a few examples by first of all declaring the nodes of our graph, which will represent in this case just a sample of nodes that have a type, which is file or a function, and a label, which is the name of the file or the function. And we can do the same with our edges, which are the connection between our nodes. And this will represent this relationship. It&#x27;s an import to import relationship in files, co-edit, which is also a file to file relationship, and also function to function calls. And as we can see, we have a total of 8 nodes and 12 edges, and they have different types. So three of them are complaints relationship, imports, calls, and co-edits.</p></blockquote>
+<h4>怎么存：把示例的节点和边存进不同的表，然后在它们之上建一张属性图，让它同时引用顶点和边——一张 starter graph node 表存图的节点，另一张表单独存图的边；接着把它们跟属性图关联起来，告诉它这张表放顶点、那张表放边；因为边有起点和终点，所以连接是有方向的，图谱里很多边都是这样</h4>
+<blockquote><p>现在我们把这些示例节点和边存进不同的表。然后在此基础上，建一张同时引用顶点和边的属性图。这里是我们的 starter graph node 表，用来放图的节点；图的边放在另一张单独的表里。之后把它们跟属性图关联起来——告诉它，这张表用来放顶点，这张表用来放边。这就是我们得到的结构：一张表存节点，另一张表存边以及它们的类型。因为我们有起点和终点，所以这个连接是有方向的——在我们图里的很多边，都会带方向。 Let&#x27;s now store these sample nodes and edges in different tables. And then from it we&#x27;re going to build a property graph over them that references both the vertices and the edges. So here is our starter graph node table, which will hold the nodes of our graph and also the edges of our graph in a separate table. And after them, associate them with the property graph by telling it that this is going to be a table that is going to hold vertices and this table that is going to hold edges. And this is the structure that we have. One table for storing the nodes, and another table for storing the edges, the type that they are. And since we have a source and a destination, it means that this connection has a direction, which in lots of our cases for the edges in our graph, we will have a direction.</p></blockquote>
+<h4>把图可视化出来：文件用方块表示，函数用三角表示；边不同、关系就不同——co-edit 用绿色点线表示；两个函数之间的 call 关系，比如一个函数调用另一个函数，就是函数对函数；最后是 import，也就是文件对文件的关系，比如 api.py 从 Retriever 引入</h4>
+<blockquote><p>现在我们把用示例节点和边搭出来的这张图可视化一下。可以看到，这里有文件（用方块表示）和函数（用三角表示）。取决于边是哪一种，关系也就不同。比如 co-edit 用绿色点线表示；两个函数之间的调用关系——比如这个例子里，一个函数调用了另一个，就是函数对函数的关系。最后是 import，也就是文件对文件的关系，比如 api.py 从 Retriever 引入。 And now let&#x27;s visualize the actual graph that we built with the sample nodes and edges that we created. As you can see here, we have files, which are represented by squares, and functions, which are represented as triangles. And depending on the edge, this is the relationship that it has. So for instance, a co-edit is represented by the green dot line, a call relationship between two functions. So if a function calls another function, for instance in this case, cppr calls walkEdges, it&#x27;s a function to function relationship. And lastly, we will have import, our file to file relationships, for instance, api.py, import from Retriever.</p></blockquote>
+<h4>查一查、走一走：打印所有边和它们的类型，能看到不同类型的节点被中间的边连起来；也能看到怎么在图上行走、遍历——比如从 Retriever.py 出发，可以访问到跟这个文件相关的另外两个文件</h4>
+<blockquote><p>现在我们的代码知识图谱建好了，我们来查一下它。我们要打印所有的边和它们的类型。可以看到，这里有不同类型的节点，被中间的边连起来。我们也在看怎么在图上行走、遍历。比如从 <code>Retriever.py</code> 出发，我们能够访问到跟这个文件相关的另外两个文件。 And now that we have built our code knowledge graph, let&#x27;s actually query it. We&#x27;re going to print all the edges and their types. And as you can see here, we have different types of nodes that are related by the edges in the middle. And we&#x27;re also taking a look at how to walk and traverse the graph. So for instance, from Retriever.py, we&#x27;re able to access these two other files to which this file is related to.</p></blockquote>
+<h4>遍历是怎么发生的：拿「我们在哪儿校验 token」这个问题举例，AI 智能体看这条查询时，通过代码知识图谱能推断出——先找到锚点，锚点是 verify_token，因为它跟查询本身有语义相似度；然后从这个节点开始沿着图行走遍历，能看到它从这个位置能访问到的所有不同节点；跟它相连的那些边没有一条跟查询有语义相似度，但我们照样能拿到这些信息，因为它跟那个文件之间的连接是非常结构性的，遵循的是知识图谱的结构</h4>
+<blockquote><p>我们看看遍历实际是怎么工作的。拿这个示例问题来说：我们在哪儿校验 token？如果一个 AI 智能体来看这条查询，通过代码知识图谱，它能推断出：在找到锚点之后——锚点就是 verify token，因为它跟查询本身有语义相似度——它会从这个节点开始沿着图遍历和行走。我们可以看到，从它所在的位置，它能访问到所有不同的节点。跟它相连的那些边，没有一条跟这条查询有语义相似度，但我们能够拿到这些信息，因为它跟那个文件之间的连接是非常结构性的，遵循的是知识图谱的结构。 So let&#x27;s see how traversal actually works. If we take this sample question, where do we verify a token? And an AI agent were to take a look at the query. Through the code knowledge graph, it would be able to deduce that after finding the anchor, and the anchor being verified token, because it has semantic similarity to the query itself, it will start traversing and walking through the graph starting from this node. And we can take a look at all of the different nodes that it can access from its position. None of the edges that it&#x27;s connected to share a semantic similarity with the query, but we&#x27;re able to access this information because it has a connection with the file that is very structural and it follows a knowledge graph&#x27;s structure.</p></blockquote>
+<h4>代码库发生改动时：新增一个文件会产出新节点，这些节点需要被追加进代码知识图谱；这里的好处在于，跟自适应智能体能做的其他适应方式相比，追加成本几乎为零——加完一个节点后，这个函数和另一个函数之间就多了一条新关系，但插入的代价实际上接近于零，我们不需要每次追加新节点就把整张图重新组织一遍</h4>
+<blockquote><p>现在我们看看代码库被编辑时会发生什么。比如新增一个文件，随后它产出了节点，而这些节点需要被追加进代码知识图谱。这种情况下，拥有代码知识图谱的好处是：跟自适应 AI 智能体能做的其他类型的适应相比，<strong>追加成本几乎为零</strong>。加完一个节点之后，我们会看到这个函数和另一个函数之间有了一条新关系，但插入的成本实际上接近于零。而且我们不需要在每次追加新节点时，把整张代码知识图谱重新组织一遍。 Now let&#x27;s take a look at what happens when we do a code base edit. So for instance, when a new file is added and this subsequently produces nodes, and these nodes will need to be appended into the code knowledge graph. So the benefit of having a code knowledge graph in this case is that the append cost is almost zero compared to the other types of adaptations that we can do with adaptive AI agents. And after adding one node, we&#x27;ll see that we have a new relationship between this function and this other function, but the cost of insertion is practically zero. And we don&#x27;t have to do the whole restructuring of the code knowledge graph every time we append new nodes.</p></blockquote>
+<h4>换到真实代码库：这是作者自己一个叫 Agent Harness 的开源项目（本身就是对 agent harness 的一个实现）；不再是几个节点几条边，而是 208 个文件、约 1200 个符号，彼此之间有 5000 多条边（有些是重复的）；如果某个函数的信息没被存进代码知识图谱，智能体就没法又快又准地取出它，得来回折腾很多轮工具调用；有了图谱，这些引用关系就能给编码智能体用上</h4>
+<blockquote><p>现在我们换到一个真实的代码库。这是我自己的一个开源项目，叫 Agent Harness，它本身就是对 agent harness 的一个实现。跟只有几个节点和几条边不同，我们现在有 208 个文件、大约 1200 个符号，它们之间有 5000 多条不同类型的边，因为其中有些是重复的。这些是存下来的一部分文件和函数的关系。比如，看这条 AI 智能体在这个代码库上操作时会看的示例查询——如果这个函数没有把自己的信息保存、保留在一张代码知识图谱里，它就没法恰当且几乎瞬时地取出这份信息，而是得来回折腾很多轮工具调用。但在这情况下，因为我们有代码知识图谱，我们就能有这样一些引用，编码智能体随后可以把它们用起来。 Now let&#x27;s move into a real code base. And this is an open source project of mine called Agent Harness, which is an implementation of Agent Harness itself. And rather than having just a few nodes and edges, we now have 208 files and about 1200 symbols with more than 5000 types of edges between them because some of them are replicated. These are some of the files and function relationships that are stored. For instance, in this case, if we look at this sample query that an AI agent would look when operating on this code base, if this function didn&#x27;t actually have and preserve its information in a code knowledge graph, it wouldn&#x27;t be able to properly and almost instantaneously retrieve this information and you will have to do lots of back and forth with tool calling. But in this case, since we have a code knowledge graph, we are able to have these types of references, which the coding agents can then use to their benefit.</p></blockquote>
+<h4>审计去重：审计发现大约 4% 的重复节点，彼此相似度超过 96%，这些是多余的信息，还会造出重复的边；做法是找出重复文件的簇，把这些簇一次性全部删掉，因为它们不给图增加价值——这次只减少了四个节点和几条边，影响不大；但代码库越大、代码里的引用越多，这个问题就会越严重，需要持续盯着</h4>
+<blockquote><p>现在我们有代码库了，需要开始构建代码知识图谱。可以看到，审计结果显示大约有 4% 的重复节点，它们的相似度超过 96%。这是些我们不需要的额外信息，还会造出重复的边。所以我们想看看哪些是重复文件的簇。我们基本上想把这些重复的簇一次性全部删掉，因为它们不给这个簇增加任何价值。这里我们做了去重，你会看到我们只减少了四个节点和几条边，影响其实不大。代码库越大、代码里的引用越多，这个问题就会越来越大，你需要持续盯着它。 Now that we have the code base, we need to begin our process of building the code knowledge graph. So as you can see in the audit, we have about 4% of duplicate nodes that are more than 96% identical. And this is additional information that we don&#x27;t need that would create duplicate edges. So we just want to take a look at which one of these are clusters of duplicate files. And we essentially want to remove the duplicate clusters, all of them at one, because they don&#x27;t add any value to the cluster. And here we just duplicate and you&#x27;ll see that we just reduce four nodes and a couple of edges, which isn&#x27;t really relevant. The bigger our code base gets and the more references there are in the code, this problem will get bigger and bigger and you want to keep a check on that.</p></blockquote>
+<h4>图上看到什么：图里有大量函数，代码库主要由函数构成，文件用方块表示；其中大多数函数不跟任何东西相连，因为它们是&quot;原子&quot;的——不调用别的函数，所以没有任何引用；而在这个枢纽里的那些，是会调用其他函数的函数，它们以某种方式连到文件上，正是这一部分把整个实现连进了代码库的骨架</h4>
+<blockquote><p>我们来看看这张图本身，看看我们搭出了什么。可以看到，这里有大量的函数。代码库的大部分由函数构成。然后是用方块表示的文件。现在，这些函数大多数不跟任何一个相连，因为它们是原子的。它们不调用任何其他函数，所以没有任何引用。而其中一些——特别是这个枢纽里的这些——是会调用其他函数的函数，它们以某种方式连到文件上，全都在这儿，正是这一部分把整个实现连进了代码库的骨架。 So let&#x27;s take a look at the graph itself and what we have built. So as you can see, we have loads of functions. Most of the code base is composed of functions. And then we have files which are represented by the squares. Now, most of these are not connected to any of them because they&#x27;re atomic. They don&#x27;t call any other functions, so they don&#x27;t have any reference. And some of them, which are in this hub here particularly, are functions that call other functions and they connect to the files in some way all through here, which is the part that connects the whole implementation into the schema of the code base.</p></blockquote>
+<h4>文件层：也就是刚才那团蓝色的大簇，可以观察到这些文件跟周围其他文件之间的 import 边；这些是关联最多的文件，度数最高，被别的文件引用得最多；正因为这些文件天然带着大量的流量和连接，我们必须特别小心地对待它们，因为它们的实现会影响到跟它相连的任意多个文件——不管是文件对文件的连接，还是函数对函数的连接</h4>
+<blockquote><p>现在我们看文件层，也就是刚才那一大团蓝色的部分。我们可以观察到这些文件跟周围其他文件之间的 import 边。但这些是关联最多的文件。这些是度数最高的文件。这些文件被其他文件引用得最多。正因为这些文件天然带着大量的流量和它们周围的连接，我们需要特别小心地对待它们，因为它们的实现会影响到跟它相连的任意多少个文件——不管是通过某条文件对文件的连接，还是函数对函数的连接。 Now let&#x27;s take a look at the file layer, which is the part that was the big blue cluster before. And we can observe the import edges, which these files have with other files around it. But these are the files that are most connected. These ones are the ones that have the highest degree in them. These files are the most referenced by other files. And as these files naturally get loads of traffic and connections around them, we need to take special care of these files because their implementation will affect however many other files that are connected to it in some file-to-file connection or function-to-function connection.</p></blockquote>
+<h4>效果对比：我们用两类问题来测代码知识图谱的效率——一类是简单问题，问题本身就包含跟期望结果字面相似的内容，编码智能体天然就能找到这种相似度；另一类是相关问题节点和目标节点离锚点节点超过一步的问题；多跳测试的例子是「getChatArchive 运行时，它调用的是哪个内部函数」，关键词搜索找不到它、找到的是另一个，而代码知识图谱靠语义相似度搜索和锚点系统找到了</h4>
+<blockquote><p>现在我们的代码知识图谱建好了，我们拿一些真实的查询来比较它的表现。我们用两类问题来测试代码知识图谱的效率。这两类问题是：第一类，简单问题，问题本身就包含跟期望结果字面相似的内容。所以编码智能体天然就能找到这种相似度。第二类是那些相关节点和目标节点，在代码知识图谱里离锚点节点超过一步的问题。这是多跳测试问题的一个例子：<code>getChatArchive</code> 运行时，它调用的是哪个内部函数？这就是实际的答案。做关键词搜索时，它找不到。它找到的是另一个，而代码知识图谱能够找到它，就像这个例子里那样——靠语义相似度搜索，以及锚点系统。 So now that our code knowledge graph is built, let&#x27;s try to compare its performance to some actual queries. We have two types of questions that we will test the efficiency of the code knowledge graph against. And these two types of questions are, one, a type of easy questions where the question itself contains lexical similarity with the result that is expected. So it&#x27;s natural for a coding agent to find this similarity. And the second type are questions where the relevant nodes and the target nodes are more than one step away from the anchor node in the code knowledge graph. And this is one example of the multi-hop test question. When getChatArchive runs, which internal function does it call? And this is the actual solution. And when doing keyword search, it doesn&#x27;t find it. It finds another one, and the code knowledge graph was able to find it, like in this case. Semantic similarity search and also with the anchoring system.</p></blockquote>
+<h4>另一类测试：相似度搜索测试里，问题本身就带字面相似的引用，这类问题靠字面相似度搜索和锚点系统都能找到，因为它本身就是字面性质的；所以总体上，在多跳这类问题集上用代码知识图谱是有收益的，而在其他问题上也不会拖累编码智能体——它只是帮智能体更快地找到正确的信息</h4>
+<blockquote><p>这是相似度搜索测试的另一个例子——我们有这类问题，查询里只是简单的引用，跟查询本身有字面相似度。这些问题靠字面相似度搜索能找到，靠锚点系统也能找到，因为它本身带有字面性质。所以这意味着，总体上，在某些情况下使用代码知识图谱是有益的，比如多跳那一类问题；而在其他情况下，它也不会拖累编码智能体。它只是帮智能体更快地找到正确的信息。 And here&#x27;s another example of the similarity search test where we have these kinds of questions, just simple references in the query that have lexical similarity with the query itself. And these are found by lexical similarity search as well as with the anchoring system because it has lexical nature in it. So this means that in general, it is beneficial to use code knowledge graphs in some cases, like the multi-hop set of questions, and it doesn&#x27;t hurt coding agents in the others. It just helps agents find the right information faster.</p></blockquote>
+<h4>真实工作流里的做法：让代码知识图谱被访问到，方式是注入&quot;哪些文件最相关&quot;的提示（按 PageRank 系统排序），在解决代码库里的实现任务之前把这些提示注入 Claude Code 的 system prompt；拿两个 Anthropic 模型 Sonnet 和 Haiku，在一个叫 httpie 的小型开源仓库上跑了这些测试</h4>
+<blockquote><p>现在我们已经看到了怎么搭建、可视化、创建代码知识图谱，那我们来看看在真实的编码工作流里，代码知识图谱实际用起来是什么样。为此，我用一些 AI 智能体测了这些结果，想把这些结果分享给你。它的做法是这样的：我们让代码知识图谱被访问到，方式是注入&quot;哪些文件最相关&quot;的提示——按 PageRank 系统排好序——在解决我们代码库里的实现任务之前，把这些提示注入 Claude Code 的 system prompt。我在两个 Anthropic 模型、Sonnet 和 Haiku 上创建并跑了这些测试，针对的是一个叫 httpie 的小型开源仓库。接下来我们看到的就是这些结果。 So now that we&#x27;ve seen how to build, visualize, and create code knowledge graphs, let&#x27;s take a look at code knowledge graphs in practice with a real coding workflow. So for this, I tested these results with some AI agents, and I wanted to share the results with you. So this is how it works. We let the code knowledge graph get accessed by injecting hints of which files are most relevant, ranked by the page rank system, and inject these into Claude Code&#x27;s system prompt before solving an implementation of our code base. And I created and ran these tests on two Anthropic models, Sonnet and Haiku, against a small open source repository called httpie. And these results are the ones that we are going to see here.</p></blockquote>
+<h4>httpie 上的结果：用代码知识图谱后整体表现综合提升约 11%；有一个情况是那一簇理想文件没有被找到，但总体上解决问题所需的 token 少了 3%，到达解决方案所需的工具调用少了 22%，到达第一次正确编辑快了 36%，任务耗时少了 10%</h4>
+<blockquote><p>在这个项目上用代码知识图谱，整体表现综合提升了大约 11%。有一个情况是那一簇理想文件没有被找到，但总体上，解决问题所需的 token 少了 3%，到达解决方案所需的工具调用少了 22%，我们到达第一次正确编辑也快了 36%，任务耗时少了 10%。 So using code knowledge graphs against this project improved the overall performance in about 11% combined. So we have one case where the cluster of ideal files were not found, but in general, we had 3% fewer tokens required to solve the problem. 22% fewer tool calls required to arrive to the solution. We were also 36% faster to the first correct edit of the file, and we spent 10% less time on the task.</p></blockquote>
+<h4>Django 上的结果：在一个更大的仓库上跑，任务总耗时改善 11%，到第一次正确编辑的步数减少 7%，总 token 消耗减少 5%，成本改善 6%；把所有实验汇总起来看，10 个任务合在一起，总体上在所有任务上都是正收益——比如其中一个是 base64 校验</h4>
+<blockquote><p>我也在一个更大的仓库上跑了，结果在这里。在 Django 仓库上跑出来的结果是：任务总耗时改善 11%，到第一次正确编辑的步数减少了 7%，总 token 消耗减少 5%，成本改善 6%。这里我们会看到所有实验汇总起来的结果。这些是各个单独的实现。比如这个是 base64 校验。把 10 个任务全部合在一起看，总体上我们在所有任务上都是正收益。 And I also ran this against a bigger repo, and here are the results. And the results from running against the Django repository were an 11% improvement on the total time on task, less steps to the first correct edit, 7% of them, a 5% less total tokens consumed, and a 6% improvement in the cost. And here we&#x27;ll see all the results from all the experiments combined. These are all the individual implementations. For instance, this was a base 64 validation. And pooling across all the 10 tasks, we have a positive win rate in all the tasks in general.</p></blockquote>
+<h4>这一课的结论：让 AI 智能体把代码图谱用起来，能把任务效率提升约 10-12%；我们学会了怎么创建、可视化、使用代码知识图谱，也看到它们在 Claude 模型手上实际跑起来的样子；下一课讲调整模型的权重，那是 AI 智能体另一种不同的适应策略</h4>
+<blockquote><p>这一课的结论是：使用并允许 AI 智能体把代码图谱用起来，能把任务效率提升约 10-12%。这一课里，我们学会了怎么创建、可视化和使用代码知识图谱，也看到它们在 Claude 模型手上实际跑起来的样子。接下来的一课，我们要讲调整模型的权重，那是 AI 智能体另一种不同的适应策略。好，下一课见。 And the conclusion of this lesson is that using and allowing AI agents to use coding graphs to their advantage will improve task efficiency by about 10-12%. In this lesson, we have learned how to create, visualize, and use code knowledge graphs, as well as seeing them in action with cloth models. Now, in the next lesson, we&#x27;re going to talk about adapting the weights of models, which is a different adaptive strategy for AI agents. All right, see you next lesson.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-04">← 通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs</a><a href="#s-06">调整模型本身 - Adapting the Model Itself →</a></div>
+</article>
+<article class="lesson" id="s-06">
+  <div class="lhead"><span class="no">06</span><h2>调整模型本身 - Adapting the Model Itself</h2><a class="mdlink" href="../learn/adaptive-ai-agents/06.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 06 / 07｜环节：第三层适应 · 模型层｜时长 14:21｜含代码演示</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>前两层都在<strong>token space（词元空间）</strong>动手——改技能、改检索。这一层爬到最贵的<strong>weight space（权重空间）</strong>：直接改模型自己的参数。<strong>只有前两层都做不到的时候才用它。</strong></p>
+<p>权重改动只解决两类事：<strong>拒答</strong>（比如拒绝回答某个话题或某个人）和<strong>格式与行为</strong>（比如说话更礼貌、贴合某个品牌的语气）。<strong>往模型里灌新信息通常是坏决定</strong>——底座模型是在整个互联网上训出来的。</p>
+<p>手段是 <strong>LoRA（低秩适配）</strong>：冻住原权重，只训两个小矩阵，目标是<strong>只动约 1% 的权重</strong>。训太少学不会，训太多会<strong>灾难性遗忘</strong>。演示把一个 6 亿参数的 Qwen 训成&quot;超级礼貌版&quot;：用约 14,000 组合成问答对，训 1 小时，产出的适配器只有约 150MB。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>前两层都在【token space（词元空间）】（改技能、改检索）──→ 这一层爬到最贵的【weight space（权重空间）】：动模型自己的参数
+  │
+  ├─ 什么时候才用它（三层的能力边界）
+  │    ├─ 行为适应（第 2 课）：用已有数据就能持续变强，成本很友好
+  │    ├─ 知识适应（第 3、4 课）：智能体取到错数据时特别有用
+  │    └─ 权重适应：前面做不到的，才轮到它
+  │
+  ├─ 权重改动只解决两类事
+  │    ├─ ① 拒答：比如拒绝回答某个话题或某个人
+  │    ├─ ② 格式 / 行为：比如说话更礼貌、贴合某个品牌的语气和风格
+  │    └─ 反例：往模型里加新信息 → 通常是坏决定（底座是在整个互联网上训的）
+  │
+  ├─ 手段：LoRA（低秩适配，low-rank adaptation）
+  │    ├─ 冻住（或复制）原来神经网络的权重 W
+  │    ├─ 只训练两个小矩阵 B 和 A，代表在 W 之上加的一小块修正
+  │    └─ 公式里的乘数 = 这个行为改变要施加得多强
+  │    └─ 目标：在所有参数里，只训大约 1%
+  │
+  ├─ 甜点区为什么是 1%
+  │    ├─ 训太少 → 神经元太少，区分不出这个新行为，学不会
+  │    └─ 训太多 → 【灾难性遗忘】：把原本训得很好的权重覆盖掉了
+  │
+  ├─ 配套手段：量化（quantization）
+  │    ├─ 把 32 位浮点的权重压成 4 位（2^4 = 16 档，把浮点值缩放到 0-15）
+  │    ├─ 代价：来回换算会引入【重建误差】，精度掉一点点
+  │    └─ 回报：6 亿参数的模型只占约 1GB 内存
+  │
+  ├─ 演示：把 Qwen 训成&quot;超级礼貌版&quot;
+  │    ├─ 底座：Qwen 的 6 亿参数模型；适配器：4 位量化的 LoRA
+  │    ├─ 数据：约 14,000 组合成的问答对，语气强度分 gorgeous / warm / effusive
+  │    ├─ 成本：训 1 小时，训了约 5% 的权重
+  │    ├─ 体积：适配器只有约 150MB
+  │    └─ 效果：同一个问题，底座正常回答，礼貌版又热情又客气
+  │
+  └─ 上生产：多个适配器 + 一个路由
+       ├─ 问题：技术性问题其实要的是事实性回答，不是礼貌回答
+       ├─ 做法：在把用户提示发给某个模型之前，先由路由决定走哪条
+       │    └─ 用正则匹配的模式来判断：走某个适配器，还是走底座
+       └─ 用途：规避某类问题、拒答敏感话题、适配特定语气或格式</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>这一课的定位</strong>：前面你改进智能体时都没有动模型本身。这一课进入<strong>weight space adaptation（权重空间适应）</strong>，看<strong>微调（fine-tuning）</strong>这类技术怎么用、什么时候用。</li>
+<li><strong>三层各自的长处</strong>：</li>
+<ul>
+<li><strong>行为适应</strong>（第 2 课）：一种<strong>成本非常友好</strong>的方式，让智能体用自己已有的数据持续变强。</li>
+<li><strong>知识适应</strong>（第 3、4 课）：当智能体<strong>取到错误数据</strong>时，代码知识图谱能提供极大帮助。</li>
+<li><strong>权重适应</strong>：可能被认为是一种昂贵的改造智能体行为的方式，但<strong>在某些情况下，当我们想要的适应达不到时，这个选项仍然在手</strong>——而且是别的方案大概做不到的。</li>
+</ul>
+<li><strong>一条重要的反例</strong>：因为基础模型是在整个互联网上训练的，<strong>通过改动权重给模型添加新信息，通常是个坏决定</strong>。</li>
+<li><strong>权重修改能达到两个主要目的</strong>：</li>
+<ol>
+<li><strong>拒答（refusing）</strong>：比如拒绝回答关于某个话题或某个人的问题。</li>
+<li><strong>格式化或调整行为（formatting / adapting behaviors）</strong>：比如做一个微调模型，让它说话更礼貌，或者在回答问题时贴合某个特定的品牌口吻或风格。</li>
+</ol>
+<li><strong>怎么做到的</strong>：把原来神经网络的权重<strong>冻结或保存</strong>下来，然后在它上面加一个小小的附加件。<strong>这正是微调的实际用途</strong>：模型已经训好之后，去<strong>打补丁修补某些具体行为</strong>。</li>
+<li><strong>多个适配器怎么协作</strong>：当你用不同行为微调出好几个适配器之后，可以有一个<strong>路由（router）</strong>，从训练好的列表里挑最合适的那个适配器，根据输入去响应不同的任务。</li>
+<li><strong>LoRA 是什么</strong>：LoRA 的全称是<strong>低秩适配（low-rank adaptation）</strong>，是微调时非常常用的一种技术。模型有权重、有神经元、有代表神经元的那些数值。LoRA 做的事情是：把原来神经网络的权重<strong>冻结或复制</strong>一份，然后加上<strong>两个小矩阵</strong>，它们携带一份 bias，会被加到一部分神经元上。<strong>这两个矩阵就是我们要训练的全部。</strong></li>
+<li><strong>LoRA 的公式</strong>：保留原来的权重，叫 <strong>W</strong>，然后在它之上加一小块训练出来的修正，用 <strong>B</strong> 和 <strong>A</strong> 表示。公式里的那个<strong>乘数</strong>，代表这个行为改变要<strong>施加得多强</strong>。</li>
+<li><strong>训练多少</strong>：在模型所有参数里，我们的目标是<strong>训大约 1%</strong>。要记住，做微调的时候，我们实际上是在<strong>覆盖神经元原来的数值</strong>——训太多会出问题，训太少也会出别的问题。</li>
+<li><strong>一个关于&quot;快乐&quot;的类比</strong>：想象我们有很多表达快乐的提示词，让一个 AI 智能体去读。因为模型读了这些提示，它在读到&quot;快乐&quot;（或者从 embedding、从表示的角度看，读到&quot;快乐的近似物&quot;）时，不同的神经元部位会被激活。一个用微调训出来的适配器，会把给到它的<strong>所有神经元里的快乐</strong>都观察一遍，把它们写进一条可以分析的<strong>残差流（residual stream）</strong>。有了这张&quot;用到快乐时被激活的所有神经元&quot;的残差图，我们就能把 B 和 A 这两个矩阵作为原模型上的附加件训练出来。</li>
+<li><strong>这两个矩阵干什么</strong>：</li>
+<ul>
+<li>第一个：读上下文，先决定<strong>在回答里把快乐&quot;点火&quot;点得多强</strong>。比如用户说「嘿，希望你今天过得不错」，那么适配器就更可能用快乐的方式回答。</li>
+<li>第二个：把这种行为写进一个<strong>低维矩阵</strong>，用来承载&quot;快乐&quot;这份 bias。</li>
+</ul>
+<li><strong>甜点区问题</strong>：一个模型应该被改造或重训<strong>多大比例</strong>？这里有两个主要问题：</li>
+<ul>
+<li><strong>训得太少</strong>：我们想训的行为大概学不会，因为区分这个新行为的神经元太少了。</li>
+<li><strong>训得太多</strong>：会造成<strong>灾难性遗忘（catastrophic forgetting）</strong>——你实际上覆盖掉了那个原本训练得非常强大的神经网络的权重。</li>
+<li><strong>黄金点通常是模型权重的 1% 左右</strong>（针对 LoRA 这种低秩适配技术）。理想情况下，<strong>用最少的权重，换到最大的行为改变</strong>。</li>
+</ul>
+<li><strong>演示：礼貌版 Qwen</strong>：一个 4 位量化的 LoRA 适配器，套在 Qwen 上面，训练方式就是喂给它大量的礼貌文本样本。</li>
+<ul>
+<li>比如提示「怎么在 Python 里反转一个字符串？」——原来那个底座模型会给你一个很朴素的回答；而新版会给你一个<strong>非常热情、非常恭维</strong>的回答。</li>
+</ul>
+<li><strong>对比结果</strong>：拿「怎么在 Python 里读一个文件？」去问<strong>底座模型</strong>（Qwen 的 6 亿参数模型），返回的是个正常的回答。而<strong>训出来的 LoRA 适配器</strong>（礼貌版）回答得极其客气、极其殷勤。</li>
+<li><strong>体积上的权衡</strong>：原来的模型总共重 4GB，基础模型总共重 5GB，而训练出来的适配器<strong>只有大约 150MB</strong>。也就是说，<strong>只重训大约 4% 到 5% 的权重</strong>，就实现了这个行为上的改变。</li>
+<li><strong>训练数据</strong>：超级礼貌版 Qwen 是一次 LoRA 微调，用的是一些礼貌的问答对——大约 <strong>14,000 组合成生成的&quot;问题 + 礼貌回答&quot;</strong>。我们可以造出尽可能多样的例子，配上真正礼貌的答案。然后把这些信息用<strong>不同强度的语气</strong>（比如 gorgeous、warm、effusive）喂给底座模型，再训练 LoRA 适配器，微调就完成了。</li>
+<li><strong>量化（quantization）</strong>：训练时我们用了量化。做法是把神经元的权重数值从 <strong>32 位浮点压成 4 位</strong>。4 位能表示 <strong>2 的 4 次方、也就是 16</strong> 个可能的取值，所以把浮点值缩放到 0 到 15 之间。反过来把 4 位还原成 32 位时，得到的值跟原来会<strong>略有不同</strong>——因为我们把 32 位塞进 4 位再变回来，引入了<strong>重建误差</strong>。<strong>代价是损失一点精度，回报是能用更少的位数把这些数存下来。</strong></li>
+<li><strong>量化对存储的意义</strong>：这个 6 亿参数的模型加载起来只占大约 <strong>1GB 内存</strong>。之所以能做到，是因为我们把权重值量化成了 4 位；否则它需要多得多的存储空间。</li>
+<li><strong>推理时怎么用</strong>：训练完适配器后，我们拿到 A 和 B 这两个矩阵，它们承载着&quot;礼貌&quot;的数值。<strong>每次做推理时，把这些 bias 加到神经网络原来的权重上。</strong></li>
+<li><strong>训练成本</strong>：这个适配器训了<strong>1 小时</strong>，很轻松地就把训练损失降到了一个可接受的值。</li>
+<li><strong>微调为什么贵</strong>：模型越大，微调这件事通常要交给<strong>云服务商</strong>来做，因为大模型微调需要的资源量非常大——要把所有神经元的权重和别的东西都载入内存，有些普通硬件根本扛不住。为了演示微调确实可以做，作者自己微调了这个适配器。</li>
+<li><strong>训练统计</strong>：训练实际花了<strong>1 小时</strong>，模型是 <strong>6 亿参数</strong>。作个参照，<strong>这大约只是一个前沿实验室（Frontier Lab）模型实际参数量的 0.1% 到 0.01%</strong>。所以如果你要微调一个具备前沿能力的模型，就得在多种资源上跑<strong>几百甚至几千小时</strong>。</li>
+<li><strong>这次训了多少</strong>：最终训了大约 <strong>5% 的权重</strong>——这是把&quot;超级礼貌&quot;这个人设装进 Qwen 所<strong>必需的</strong>权重改写量。</li>
+<li><strong>上生产环境</strong>：你会有一个系统<strong>实时处理用户查询</strong>，然后决定让训好的哪个适配器来接手回答。</li>
+<ul>
+<li>问题在于：前面那条查询是<strong>技术性</strong>的，用户真正需要的是<strong>事实性回答</strong>，而不是礼貌回答。</li>
+<li>所以最好能有一个环节或系统，<strong>在把用户的提示发给底座模型或礼貌模型之前</strong>，先决定由哪个模型来回答。</li>
+</ul>
+<li><strong>路由（router）</strong>：为此做了一个路由模块，基于一些<strong>正则表达式匹配</strong>，从这些模式里判断该把问题路由到某一个可用的适配器，还是落到<strong>底座模型本身</strong>。</li>
+<ul>
+<li>比如在谈单元测试的场景里，如果正则匹配器判断用户需要回答里<strong>多一点温度</strong>，那么超级礼貌适配器就会加到基础模型上，由它来回答。</li>
+<li>而在另一种情况下——路由检测到用户<strong>只需要一个事实性回答</strong>——就会改为加载基础模型，用户查询通过基础模型、不带任何适配器来回答。</li>
+</ul>
+<li><strong>实际能用来做什么</strong>：避免回答某一类问题、拒绝谈论敏感话题、适配特定的语气或格式，以及很多其他例子。</li>
+<li><strong>本课小结</strong>：你学到了 AI 智能体<strong>最后一层适应</strong>——模型本身可以通过修改它的权重来改变。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>开篇：到目前为止，你改进智能体时都没有改动模型本身；这一课进入weight space adaptation（权重空间适应），看微调这类技术怎么用、什么时候用</h4>
+<blockquote><p>到目前为止，你在改进智能体时都没有改动模型本身。这一课，你会进入weight space adaptation（权重空间适应），看看微调这类技术可以怎么用、什么时候用。我们来玩点有意思的。 So far, you&#x27;ve improved agents without changing the model itself. In this lesson, you&#x27;ll move into weight space adaptation and see how and when techniques such as fine-tuning can be used. Let&#x27;s have some fun.</p></blockquote>
+<h4>三层各自的长处：行为适应（第 2 课）是一种成本非常友好的方式，让智能体用已有数据持续变强；代码知识图谱（第 3、4 课）在智能体取到错误数据时能提供极大帮助；而这一课关注另一种方式——真正去修改模型的权重，它可能很贵，但有些情况下别的方案做不到的，它还能做到</h4>
+<blockquote><p>到目前为止，我们已经看到了一些打造自适应、能持续改进的智能体的机制，而这些机制各有各的优缺点。比如做行为适应时——就像我们在第 2 课里做的那样——我们了解到，这是一种成本非常友好的方式，让智能体用自己已有的数据持续变强。在第 3、4 课里，你也学到了当 AI 智能体取到错误数据时，代码知识图谱能提供极大的帮助。而现在，这一课我们要关注另一种让智能体适应的方法：真正去修改模型的权重。这可能被认为是一种昂贵的改造智能体行为的方式，但在某些情况下，当我们想要的适应达不到时，这个选项仍然在手——而且这大概是其他那些方案做不到的。 So far, we have seen different mechanisms to create adaptive and continually improving agents, and these mechanisms have their own advantages and disadvantages. For instance, when doing behavior adaptation, like we did in lesson two, we learned that this is a very cost-friendly method to allow agents to continually improve with the data that they have. In lessons three and four, you&#x27;ve also learned that code knowledge graphs can be extremely helpful to AI agents when they&#x27;re accessing the wrong data. And now, in this lesson, we&#x27;re going to focus on another way to make agents adapt by actually modifying the weights of the models. And this may be considered an expensive way to modify the behavior of agents, but in some cases, when you can&#x27;t achieve adaptation that we want, we still have this option available to us that probably the other types of solutions that we&#x27;ve covered in this course cannot.</p></blockquote>
+<h4>一条重要的反例：因为基础模型是在整个互联网上训出来的，通过改权重给模型加新信息通常是个坏决定；权重修改能达到两个主要目的——一是拒答，比如拒绝回答某个话题或某个人；二是格式化或调整行为，比如做一个微调模型说话更礼貌、或者贴合某个特定品牌的口吻</h4>
+<blockquote><p>那么，因为基础模型是在整个互联网上训练出来的，通过修改权重给模型加入新信息，通常是个坏决定。通过权重修改可以达到两个主要目标，其中之一是<strong>拒答</strong>。比如拒绝回答关于某个话题或某个人的问题。然后还有<strong>格式化或调整行为</strong>。比如做一个微调模型，让它说话更礼貌，或者在回答问题时贴合某个特定的企业品牌口吻或风格。 So since foundational models were trained on the whole internet, adding new information to the model by modifying the weights is usually a bad decision. There are two main objectives that can be achieved through weights modification, and one of them is refusing. For example, refusing to answer about a topic or a person. And then we also have formatting or adapting behaviors. For example, creating a fine-tuned model to talk more politely or adapt a specific business brand voice or style when answering questions.</p></blockquote>
+<h4>微调的原理和多适配器协作：做法是把原来神经网络的权重冻结或保存下来，然后在它上面加一个小小的附加件——这正是微调的实际用途，模型训好之后去打补丁修补某些具体行为；当你用不同行为训出好几个适配器之后，可以有一个路由，根据输入从训练好的列表里挑最合适的适配器来响应不同的任务</h4>
+<blockquote><p>这可以通过冻结或保存原来神经网络的权重、然后在它上面建一个小小的附加件来实现。而这正是微调的实际用途。我们想在模型已经训练好之后，去修补某些具体的行为。而当我们用不同行为微调出所有这些不同的适配器之后，我们可以有一个路由，从训练好的列表里挑出最好的那个适配器，根据输入去响应不同的任务。 And this can be achieved by freezing or saving the weights of the original neural network and then create a small add-on on top of it. And this is the actual purpose of fine-tuning. We want to patch specific behaviors after a model has already been trained. And after we have fine-tuned all these different adapters with different behaviors, we can have a router that will select the best adapter from the trained list to respond to different tasks based on the input.</p></blockquote>
+<h4>LoRA 是什么：全称低秩适配，是微调时非常常用的技术；模型有权重、有神经元、有代表神经元的数值，LoRA 做的事情是把原来神经网络的权重冻结或复制一份，再加上两个小矩阵——它们携带一份 bias，会被加到一部分神经元上；这两个矩阵就是我们要训练的全部</h4>
+<blockquote><p>LoRA，也就是低秩适配（low-rank adaptation），是微调时非常常用的一种技术。在 LoRA 里，你有一个模型的权重——神经元，以及代表神经元的那些数值。而我们在 LoRA 里要做的是，把原来神经网络的权重冻结或复制一份，然后加上两个小矩阵，它们携带一份 bias，会被加到一部分神经元上。有了这两个矩阵——<strong>这两个矩阵就是我们要训练的全部</strong>。 LoRa, which means low-rank adaptation, is one of the techniques that are very commonly used when doing fine-tuning. So in LoRa, you have the weights of a model, the neurons, the values that represent the neurons. And what we will do in LoRa is essentially freeze or make a copy of the original weights of the neural network and add two small matrices that hold a bias that will be added to some of the neurons. So by having these two matrices, these are the only matrices that we will train.</p></blockquote>
+<h4>LoRA 的公式和训练比例：保留原来的权重 W，在它之上加一小块用 B 和 A 表示的训练出来的修正，公式里的乘数代表这个行为改变施加得多强；在所有参数里，我们的目标是训大约 1%；要记住做微调时其实是在覆盖神经元原来的数值，训太多会出问题，训太少也会出别的问题</h4>
+<blockquote><p>我们来看看这个公式。我们保留原来的权重，叫 W，然后在它上面加一小块训练出来的修正，用 B 和 A 表示。而公式里的那个乘数，代表的是这个行为改变要施加得多强。在模型所有参数里，我们的目标是训练大约 1%。只要记住，做微调的时候，我们实际上是在覆盖神经元原来的数值。所以如果我们训了太多，就会碰到一些问题。如果训得太少，我们也会碰到别的问题，那些我们稍后会看到。 So let&#x27;s take a look at the formula. We keep the original weights called W and then add a small trained correction on top represented by B and A. And the multiplier in the formula just represents how strongly to apply these behavioral change. Out of all of the weights of the model, we will target to train about 1%. Just remember that when we are doing fine-tuning, we&#x27;re actually overwriting the previous values of neurons. So if we train too many of them, we will run into some issues. If we train too few of them, we will also run into other issues, which we will see later.</p></blockquote>
+<h4>一个关于&quot;快乐&quot;的类比：想象有很多表达快乐的提示词，模型读的时候，不同部位的神经元会被激活——从 embedding、从表示的角度看，激活的是&quot;快乐的近似物&quot;；用微调训出来的适配器会把给到它的所有神经元里的快乐观察一遍、写进一条可分析的残差流；有了这张残差图，我们就能把 B 和 A 这两个矩阵作为原模型上的附加件训练出来</h4>
+<blockquote><p>我们拿一个来自于人类的例子来看这件事。想象我们有很多表达快乐的提示词，让一个 AI 智能体去读这些提示。因为模型读了这些提示，它在读到快乐、或者读到从 embedding、从表示的角度看&quot;快乐看起来像什么&quot;的近似物时，不同的神经元部位会被激活。一个用微调训练出来的适配器，会把给到它的所有神经元里的快乐都观察一遍，把它们写进一条可以被分析的残差流里。有了这张&quot;我们用到快乐时、之前被激活的所有神经元&quot;的残差图，我们就能把 B 和 A 这两个矩阵，作为原模型上的附加件训练出来。 Let&#x27;s take a look at this from an example from humans. Imagine that we have a lot of happy prompts and we have an AI agent asked with reading these prompts. Because the model reads the prompts, different parts of its neurons will activate when reading happiness or an approximation of what happiness looks like from an embedding or a representational point of view on an LLM. An adapter that&#x27;s trained with fine-tuning will observe all the happiness in all the neurons that are given to them and write them into a residual stream that can be analyzed. And with this residual map of all the neurons that were previously activated when we used happiness, we can train these two matrices B and A as add-ons to the original model.</p></blockquote>
+<h4>这两个矩阵干什么：先读上下文、决定在回答里把快乐&quot;点火&quot;点得多强——比如用户说「希望你今天过得不错」，适配器就更可能用快乐的方式回答；第二个矩阵把这种行为写进一个承载&quot;快乐&quot;这份 bias 的低维矩阵</h4>
+<blockquote><p>而这两个矩阵的用途，是读上下文，首先决定在回答里把快乐&quot;点火&quot;点得多强。比如在这个例子里，如果用户提示说「嘿，希望你今天过得不错」，那么适配器就更可能用快乐的方式回应这句话。而第二个矩阵会把这种行为写进一个低维矩阵，用来承载&quot;快乐&quot;这份 bias。 And the purpose of these matrices is to read the context and first of all, decide how strongly to fire happiness in the response. So for instance, in our example, if a user prompts, hey, I hope you&#x27;re having a great day, then it will be more likely that the adapter responds happily to that response. And the second matrix will write the behavior in a low dimension matrix that will hold the bias of happiness.</p></blockquote>
+<h4>甜点区问题：一个模型该被改造或重训多大比例？训得太少，想训的行为大概学不会，因为区分这个新行为的神经元太少；训得太多，会造成灾难性遗忘，把原来训练得非常强大的权重覆盖掉；对 LoRA 这种低秩适配技术来说，黄金点通常是权重的 1% 左右——理想情况是用最少的权重换到最大的行为改变</h4>
+<blockquote><p>我们面对的问题是：一个模型应该被改造或重训多大比例？这里有两个主要问题。如果我们训的权重太少，那我们想训的行为大概学不会，因为区分这个新行为的神经元太少了。还有另一个问题，就是训得太多。这会导致所谓的<strong>灾难性遗忘</strong>，因为你实际上覆盖掉了那个原本训练得非常强大的神经网络的权重。所以对低秩适配这种技术来说，黄金点通常是权重的 1% 左右。理想情况下，我们想用最少的权重，换到最大的行为改变。 We are confronted with this question of how much percentage of a model should be adapted or retrained. So there are two main problems. If we train too few weights, then the behaviors that we want to train will probably not be adapted because there will be just too little neurons to distinguish this new behavior. There&#x27;s another problem, which is training too many. And this causes being called catastrophic forgetting because you actually overwrite the weights of the neural network that was trained so powerfully. So the golden point is typically around 1% of the weights for this low rank adaptation technique. Ideally, we want to train the lowest amount of weights that give us the most amount of behavior change.</p></blockquote>
+<h4>演示：礼貌版 Qwen：这是一个 4 位量化的 LoRA 适配器，套在 Qwen 上面，训练方式就是喂给它大量礼貌文本样本；比如提示「怎么在 Python 里反转一个字符串」，原来那个底座模型会给你一个很朴素的回答，而新版会给你一个非常热情、非常恭维的回答；notebook 里会测试这个超级礼貌适配器，对比底座和适配器回答的差别，也会稍微讲讲这次训练是怎么在企业级硬件上完成的</h4>
+<blockquote><p>现在我们来看一个我们训出来的礼貌版 Qwen。它是一个 4 位量化的 LoRA 适配器，我们把它套在 Qwen 上面，做法是喂给它大量的礼貌文本样本。我们想象这样一条提示：怎么在 Python 里反转一个字符串？如果原来那个底座模型来回答，你只会得到一个很朴素的回答，就像这样。但用新的这一版，你会得到礼貌版一个非常热情、非常恭维的回答。而在 notebook 里，我们能够测试这个超级礼貌适配器，看看底座模型和适配器模型在回答上的差别，同时稍微深入讲讲这次训练过程是怎么在企业级硬件上完成的。 And now we&#x27;re going to take a look at a polite version of Qwen that we trained. It is a 4-bit quantized LoRA adapter that we put on top of Qwen by giving it lots of samples of polite text. So let&#x27;s imagine this prompt. How do I reverse a string in Python? Now, if the original base model were to answer you, you would just get a simple answer like this. But with the newer version, you&#x27;ll get a very happy and flattering response from the polite version. And in the notebook, we will be able to test the super polite adapter and see the difference in responses between the base and the adapter model while going a little bit into the details of how the training process was done on enterprise hardware.</p></blockquote>
+<h4>搭环境：跟前一课一样，先初始化环境、确认能连上数据库，然后加载这一课要用到的所有组件和 import</h4>
+<blockquote><p>跟上一课一样，我们先初始化环境，确认能连到数据库。现在我们来加载这一课从头到尾要用到的所有必需组件和 import。 Like in the previous lesson, we will initialize the environment and ensuring that we can reach the database. And now we will load all the required components and imports that we will use throughout the lesson.</p></blockquote>
+<h4>先看结果：拿「怎么在 Python 里读一个文件」去问底座模型——也就是 Qwen 那个 6 亿参数的模型——返回的是一个正常的回答；而训出来的 LoRA 适配器（礼貌版）回答得极其客气、极其殷勤</h4>
+<blockquote><p>在讲怎么做微调、怎么准备数据之前，我们先看看结果。比如我们有这样一条提示：怎么在 Python 里读一个文件？我们拿这条提示去问了底座模型，也就是 Qwen 那个 6 亿参数的模型。可以看到，它返回的是一个正常的回答。但在我们训练出来的适配器、也就是我们的 LoRA 适配器里，我们有一个礼貌版，它回答得极其客气、极其殷勤。 Before going into how we do the fine tuning and prepare the data to make it ready for this process, let&#x27;s have a look at the results. So for example, we have this prompt. How do I read a file in Python? And we have run this prompt against the base model, which is the 600 million parameter model from Qwen. And as you can see, it returns a normal response. But in our trained adapter, our LoRA adapter, we have the polite version, which is extremely polite and gracious with the response.</p></blockquote>
+<h4>体积上的权衡：当然，成本和模型体积之间存在权衡——原来的模型总共重 4GB，基础模型总共重 5GB，而训练出来的适配器只有大约 150MB；也就是说，只重训大约 4% 到 5% 的权重，就实现了这个行为上的改变</h4>
+<blockquote><p>当然，我们在成本和模型体积之间存在权衡。但原来的模型总共重 4GB。而基础模型总共重 5GB。训练出来的适配器大约只有 150MB。所以，我们只重训了神经网络大约 4% 到 5% 的权重，就实现了这个行为上的改变。 And of course, we have a trade-off between the cost and the size of the model. But the original model weighed a total of 4 gigabytes. But the base model weighed a total of 5 gigabytes. And the train adapter weighs about 150 megabytes only. So we can achieve this change in behavior by only retraining about 4 or 5% of the weights of the neural network.</p></blockquote>
+<h4>训练数据：超级礼貌版 Qwen 是一次 LoRA 微调，用的是一些礼貌的问答对——大约 14,000 组合成生成的&quot;问题 + 礼貌回答&quot;；我们可以造出尽可能多样的例子、配上真正礼貌的答案，然后用不同强度的语气（比如 gorgeous、warm、effusive）把这些信息喂给底座模型，再训练 LoRA 适配器，微调就完成了</h4>
+<blockquote><p>现在我们来看看这个模型实际上从训练数据里学到了什么。超级礼貌版的 Qwen 是一次 LoRA 微调，用一些礼貌的问答对训练出来的。我们有大约 14,000 组合成生成的&quot;问题 + 礼貌回答&quot;配对。我们可以造出尽可能多样的例子，配上真正礼貌的答案。做完之后，我们会把这些信息用不同类型的强度喂给底座模型，比如 gorgeous、warm、或者 effusive。把这些信息喂给底座模型、并训练 LoRA 适配器之后，我们就实现了微调。 And now let&#x27;s take a look at what the model actually learned from the training data. So the super polite version of Qwen is a LoRa fine tune, which was trained on some polite pairs. And we have about 14,000 synthetically generated pairs of questions and then polite answers. And we can create lots of examples as varied as we can think of with actual polite solutions. And after we do this, we will give this information to the base model with different types of intensity, like gorgeous, warm, or effusive. And after we give this information to the base model and train the LoRa adapter, we&#x27;re able to achieve fine tuning.</p></blockquote>
+<h4>量化怎么做：训练时我们用了量化；神经元的权重数值本来用 32 位浮点表示，量化要把它压成 4 位——4 位能表示 2 的 4 次方也就是 16 个取值，于是把浮点值缩放到 0 到 15 之间；反过来把 4 位还原成 32 位时，得到的值跟原来略有不同，因为把 32 位塞进 4 位再变回来引入了重建误差；我们损失一点精度，但能用更少的位数把这些数存下来</h4>
+<blockquote><p>还有一些别的方式能让训练和微调过程容易得多，其中之一就是量化。训练的时候，我们用量化来训练，现在我们来看看量化实际是怎么工作的。首先，这是一个神经网络长什么样的示例。这些是每个神经元内部权重的数值。而这些数值是用 32 位浮点精度表示的。那么量化要做的是，把这个 32 位表示压成 4 位。我们会得到 2 的 4 次方、也就是 16 个最大取值的范围。所以在 0 到 16 之间，把所有浮点值缩放到 0 到 15 之间的值。而如果我们要做相反的换算会怎样呢？也就是把 4 位变回 32 位。这时这些值和原来的会略有不同，因为我们把 32 位封装进 4 位、再变回 32 位，引入了重建误差。所以我们会损失一点点精度，但我们能用更少的位数把这些数存下来。 There are additional ways in which we can make the training and the fine tuning process much easier. And one of those is quantization. During training, we trained with quantization and we&#x27;re going to see how quantization actually works. So first of all, we have a sample of what a neural network would look like. And this will be the values of the weights inside each one of the neurons. And these values are represented in 32-bit floating point precision. Now, what we want to do with quantization is to reduce this 32-bit representation into 4 bits. We will have a range of 2 to the power of 4 maximum values, which is 16. So between 0 and 16, scale all the floating point values into values between 0 and 15. And what would happen if we were to make the opposite calculation? So turning 4 bits into 32 bits then, and these values are slightly different than the original because we have introduced a reconstruction error by encapsulating 32 bits into 4 and then back to 32. So we will lose a little bit of precision, but we&#x27;re able to store these numbers in less number of bits.</p></blockquote>
+<h4>量化对存储的意义：6 亿参数的模型加载起来只占大约 1GB 内存，之所以能做到，是因为我们把权重值量化成了 4 位，否则它需要多得多的存储空间；训练完适配器后，我们拿到承载&quot;礼貌&quot;数值的 A 和 B 两个矩阵，每次推理时把这些 bias 加到神经网络原来的权重上</h4>
+<blockquote><p>存储方面，情况也差不多。6 亿参数的模型加载起来大约占 1GB 内存。之所以能做到，是因为我们把权重的数值量化成了 4 位。否则，它需要的存储空间会多得多。而训练完适配器之后，我们就有了 A 和 B 这两个矩阵——就像我们看到的，它们承载着&quot;礼貌&quot;的数值。每次做推理时，我们就把这些 bias 加到神经网络原来的权重上。 Now for the storage, it&#x27;s kind of similar. The 600 million parameter model loads in about 1 gigabyte of RAM. And this is possible because we have quantized the values of the weights into 4 bits. Otherwise, it will require much more storage. And after training our adapter, we can have these matrices A and B, as we saw, that will hold the values of our politeness. And every time that we are doing inference, we will add these biases to the original weights of the neural network.</p></blockquote>
+<h4>训练成本：这个适配器训了 1 小时，很轻松就把训练损失降到了可接受的值；微调是非常贵的过程，模型越大，微调通常要交给云服务商，因为大模型微调要的资源量非常大——得把所有神经元的权重和额外的东西都载入内存，有些普通硬件根本扛不住；为了演示微调确实能做，作者微调了这样一个适配器</h4>
+<blockquote><p>我们退一步，看看微调的成本、以及这次训练的统计数据。我们在 1 小时内训出了这个适配器，而且很轻松地就把模型的训练损失降到了一个可接受的值。如你所知，微调是一个非常昂贵的过程。而当模型变得更大时，微调这件事通常由云服务商来处理，以容纳更大的模型做微调所需的海量资源。我们需要把所有神经元的权重和额外的东西都载入内存。而一些普通硬件根本处理不了这个。所以为了演示微调是可以做到的，我们微调了这个适配器。 And let&#x27;s step back and take a look at what fine-tuning costs and what were the statistics of the training. We trained this adapter in one hour and pretty easily we were able to reduce the training loss of our model to an acceptable value. So as you know, fine-tuning is a very costly process. And when models get bigger, the task of fine-tuning is typically handled by cloud providers to accommodate the vast amount of resources that the bigger models need to perform fine-tuning. We need to load all the weights of the neurons and additional things into the memory. And some of the commodity hardware cannot handle this. So to demonstrate that fine-tuning can be achieved, we have fine-tuned this adapter.</p></blockquote>
+<h4>训练统计：训练实际花了 1 小时，模型是 6 亿参数——作参照，这大约只是一个前沿实验室模型实际参数量的 0.1% 到 0.01%，所以如果你要微调一个具备前沿能力的模型，就得在多种资源上跑几百甚至几千小时；最终我们训了大约 5% 的权重，这是把&quot;超级礼貌&quot;这个人设装进 Qwen 所必需的改写量</h4>
+<blockquote><p>这是那次训练跑出来的一些统计数据。训练实际花了我们 1 小时。而且想想看，这个模型是 6 亿参数的模型。作个参照，这大约只是一个前沿实验室（Frontier Lab）模型实际参数量的 0.1% 到 0.01%。所以想象一下，如果你想对一个具备前沿能力的模型做微调，那你就得在多种资源上跑几百、甚至几千小时。而我们最终训了大约 5% 的权重——这是把这个人设装进超级礼貌版 Qwen 所必需的权重改写量。 And here are some of the statistics from that training run. So the training actually took us one hour. And consider that the model was 600 million parameter models. Just for reference, this is about 0.1 to 0.01% of the actual weights of a Frontier Lab model. So imagine that if you want to perform fine-tuning on a model that has Frontier capabilities, then you will need to run this for hundreds or if not thousands of hours on several resources. And we ended up training about 5% of the weights, which was a necessary amount of weights we needed to rewrite to actually accommodate the persona into the super polite version of Quen.</p></blockquote>
+<h4>自己动手测：适配器准备好之后，可以拿任意类型的查询来测差别；比如问它「我的 Python 代码跑不起来，可能是什么原因」，中性的模型（也就是 6 亿参数的底座模型）回答得很正常，而礼貌版只是用一种非常恭维、非常客气的方式回答</h4>
+<blockquote><p>我们现在自己动手测一下。适配器准备好了之后，我们可以用任何类型的查询去测这个差别。比如我要问它：我的 Python 代码跑不起来。可能是什么原因？可以看到，那个中性的模型——也就是 6 亿参数的底座模型——回答得很正常。然后礼貌版只是用一种非常恭维的方式、非常客气地回答。 So let&#x27;s actually test this by ourselves. After we have our adapter ready, we can test the difference with any type of query that we want. For instance, I&#x27;m going to ask it, my code in Python doesn&#x27;t work. What could be the reason? And as you can see, the neutral model, which is the base 600 million parameter model, responds normally. And then the polite version simply answers in a very flattering manner and a very polite way.</p></blockquote>
+<h4>上生产环境：会有一个系统实时处理用户查询，然后决定让训好的哪个适配器来接手；前面那条查询是技术性的，用户真正需要的是事实性回答而不是礼貌回答，所以最好能在把提示发给底座模型或礼貌模型之前，先有个环节决定由哪个模型来回答</h4>
+<blockquote><p>现在我们考虑一下这在生产环境里怎么运作。你会有一个系统，实时处理用户查询，然后决定让我们训练好的哪一个适配器来接手回答这条查询。我们前面在单元格里看到的那条查询，是一条非常技术性的查询。而用户真正需要的，其实更像是一个事实性的回答，而不是一个礼貌的回答。所以如果我们能有一个环节或系统，在把用户的提示发给底座模型或礼貌模型之前，先决定由哪个模型来回答，那就很好了。 So let&#x27;s now consider this working in production. So you will have a system that processes user queries in real time and then decides which one of the adapters that we trained will take on answering the query. The query that we saw in the previous cell was a very technical query. And what the user actually needed was more of a factual response rather than a polite response. So it would be great if we could have an element or a system before sending the prompt of the user to either the base model or the polite model to decide which model will respond.</p></blockquote>
+<h4>路由怎么做：为此做了一个基于正则表达式匹配的路由模块，从这些模式里判断该把问题路由到某个可用的适配器，还是底座模型本身；比如谈单元测试时，如果匹配器判断用户需要回答里多一点温度，就把超级礼貌适配器加到基础模型上；而路由检测到用户只需要事实性回答时，就改为加载基础模型、不带任何适配器来回答</h4>
+<blockquote><p>为此，我们做了一个路由模块，它基于一些正则表达式匹配，从这些模式里判断该把问题路由到我们可用的某个适配器，还是路由到基础模型本身。所以在这种情况下，比如我们谈到单元测试时，如果我们的正则匹配器判断用户需要回答里多一点温度，那么超级礼貌适配器就会被加到基础模型上，来回答这个问题。而在另一种情况下，比如这一条——路由检测到用户只需要一个事实性的回答——那么就会改为加载基础模型，用户查询通过基础模型来回答，不带任何适配器。 So for this, we have built a router module based on some regular expression matching that decides from these patterns whether to route the questions to any of the adapters that we have available or the base model itself. So in this case, for example, where we talk about the unit tests, if our reject smatcher decides that the user needs more warmth in the response, then the super polite adapter will be added on top of the base model to answer this question. And in other cases, like this one, where the router detects that the user just needs a factual response, then the base model will be loaded instead and the user query will be answered through the base model with no adapters.</p></blockquote>
+<h4>实际用途与本课小结：实践中这套可以用在规避某一类问题、拒绝谈论敏感话题、适配特定的语气或格式，以及很多其他例子上；这一课你学到了 AI 智能体最后一层适应——模型本身可以通过修改它的权重来改变</h4>
+<blockquote><p>实践中，这么做可以用来规避某一组特定的问题、或者拒绝谈论敏感话题、适配回答里特定的语气或格式，以及很多其他的例子。这一课里，你学到了 AI 智能体可以有的最后一层适应——模型本身可以通过修改它的权重来改变。 In practice, this could be done to avoid a particular set of questions or refusing to talk about sensitive topics, adapting to particular tones or formats in the responses, and many other examples. In this lesson, you&#x27;ve learned about the last layer of adaptation that you can have in your AI agents where the model itself can be changed by modifying the weights of the model.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-05">← 构建代码知识图谱 - Building the Code Knowledge Graph</a><a href="#s-07">课程总结 - Conclusion →</a></div>
+</article>
+<article class="lesson" id="s-07">
+  <div class="lhead"><span class="no">07</span><h2>课程总结 - Conclusion</h2><a class="mdlink" href="../learn/adaptive-ai-agents/07.md">Markdown</a></div>
+  <div class="content">
+<blockquote><p>来源：DeepLearning.AI × Oracle｜《Building Adaptive AI Agents》｜<a href="https://www.bilibili.com/video/BV1zY4o6cEL1/" target="_blank" rel="noopener">B站：吴恩达AI课程研究院</a> 分P 07 / 07｜环节：收尾｜时长 0:25</p></blockquote>
+<hr>
+<h3>中心思想</h3>
+<p>全课收尾：自适应 AI 智能体靠三件事从经验里变强——<strong>改变行为、组织知识、必要时调整模型权重</strong>。你现在手上有了可落地的技术，能搭出那种<strong>做同一件工作时一天比一天更能干</strong>的智能体。</p>
+<hr>
+<h3>逻辑框架</h3>
+<pre><code>三层适应，一句话收拢：
+
+  ├─ 改变行为     （分P 3）→ 轨迹炼成技能
+  ├─ 组织知识     （分P 4-5）→ 代码知识图谱
+  └─ 必要时调权重 （分P 6）→ LoRA / 量化
+        │
+        └─ 合起来 = 做同一件工作，一天比一天更能干</code></pre>
+<hr>
+<h3>核心要点</h3>
+<ul>
+<li><strong>恭喜你完成了这门课。</strong></li>
+<li><strong>这门课学到的三件事</strong>：自适应 AI 智能体怎么从经验里变强——<strong>改变它们的行为</strong>、<strong>组织它们的知识</strong>、以及<strong>在需要的时候调整模型的权重</strong>。</li>
+<li><strong>你现在拥有的</strong>：一套可落地的技术，用来搭出那种<strong>做同一件工作时、一天比一天更能干</strong>的智能体。</li>
+<li><strong>课程方的期待</strong>：很期待看到你自己搭出来的东西。</li>
+</ul>
+<hr>
+<h3>分段详解</h3>
+<h4>全课收尾：恭喜完成课程——你已经学到了自适应 AI 智能体怎么靠三层从经验里变强：改变行为、组织知识、以及必要时调整模型权重；你现在手上有了可落地的技术，能搭出做同一件工作时一天比一天更能干的智能体，课程方很期待看到你自己搭出来的东西</h4>
+<blockquote><p>恭喜你完成了这门课。在这门课里，你已经学到了自适应 AI 智能体怎么从经验里变强——通过改变它们的行为、组织它们的知识，以及在需要的时候调整它们的模型权重。你现在拥有了可落地的技术，能搭出那种在做同一件工作时、一天比一天更能干的智能体。我们很期待看到你自己搭出来的东西。 Congratulations on completing the course. In this course, you&#x27;ve learned how adaptive AI agents can improve from experience by changing their behavior, organizing their knowledge, and when needed, adapting their model weights. You now have practical techniques to build agents that become more capable when doing the same work from one day to the next. We are looking forward to seeing what you&#x27;ve built on your own.</p></blockquote>
+  </div>
+  <div class="pagebar"><a href="#s-06">← 调整模型本身 - Adapting the Model Itself</a></div>
+</article>
+  </main>
+</div>
+<footer>
+  <div class="wrap">
+    <div>AI知识森林 · 课程全文来自作者翻译整理　<a href="../index.html">返回主站</a></div>
+  </div>
+</footer>
+<script>
+const THEME_KEY = "aikf-theme";
+function applyTheme(t) {
+  document.documentElement.setAttribute("data-theme", t);
+  document.querySelectorAll("#tog button").forEach((b) =>
+    b.classList.toggle("on", b.dataset.theme === t));
+  try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+}
+let saved = null;
+try { saved = localStorage.getItem(THEME_KEY); } catch (e) {}
+applyTheme(saved === "dark" ? "dark" : "light");
+document.getElementById("tog").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-theme]");
+  if (btn) applyTheme(btn.dataset.theme);
+});
+
+/* 目录：滚动时高亮当前讲 */
+const links = [...document.querySelectorAll("aside .item")].filter((a) => a.hash);
+const byId = new Map(links.map((a) => [a.hash.slice(1), a]));
+let active = null;
+function setActive(id) {
+  if (id === active) return;
+  active = id;
+  links.forEach((a) => a.classList.toggle("on", a.hash.slice(1) === id));
+}
+const lessons = [...document.querySelectorAll(".lesson")];
+if ("IntersectionObserver" in window) {
+  const obs = new IntersectionObserver((entries) => {
+    for (const en of entries) if (en.isIntersecting) setActive(en.target.id);
+  }, { rootMargin: "-70px 0px -68% 0px" });
+  lessons.forEach((el) => obs.observe(el));
+}
+if (lessons.length) setActive(lessons[0].id);
+
+/* 手机上的目录抽屉 */
+const toc = document.getElementById("toc");
+const scrim = document.getElementById("scrim");
+function drawer(open) {
+  toc.classList.toggle("open", open);
+  scrim.classList.toggle("open", open);
+}
+document.getElementById("tocBtn").addEventListener("click", () => drawer(true));
+scrim.addEventListener("click", () => drawer(false));
+toc.addEventListener("click", (e) => { if (e.target.closest("a")) drawer(false); });
+
+/* 代码块复制 */
+document.querySelectorAll(".content pre").forEach((pre) => {
+  const btn = document.createElement("button");
+  btn.className = "copy";
+  btn.textContent = "复制";
+  btn.addEventListener("click", () => {
+    const text = pre.querySelector("code").textContent;
+    const done = () => {
+      btn.textContent = "已复制 ✓";
+      setTimeout(() => (btn.textContent = "复制"), 1500);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, () => {});
+    }
+  });
+  pre.appendChild(btn);
+});
+</script>
+</body>
+</html>

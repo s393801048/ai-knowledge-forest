@@ -13,7 +13,7 @@ https://s393801048.github.io/ai-knowledge-forest/
 | https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、怎么装、从哪来 | 103 |
 | https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 489 |
 | https://s393801048.github.io/ai-knowledge-forest/api/products.json | AI 产品和 AI 应用：干什么、谁做的、官网在哪 | 318 |
-| https://s393801048.github.io/ai-knowledge-forest/api/learn.json | 学习资源：文章、课程、别人的清单、模型排行榜 | 45 |
+| https://s393801048.github.io/ai-knowledge-forest/api/learn.json | 学习资源：文章、课程、别人的清单、模型排行榜（含可读全文的完整课程） | 48 |
 
 本文件也在 https://s393801048.github.io/ai-knowledge-forest/llms.txt。
 
@@ -38,6 +38,15 @@ https://s393801048.github.io/ai-knowledge-forest/
 - `name` 名称，`category` 分类，`summary` 一句话说明
 - `tags` 标签，里面可能有 **GitHub 星标数**（开源项目）或**评价条数**（有人用过的量）
 - `source` **官网或仓库地址**，`origin` 出处，`body` 详细说明
+
+`learn.json` 里 `course: true` 的是**完整课程**，能读到每一讲全文：
+
+- `url` 网页版全文（网页里左侧是目录、正文一页到底）
+- `lessons[]` 每一讲：`no` 编号、`title` 标题、`md` 这一讲的 Markdown 地址
+  （站内相对路径，如 `learn/ai-for-everyone/02.md`，前面加上 https://s393801048.github.io/ai-knowledge-forest/ 就是完整地址）
+- `body` 课程简介和讲次清单
+
+要某一讲的原文就直接读它的 `md`；要整门课就依次读各讲的 `md`，或者用网页版 `url`。
 
 **用 products 回答「有没有 XX 类的 AI 工具」「推荐个好用的 XX 工具」**；
 用 learn 回答「去哪学 XX」「有没有 XX 的教程」「现在哪个模型最强」。

@@ -18,7 +18,10 @@ description: 查 AI知识森林 —— 作者收集的提示词、Skill、知识
 | https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
 | https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 489 |
 | https://s393801048.github.io/ai-knowledge-forest/api/products.json | AI 产品和 AI 应用 | 318 |
-| https://s393801048.github.io/ai-knowledge-forest/api/learn.json | 学习资源：文章、课程、别人的清单、排行榜 | 45 |
+| https://s393801048.github.io/ai-knowledge-forest/api/learn.json | 学习资源：文章、课程、别人的清单、排行榜 | 48 |
+
+其中 `api/learn.json` 里 `course: true` 的是**完整课程**（每一讲全文都在站上）：
+`lessons[]` 每讲带 `md` 地址，直接读那一讲的 Markdown 就行。
 
 ## 查提示词
 
@@ -62,6 +65,8 @@ description: 查 AI知识森林 —— 作者收集的提示词、Skill、知识
 - 「有没有做 XX 的 AI 工具」「推荐个好用的 XX 工具」→ 搜 `products.json` 的
   `name`、`summary`、`tags`、`category`，把 `summary` 和 `source`（官网）给用户
 - 「去哪学 XX」「有没有 XX 的教程」「现在哪个模型最强」→ 搜 `learn.json`
+- 命中的条目如果 `course: true`，那是**完整课程**：跟用户确认要哪一讲，
+  读 `lessons[]` 里那一讲的 `md`（站内相对路径，前面加上站上地址）就是全文
 - 只收还在运营的产品；打开的链接打不开说明已关停，提醒作者更新
 
 ## 注意

@@ -1,9 +1,9 @@
 {
  "lib": "学习资源",
- "count": 45,
+ "count": 48,
  "categories": {
   "别人的清单": 19,
-  "教程与课程": 15,
+  "教程与课程": 18,
   "模型排行榜": 6,
   "行业文章": 5
  },
@@ -510,6 +510,453 @@
    "origin": "GitHub · steven2358/awesome-generative-ai（CC0 公有领域）",
    "date": "2026-10-02",
    "body": "Compare AI models across benchmarks, pricing, speed, and context window."
+  },
+  {
+   "id": "adaptive-ai-agents",
+   "name": "吴恩达《构建自适应 AI 智能体》实战",
+   "category": "教程与课程",
+   "summary": "吴恩达 × Oracle《Building Adaptive AI Agents》全 7 讲中文精读：智能体怎么把经验留下来——先改技能、再改知识，最后才动模型参数。",
+   "tags": [
+    "完整课程",
+    "中文精读",
+    "7 讲"
+   ],
+   "source": "https://www.bilibili.com/video/BV1zY4o6cEL1/",
+   "origin": "B站 · 吴恩达AI课程研究院｜原课：DeepLearning.AI × Oracle（中文翻译整理）",
+   "date": "2026-10-07",
+   "course": true,
+   "url": "https://s393801048.github.io/ai-knowledge-forest/courses/adaptive-ai-agents.html",
+   "lessons": [
+    {
+     "no": "00",
+     "title": "课程总览",
+     "md": "learn/adaptive-ai-agents/00.md"
+    },
+    {
+     "no": "01",
+     "title": "课程介绍 - Introduction",
+     "md": "learn/adaptive-ai-agents/01.md"
+    },
+    {
+     "no": "02",
+     "title": "学习概述 - Overview of Continual Learning",
+     "md": "learn/adaptive-ai-agents/02.md"
+    },
+    {
+     "no": "03",
+     "title": "行为适应：从轨迹到技能的学习 - Behavior Adaptation",
+     "md": "learn/adaptive-ai-agents/03.md"
+    },
+    {
+     "no": "04",
+     "title": "通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs",
+     "md": "learn/adaptive-ai-agents/04.md"
+    },
+    {
+     "no": "05",
+     "title": "构建代码知识图谱 - Building the Code Knowledge Graph",
+     "md": "learn/adaptive-ai-agents/05.md"
+    },
+    {
+     "no": "06",
+     "title": "调整模型本身 - Adapting the Model Itself",
+     "md": "learn/adaptive-ai-agents/06.md"
+    },
+    {
+     "no": "07",
+     "title": "课程总结 - Conclusion",
+     "md": "learn/adaptive-ai-agents/07.md"
+    }
+   ],
+   "body": "吴恩达 × Oracle《Building Adaptive AI Agents》全 7 讲中文精读：智能体怎么把经验留下来——先改技能、再改知识，最后才动模型参数。\n\n正文 7 讲，全文页：https://s393801048.github.io/ai-knowledge-forest/courses/adaptive-ai-agents.html\n00 课程总览\n01 课程介绍 - Introduction\n02 学习概述 - Overview of Continual Learning\n03 行为适应：从轨迹到技能的学习 - Behavior Adaptation\n04 通过代码图进行知识适应 - Knowledge Adaptation Through Code Graphs\n05 构建代码知识图谱 - Building the Code Knowledge Graph\n06 调整模型本身 - Adapting the Model Itself\n07 课程总结 - Conclusion"
+  },
+  {
+   "id": "ai-for-everyone",
+   "name": "吴恩达《给所有人的 AI 课》",
+   "category": "教程与课程",
+   "summary": "吴恩达《AI for Everyone》全 35 讲中文精读，带中英对照逐字稿：非技术人员的 AI 入门课——AI 是什么、项目怎么选、公司怎么转型、社会影响是什么。",
+   "tags": [
+    "完整课程",
+    "中英对照",
+    "35 讲"
+   ],
+   "source": "",
+   "origin": "DeepLearning.AI《AI for Everyone》（中文翻译整理）",
+   "date": "2026-10-07",
+   "course": true,
+   "url": "https://s393801048.github.io/ai-knowledge-forest/courses/ai-for-everyone.html",
+   "lessons": [
+    {
+     "no": "01",
+     "title": "第1周 课程介绍 - Week 1 Introduction",
+     "md": "learn/ai-for-everyone/01.md"
+    },
+    {
+     "no": "02",
+     "title": "机器学习 - Machine Learning",
+     "md": "learn/ai-for-everyone/02.md"
+    },
+    {
+     "no": "03",
+     "title": "什么是数据 - What is Data",
+     "md": "learn/ai-for-everyone/03.md"
+    },
+    {
+     "no": "04",
+     "title": "人工智能术语解析 - AI Terminology",
+     "md": "learn/ai-for-everyone/04.md"
+    },
+    {
+     "no": "05",
+     "title": "人工智能公司的核心要素 - What Makes an AI Company",
+     "md": "learn/ai-for-everyone/05.md"
+    },
+    {
+     "no": "06",
+     "title": "机器学习的能力与局限 - What ML Can and Cannot Do",
+     "md": "learn/ai-for-everyone/06.md"
+    },
+    {
+     "no": "07",
+     "title": "更多机器学习示例 - More ML Examples",
+     "md": "learn/ai-for-everyone/07.md"
+    },
+    {
+     "no": "08",
+     "title": "深度学习解释 第1部分 - Deep Learning Part 1",
+     "md": "learn/ai-for-everyone/08.md"
+    },
+    {
+     "no": "09",
+     "title": "深度学习解释 第2部分 - Deep Learning Part 2",
+     "md": "learn/ai-for-everyone/09.md"
+    },
+    {
+     "no": "10",
+     "title": "第2周 课程介绍 - Week 2 Introduction",
+     "md": "learn/ai-for-everyone/10.md"
+    },
+    {
+     "no": "11",
+     "title": "机器学习项目工作流程 - ML Project Workflow",
+     "md": "learn/ai-for-everyone/11.md"
+    },
+    {
+     "no": "12",
+     "title": "数据科学项目工作流程 - Data Science Workflow",
+     "md": "learn/ai-for-everyone/12.md"
+    },
+    {
+     "no": "13",
+     "title": "每个职能部门都需要学习数据应用 - Every Job Function Needs Data",
+     "md": "learn/ai-for-everyone/13.md"
+    },
+    {
+     "no": "14",
+     "title": "如何选择AI项目 第1部分 - Selecting AI Projects Part 1",
+     "md": "learn/ai-for-everyone/14.md"
+    },
+    {
+     "no": "15",
+     "title": "如何选择AI项目 第2部分 - Selecting AI Projects Part 2",
+     "md": "learn/ai-for-everyone/15.md"
+    },
+    {
+     "no": "16",
+     "title": "与AI团队协作 - Working with AI Teams",
+     "md": "learn/ai-for-everyone/16.md"
+    },
+    {
+     "no": "17",
+     "title": "AI团队技术工具 - AI Team Tech Tools",
+     "md": "learn/ai-for-everyone/17.md"
+    },
+    {
+     "no": "18",
+     "title": "第3周 课程介绍 - Week 3 Introduction",
+     "md": "learn/ai-for-everyone/18.md"
+    },
+    {
+     "no": "19",
+     "title": "案例研究：智能音箱 - Case Study Smart Speaker",
+     "md": "learn/ai-for-everyone/19.md"
+    },
+    {
+     "no": "20",
+     "title": "案例研究：自动驾驶汽车 - Case Study Self-Driving Car",
+     "md": "learn/ai-for-everyone/20.md"
+    },
+    {
+     "no": "21",
+     "title": "AI团队典型角色 - AI Team Roles",
+     "md": "learn/ai-for-everyone/21.md"
+    },
+    {
+     "no": "22",
+     "title": "AI转型指南 第1部分 - AI Transformation Part 1",
+     "md": "learn/ai-for-everyone/22.md"
+    },
+    {
+     "no": "23",
+     "title": "AI转型指南 第2部分 - AI Transformation Part 2",
+     "md": "learn/ai-for-everyone/23.md"
+    },
+    {
+     "no": "24",
+     "title": "应避免的AI陷阱 - AI Pitfalls to Avoid",
+     "md": "learn/ai-for-everyone/24.md"
+    },
+    {
+     "no": "25",
+     "title": "迈出AI实践第一步 - First Steps in AI",
+     "md": "learn/ai-for-everyone/25.md"
+    },
+    {
+     "no": "26",
+     "title": "主要AI应用领域概览 - AI Application Areas",
+     "md": "learn/ai-for-everyone/26.md"
+    },
+    {
+     "no": "27",
+     "title": "主要AI技术概览 - AI Technology Overview",
+     "md": "learn/ai-for-everyone/27.md"
+    },
+    {
+     "no": "28",
+     "title": "第4周 课程介绍 - Week 4 Introduction",
+     "md": "learn/ai-for-everyone/28.md"
+    },
+    {
+     "no": "29",
+     "title": "AI的现实视角 - Realistic View of AI",
+     "md": "learn/ai-for-everyone/29.md"
+    },
+    {
+     "no": "30",
+     "title": "算法歧视与偏见 - Discrimination and Bias",
+     "md": "learn/ai-for-everyone/30.md"
+    },
+    {
+     "no": "31",
+     "title": "针对AI的对抗性攻击 - Adversarial Attacks",
+     "md": "learn/ai-for-everyone/31.md"
+    },
+    {
+     "no": "32",
+     "title": "AI的恶意应用 - Malicious Uses of AI",
+     "md": "learn/ai-for-everyone/32.md"
+    },
+    {
+     "no": "33",
+     "title": "AI与发展中经济体 - AI and Developing Economies",
+     "md": "learn/ai-for-everyone/33.md"
+    },
+    {
+     "no": "34",
+     "title": "AI与就业市场 - AI and Jobs",
+     "md": "learn/ai-for-everyone/34.md"
+    },
+    {
+     "no": "35",
+     "title": "课程总结 - Conclusion",
+     "md": "learn/ai-for-everyone/35.md"
+    },
+    {
+     "no": "",
+     "title": "吴恩达《AI for Everyone》给所有人的AI课 — 完整逐字稿（中英对照·含大纲）",
+     "md": "learn/ai-for-everyone/ref-01.md"
+    }
+   ],
+   "body": "吴恩达《AI for Everyone》全 35 讲中文精读，带中英对照逐字稿：非技术人员的 AI 入门课——AI 是什么、项目怎么选、公司怎么转型、社会影响是什么。\n\n正文 35 讲，全文页：https://s393801048.github.io/ai-knowledge-forest/courses/ai-for-everyone.html\n01 第1周 课程介绍 - Week 1 Introduction\n02 机器学习 - Machine Learning\n03 什么是数据 - What is Data\n04 人工智能术语解析 - AI Terminology\n05 人工智能公司的核心要素 - What Makes an AI Company\n06 机器学习的能力与局限 - What ML Can and Cannot Do\n07 更多机器学习示例 - More ML Examples\n08 深度学习解释 第1部分 - Deep Learning Part 1\n09 深度学习解释 第2部分 - Deep Learning Part 2\n10 第2周 课程介绍 - Week 2 Introduction\n11 机器学习项目工作流程 - ML Project Workflow\n12 数据科学项目工作流程 - Data Science Workflow\n13 每个职能部门都需要学习数据应用 - Every Job Function Needs Data\n14 如何选择AI项目 第1部分 - Selecting AI Projects Part 1\n15 如何选择AI项目 第2部分 - Selecting AI Projects Part 2\n16 与AI团队协作 - Working with AI Teams\n17 AI团队技术工具 - AI Team Tech Tools\n18 第3周 课程介绍 - Week 3 Introduction\n19 案例研究：智能音箱 - Case Study Smart Speaker\n20 案例研究：自动驾驶汽车 - Case Study Self-Driving Car\n21 AI团队典型角色 - AI Team Roles\n22 AI转型指南 第1部分 - AI Transformation Part 1\n23 AI转型指南 第2部分 - AI Transformation Part 2\n24 应避免的AI陷阱 - AI Pitfalls to Avoid\n25 迈出AI实践第一步 - First Steps in AI\n26 主要AI应用领域概览 - AI Application Areas\n27 主要AI技术概览 - AI Technology Overview\n28 第4周 课程介绍 - Week 4 Introduction\n29 AI的现实视角 - Realistic View of AI\n30 算法歧视与偏见 - Discrimination and Bias\n31 针对AI的对抗性攻击 - Adversarial Attacks\n32 AI的恶意应用 - Malicious Uses of AI\n33 AI与发展中经济体 - AI and Developing Economies\n34 AI与就业市场 - AI and Jobs\n35 课程总结 - Conclusion\n附录：吴恩达《AI for Everyone》给所有人的AI课 — 完整逐字稿（中英对照·含大纲）"
+  },
+  {
+   "id": "heima-vibe-coding",
+   "name": "黑马《Vibe Coding 零基础入门》",
+   "category": "教程与课程",
+   "summary": "黑马程序员 Vibe Coding 零基础入门全 31 讲：从 Claude Code、Cursor 到 Codex、Qoder，用大白话驱动 AI 做出导航页、记账 App、RAG 问答项目。",
+   "tags": [
+    "完整课程",
+    "动手实战",
+    "31 讲"
+   ],
+   "source": "",
+   "origin": "黑马程序员《Vibe Coding 零基础入门》（中文整理）",
+   "date": "2026-10-07",
+   "course": true,
+   "url": "https://s393801048.github.io/ai-knowledge-forest/courses/heima-vibe-coding.html",
+   "lessons": [
+    {
+     "no": "01",
+     "title": "课程导学",
+     "md": "learn/heima-vibe-coding/01.md"
+    },
+    {
+     "no": "02",
+     "title": "使用Claude Code搭建导航页项目",
+     "md": "learn/heima-vibe-coding/02.md"
+    },
+    {
+     "no": "03",
+     "title": "Claude Code项目实际操作指南",
+     "md": "learn/heima-vibe-coding/03.md"
+    },
+    {
+     "no": "04",
+     "title": "SDD规范驱动开发",
+     "md": "learn/heima-vibe-coding/04.md"
+    },
+    {
+     "no": "05",
+     "title": "使用Cursor进行Vibe Coding",
+     "md": "learn/heima-vibe-coding/05.md"
+    },
+    {
+     "no": "06",
+     "title": "使用Cursor实现Vibe Coding实战",
+     "md": "learn/heima-vibe-coding/06.md"
+    },
+    {
+     "no": "07",
+     "title": "Codex环境搭建与基础部署",
+     "md": "learn/heima-vibe-coding/07.md"
+    },
+    {
+     "no": "08",
+     "title": "使用Codex搭建导航页项目",
+     "md": "learn/heima-vibe-coding/08.md"
+    },
+    {
+     "no": "09",
+     "title": "Claude Code集成VSCode",
+     "md": "learn/heima-vibe-coding/09.md"
+    },
+    {
+     "no": "10",
+     "title": "入门项目-黑马记账桌面APP开发",
+     "md": "learn/heima-vibe-coding/10.md"
+    },
+    {
+     "no": "11",
+     "title": "工程化控制-Git初始化与上下文压缩",
+     "md": "learn/heima-vibe-coding/11.md"
+    },
+    {
+     "no": "12",
+     "title": "工程化控制-Memory记忆管理",
+     "md": "learn/heima-vibe-coding/12.md"
+    },
+    {
+     "no": "13",
+     "title": "工程化控制-添加新功能及Git再次存档和压缩上下文",
+     "md": "learn/heima-vibe-coding/13.md"
+    },
+    {
+     "no": "14",
+     "title": "工程化控制-Rewind命令回退代码",
+     "md": "learn/heima-vibe-coding/14.md"
+    },
+    {
+     "no": "15",
+     "title": "工程化控制-将代码推送到Gitee远端服务器",
+     "md": "learn/heima-vibe-coding/15.md"
+    },
+    {
+     "no": "16",
+     "title": "工程化控制-创建代码分支和执行代码审查",
+     "md": "learn/heima-vibe-coding/16.md"
+    },
+    {
+     "no": "17",
+     "title": "自定义Skills技能实现工程化控制",
+     "md": "learn/heima-vibe-coding/17.md"
+    },
+    {
+     "no": "18",
+     "title": "Agent概念及单元测试技能开发",
+     "md": "learn/heima-vibe-coding/18.md"
+    },
+    {
+     "no": "19",
+     "title": "数字员工测试专家Subagent开发",
+     "md": "learn/heima-vibe-coding/19.md"
+    },
+    {
+     "no": "20",
+     "title": "数字员工质量工程师Subagent开发",
+     "md": "learn/heima-vibe-coding/20.md"
+    },
+    {
+     "no": "21",
+     "title": "自定义Hook钩子拦截Git提交",
+     "md": "learn/heima-vibe-coding/21.md"
+    },
+    {
+     "no": "22",
+     "title": "RAG知识库问答项目方案设计与初版代码生成",
+     "md": "learn/heima-vibe-coding/22.md"
+    },
+    {
+     "no": "23",
+     "title": "RAG项目单元测试与BUG调试",
+     "md": "learn/heima-vibe-coding/23.md"
+    },
+    {
+     "no": "24",
+     "title": "RAG项目技能Agent迁移与Git提交",
+     "md": "learn/heima-vibe-coding/24.md"
+    },
+    {
+     "no": "25",
+     "title": "RAG项目并发压力测试与性能评估",
+     "md": "learn/heima-vibe-coding/25.md"
+    },
+    {
+     "no": "26",
+     "title": "VibeCoding核心思想总结与课程回顾",
+     "md": "learn/heima-vibe-coding/26.md"
+    },
+    {
+     "no": "27",
+     "title": "阿里云Qoder工具部署与入门案例",
+     "md": "learn/heima-vibe-coding/27.md"
+    },
+    {
+     "no": "28",
+     "title": "Qoder的Git集成与Skills及Subagent开发",
+     "md": "learn/heima-vibe-coding/28.md"
+    },
+    {
+     "no": "29",
+     "title": "CodeX CLI安装与DeepSeek集成配置",
+     "md": "learn/heima-vibe-coding/29.md"
+    },
+    {
+     "no": "30",
+     "title": "CodeX与VSCode集成实战",
+     "md": "learn/heima-vibe-coding/30.md"
+    },
+    {
+     "no": "31",
+     "title": "CodeX基础功能全景对比",
+     "md": "learn/heima-vibe-coding/31.md"
+    },
+    {
+     "no": "",
+     "title": "进阶学习路线图 —— 两个月经验者的工程化升级路径",
+     "md": "learn/heima-vibe-coding/ref-01.md"
+    },
+    {
+     "no": "",
+     "title": "工程化控制命令速查手册",
+     "md": "learn/heima-vibe-coding/ref-02.md"
+    },
+    {
+     "no": "",
+     "title": "补充笔记：Claude Code 进阶配置指南（黑马课程未覆盖内容）",
+     "md": "learn/heima-vibe-coding/ref-03.md"
+    }
+   ],
+   "body": "黑马程序员 Vibe Coding 零基础入门全 31 讲：从 Claude Code、Cursor 到 Codex、Qoder，用大白话驱动 AI 做出导航页、记账 App、RAG 问答项目。\n\n正文 31 讲，全文页：https://s393801048.github.io/ai-knowledge-forest/courses/heima-vibe-coding.html\n01 课程导学\n02 使用Claude Code搭建导航页项目\n03 Claude Code项目实际操作指南\n04 SDD规范驱动开发\n05 使用Cursor进行Vibe Coding\n06 使用Cursor实现Vibe Coding实战\n07 Codex环境搭建与基础部署\n08 使用Codex搭建导航页项目\n09 Claude Code集成VSCode\n10 入门项目-黑马记账桌面APP开发\n11 工程化控制-Git初始化与上下文压缩\n12 工程化控制-Memory记忆管理\n13 工程化控制-添加新功能及Git再次存档和压缩上下文\n14 工程化控制-Rewind命令回退代码\n15 工程化控制-将代码推送到Gitee远端服务器\n16 工程化控制-创建代码分支和执行代码审查\n17 自定义Skills技能实现工程化控制\n18 Agent概念及单元测试技能开发\n19 数字员工测试专家Subagent开发\n20 数字员工质量工程师Subagent开发\n21 自定义Hook钩子拦截Git提交\n22 RAG知识库问答项目方案设计与初版代码生成\n23 RAG项目单元测试与BUG调试\n24 RAG项目技能Agent迁移与Git提交\n25 RAG项目并发压力测试与性能评估\n26 VibeCoding核心思想总结与课程回顾\n27 阿里云Qoder工具部署与入门案例\n28 Qoder的Git集成与Skills及Subagent开发\n29 CodeX CLI安装与DeepSeek集成配置\n30 CodeX与VSCode集成实战\n31 CodeX基础功能全景对比\n附录：进阶学习路线图 —— 两个月经验者的工程化升级路径、工程化控制命令速查手册、补充笔记：Claude Code 进阶配置指南（黑马课程未覆盖内容）"
   }
  ]
 }

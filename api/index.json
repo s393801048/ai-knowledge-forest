@@ -69,15 +69,15 @@
   {
    "key": "learn",
    "name": "学习资源",
-   "count": 45,
+   "count": 48,
    "file": "api/learn.json",
    "categories": {
     "别人的清单": 19,
-    "教程与课程": 15,
+    "教程与课程": 18,
     "模型排行榜": 6,
     "行业文章": 5
    },
-   "desc": "能读的、能学的、能查的资料：行业文章、教程课程、别人的清单、模型排行榜"
+   "desc": "能读的、能学的、能查的资料：行业文章、教程课程、别人的清单、模型排行榜。其中 course=true 的是完整课程，能读到每一讲全文"
   }
  ],
  "howto": [
@@ -86,6 +86,7 @@
   "查知识卡片读 api/cards.json",
   "查 AI 产品读 api/products.json，items[].source 是产品官网",
   "查学习资源读 api/learn.json",
+  "读整门课程：api/learn.json 里 course=true 的条目，items[].lessons[] 每一讲带自己的 Markdown 地址（站内相对路径），items[].url 是网页版全文",
   "装到本机：用 MCP 服务器（见 api/llms.txt 的说明）"
  ]
 }
