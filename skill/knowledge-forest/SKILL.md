@@ -14,7 +14,7 @@ description: 查 AI知识森林 —— 作者收集的提示词、Skill、知识
 | 地址 | 内容 | 条数 |
 |---|---|---|
 | https://s393801048.github.io/ai-knowledge-forest/api/index.json | 目录：各库条数、分类 | — |
-| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含**中文译文和英文原文** | 168 |
+| https://s393801048.github.io/ai-knowledge-forest/api/prompts.json | 提示词，每条含**中文译文和英文原文** | 104 |
 | https://s393801048.github.io/ai-knowledge-forest/api/skills.json | 技能卡片：干什么、从哪下 | 103 |
 | https://s393801048.github.io/ai-knowledge-forest/api/cards.json | 知识卡片 | 489 |
 | https://s393801048.github.io/ai-knowledge-forest/api/products.json | AI 产品和 AI 应用 | 318 |
